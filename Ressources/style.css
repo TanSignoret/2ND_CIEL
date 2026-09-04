@@ -1,0 +1,718 @@
+:root {
+    --ground: #F1F5F5;
+    --surface: #FFFFFF;
+    --surface-2: #E9EFEF;
+    --ink: #111C1D;
+    --muted: #546466;
+    --line: #D5DFDF;
+    --accent: #0B6B68;
+    --accent-ink: #0B6B68;
+    --accent-soft: #DDEDEB;
+    --signal: #9C5A08;
+    --ok: #2C7A4B;
+    --ok-soft: #DDEEE2;
+    --shadow: 0 1px 2px rgba(17, 28, 29, 0.05), 0 8px 24px -16px rgba(17, 28, 29, 0.35);
+    --radius: 10px;
+    --step-size: 2.1rem;
+}
+
+/* Style principal */
+body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+/* Style du texte, titre et liens */
+h1, h2, h3, h4 {
+    font-family: "Archivo", "Segoe UI", system-ui, sans-serif;
+    text-wrap: balance;
+    margin: 0;
+    line-height: 1.15;
+    color: var(--ink);
+}
+
+code, kbd, .mono {
+    font-family: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+
+a {
+    color: var(--accent-ink);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header.hero {
+    padding: 3.5rem 0 2.25rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%);
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.eyebrow {
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 0.9rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 5.5vw, 3.1rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 2rem 0 0.6rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+/* Barre de navigation */
+.nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 1rem;
+}
+
+.nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: center;
+    }
+
+.nav a:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+}
+
+.nav a.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Description et chips du header */
+.lede {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.chips {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.chip{
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--muted);
+    font-size: 0.78rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 99px;
+}
+
+/* Section principale */
+section {
+    margin-top: 3rem;
+    scroll-margin-top: 4.5rem;
+}
+
+.sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.sec-num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    color: var(--accent-ink);
+    font-weight: 500;
+}
+
+.section-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-title h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.section-tag {
+    margin-left: auto;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* Cards pour la home page */
+.display-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Section "En construction" */
+.construction {
+    background: var(--surface-2);
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+}
+
+.construction-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--signal);
+}
+
+.construction h3 {
+    margin: 0 0 0.5rem;
+    color: var(--signal);
+}
+
+
+/* Cartes pour les TP/Cours */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.card-title {
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.card-tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--surface-2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.card-description {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.card-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--muted);
+}
+
+.meta-icon {
+    color: var(--accent);
+}
+
+/* Sections */
+.sec-tag {
+    margin-left: auto;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+/* Steps */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.step {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: var(--step-size) 1fr;
+    gap: 0 1rem;
+    padding: 1.05rem 1.2rem;
+    transition: border-color 0.2s;
+}
+
+.step-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.step-num {
+    grid-row: 1/3;
+    width: var(--step-size);
+    height: var(--step-size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.step-title {
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 1.03rem;
+    flex: 1;
+    padding-top: 0.15rem;
+}
+
+.step-body {
+    grid-column: 2;
+    padding-top: 0.5rem;
+}
+
+.step-body p:last-child {
+    margin-bottom: 0;
+}
+
+.tick {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    user-select: none;
+    padding-top: 0.15rem;
+}
+
+.tick input {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--ok);
+    cursor: pointer;
+    margin: 0;
+}
+
+.tick span {
+    font-family: "Archivo", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* Callouts */
+.callout {
+    border-left: 3px solid var(--signal);
+    background: var(--signal-soft);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.2rem 0;
+    font-size: 0.97rem;
+}
+
+.callout.deliver {
+    border-left-color: var(--ok);
+    background: var(--ok-soft);
+}
+
+.callout .lbl {
+    display: block;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 0.35rem;
+}
+
+.callout.deliver .lbl {
+    color: var(--ok);
+}
+
+.callout p:last-child {
+    margin-bottom: 0;
+}
+
+/* Tables */
+.tw {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 34rem;
+    font-size: 0.95rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+}
+
+thead th {
+    font-family: "Archivo", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface-2);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td.pts {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    text-align: right;
+}
+
+tfoot td {
+    font-weight: 700;
+    background: var(--surface-2);
+    font-family: "Archivo", sans-serif;
+}
+
+/* Skills */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 0.9rem;
+}
+
+.skill {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 0.95rem 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+.skill .code {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--accent-ink);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.skill b {
+    font-family: "Archivo", sans-serif;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.skill span {
+    font-size: 0.93rem;
+    color: var(--muted);
+}
+
+/* Code Blocks */
+code {
+    background: var(--surface-2);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+    font-size: 0.88em;
+}
+
+.filename {
+    display: block;
+    background: var(--ink);
+    color: var(--ground);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.filename em {
+    color: var(--accent);
+    font-style: normal;
+}
+
+pre.tree {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    margin: 0.9rem 0;
+    overflow-x: auto;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* Lists */
+ul.plain {
+    margin: 0 0 1rem;
+    padding-left: 1.1rem;
+}
+
+ul.plain li {
+    margin-bottom: 0.4rem;
+}
+
+ul.plain li::marker {
+    color: var(--accent);
+}
+
+/* ============================================
+Listes classiques (statiques)
+============================================ */
+ul.plain:not(.collapsible) {
+    margin: 0 0 1rem;
+    padding-left: 1.1rem;
+    list-style: disc;
+}
+
+ul.plain:not(.collapsible) li {
+    margin-bottom: 0.4rem;
+}
+
+ul.plain:not(.collapsible) li::marker {
+    color: var(--accent);
+}
+
+/* ============================================
+Listes déroulantes (collapsible)
+============================================ */
+ul.plain.collapsible {
+    margin: 0 0 1rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.plain.collapsible > li {
+    margin-bottom: 0.5rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+ul.plain.collapsible > li::before {
+    content: "▶";
+    position: absolute;
+    left: -1.5rem;
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+
+ul.plain.collapsible > li.active::before {
+    content: "▼";
+}
+
+ul.plain.collapsible > li > ul {
+    display: none;
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+ul.plain.collapsible > li.active > ul {
+    display: block;
+}
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.note {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .display-cards {
+        grid-template-columns: 1fr;
+    }
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ground: #0C1314;
+        --surface: #141E1F;
+        --surface-2: #1B2728;
+        --ink: #E7EEED;
+        --muted: #9AABAB;
+        --line: #28393A;
+        --accent: #3FB6AC;
+        --accent-ink: #5ECDC2;
+        --accent-soft: #153230;
+        --signal: #E0A657;
+        --signal-soft: #302416;
+        --ok: #63C486;
+        --ok-soft: #15291D;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -16px rgba(0, 0, 0, 0.8);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+     
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .step {
+        grid-template-columns: 1.8rem 1fr;
+        gap: 0 0.8rem;
+        padding: 0.9rem 1rem;
+        --step-size: 1.8rem;
+    }
+    
+    .step-body {
+        grid-column: 1/3;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+@media print {
+    .bar, .btn {
+        display: none;
+    }
+    
+    body {
+        background: #fff;
+        font-size: 11pt;
+    }
+    
+    .step, .tw {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+    
+    section {
+        break-inside: auto;
+    }
+}
