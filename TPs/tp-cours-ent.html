@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP CIEL - Communication en ligne et GED</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const listItems = document.querySelectorAll('ul.plain > li');
+
+            listItems.forEach(item => {
+                if (item.querySelector('ul')) {
+                    item.addEventListener('click', function(e) {
+                        // Évite de déclencher le clic si on clique sur un lien
+                        if (e.target.tagName === 'A') return;
+
+                        // Basculer la classe "active"
+                        this.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+<body>
+    <div class="wrap">
+        <header class="hero col">
+            <div class="eyebrow">Séance 1 — Découverte des outils numériques</div>
+            <h1>Communication et travail en ligne</h1>
+            <p>Découverte d'outils que vous utiliserez au lycée, puis en entreprise : un mail électronique, l'espace numérique de travail et la gestion électronique de documents. Suivez les étapes, cochez au fur et à mesure, transmetez vos fichiers à l'enseignant.</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 4 h (2 × 2 h)</span>
+                <span class="chip">Poste Windows + navigateur</span>
+                <span class="chip">Travail individuel</span>
+            </div>
+        </header>
+
+        <section>
+            <h3>Problèmes avec l'ENT du lycée</h3>
+            <div class="tw">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ce que vous observez</th>
+                            <th>Causes possibles</th>
+                            <th>Ce que vous vérifiez</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>« Identifiant ou mot de passe incorrect »</td>
+                            <td>Verrou majuscule activé, mauvais clavier, compte ENT différent du compte session.</td>
+                            <td>Témoin <kbd>Verr. Maj</kbd>, tape le mot de passe dans un bloc-notes pour le relire, vérifiez que vous êtes bien sur la bonne page de connexion.</td>
+                        </tr>
+                        <tr>
+                            <td>La page de l'ENT ne s'affiche pas.</td>
+                            <td>Adresse mal saisie, pas de réseau, service momentanément indisponible.</td>
+                            <td>L'adresse dans la barre du navigateur, l'icône réseau du poste, la même page sur le poste voisin.</td>
+                        </tr>
+                        <tr>
+                            <td>La capture collée est vide ou noire.</td>
+                            <td>Rien dans le presse-papiers, capture faite sur un autre écran.</td>
+                            <td>Refais la capture avec <kbd>Windows</kbd>+<kbd>Maj</kbd>+<kbd>S</kbd> et colle immédiatement.</td>
+                        </tr>
+                        <tr>
+                            <td>Le fichier rendu s'ouvre dans Word, pas dans une visionneuse d'images.</td>
+                            <td>Tu as rendu le document, pas l'image : l'extension n'est pas <code>.png</code>.</td>
+                            <td>L'extension affichée dans l'explorateur ; refais « Enregistrer comme image ».</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="cours-ent">
+            <div class="sec-head"><span class="sec-num">03</span><h2>Cours — Qu'est-ce qu'un ENT ?</h2><span class="sec-tag">À retenir</span></div>
+            <div class="lesson col">
+                <p>L'<b>ENT</b> (Espace Numérique de Travail) est un site en ligne qui regroupe les services et les outils du lycée en un seul endroit : cours, emploi du temps, notes, devoirs, messagerie, informations de la vie scolaire.</p>
+                <p>Il permet aux élèves, aux parents, aux professeurs et à l'établissement d'échanger dans un <b>espace sécurisé</b>. Chaque personne se connecte avec son propre compte et ne voit que ce qui la concerne : c'est ce qu'on appelle un <b>accès personnalisé</b> à travers un <b>portail unique</b>.</p>
+                
+                <h3>Qui voit quoi ?</h3>
+                <div class="skills">
+                    <div class="skill">
+                        <b>Élève</b>
+                        <span>Ses devoirs, son emploi du temps, ses notes, ses cours et ressources.</span>
+                    </div>
+                    <div class="skill">
+                        <b>Parent</b>
+                        <span>Les résultats, les absences et le travail de son enfant.</span>
+                    </div>
+                    <div class="skill">
+                        <b>Professeur</b>
+                        <span>Le cahier de textes, les notes, la vie scolaire, les ressources à déposer.</span>
+                    </div>
+                    <div class="skill">
+                        <b>Le lycée</b>
+                        <span>Les informations des élèves, les emplois du temps, les espaces partagés.</span>
+                    </div>
+                </div>
+                
+                <div class="callout">
+                    <span class="lbl">Le mot juste</span>
+                    <p>Un ENT ne stocke pas seulement des fichiers : il <b>relie des services</b> (notes, messagerie, agenda) derrière une seule connexion.</p>
+                </div>
+                
+                <h3>Différence entre ENT et GED</h3>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Critère</th>
+                                <th>ENT</th>
+                                <th>GED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Fonction</b></td>
+                                <td>Portail pour accéder à des <b>services</b> (notes, messagerie, etc.).</td>
+                                <td>Outil pour <b>stocker et organiser</b> des fichiers.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Exemple</b></td>
+                                <td>MaClasse.ENT, Pronote.</td>
+                                <td>Proton Drive, Nextcloud, Google Drive.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Utilisation</b></td>
+                                <td>Communication, suivi scolaire.</td>
+                                <td>Collaboration, partage de documents.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+            <p>Cours et TP par <strong>Tanguy Signoret</strong> | <a href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+            <p>Mise à jour : septembre 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

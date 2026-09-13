@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP CIEL PROF - Communication en ligne et GED</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const listItems = document.querySelectorAll('ul.plain > li');
+
+            listItems.forEach(item => {
+                if (item.querySelector('ul')) {
+                    item.addEventListener('click', function(e) {
+                        // Évite de déclencher le clic si on clique sur un lien
+                        if (e.target.tagName === 'A') return;
+
+                        // Basculer la classe "active"
+                        this.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hero col">
+            <div class="eyebrow">Séance 1 — Découverte des outils numériques</div>
+            <h1>Communication en ligne et Gestion Électronique de Documents</h1>
+            <p>Deux outils que vous utiliserez tous les jours au lycée, puis en entreprise : l'espace numérique de travail et la gestion électronique de documents. Suis les étapes, coche au fur et à mesure, dépose tes fichiers.</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 4 h (2 × 2 h)</span>
+                <span class="chip">Poste Windows + navigateur</span>
+                <span class="chip">Travail individuel</span>
+            </div>
+        </header>
+
+        <section id="objectifs">
+            <div class="sec-head"><span class="sec-num">01</span><h2>Ce que vous allez apprendre</h2><span class="sec-tag">Objectifs</span></div>
+            <div class="col">
+                <ul class="plain">
+                    <li>Créer et utiliser une adresse mail professionnelle avec Proton Mail.</li>
+                    <li>Envoyer un email structuré avec les bonnes pratiques.</li>
+                    <li>Organiser tes documents dans un espace cloud sécurisé (Proton Drive).</li>
+                    <li>Comprendre les différences entre un ENT et une GED.</li>
+                    <li>Partager des fichiers de manière sécurisée.</li>
+                </ul>
+            </div>
+
+            <h3>Compétences visées</h3>
+            <div class="skills">
+                <div class="skill">
+                    <span class="code">C08 · Unité E32</span>
+                    <b>Exploiter et organiser un système numérique</b>
+                    <span>Utiliser les services d'un environnement numérique, structurer et stocker des documents de façon logique et retrouvable.</span>
+                </div>
+                <div class="skill">
+                    <span class="code">C09 · Unité E31</span>
+                    <b>Communiquer et rendre compte</b>
+                    <span>Transmettre un travail selon une procédure imposée : format de fichier, convention de nommage, dépôt au bon endroit, courte synthèse écrite.</span>
+                </div>
+            </div>
+            <p class="note" style="margin-top:.9rem">Repères Vademecum Seconde TNE — activités « s'approprier un environnement numérique » et « rendre compte ».</p>
+
+            <h3>Déroulé de la séquence</h3>
+            <nav class="toc" aria-label="Sommaire">
+                <ol>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#tp1">TP 1 — Faire un Contre Rendu de TP</a></li>
+                    <li><a href="#tp2">TP 2 — Créer une boîte mail professionnelle</a></li>
+                    <li><a href="#cours-email">Cours — Les bonnes pratiques de l'email</a></li>
+                    <li><a href="#tp3">TP 3 — Organiser un GED</a></li>
+                    <li><a href="#cours-ged">Cours — Qu'est-ce que la GED ?</a></li>
+                    <li><a href="#lexique">Lexique</a></li>
+                </ol>
+            </nav>
+        </section>
+
+        <section id="tp1">
+            <div class="sec-head"><span class="sec-num">01</span><h2>TP 1 - Faire un Contre Rendu de TP</h2><span class="sec-tag">Livrables</span></div>
+            <div class="col">
+            
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num"></div>
+                    <div class="step-head">
+                        <span class="step-title">Attendu</span>
+                        <label class="tick"><input type="checkbox" data-step="m1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain">
+                            <li>L'aboressance suivante : <strong>Document/TP_CIEL_2026/</strong>.</li>
+                            <li>Un fichier : <strong>TP_ENT_2CIEL_DUPONT_Jean.png</strong> (avec nom et prénom).</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+            </div>
+        </section>
+
+        <section id="tp2">
+            <div class="sec-head"><span class="sec-num">02</span><h2>TP 2 - Créer une boîte mail professionnelle</h2><span class="sec-tag">Livrables</span></div>
+            <div class="col">
+            
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num"></div>
+                    <div class="step-head">
+                        <span class="step-title">TP 2 - Mail</span>
+                        <label class="tick"><input type="checkbox" data-step="m1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain">
+                            <li>Pourquoi Proton Mail ?
+                                <ul class="plain">
+                                    <li>Proton Mail est un service <b>chiffré de bout en bout</b> :</li>
+                                    <li>Seuls <b>toi et le destinataire</b> pouvez lire les emails.</li>
+                                    <li>Même Proton ne peut pas accéder à leur contenu.</li>
+                                    <li><b>Respectueux du RGPD</b> (règlement européen sur la protection des données).</li>
+                                </ul>
+                            </li>
+                            <li>Un mail avec ce format et surtout le lien vers le site du lycée</li>
+
+                        </ul>
+                        <pre class="tree">Destinataire : tanguy.signoret@ac-lyon.fr
+Objet : TP Mail - DUPONT Jean
+
+Bonjour Monsieur,
+
+Je vous envoie ce mail dans le cadre du TP sur la communication en ligne.
+Voici le lien vers le site du lycée : https://charlie-chaplin.ent.auvergnerhonealpes.fr
+
+Respectueusement,
+Jean DUPONT
+                        </pre>
+                        <ul class="plain">
+                            <li>Répondre à un email</li>
+                            <li>Mettre un email dans un dossier (label)</li>
+                        </ul>
+                    </div>
+                </li>
+                
+                
+            </ol>
+            </div>
+        </section>
+
+        <section id="tp3">
+            <div class="sec-head"><span class="sec-num">03</span><h2>TP 3 - Organiser un GED</h2><span class="sec-tag">Livrables</span></div>
+            <div class="col">
+            
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num"></div>
+                    <div class="step-head">
+                        <span class="step-title">Attendu</span>
+                        <label class="tick"><input type="checkbox" data-step="m1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain">
+                            <li>L'aboressance suivante : <strong>Document/TP_CIEL_2026/</strong>.</li>
+                            <li>Un fichier : <strong>TP_ENT_2CIEL_DUPONT_Jean.png</strong> (avec nom et prénom).</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+            </div>
+        </section>
+
+
+
+        <section id="cr_tp">
+            <div class="sec-head"><span class="sec-num">0</span><h2>Ce qu'il y a dans le contre rendu du TP</h2><span class="sec-tag">Objectifs</span></div>
+            <div class="col">
+                <ul class="plain">
+                    <li>Un document : TP_ENT_2CIEL_DUPONT_Jean.png avec nom, prénom</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+            <p>Cours et TP par <strong>Tanguy Signoret</strong> | <a href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+            <p>Mise à jour : septembre 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

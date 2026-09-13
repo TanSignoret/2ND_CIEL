@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — Signature électronique et communication par email avec Proton Mail</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const listItems = document.querySelectorAll('ul.plain > li');
+
+            listItems.forEach(item => {
+                if (item.querySelector('ul')) {
+                    item.addEventListener('click', function(e) {
+                        // Évite de déclencher le clic si on clique sur un lien
+                        if (e.target.tagName === 'A') return;
+
+                        // Basculer la classe "active"
+                        this.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Séance 3 — Communication professionnelle</div>
+            <h1>TP — Signature électronique et communication par email avec Proton Mail</h1>
+            <p class="lede">Dans ce TP, vous allez créer une signature électronique professionnelle dans Proton Mail et pratiquer les bonnes pratiques de communication par email, comme le feraient des collaborateurs dans une entreprise.</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 2h</span>
+                <span class="chip">Travail individuel</span>
+            </div>
+        </header>
+
+        <!-- Contexte professionnel -->
+        <section id="context">
+            <div class="sec-head">
+                <span class="sec-num">01</span>
+                <h2>Contexte professionnel</h2>
+                <span class="sec-tag">Introduction</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans une entreprise, la <strong>communication par email</strong> est un outil essentiel pour échanger avec des collègues, des clients ou des partenaires.
+                    Une <strong>signature électronique</strong> professionnelle permet de donner une image sérieuse et de faciliter le contact.
+                    De plus, savoir <strong>partager des documents</strong>, <strong>ajouter des pièces jointes</strong>, ou <strong>mettre des personnes en copie</strong> (CC/CCI) est indispensable pour travailler efficacement en équipe.
+                </p>
+                <p>
+                    Aujourd’hui, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Créer une <strong>signature électronique professionnelle</strong> dans Proton Mail.</li>
+                    <li>Envoyer un email avec une <strong>pièce jointe</strong> (fichier depuis Proton Drive).</li>
+                    <li>Partager un document via Proton Drive et l’envoyer par email.</li>
+                    <li>Utiliser les champs <strong>CC</strong> (Copie) et <strong>CCI</strong> (Copie Cachée).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TP 1 : Créer une signature électronique -->
+        <section id="tp1">
+            <div class="sec-head">
+                <span class="sec-num">02</span>
+                <h2>Exo 1 — Créer une signature électronique dans Proton Mail</h2>
+                <span class="sec-tag">4 étapes</span>
+            </div>
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Accéder aux paramètres de signature</span>
+                        <label class="tick"><input type="checkbox" data-step="s1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain collapsible">
+                            <li>Connectez-vous à votre compte <a href="https://mail.proton.me">Proton Mail</a>.
+                                <ul class="plain">
+                                    <li>Cliquez sur l’icône <strong>⚙️ Paramètres</strong> (en haut à droite).</li>
+                                    <li>Dans le menu latéral, sélectionnez <strong>"Identités et adresses"</strong>.</li>
+                                    <li>Cliquez sur votre adresse email (ex: <code>prenom.nom@proton.me</code>).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Vous êtes sur la page de configuration de votre adresse email.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer une signature basique</span>
+                        <label class="tick"><input type="checkbox" data-step="s2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain collapsible">
+                            <li>Dans la section <strong>"Signature"</strong>, créez une nouvelle signature
+                                <ul>
+
+                        <pre class="tree">---
+Cordialement,
+[VOTRE_PRÉNOM] [VOTRE_NOM]
+Élève en Seconde Bac Pro CIEL
+Email : [VOTRE_EMAIL_PROTON]</pre>
+                                <li>Donnez un nom à votre signature (ex: <code>Signature Bac Pro</code>).</li>
+                                <li>Enregistrez.</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <div class="callout">
+                            <span class="lbl">Pourquoi une signature ?</span>
+                            <p>Une signature électronique permet de :
+                                <ul class="plain">
+                                    <li>Donner une <strong>image professionnelle</strong>.</li>
+                                    <li>Faciliter le <strong>contact</strong> (le destinataire a vos coordonnées).</li>
+                                    <li>Respecter les <strong>normes de l'entreprise</strong> (ex: mention du poste, du service).</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre signature est enregistrée avec le contenu minimum.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Personnaliser la signature</span>
+                        <label class="tick"><input type="checkbox" data-step="s3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain collapsible">
+                            <li>Modifiez votre signature pour ajouter des éléments supplémentaires
+                                <ul>
+                        <pre class="tree">---
+Cordialement,
+[VOTRE_PRÉNOM] [VOTRE_NOM]
+Élève en Seconde Bac Pro CIEL
+📧 Email : [VOTRE_EMAIL_PROTON]
+🌐 Lycée Charlie Chaplin : https://charlie-chaplin.ent.auvergnerhonealpes.fr</pre>
+                                    <p>Vous pouvez aussi ajouter un <strong>logo</strong> (optionnel) :</p>
+                                    <li>Téléchargez le logo du lycée (ex: depuis le site du lycée).</li>
+                                    <li>Dans Proton Mail, utilisez l’option <strong>"Insérer une image"</strong> dans l’éditeur de signature.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre signature est personnalisée avec les nouveaux éléments.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Configurer l'application automatique</span>
+                        <label class="tick"><input type="checkbox" data-step="s4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Faites en sorte que votre signature s’applique automatiquement à tous vos emails :</p>
+                        <ol class="plain">
+                            <li>Dans <strong>"Identités et adresses"</strong>, sélectionnez votre signature dans le menu déroulant <strong>"Signature par défaut"</strong>.</li>
+                            <li>Activez l’option <strong>"Ajouter automatiquement la signature aux nouveaux emails"</strong>.</li>
+                            <li>Enregistrez les modifications.</li>
+                        </ol>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre signature s’affiche automatiquement dans un nouvel email.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- TP 2 : Exercices de communication par email -->
+        <section id="tp2">
+            <div class="sec-head">
+                <span class="sec-num">03</span>
+                <h2>Exo 2 — Exercices de communication par email</h2>
+                <span class="sec-tag">5 exercices</span>
+            </div>
+            <div class="col">
+                <p>Maintenant que votre signature est configurée, vous allez pratiquer différents scénarios de communication par email.</p>
+            </div>
+
+            <ol class="steps">
+                <!-- Exercice 1 : Envoyer un email avec une pièce jointe -->
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Envoyer un email avec une pièce jointe</span>
+                        <label class="tick"><input type="checkbox" data-step="e1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Envoyez un email à un camarade avec mail profesionnel, une piece jointe et votre signature.</p>
+                        <p><strong>Pièce jointe</strong> :</p>
+                        <ol class="plain">
+                            <li>Créez un fichier texte nommé <code>TP_Communication_Synthese_[VOTRE_NOM]_[VOTRE_PRÉNOM].txt</code>.</li>
+                            <li>Ajoutez le texte suivant dans le fichier :</li>
+                        </ol>
+                        <pre class="tree">Les bonnes pratiques pour un email professionnel :
+1. Utiliser un objet clair et court.
+2. Ajouter une formule de politesse (Bonjour, Cordialement).
+3. Signer avec son nom et prénom.
+4. Vérifier les pièces jointes avant envoi.</pre>
+                        <ol class="plain" start="3">
+                            <li>Joignez ce fichier à votre email.</li>
+                        </ol>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre email est envoyé avec la pièce jointe et la signature.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Exercice 2 : Partager un document depuis Proton Drive -->
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Partager un document depuis Proton Drive</span>
+                        <label class="tick"><input type="checkbox" data-step="e2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Dans cet exercice, vous allez partager un document depuis Proton Drive et envoyer un email avec le lien de partage.</p>
+                        <ol class="plain">
+                            <li>Accédez à <a href="https://drive.proton.me" target="_blank">Proton Drive</a>.</li>
+                            <li>Créez un dossier nommé <code>TP_Communication</code> (s’il n’existe pas déjà).</li>
+                            <li>Dans ce dossier, déposez un fichier (ex: un PDF ou un document texte) nommé <code>TP_Communication_Document_[VOTRE_NOM].pdf</code>.</li>
+                            <li>Partagez ce fichier avec un camarade en <strong>lecture seule</strong> (votre camarade ne doit pas pouvoir modifier votre document) :
+                                <ol class="plain">
+                                    <li>Cliquez droit sur le fichier.</li>
+                                    <li>Sélectionnez <strong>"Partager"</strong>.</li>
+                                    <li>Ajoutez l’email de votre camarade.</li>
+                                    <li>Choisissez les droits : <strong>"Peut voir"</strong>.</li>
+                                    <li>Cliquez sur <strong>"Envoyer l’invitation"</strong>.</li>
+                                </ol>
+                            </li>
+                            <li>Envoyez un email à votre commarade avec le lien de partage :
+                                <ul class="plain">
+                                    <li><strong>Objet</strong> : <code>TP Communication - Partage Drive - [VOTRE_NOM]</code>.</li>
+                                    <li><strong>Contenu</strong> :</li>
+                                </ul>
+                                <pre class="tree">Bonjour,
+
+Je te partage un document dans le cadre du TP sur la communication.
+Tu peux y acceder via ce lien : [LIEN_DE_PARTAGE]
+
+Cordialement,
+[VOTRE_PRÉNOM] [VOTRE_NOM]</pre>
+                            </li>
+                        </ol>
+                        <div class="callout">
+                            <span class="lbl">Pourquoi partager un lien ?</span>
+                            <p>Partager un lien vers un document dans le cloud (ex: Proton Drive) est souvent plus pratique que d’envoyer le fichier en pièce jointe, car :
+                                <ul class="plain">
+                                    <li>Le destinataire peut <strong>accéder à la dernière version</strong> du document.</li>
+                                    <li>Cela évite les problèmes de <strong>taille de pièce jointe</strong>.</li>
+                                    <li>Vous pouvez <strong>contrôler les droits d’accès</strong> (lecture seule, modification, etc.).</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre professeur confirme avoir reçu l’email avec le lien de partage et peut accéder au document.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Exercice 3 : Mettre une personne en copie (CC) -->
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Mettre une personne en copie (CC)</span>
+                        <label class="tick"><input type="checkbox" data-step="e3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Dans cet exercice, vous allez envoyer un email à votre professeur et mettre un camarade en <strong>copie (CC)</strong>.</p>
+                        <ul class="plain collapsible">
+                            <li>Envoyez un email professionnel à votre professeur.
+                            <ul class="plain">
+                                <li><strong>Objet</strong> : <code>TP Communication - CC - [VOTRE_NOM]</code>.</li>
+                                <li><strong>Contenu</strong> :</li>
+                                <pre class="tree">Bonjour Monsieur,
+
+Je vous envoie ce mail pour vous informer que j’ai terminé le TP sur la communication.
+Je mets [PRÉNOM_DU_CAMARADE] en copie pour qu’il/elle soit au courant.
+
+Cordialement,
+[VOTRE_PRÉNOM] [VOTRE_NOM]</pre>
+                            </ul>
+                            </li>
+                        </ul>
+
+                        <p>Dans le champ <strong>CC</strong>, ajoutez l’adresse email de votre camarade.</p>
+                        <p>Envoyez l’email.</p>
+                        
+                        <div class="callout">
+                            <span class="lbl">À quoi sert le CC ?</span>
+                            <p>Le champ <strong>CC (Copie Carbone)</strong> permet d’envoyer une copie de l’email à d’autres destinataires <strong>de manière visible</strong> :
+                                <ul class="plain">
+                                    <li>Tous les destinataires (y compris ceux en CC) voient <strong>qui a reçu l’email</strong>.</li>
+                                    <li>Utilisé pour <strong>informer plusieurs personnes</strong> d’une même information.</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre email est envoyé avec votre camarade en CC.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Exercice 4 : Mettre une personne en copie cachée (CCI) -->
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Mettre une personne en copie cachée (CCI)</span>
+                        <label class="tick"><input type="checkbox" data-step="e4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Même consigne que dans l’exercice précédent :</p>
+                        <p>Envoyez un email professionnel à un camarade et mettez un autre camarade en <strong>copie cachée (CCI)</strong>.</p>
+                        
+
+                        <div class="callout">
+                            <span class="lbl">À quoi sert le CCI ?</span>
+                            <p>Le champ <strong>CCI (Copie Carbone Invisible)</strong> permet d’envoyer une copie de l’email à d’autres destinataires <strong>de manière invisible</strong> :
+                                <ul class="plain">
+                                    <li>Les destinataires en CCI <strong>ne voient pas</strong> qui d’autre a reçu l’email.</li>
+                                    <li>Les autres destinataires (To, CC) <strong>ne voient pas</strong> qui est en CCI.</li>
+                                    <li>Utilisé pour <strong>protéger la confidentialité</strong> des destinataires (ex: envoi d’un email à une liste de clients sans que chacun voie les autres).</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre email est envoyé avec votre camarade en CCI (il/elle reçoit l’email mais ne voit pas que vous avez mis d’autres personnes en destinataire).</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Exercice 5 : Envoyer un email avec CC et CCI -->
+                <li class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-head">
+                        <span class="step-title">Envoyer un email avec CC et CCI</span>
+                        <label class="tick"><input type="checkbox" data-step="e5"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Dans cet exercice, vous allez envoyer un email à un camarade, et mettre un camarade en <strong>CC</strong> et un autre en <strong>CCI</strong>.</p>
+                        <ol class="plain">
+                            <li>Demandez les adresses email Proton Mail à <strong>3 camarades</strong>.</li>
+                            <li>Dans le champ <strong>CC</strong>, ajoutez l’adresse email du premier camarade.</li>
+                            <li>Dans le champ <strong>CCI</strong>, ajoutez l’adresse email du deuxième camarade.</li>
+                            <li>Envoyez l’email.</li>
+                        </ol>
+                        <div class="callout">
+                            <span class="lbl">Différence entre CC et CCI</span>
+                            <p>
+                                <table class="tw">
+                                    <thead>
+                                        <tr>
+                                            <th>Champ</th>
+                                            <th>Visible par les destinataires ?</th>
+                                            <th>Utilisation typique</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>To (Destinataire)</strong></td>
+                                            <td>✅ Oui</td>
+                                            <td>Destinataire principal de l’email.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>CC (Copie)</strong></td>
+                                            <td>✅ Oui</td>
+                                            <td>Informer d’autres personnes (tout le monde voit qui est en CC).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>CCI (Copie Cachée)</strong></td>
+                                            <td>❌ Non</td>
+                                            <td>Protéger la confidentialité des destinataires (personne ne voit qui est en CCI).</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre email est envoyé avec un camarade en CC et un autre en CCI.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Livrables -->
+        <section id="livrables">
+            <div class="sec-head">
+                <span class="sec-num">04</span>
+                <h2>Ce que vous devez rendre</h2>
+                <span class="sec-tag">Checklist</span>
+            </div>
+            <div class="col">
+                <p>À la fin de ce TP, vous devez rendre :</p>
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-num">✓</div>
+                        <div class="step-head">
+                            <span class="step-title">Signature électronique</span>
+                            <label class="tick"><input type="checkbox" data-step="r1"><span>Rendu</span></label>
+                        </div>
+                        <div class="step-body">
+                            <p>Une signature électronique <strong>créée et configurée</strong> dans Proton Mail, appliquée automatiquement à vos emails.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num">✓</div>
+                        <div class="step-head">
+                            <span class="step-title">Email avec pièce jointe</span>
+                            <label class="tick"><input type="checkbox" data-step="r2"><span>Rendu</span></label>
+                        </div>
+                        <div class="step-body">
+                            <p>Un email envoyé à <code>tanguy.signoret@ac-lyon.fr</code> avec :
+                                <ul class="plain">
+                                    <li>Objet : <code>TP Communication - Pièce jointe - [VOTRE_NOM]</code>.</li>
+                                    <li>Contenu : Message clair avec formule de politesse.</li>
+                                    <li>Un camarade en <strong>CC</strong>.</li>
+                                    <li>Document partagé en <strong>lecture seule</strong>.</li>
+                                    <li>Pièce jointe : <code>TP_Communication_Synthese_[VOTRE_NOM]_[VOTRE_PRÉNOM].txt</code>.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num">✓</div>
+                        <div class="step-head">
+                            <span class="step-title">Email avec CC et CCI</span>
+                            <label class="tick"><input type="checkbox" data-step="r6"><span>Rendu</span></label>
+                        </div>
+                        <div class="step-body">
+                            <p>Un email envoyé à <code>tanguy.signoret@ac-lyon.fr</code> avec :
+                                <ul class="plain">
+                                    <li>Objet : <code>TP Communication - CC et CCI - [VOTRE_NOM]</code>.</li>
+                                    <li>Contenu : Message clair.</li>
+                                    <li>Un camarade en <strong>CC</strong> et un autre en <strong>CCI</strong>.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+            <p>Cours et TP par <strong>Tanguy Signoret</strong> | <a href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+            <p>Mise à jour : septembre 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

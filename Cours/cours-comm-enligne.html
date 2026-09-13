@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP CIEL - Communication en ligne et GED</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const listItems = document.querySelectorAll('ul.plain > li');
+
+            listItems.forEach(item => {
+                if (item.querySelector('ul')) {
+                    item.addEventListener('click', function(e) {
+                        // Évite de déclencher le clic si on clique sur un lien
+                        if (e.target.tagName === 'A') return;
+
+                        // Basculer la classe "active"
+                        this.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+<body>
+    <div class="wrap">
+        <header class="hero col">
+            <div class="eyebrow">Séance 1 — Découverte des outils numériques</div>
+            <h1>Communication et travail en ligne</h1>
+            <p>Découverte d'outils que vous utiliserez au lycée, puis en entreprise : un mail électronique, l'espace numérique de travail et la gestion électronique de documents. Suivez les étapes, cochez au fur et à mesure, transmetez vos fichiers à l'enseignant.</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 30 min</span>
+                <span class="chip">Poste Windows + navigateur</span>
+            </div>
+        </header>
+
+        <section id="cours-email">
+            <div class="sec-head"><span class="sec-num">01</span><h2>Cours — Les bonnes pratiques de l'email professionnel</h2><span class="sec-tag">À retenir</span></div>
+            <div class="lesson col">
+                <p>Un email professionnel doit être <b>clair, concis et poli</b>. Voici les éléments essentiels à respecter :</p>
+                
+                <h3>Structure d'un email professionnel</h3>
+                <ol class="plain">
+                    <li><b>Objet</b> : Court et explicite (max. 50 caractères).
+                        <ul class="plain">
+                            <li>✅ <code>TP Mail - DUPONT Jean</code></li>
+                            <li>❌ <code>Bonjour</code> (trop vague)</li>
+                            <li>❌ <code>URGENT !!!</code> (trop agressif)</li>
+                        </ul>
+                    </li>
+                    <li><b>Formule d'appel</b> :
+                        <ul class="plain">
+                            <li>✅ <code>Bonjour Madame/Monsieur [NOM]</code> (si vous connaissez le nom).</li>
+                            <li>✅ <code>Bonjour</code> (si vous ne connaissez pas le nom).</li>
+                            <li>❌ <code>Salut</code>, <code>Coucou</code>, <code>Hey</code> (trop informel).</li>
+                        </ul>
+                    </li>
+                    <li><b>Corps du message</b> :
+                        <ul class="plain">
+                            <li>Phrases <b>complètes</b> et <b>polies</b>.</li>
+                            <li>Paragraphe <b>courts</b> (max. 5 lignes par idée).</li>
+                            <li>Aller à l'<b>essentiel</b> : Explique clairement ton objectif.</li>
+                        </ul>
+                    </li>
+                    <li><b>Formule de politesse</b> :
+                        <ul class="plain">
+                            <li>✅ <code>Respectueusement,</code> (pour un supérieur hiérarchique).</li>
+                            <li>✅ <code>Cordialement,</code> (pour un collègue ou un professeur).</li>
+                            <li>❌ <code>À plus</code>, <code>Bonne journée</code> (trop informel).</li>
+                        </ul>
+                    </li>
+                    <li><b>Signature</b> :
+                        <ul class="plain">
+                            <li>Nom + Prénom + Classe (ex: <code>Jean DUPONT – 2CIEL</code>).</li>
+                        </ul>
+                    </li>
+                    <li><b>Pièces jointes</b> :
+                        <ul class="plain">
+                            <li>Nomme tes fichiers clairement (ex: <code>TP_GED_2CIEL_DUPONT_Jean.pdf</code>).</li>
+                            <li>Mentionne-les dans le corps du message (ex: <code>Vous trouverez ci-joint mon travail.</code>).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+
+
+        <section id="cours-ged">
+            <div class="sec-head"><span class="sec-num">02</span><h2>Cours — Qu'est-ce que la GED ?</h2><span class="sec-tag">À retenir</span></div>
+            <div class="lesson col">
+                <p><b>GED</b> signifie <b>Gestion Électronique de Documents</b>. C'est un outil qui permet de <b>stocker</b>, <b>organiser</b>, <b>retrouver</b> et <b>partager</b> des fichiers numériques de façon sécurisée.</p>
+                <p>Plusieurs personnes (élèves, professeurs, collègues) peuvent travailler sur les mêmes dossiers : chacun voit la même version du document, au même endroit. Fini les fichiers <code>rapport_final_v2_vraiment_final.docx</code> envoyés par mail.</p>
+                <p>En entreprise, la GED sert à gérer la documentation technique, les procédures, les listes de tâches, les comptes rendus d'intervention. Chaque entreprise utilise sa propre solution (Nextcloud, SharePoint, Alfresco, Google Drive…) : ce qui compte n'est pas de connaître un logiciel par cœur, mais de savoir <b>ranger et retrouver</b> l'information dans n'importe lequel.</p>
+                
+                <h3>Exemples de GED</h3>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Outil</th>
+                                <th>Type</th>
+                                <th>Caractéristiques</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Proton Drive</b></td>
+                                <td>Cloud (en ligne)</td>
+                                <td>Chiffrement de bout en bout, 5 Go gratuit, respect du RGPD.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Nextcloud</b></td>
+                                <td>Cloud (auto-hébergé)</td>
+                                <td>Open-source, personnalisable, souvent utilisé en entreprise.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Google Drive</b></td>
+                                <td>Cloud</td>
+                                <td>15 Go gratuit, collaboration en temps réel, intégration avec Gmail.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>Proton Drive vs. Autres solutions</h3>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Critère</th>
+                                <th>Proton Drive</th>
+                                <th>Google Drive</th>
+                                <th>Clé USB</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Chiffrement</b></td>
+                                <td>✅ De bout en bout</td>
+                                <td>❌ Non (Google peut accéder aux fichiers)</td>
+                                <td>❌ Non</td>
+                            </tr>
+                            <tr>
+                                <td><b>Accès hors ligne</b></td>
+                                <td>✅ Oui (avec l'app mobile)</td>
+                                <td>✅ Oui</td>
+                                <td>✅ Oui</td>
+                            </tr>
+                            <tr>
+                                <td><b>Partage sécurisé</b></td>
+                                <td>✅ Oui (avec mot de passe)</td>
+                                <td>⚠️ Oui (mais moins sécurisé)</td>
+                                <td>❌ Non</td>
+                            </tr>
+                            <tr>
+                                <td><b>Espace gratuit</b></td>
+                                <td>500 Mo</td>
+                                <td>15 Go</td>
+                                <td>Dépend de la clé</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="callout">
+                    <span class="lbl">Pourquoi Proton Drive en Bac Pro CIEL ?</span>
+                    <p>Proton Drive est idéal pour apprendre les <b>bonnes pratiques</b> en matière de :</p>
+                    <ul class="plain">
+                        <li><b>Sécurité</b> : Chiffrement de bout en bout.</li>
+                        <li><b>RGPD</b> : Conforme au règlement européen sur la protection des données.</li>
+                        <li><b>Pédagogie</b> : Montre qu'il existe des alternatives aux géants du web (Google, Microsoft).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="col">
+            <p>Séance 1 — Communication - Seconde Bac Pro CIEL - Lycée Charlie Chaplin - T. Signoret</p>
+            <p>Septembre 2026.</p>
+        </footer>
+    </div>
+</body>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — Interface graphique</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Séance 2 — Découverte de l'interface utilisateur et du clavier</div>
+            <h1>TP — Utiliser un ordinateur dans le contexte profesionnel</h1>
+            <p class="lede">Dans ce TP, vous allez maîtriser l'interface graphique (dossiers, fichiers, archives) et apprendre à utiliser un ordinateur uniquement avec le clavier, comme le feraient des professionnels dans un environnement sans souris.</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 4h</span>
+                <span class="chip">Travail individuel</span>
+            </div>
+        </header>
+
+        <!-- Contexte professionnel -->
+        <section id="context">
+            <div class="sec-head">
+                <span class="sec-num">01</span>
+                <h2>Contexte professionnel</h2>
+                <span class="sec-tag">Introduction</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans une entreprise, les employés doivent souvent :
+                </p>
+                <ul class="plain">
+                    <li><strong>Gérer des fichiers et dossiers</strong> : Créer, organiser, compresser et sécuriser des documents.</li>
+                    <li><strong>Travailler sans souris</strong> : Utiliser des raccourcis clavier pour naviguer, créer des fichiers ou envoyer des emails (ex: sur des serveurs sans interface graphique).</li>
+                    <li><strong>Respecter les autorisations</strong> : Comprendre les droits d’accès aux fichiers (lecture, écriture, exécution).</li>
+                    <li><strong>Optimiser leur productivité</strong> : Utiliser des outils comme les métadonnées ou les archives pour gagner du temps.</li>
+                </ul>
+                <p>
+                    Aujourd’hui, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Maîtriser l’<strong>interface graphique</strong> (dossiers, fichiers, archives).</li>
+                    <li>Découvrir les <strong>métadonnées</strong> et les <strong>autorisations</strong> des fichiers.</li>
+                    <li>Utiliser un ordinateur <strong>uniquement avec le clavier</strong> (recherche sur Internet, création de fichiers, envoi d’emails, etc.).</li>
+                    <li>Participer à un <strong>concours de frappe</strong> pour améliorer votre vitesse de saisie.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TP 1 : Maîtriser l'interface graphique -->
+        <section id="tp1">
+            <div class="sec-head">
+                <span class="sec-num">02</span>
+                <h2>TP 1 — Maîtriser l'interface graphique</h2>
+                <span class="sec-tag">6 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette première partie, vous allez apprendre à :
+                </p>
+                <ul class="plain">
+                    <li>Créer et organiser des <strong>dossiers et fichiers</strong>.</li>
+                    <li>Comprendre les <strong>types de fichiers</strong> et leurs extensions.</li>
+                    <li>Découvrir les <strong>autorisations</strong> (lecture, écriture, exécution).</li>
+                    <li>Explorer les <strong>métadonnées</strong> des fichiers.</li>
+                    <li>Compresser et décompresser des <strong>archives</strong>.</li>
+                </ul>
+            </div>
+
+            <ol class="steps">
+                <!-- Étape 1 : Créer une arborescence de dossiers -->
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer une arborescence de dossiers</span>
+                        <label class="tick"><input type="checkbox" data-step="i1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Créez la structure de dossiers suivante sur votre bureau ou dans votre dossier personnel :</p>
+                        <pre class="tree">TP_Interface/
+├── Documents/
+│   ├── Cours/
+│   │   ├── CIEL/
+│   │   └── CultureG/
+│   └── TP/
+│       ├── TP1_Interface/
+│       └── TP2_Clavier/
+├── Images/
+│   ├── Logos/
+│   └── Captures/
+└── Archives/</pre>
+                        <ol class="plain">
+                            <li>Ouvrez l’<strong>Explorateur de fichiers</strong> (<kbd>Win + E</kbd> sur Windows, <kbd>Alt + F2</kbd> → <code>nautilus</code> sur Linux).</li>
+                            <li>Sur votre bureau, créez un dossier nommé <code>TP_Interface</code>.</li>
+                            <li>À l’intérieur, créez les sous-dossiers selon l’arborescence ci-dessus.</li>
+                        </ol>
+                        <div class="callout">
+                            <span class="lbl">Pourquoi une arborescence ?</span>
+                            <p>Une arborescence bien organisée permet de :
+                                <ul class="plain">
+                                    <li><strong>Retrouver rapidement</strong> ses fichiers.</li>
+                                    <li><strong>Éviter les doublons</strong> (ex: plusieurs versions d’un même fichier).</li>
+                                    <li><strong>Faciliter la collaboration</strong> (les autres savent où trouver les documents).</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre arborescence correspond au modèle ci-dessus.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 2 : Créer des fichiers de différents types -->
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer des fichiers de différents types</span>
+                        <label class="tick"><input type="checkbox" data-step="i2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Créez les fichiers suivants dans les dossiers appropriés :</p>
+                        <table class="tw raccourcis-table">
+                            <thead>
+                                <tr>
+                                    <th>Type de fichier</th>
+                                    <th>Nom du fichier</th>
+                                    <th>Emplacement</th>
+                                    <th>Contenu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Texte (.txt)</td>
+                                    <td><code>notes.txt</code></td>
+                                    <td><code>TP_Interface/Documents/Cours/CIEL/</code></td>
+                                    <td>Ajoutez le texte : <code>Ceci est un fichier texte pour le TP Interface.</code></td>
+                                </tr>
+                                <tr>
+                                    <td>PDF (.pdf)</td>
+                                    <td><code>cours_CIEL.pdf</code></td>
+                                    <td><code>TP_Interface/Documents/Cours/CIEL/</code></td>
+                                    <td>Exportez un document texte en PDF (ex: depuis LibreOffice).</td>
+                                </tr>
+                                <tr>
+                                    <td>Image (.png)</td>
+                                    <td><code>logo_lycee.png</code></td>
+                                    <td><code>TP_Interface/Images/Logos/</code></td>
+                                    <td>Téléchargez le logo du lycée depuis son site web.</td>
+                                </tr>
+                                <tr>
+                                    <td>Archive (.zip)</td>
+                                    <td><code>archive_documents.zip</code></td>
+                                    <td><code>TP_Interface/Archives/</code></td>
+                                    <td>Compressez le dossier <code>Documents</code> (voir étape 5).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Les fichiers sont créés dans les bons dossiers avec le bon contenu.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 3 : Découvrir les types de fichiers et leurs extensions -->
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Découvrir les types de fichiers et leurs extensions</span>
+                        <label class="tick"><input type="checkbox" data-step="i3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Les fichiers ont des <strong>extensions</strong> qui indiquent leur type. Voici une liste des extensions courantes :</p>
+                        <table class="tw raccourcis-table">
+                            <thead>
+                                <tr>
+                                    <th>Catégorie</th>
+                                    <th>Extensions</th>
+                                    <th>Logiciel associé</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3"><strong>Texte</strong></td>
+                                    <td><code>.txt</code></td>
+                                    <td>Bloc-notes, Notepad++</td>
+                                    <td>Fichier texte brut (sans mise en forme).</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.docx</code>, <code>.odt</code></td>
+                                    <td>Word, LibreOffice Writer</td>
+                                    <td>Fichier texte avec mise en forme.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.pdf</code></td>
+                                    <td>Adobe Acrobat, navigateur</td>
+                                    <td>Fichier portable (non modifiable).</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3"><strong>Image</strong></td>
+                                    <td><code>.jpg</code>, <code>.jpeg</code></td>
+                                    <td>Photoshop, GIMP, Aperçu</td>
+                                    <td>Image compressée (perte de qualité).</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.png</code></td>
+                                    <td>Photoshop, GIMP, Aperçu</td>
+                                    <td>Image non compressée (qualité préservée).</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.gif</code></td>
+                                    <td>Photoshop, navigateur</td>
+                                    <td>Image animée.</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><strong>Archive</strong></td>
+                                    <td><code>.zip</code></td>
+                                    <td>7-Zip, WinRAR, Explorateur Windows</td>
+                                    <td>Archive compressée (universelle).</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.rar</code>, <code>.7z</code></td>
+                                    <td>WinRAR, 7-Zip</td>
+                                    <td>Archive compressée (meilleur taux de compression).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Exécutable</strong></td>
+                                    <td><code>.exe</code> (Windows), <code>.app</code> (Mac)</td>
+                                    <td>Système d'exploitation</td>
+                                    <td>Programme exécutable.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="callout">
+                            <span class="lbl">À retenir</span>
+                            <p>L’extension d’un fichier détermine :
+                                <ul class="plain">
+                                    <li>Le <strong>type de fichier</strong> (texte, image, archive, etc.).</li>
+                                    <li>Le <strong>logiciel</strong> à utiliser pour l’ouvrir.</li>
+                                    <li>Les <strong>autorisations</strong> (ex: un fichier <code>.exe</code> peut être exécuté, contrairement à un <code>.txt</code>).</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Vous avez compris les extensions des fichiers créés.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 4 : Découvrir les autorisations des fichiers -->
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Découvrir les autorisations des fichiers</span>
+                        <label class="tick"><input type="checkbox" data-step="i4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Les fichiers et dossiers ont des <strong>autorisations</strong> qui déterminent ce que les utilisateurs peuvent faire. Voici les principales autorisations :</p>
+                        <table class="tw raccourcis-table">
+                            <thead>
+                                <tr>
+                                    <th>Autorisation</th>
+                                    <th>Symbole (Linux)</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Lecture (Read)</strong></td>
+                                    <td><code>r</code></td>
+                                    <td>Permet de <strong>lire</strong> le fichier ou de lister le contenu d’un dossier.</td>
+                                    <td>Un fichier texte que vous pouvez ouvrir.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Écriture (Write)</strong></td>
+                                    <td><code>w</code></td>
+                                    <td>Permet de <strong>modifier</strong> le fichier ou d’ajouter/supprimer des fichiers dans un dossier.</td>
+                                    <td>Un document Word que vous pouvez éditer.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Exécution (Execute)</strong></td>
+                                    <td><code>x</code></td>
+                                    <td>Permet d’<strong>exécuter</strong> le fichier (pour les programmes) ou d’<strong>entrer</strong> dans un dossier.</td>
+                                    <td>Un fichier <code>.exe</code> ou un script <code>.sh</code>.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>Exercice :</strong> Vérifiez les autorisations des fichiers que vous avez créés :</p>
+                        <ol class="plain">
+                            <li>Sur <strong>Windows</strong> :
+                                <ul class="plain">
+                                    <li>Faites un clic droit sur <code>notes.txt</code> → <strong>Propriétés</strong> → Onglet <strong>Sécurité</strong>.</li>
+                                    <li>Observez les autorisations pour votre utilisateur.</li>
+                                </ul>
+                            </li>
+                            <li>Sur <strong>Linux</strong> :
+                                <ul class="plain">
+                                    <li>Ouvrez un terminal et tapez : <code>ls -l TP_Interface/</code>.</li>
+                                    <li>Observez les permissions (ex: <code>-rw-r--r--</code> pour un fichier en lecture/écriture pour le propriétaire et lecture seule pour les autres).</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="callout">
+                            <span class="lbl">Exemple de permissions Linux</span>
+                            <p>La commande <code>ls -l</code> affiche des permissions comme <code>drwxr-xr-x</code> :
+                                <ul class="plain">
+                                    <li><code>d</code> : Dossier (au lieu de <code>-</code> pour un fichier).</li>
+                                    <li><code>rwx</code> : Lecture (<code>r</code>), écriture (<code>w</code>), exécution (<code>x</code>) pour le propriétaire.</li>
+                                    <li><code>r-x</code> : Lecture et exécution pour le groupe.</li>
+                                    <li><code>r-x</code> : Lecture et exécution pour les autres.</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Vous avez vérifié les autorisations de vos fichiers.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 5 : Découvrir les métadonnées -->
+                <li class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-head">
+                        <span class="step-title">Découvrir les métadonnées</span>
+                        <label class="tick"><input type="checkbox" data-step="i5"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Les <strong>métadonnées</strong> sont des informations sur un fichier (auteur, date de création, taille, etc.). Elles sont utiles pour organiser et retrouver des fichiers.</p>
+                        <p><strong>Exercice :</strong> Affichez les métadonnées du fichier <code>notes.txt</code> :</p>
+                        <ol class="plain">
+                            <li>Sur <strong>Windows</strong> :
+                                <ul class="plain">
+                                    <li>Faites un clic droit sur <code>notes.txt</code> → <strong>Propriétés</strong>.</li>
+                                    <li>Observez les onglets <strong>Général</strong> (taille, date de création) et <strong>Détails</strong> (auteur, titre, etc.).</li>
+                                </ul>
+                            </li>
+                            <li>Sur <strong>Linux</strong> :
+                                <ul class="plain">
+                                    <li>Ouvrez un terminal et tapez : <code>stat TP_Interface/Documents/Cours/CIEL/notes.txt</code>.</li>
+                                    <li>Observez les informations affichées (taille, date de modification, etc.).</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="callout">
+                            <span class="lbl">À quoi servent les métadonnées ?</span>
+                            <p>Les métadonnées permettent de :
+                                <ul class="plain">
+                                    <li><strong>Trier et filtrer</strong> les fichiers (ex: par date de création).</li>
+                                    <li><strong>Retrouver rapidement</strong> un fichier (ex: recherche par auteur).</li>
+                                    <li><strong>Automatiser des tâches</strong> (ex: sauvegarder les fichiers modifiés aujourd’hui).</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Vous avez affiché les métadonnées du fichier <code>notes.txt</code>.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 6 : Compresser et décompresser des archives -->
+                <li class="step">
+                    <div class="step-num">6</div>
+                    <div class="step-head">
+                        <span class="step-title">Compresser et décompresser des archives</span>
+                        <label class="tick"><input type="checkbox" data-step="i6"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Les <strong>archives</strong> permettent de regrouper et compresser plusieurs fichiers/dossiers en un seul fichier.</p>
+                        <ol class="plain">
+                            <li><strong>Compresser le dossier <code>Documents</code> :</strong>
+                                <ul class="plain">
+                                    <li>Cliquez droit sur le dossier <code>Documents</code> (dans <code>TP_Interface/</code>).</li>
+                                    <li>Sélectionnez <strong>7-Zip</strong> → <strong>Ajouter à l'archive...</strong>.</li>
+                                    <li>Choisissez :
+                                        <ul class="plain">
+                                            <li><strong>Format</strong> : ZIP.</li>
+                                            <li><strong>Nom</strong> : <code>archive_documents.zip</code>.</li>
+                                            <li><strong>Emplacement</strong> : <code>TP_Interface/Archives/</code>.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Cliquez sur <strong>OK</strong>.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Décompresser l'archive :</strong>
+                                <ul class="plain">
+                                    <li>Ouvrez le dossier <code>TP_Interface/Archives/</code>.</li>
+                                    <li>Cliquez droit sur <code>archive_documents.zip</code>.</li>
+                                    <li>Sélectionnez <strong>7-Zip</strong> → <strong>Extraire ici</strong>.</li>
+                                    <li>Vérifiez que le dossier <code>Documents</code> est bien extrait.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Protéger une archive par mot de passe (optionnel) :</strong>
+                                <ul class="plain">
+                                    <li>Compressez le fichier <code>notes.txt</code> en ZIP avec un mot de passe (ex: <code>BacPro2026</code>).</li>
+                                    <li>Nommez l'archive <code>notes_protegee.zip</code>.</li>
+                                    <li>Testez : Demandez à un camarade d’essayer d’extraire l’archive (il ne devrait pas y arriver sans le mot de passe).</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="callout">
+                            <span class="lbl">Pourquoi compresser ?</span>
+                            <p>Compresser des fichiers permet de :
+                                <ul class="plain">
+                                    <li><strong>Réduire la taille</strong> (gain de place sur le disque ou en pièce jointe).</li>
+                                    <li><strong>Regrouper plusieurs fichiers</strong> en un seul.</li>
+                                    <li><strong>Protéger les fichiers</strong> avec un mot de passe.</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Vous avez compressé et décompressé l’archive <code>archive_documents.zip</code>.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+            <p>Cours et TP par <strong>Tanguy Signoret</strong> | <a href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+            <p>Mise à jour : septembre 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

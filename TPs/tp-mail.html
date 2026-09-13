@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP CIEL - Communication en ligne et GED</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const listItems = document.querySelectorAll('ul.plain > li');
+
+            listItems.forEach(item => {
+                if (item.querySelector('ul')) {
+                    item.addEventListener('click', function(e) {
+                        // Évite de déclencher le clic si on clique sur un lien
+                        if (e.target.tagName === 'A') return;
+
+                        // Basculer la classe "active"
+                        this.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+<body>
+    <div class="wrap">
+        <header class="hero col">
+            <div class="eyebrow">Séance 1 — Découverte des outils numériques</div>
+            <h1>Communication et travail en ligne</h1>
+            <p>Découverte d'outils que vous utiliserez au lycée, puis en entreprise : un mail électronique, l'espace numérique de travail et la gestion électronique de documents. Suivez les étapes, cochez au fur et à mesure, transmetez vos fichiers à l'enseignant.</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 2 h</span>
+                <span class="chip">Poste Windows + navigateur</span>
+                <span class="chip">Travail individuel</span>
+            </div>
+        </header>
+
+        <section id="objectifs">
+            <div class="sec-head"><span class="sec-num">01</span><h2>Ce que vous allez apprendre</h2><span class="sec-tag">Objectifs</span></div>
+            <div class="col">
+                <ul class="plain">
+                    <li>Créer et utiliser une adresse mail professionnelle avec Proton Mail.</li>
+                    <li>Envoyer un email structuré avec les bonnes pratiques.</li>
+                    <li>Organiser tes documents dans un espace cloud sécurisé (Proton Drive).</li>
+                    <li>Comprendre les différences entre un ENT et une GED.</li>
+                    <li>Partager des fichiers de manière sécurisée.</li>
+                </ul>
+            </div>
+
+            <h3>Compétences visées</h3>
+            <div class="skills">
+                <div class="skill">
+                    <span class="code">C08 · Unité E32</span>
+                    <b>Exploiter et organiser un système numérique</b>
+                    <span>Utiliser les services d'un environnement numérique, structurer et stocker des documents de façon logique et retrouvable.</span>
+                </div>
+                <div class="skill">
+                    <span class="code">C09 · Unité E31</span>
+                    <b>Communiquer et rendre compte</b>
+                    <span>Transmettre un travail selon une procédure imposée : format de fichier, convention de nommage, dépôt au bon endroit, courte synthèse écrite.</span>
+                </div>
+            </div>
+            <p class="note" style="margin-top:.9rem">Repères Vademecum Seconde TNE — activités « s'approprier un environnement numérique » et « rendre compte ».</p>
+
+            <h3>Déroulé de la séquence</h3>
+            <nav class="toc" aria-label="Sommaire">
+                <ol>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#tp1">Exo 1 — Faire un Contre Rendu de TP</a></li>
+                    <li><a href="#tp2">Exo 2 — Créer une boîte mail professionnelle</a></li>
+                    <li><a href="#tp3">Exo 3 — Organiser un GED</a></li>
+                    <li><a href="#lexique">Lexique</a></li>
+                </ol>
+            </nav>
+        </section>
+
+        <section id="introduction">
+            <div class="sec-head"><span class="sec-num">02</span><h2>Introduction</h2><span class="sec-tag">Prérequis</span></div>
+            <div class="col">
+                <p>Dans cette séquence, vous allez apprendre à utiliser deux outils essentiels pour votre parcours en Bac Pro CIEL :</p>
+                <ul class="plain">
+                    <li><b>Proton Mail</b> : pour créer une adresse email professionnelle et sécurisée.</li>
+                    <li><b>Proton Drive</b> : pour organiser et partager tes documents dans le cloud.</li>
+                </ul>
+                <p>Ces outils sont utilisés en entreprise pour leur <b>sécurité</b> et leur <b>respect de la vie privée</b>.</p>
+                
+                <div class="callout">
+                    <span class="lbl">Matériel nécessaire</span>
+                    <p>Pour suivre ce TP, vous aurez besoin de :</p>
+                    <ul class="plain">
+                        <li>Un poste informatique avec accès à Internet.</li>
+                        <li>Un navigateur web (Firefox, Chrome, Edge).</li>
+                        <li>Tes identifiants ENT (fournis par le lycée).</li>
+                        <li>Un traitement de texte (LibreOffice Writer ou Word).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="tp1">
+            <div class="sec-head"><span class="sec-num">03</span><h2>Exo 1 - Faire un Contre Rendu de TP</h2><span class="sec-tag">Livrables</span></div>
+            <div class="col">
+                <p>Tout au long des TPs, vous allez devoir remplir un document de contre rendu.</p>
+                <p>À chaque étape vous aurez une ou deux questions à répondre, pensez à bien le remplir au fur et à mesure.</p>
+            
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer un dossier et un document</span>
+                        <label class="tick"><input type="checkbox" data-step="m1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain">
+                            <li>Allez dans le dossier <strong>Document</strong> de l'ordinateur.</li>
+                            <li><strong>Créer un dossier :</strong></li>
+                            <ul>
+                                <li>Comment faire <code>Click droit -> Nouveau -> Dossier</code></li>
+                                <li>Nom du dossier : <code>TP_CIEL_2026</code></li>
+                            </ul>
+                            <li>Allez dans le dossier <strong>TP_CIEL_2026</strong>.</li>
+                            <li><strong>Créer un document texte :</strong> <i>Click droit -> Nouveau -> Document texte</i>.</li>
+                            <ul>
+                                <li>Nom du document : <code>monpremierdocument.odt</code></li>
+                            </ul>
+                        </ul>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Ton document apprait bien dans le dossier <i>Document/TP_CIEL_2026</i>.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Remplir un document texte</span>
+                        <label class="tick"><input type="checkbox" data-step="m1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain">
+                            <li><strong>Dans le document texte créé, note les informations suivante :</strong></li>
+                            <ul class="plain">
+                                <li><u>Ton nom et prénom</u></li>
+                                <li><u>Ta classe</u></li>
+                                <li><u>Les questions du sujet :</u> <i>Copie</i> (Ctrl + c) puis <i>Colle</i> (Ctrl + V) la question</li>
+                            </ul>
+                            <li><strong>Enregistre ce document :</strong></li>
+                            <ul class="plain">
+                                <li><u>Via le logiciel :</u> Fichier -> Enregistrer</li>
+                                <li><u>Raccourcis clavier :</u> Ctrl + S</li>
+                            </ul>
+                        </ul>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Ton document apprait bien dans le dossier <i>Document</i>.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Renommer un document</span>
+                        <label class="tick"><input type="checkbox" data-step="m1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain">
+                            <li>Allez dans le dossier <i><strong>Document</strong></i> puis  <i><strong>TP_CIEL_2026</strong></i>.</li>
+                            <li>Vous devez voir apparaitre votre docuement texte.</li>
+                            <li>
+                                Pour renomer un document, il existe plusieurs méthode :
+                                <ul class="plain">
+                                    <li><u>Via le logiciel :</u> Fichier -> Enregistrer sous</li>
+                                    <li><u>Raccourcis clavier :</u> F12 ou Ctrl + F2</li>
+                                    <li><u>Via l'explorateur de fichier :</u> Click droit -> Renommer</li>
+                                </ul>
+                            </li>
+                            <li>Respecter le format suivant : <code>TP_[SUJET]_[maClasse]_[NOM]_[Prenom].[extension]</code></li>
+                        </ul>
+                
+                        <div class="callout">
+                            <span class="lbl">Règles à respecter</span>
+                            <p><b>Nommage des fichiers</b> :</p>
+                            <p>Tous les fichiers que vous créez doivent suivre cette convention :</p>
+                            <p><a href="../Ressources/TP_Mail_2CIEL_DUPONT_Jean.txt" download>Exemple : <code>TP_ENT_2CIEL_DUPONT_Jean.png</code></p></a>
+                            <p>❌ <b>Interdit</b> : espaces, accents, caractères spéciaux (<code>! @ # $ % ^ & *</code>).</p>
+                            <p>✅ Les types de fichiers autorisés : .docx, .pdf, .png, .jpg</p>
+                        </div>
+
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Ton document apprait bien dans le dossier <i>Document/TP_CIEL_2026/</i> avec le nom qui respecter les règles.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+            </div>
+
+
+        <section id="tp2">
+            <div class="sec-head"><span class="sec-num">04</span><h2>Exo 2 — Créer une boîte mail professionnelle avec Proton Mail</h2><span class="sec-tag">5 étapes</span></div>
+            <div class="col">
+                <p>Dans ce TP, vous allez créer une <b>adresse email professionnelle</b> avec Proton Mail, un service de messagerie <b>chiffré et respectueux de la vie privée</b>.</p>
+                <p>Proton Mail est utilisé par des millions de personnes et d'entreprises pour protéger leurs communications.</p>
+            </div>
+            
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer un compte Proton Mail</span>
+                        <label class="tick"><input type="checkbox" data-step="m1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain collapsible">
+                            <li>Rends-toi sur <a href="https://mail.proton.me" target="_blank">Proton Mail</a> et crée un compte <b>gratuit</b>.</p>
+                            <ul class="plain">
+                                <li>Clique sur <b>"Créer un compte gratuit"</b>.</li>
+                                <li>Choisis l'option <b>Gratuite</b> (500 Mo de stockage).</li>
+                                <li>Remplis le formulaire :
+                                    <ul class="plain">
+                                        <li><b>Nom d'utilisateur</b> : <code>prenom.nom</code> (ex: <code>tanguy.signoret</code>).</li>
+                                        <li><b>Adresse email</b> : <code>prenom.nom@proton.me</code>.</li>
+                                        <li><b>Mot de passe</b> : Robuste (min. 12 caractères, majuscules, chiffres, symboles).</li>
+                                    </ul>
+                                </li>
+                                <li>Valide ton adresse email via le <b>lien de confirmation</b> envoyé par Proton (vérifie tes spams si nécessaire).</li>
+                                <li>Connecte-toi à ton compte.</li>
+                            </ul>
+                        </ul>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Votre compte est créé et vous êtes connecté.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Découvrir l'interface de Proton Mail</span>
+                        <label class="tick"><input type="checkbox" data-step="m2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain collapsible">
+                            <li>Explore l'interface de Proton Mail :
+                                <ul class="plain">
+                                    <li>Boîte de réception (Inbox)</li>
+                                    <li>Bouton "Nouveau message" (Compose)</li>
+                                    <li>Dossiers : Brouillons (Drafts), Envoyés (Sent), Corbeille (Trash)</li>
+                                    <li>Options de chiffrement (icône 🔒)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p><u>Attendu :</u></p>
+                        <ul class="plain">
+                            <li>Insère une capture d'écran de l'accueil de Proton Mail dans ton contre rendu.</li>
+                        </ul>
+                        <div class="callout">
+                            <span class="lbl">Aide</span>
+                            <p><b>Faire une capture d'écran</b> :</p>
+                            <p>Appuyer sur la touche "Impr. écran" (ou "PrtScn") pour capturer l'écran entier.</p>
+                            <p>On ouvre un logiciel de traitement de texte (Word, Open office), on colle (Ctrl+V), on fait un clic droit sur l'image puis enregistrer.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Envoyer un email professionnel</span>
+                        <label class="tick"><input type="checkbox" data-step="m3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Envoie un email à ton professeur (<code>tanguy.signoret@ac-lyon.fr</code>) avec les éléments suivants :</p>
+                        <ul class="plain">
+                            <li><b>Destinataire</b> : <code>tanguy.signoret@ac-lyon.fr</code>.</li>
+                            <li><b>Objet</b> : <code>TP Mail - [TON_NOM] [TON_PRÉNOM]</code> (ex: <code>TP Mail - SIGNORET Tanguy</code>).</li>
+                            <li><b>Contenu</b> :</li>
+                        </ul>
+                        <pre class="tree">Bonjour Monsieur,
+
+Je vous envoie ce mail dans le cadre du TP sur la communication en ligne.
+Voici le lien vers le site du lycée : [le lien du site du lycée].
+
+Respectueusement,
+[TON_PRÉNOM] [TON_NOM]</pre>
+                        <ul class="plain collapsible">
+                            <li>Voir un exemple
+                                <ul class="plain">
+<pre class="tree">Destinataire : tanguy.signoret@ac-lyon.fr
+Objet : TP Mail - DUPONT Jean
+
+Bonjour Monsieur,
+
+Je vous envoie ce mail dans le cadre du TP sur la communication en ligne.
+Voici le lien vers le site du lycée : https://charlie-chaplin.ent.auvergnerhonealpes.fr
+
+Respectueusement,
+Jean DUPONT</pre>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="callout">
+                            <span class="lbl">À retenir</span>
+                            <p>Un email professionnel doit toujours contenir :</p>
+                            <ul class="plain">
+                                <li>Un <b>objet clair et court</b>.</li>
+                                <li>Une <b>formule de politesse</b> (<code>Bonjour</code>, <code>Cordialement</code>, etc.).</li>
+                                <li>Une <b>signature</b> avec ton nom et prénom.</li>
+                            </ul>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Ton email est envoyé et visible dans le dossier <b>"Envoyés"</b>.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Recevoir et répondre à un email</span>
+                        <label class="tick"><input type="checkbox" data-step="m4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Demande à un camarade de t'envoyer un email sur ton adresse Proton Mail avec un objet et un contenu simple.</p>
+                        <p><b>Réponds-lui</b> en :</p>
+                        <ul class="plain">
+                            <li>Cliquant sur <b>"Répondre"</b> (Reply).</li>
+                            <li>Ajoutant une phrase de remerciement.</li>
+                            <li>Signant avec ton nom et prénom.</li>
+                        </ul>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Ta réponse est visible dans le dossier <b>"Envoyés"</b>.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-head">
+                        <span class="step-title">Organiser sa boîte mail</span>
+                        <label class="tick"><input type="checkbox" data-step="m5"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <ul class="plain collapsible">
+                            <li>Créer un <b>dossier</b> nommé <code>Bac_Pro_CIEL</code> et déplace-y l'email reçu de ton camarade.
+                                <ul class="plain">
+                                    <li>Clique sur <b>"Dossiers"</b> (ou <b>"Labels"</b>) dans la barre latérale.</li>
+                                    <li>Sélectionne <b>"Créer un dossier"</b>.</li>
+                                    <li>Nomme-le <code>Bac_Pro_CIEL</code> et valide.</li>
+                                    <li>Glisse-dépose l'email dans ce dossier.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="tp3">
+            <div class="sec-head"><span class="sec-num">06</span><h2>Exo 3 — Organiser la GED avec Proton Drive</h2><span class="sec-tag">6 étapes</span></div>
+            <div class="col">
+                <p>Dans ce TP, vous allez utiliser <b>Proton Drive</b>, un espace de stockage <b>cloud sécurisé</b> lié à ton compte Proton Mail.</p>
+                <p>Tu vas y créer une <b>arborescence</b> (organisation de dossiers), déposer des fichiers, et les partager avec ton professeur.</p>
+            </div>
+            
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Accéder à Proton Drive</span>
+                        <label class="tick"><input type="checkbox" data-step="d1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Depuis ton compte Proton Mail, clique sur l'icône <b>"Drive"</b> dans la barre latérale (ou va sur <a href="https://drive.proton.me" target="_blank">drive.proton.me</a>).</p>
+                        <p>Proton Drive est un espace de stockage <b>chiffré</b> : tes fichiers sont protégés même si le serveur de Proton est piraté.</p>
+                        <div class="callout">
+                            <span class="lbl">Pourquoi Proton Drive ?</span>
+                            <p>Contrairement à Google Drive, Proton Drive <b>chiffre tes fichiers</b> : même Proton ne peut pas y accéder sans ton mot de passe.</p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Tu es sur la page d'accueil de Proton Drive.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer une arborescence</span>
+                        <label class="tick"><input type="checkbox" data-step="d2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Recréer <b>exactement</b> cette arborescence dans Proton Drive :</p>
+                        <pre class="tree">Bac_Pro_CIEL/
+├── Cours/
+│   ├── ENT/
+│   └── GED/
+├── TP/
+│   ├── TP1_ENT/
+│   └── TP2_GED/
+└── Ressources/</pre>
+                        <p><b>Une arborescence</b>, c'est la façon dont les dossiers et les fichiers sont organisés les uns dans les autres, comme les branches d'un arbre.</p>
+                        <ul class="plain">
+                            <li>Quelques étapes pour t'aider à créer cette arborescence
+                                <ul class="plain">
+                                    <li>Crée le dossier <code>Bac_Pro_CIEL</code> à la racine de Proton Drive.</li>
+                                    <li>À l'intérieur, crée les dossiers <code>Cours</code>, <code>TP</code> et <code>Ressources</code>.</li>
+                                    <li>Dans <code>Cours</code>, crée les sous-dossiers <code>ENT</code> et <code>GED</code>.</li>
+                                    <li>Dans <code>TP</code>, crée les sous-dossiers <code>TP1_ENT</code> et <code>TP2_GED</code>.</li>
+                                </ul>
+                            </li>
+                            <li>Créer un dossier
+                                <ul class="plain">
+                                    <li>Clique sur <b>"Nouveau dossier"</b> (icône <code>+</code>).</li>
+                                    <li>Nomme le dossier.</li>
+                                    <li>Ouvre le dossier et répète l'opération pour les sous-dossiers.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <details class="help"><summary>Comment créer des dossiers ?</summary>
+                            <div class="help-in">
+                                <ol>
+                                    <li>Clique sur <b>"Nouveau dossier"</b> (icône <code>+</code>).</li>
+                                    <li>Nomme le dossier (ex: <code>Bac_Pro_CIEL</code>).</li>
+                                    <li>Ouvre le dossier et répète l'opération pour les sous-dossiers.</li>
+                                </ol>
+                            </div>
+                        </details>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Ton arborescence correspond au modèle ci-dessus.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Déposer un fichier dans Proton Drive</span>
+                        <label class="tick"><input type="checkbox" data-step="d3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Télécharge la page des clubs du lycée en PDF :</p>
+                        <ol class="plain">
+                            <li>Va sur <a href="https://charlie-chaplin.ent.auvergnerhonealpes.fr/vie-du-lycee/" target="_blank">la page des clubs du lycée Charlie Chaplin</a>.</li>
+                            <li>Fais un clic droit → <b>"Imprimer"</b> (ou <kbd>Ctrl</kbd> + <kbd>P</kbd>).</li>
+                            <li>Dans la fenêtre d'impression, sélectionne <b>"Enregistrer au format PDF"</b>.</li>
+                            <li>Enregistre le PDF sur ton bureau avec le nom : <code>clubs_lycee.pdf</code>.</li>
+                        </ol>
+                        <p>Dépose ce PDF dans le dossier <code>Bac_Pro_CIEL/TP/TP2_GED/</code> avec le nom :</p>
+                        <span class="filename mono">TP_GED_2CIEL_<em>TON_NOM</em>_<em>TON_PRÉNOM</em>.pdf</span>
+                        <details class="help"><summary>Comment déposer un fichier ?</summary>
+                            <div class="help-in">
+                                <ol>
+                                    <li>Ouvre le dossier de destination dans Proton Drive.</li>
+                                    <li>Glisse-dépose le fichier depuis ton explorateur de fichiers.</li>
+                                    <li>Ou clique sur <b>"Télécharger"</b> et sélectionne le fichier.</li>
+                                </ol>
+                            </div>
+                        </details>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Le fichier <code>TP_GED_2CIEL_[TON_NOM]_[TON_PRÉNOM].pdf</code> est dans <code>TP2_GED</code>.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Partager un dossier avec ton professeur</span>
+                        <label class="tick"><input type="checkbox" data-step="d4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Partage le dossier <code>TP2_GED</code> avec ton professeur (<code>tanguy.signoret@ac-lyon.fr</code>) en <b>lecture seule</b>.</p>
+                        <details class="help"><summary>Comment partager un dossier ?</summary>
+                            <div class="help-in">
+                                <ol>
+                                    <li>Clic droit sur le dossier <code>TP2_GED</code>.</li>
+                                    <li>Sélectionne <b>"Partager"</b>.</li>
+                                    <li>Ajoute l'email : <code>tanguy.signoret@ac-lyon.fr</code>.</li>
+                                    <li>Choisis les droits : <b>"Peut voir"</b> (lecture seule).</li>
+                                    <li>Clique sur <b>"Envoyer l'invitation"</b>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Ton professeur confirme avoir accès au dossier <code>TP2_GED</code>.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-head">
+                        <span class="step-title">Rédiger une fiche de synthèse</span>
+                        <label class="tick"><input type="checkbox" data-step="d5"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Dans le compte rendu créer en début de séance :</p>
+
+                        <ul class="plain collapsible">
+                            <li>Télécharge la page des clubs du lycée en PDF
+                                <ul class="plain">
+                                    <li>Va sur <a href="https://charlie-chaplin.ent.auvergnerhonealpes.fr/vie-du-lycee/" target="_blank">la page des clubs du lycée Charlie Chaplin</a>.</li>
+                                    <li>Fais un clic droit → <b>"Imprimer"</b> (ou <kbd>Ctrl</kbd> + <kbd>P</kbd>).</li>
+                                    <li>Dans la fenêtre d'impression, sélectionne <b>"Enregistrer au format PDF"</b>.</li>
+                                    <li>Enregistre le PDF sur ton bureau avec le nom : <code>clubs_lycee.pdf</code>.</li>
+                                </ul>
+                            </li>
+                            <li>Dépose ce PDF dans le dossier <code>Bac_Pro_CIEL/TP/TP2_GED/</code> avec le nom :</li>
+                            <span class="filename mono">TP_GED_2CIEL_<em>TON_NOM</em>_<em>TON_PRÉNOM</em>.pdf</span>
+                            <li>Comment déposer un fichier
+                                <ul class="plain">
+                                    <li>Ouvre le dossier de destination dans Proton Drive.</li>
+                                    <li>Glisse-dépose le fichier depuis ton explorateur de fichiers.</li>
+                                    <li>Ou clique sur <b>"Télécharger"</b> et sélectionne le fichier.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Le fichier <code>TP_GED_2CIEL_[TON_NOM]_[TON_PRÉNOM].pdf</code> est dans <code>TP2_GED</code>.</p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Le document <code>TP_GED_Synthese_2CIEL_[TON_NOM]_[TON_PRÉNOM].docx</code> est dans <code>TP2_GED</code> et partagé.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">6</div>
+                    <div class="step-head">
+                        <span class="step-title">Vérifier les livrables</span>
+                        <label class="tick"><input type="checkbox" data-step="d6"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Assurez-vous qu'il y a bien :</p>
+                        <ul class="plain">
+                            <li>Le PDF des clubs est dans <code>TP2_GED</code> avec le bon nom.</li>
+                            <li>Le document de synthèse est dans <code>TP2_GED</code> et partagé.</li>
+                            <li>Ton professeur a bien reçu l'invitation pour accéder à <code>TP2_GED</code>.</li>
+                        </ul>
+                        <div class="callout deliver">
+                            <span class="lbl">Livrables 2 et 3</span>
+                            <p>
+                                <ul class="plain">
+                                    <li>Le PDF des clubs, nommé correctement.</li>
+                                    <li>Le document de synthèse, partagé avec ton professeur.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+            
+
+        <section id="rendre">
+            <div class="sec-head"><span class="sec-num">07</span><h2>Ce que je dois rendre</h2><span class="sec-tag">Checklist</span></div>
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">✓</div>
+                    <div class="step-head">
+                        <span class="step-title">Email professionnel</span>
+                        <label class="tick"><input type="checkbox" data-step="r1"><span>Rendu</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Un email envoyé depuis ton adresse Proton Mail à <code>tanguy.signoret@ac-lyon.fr</code> avec :</p>
+                        <ul class="plain">
+                            <li>Objet : <code>TP Mail - [TON_NOM] [TON_PRÉNOM]</code>.</li>
+                            <li>Contenu : formule de politesse + lien du site du lycée + signature.</li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="step">
+                    <div class="step-num">✓</div>
+                    <div class="step-head">
+                        <span class="step-title">PDF des clubs du lycée</span>
+                        <label class="tick"><input type="checkbox" data-step="r2"><span>Rendu</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Fichier nommé <code>TP_GED_2CIEL_[TON_NOM]_[TON_PRÉNOM].pdf</code>, déposé dans <code>Proton Drive/TP2_GED/</code>.</p>
+                    </div>
+                </li>
+                
+                <li class="step">
+                    <div class="step-num">✓</div>
+                    <div class="step-head">
+                        <span class="step-title">Document de synthèse</span>
+                        <label class="tick"><input type="checkbox" data-step="r3"><span>Rendu</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Fichier nommé <code>TP_GED_Synthese_2CIEL_[TON_NOM]_[TON_PRÉNOM].docx</code>, déposé dans <code>Proton Drive/TP2_GED/</code> et partagé avec ton professeur.</p>
+                    </div>
+                </li>
+                
+                <li class="step">
+                    <div class="step-num">✓</div>
+                    <div class="step-head">
+                        <span class="step-title">Partage du dossier TP2_GED</span>
+                        <label class="tick"><input type="checkbox" data-step="r4"><span>Rendu</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Le dossier <code>TP2_GED</code> doit être partagé en <b>lecture seule</b> avec <code>tanguy.signoret@ac-lyon.fr</code>.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="lexique">
+            <div class="sec-head"><span class="sec-num">08</span><h2>Lexique</h2><span class="sec-tag">Vocabulaire</span></div>
+            <div class="tw">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mot</th>
+                            <th>Définition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Cloud</b></td>
+                            <td>Stockage de données sur des serveurs distants, accessibles via Internet.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Chiffrement de bout en bout</b></td>
+                            <td>Technologie qui protège les données (emails, fichiers) pour que seul le destinataire puisse les lire.</td>
+                        </tr>
+                        <tr>
+                            <td><b>RGPD</b></td>
+                            <td>Règlement Général sur la Protection des Données : loi européenne pour protéger les données personnelles.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Proton Mail</b></td>
+                            <td>Service de messagerie chiffré, respectueux de la vie privée.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Proton Drive</b></td>
+                            <td>Espace de stockage cloud sécurisé lié à Proton Mail, avec chiffrement de bout en bout.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Arborescence</b></td>
+                            <td>Organisation des dossiers et fichiers les uns dans les autres.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Extension</b></td>
+                            <td>Les lettres après le point dans un nom de fichier (<code>.png</code>, <code>.docx</code>) : elles indiquent le type de fichier.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Livrable</b></td>
+                            <td>Le travail fini que vous devez remettre, dans la forme demandée.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+            <p>Cours et TP par <strong>Tanguy Signoret</strong> | <a href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+            <p>Mise à jour : septembre 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
