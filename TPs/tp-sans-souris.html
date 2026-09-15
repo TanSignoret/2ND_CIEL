@@ -3,271 +3,866 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP — Interface graphique et utilisation sans souris</title>
+    <title>TP — Utilisation d'un PC sans souris</title>
     <link rel="stylesheet" href="../Ressources/style.css">
 </head>
 <body>
     <div class="wrap">
         <header class="hero">
-            <div class="eyebrow">Séance 2 — Maîtrise de l'interface et du clavier</div>
-            <h1>TP — Interface graphique et utilisation sans souris</h1>
-            <p class="lede">Dans ce TP, vous allez maîtriser l'interface graphique (dossiers, fichiers, archives) et apprendre à utiliser un ordinateur uniquement avec le clavier, comme le feraient des professionnels dans un environnement sans souris.</p>
+            <div class="eyebrow">Activité Professionnelle</div>
+            <h1>TP — Utilisation d'un PC sans souris</h1>
+            <p class="lede">
+
+                    Dans une entreprise, il est essentiel de savoir utiliser un ordinateur sans souris.
+            </p>
             <div class="chips">
                 <span class="chip">Seconde Bac Pro CIEL</span>
-                <span class="chip">Durée : 4h</span>
+                <span class="chip">Durée : 3h</span>
                 <span class="chip">Travail individuel</span>
             </div>
         </header>
 
-        <!-- Contexte professionnel -->
+        <!-- Mise en contexte -->
         <section id="context">
             <div class="sec-head">
                 <span class="sec-num">01</span>
-                <h2>Contexte professionnel</h2>
-                <span class="sec-tag">Introduction</span>
+                <h2>Mise en contexte</h2>
+                <span class="sec-tag">Contexte professionnel</span>
             </div>
             <div class="col">
-                <p>
-                    Dans une entreprise, les employés doivent souvent :
+                <p>Vous venez d'intégrer une entreprise spécialisée dans les systèmes numériques.</p>
+                <p>Lors d'une intervention, votre souris ne fonctionne plus. Vous devez malgré tout être capable d'utiliser le poste informatique pour consulter des informations, lancer des outils, organiser des fichiers, faire des captures d'écran et rédiger un compte-rendu.</p>
+                <p>Votre responsable vous demande de prouver que vous savez utiliser efficacement un ordinateur uniquement avec le clavier.
                 </p>
-                <ul class="plain">
-                    <li><strong>Gérer des fichiers et dossiers</strong> : Créer, organiser, compresser et sécuriser des documents.</li>
-                    <li><strong>Travailler sans souris</strong> : Utiliser des raccourcis clavier pour naviguer, créer des fichiers ou envoyer des emails (ex: sur des serveurs sans interface graphique).</li>
-                    <li><strong>Respecter les autorisations</strong> : Comprendre les droits d’accès aux fichiers (lecture, écriture, exécution).</li>
-                    <li><strong>Optimiser leur productivité</strong> : Utiliser des outils comme les métadonnées ou les archives pour gagner du temps.</li>
-                </ul>
                 <p>
-                    Aujourd’hui, vous allez :
+                    <strong>Problématique :</strong> Comment utiliser efficacement un poste informatique Windows <strong>uniquement avec le clavier</strong> ?
                 </p>
-                <ul class="plain">
-                    <li>Maîtriser l’<strong>interface graphique</strong> (dossiers, fichiers, archives).</li>
-                    <li>Découvrir les <strong>métadonnées</strong> et les <strong>autorisations</strong> des fichiers.</li>
-                    <li>Utiliser un ordinateur <strong>uniquement avec le clavier</strong> (recherche sur Internet, création de fichiers, envoi d’emails, etc.).</li>
-                    <li>Participer à un <strong>concours de frappe</strong> pour améliorer votre vitesse de saisie.</li>
-                </ul>
+                <div class="callout">
+                    <span class="lbl">📝 Carnet de bord</span>
+                    <p>
+                        Tout au long de ce TP, vous allez compléter un <strong>unique document texte</strong> nommé :
+                        <span class="filename">TP-SANSSOURIS-[VOTRE_NOM].txt</span>
+                        <br>
+                        Ce document servira de <strong>carnet de bord</strong> pour noter :
+                        <ul class="plain">
+                            <li>Les <strong>raccourcis clavier</strong> que vous avez découverts.</li>
+                            <li>Les <strong>réponses aux questions</strong> posées dans le TP.</li>
+                            <li>Les <strong>preuves</strong> de réalisation des missions (ex: captures d'écran, contenus de fichiers).</li>
+                        </ul>
+                        À la fin de la séance, vous enverrez ce fichier par <strong>email professionnel</strong> à votre professeur.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- TP 2 : Utiliser un ordinateur sans souris -->
-        <section id="tp2">
+        <!-- Compétences visées -->
+        <section id="competences">
             <div class="sec-head">
-                <span class="sec-num">03</span>
-                <h2>TP 2 — Utiliser un ordinateur sans souris</h2>
-                <span class="sec-tag">7 étapes</span>
+                <span class="sec-num">02</span>
+                <h2>Compétences visées</h2>
+                <span class="sec-tag">Objectifs</span>
             </div>
             <div class="col">
                 <p>
-                    Dans cette partie, vous allez apprendre à utiliser votre ordinateur <strong>uniquement avec le clavier</strong>.
-                    Cela est utile pour :
+                    Ce TP vous permettra de valider les compétences suivantes :
+                </p>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Compétence</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>C06</strong></td>
+                                <td>Valider la conformité d'une installation.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>C09</strong></td>
+                                <td>Installer les éléments d'un système électronique ou informatique.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>C10</strong></td>
+                                <td>Exploiter un réseau informatique.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission 1 : Prendre le contrôle du poste -->
+        <section id="mission1">
+            <div class="sec-head">
+                <span class="sec-num">03</span>
+                <h2>Mission 1 — Prendre le contrôle du poste</h2>
+                <span class="sec-tag">3 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette mission, vous allez :
                 </p>
                 <ul class="plain">
-                    <li>Travailler sur des <strong>serveurs sans interface graphique</strong>.</li>
-                    <li>Gagner en <strong>productivité</strong> (les raccourcis clavier sont plus rapides que la souris).</li>
-                    <li>Accéder à un ordinateur en cas de <strong>panne de souris</strong>.</li>
+                    <li>Verrouiller et déverrouiller votre session Windows.</li>
+                    <li>Créer un fichier texte avec une phrase donnée.</li>
+                    <li>Enregistrer ce fichier sur le bureau.</li>
                 </ul>
-                <p><strong>Consigne :</strong> Pour ce TP, <strong>ne pas utiliser la souris</strong> !</p>
+                <div class="callout">
+                    <span class="lbl">📝 Dans votre carnet de bord</span>
+                    <p>
+                        À la fin de cette mission, notez dans <span class="filename">TP-SANSSOURIS-[VOTRE_NOM].txt</span>
+                        <ul class="plain">
+                            <li>Le raccourci clavier utilisé pour <strong>verrouiller la session</strong>.</li>
+                            <li><strong>Ouvrir Bloc-notes</strong>.</li>
+                            <li>Le raccourci clavier utilisé pour <strong>enregistrer le fichier</strong>.</li>
+                        </ul>
+                    </p>
+                </div>
             </div>
-
             <ol class="steps">
-                <!-- Étape 1 : Naviguer dans l'interface avec le clavier -->
                 <li class="step">
                     <div class="step-num">1</div>
                     <div class="step-head">
-                        <span class="step-title">Naviguer dans l'interface avec le clavier</span>
-                        <label class="tick"><input type="checkbox" data-step="k1"><span>Fait</span></label>
+                        <span class="step-title">Verrouiller et déverrouiller la session Windows</span>
+                        <label class="tick"><input type="checkbox" data-step="m1-1"><span>Fait</span></label>
                     </div>
                     <div class="step-body">
-                        <p>Apprenez à naviguer dans l’interface de votre ordinateur avec le clavier :</p>
-                        <table class="tw raccourcis-table">
-                            <thead>
-                                <tr>
-                                    <th>Action</th>
-                                    <th>Raccourci Windows</th>
-                                    <th>Raccourci Linux</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Ouvrir le menu Démarrer / Lancer un programme</td>
-                                    <td><kbd>Win</kbd></td>
-                                    <td><kbd>Alt + F2</kbd></td>
-                                </tr>
-                                <tr>
-                                    <td>Ouvrir l'Explorateur de fichiers</td>
-                                    <td><kbd>Win + E</kbd></td>
-                                    <td><kbd>Alt + F2</kbd> → tapez <code>nautilus</code> → <kbd>Entrée</kbd></td>
-                                </tr>
-                                <tr>
-                                    <td>Basculer entre les fenêtres ouvertes</td>
-                                    <td><kbd>Alt + Tab</kbd></td>
-                                    <td><kbd>Alt + Tab</kbd></td>
-                                </tr>
-                                <tr>
-                                    <td>Fermer une fenêtre</td>
-                                    <td><kbd>Alt + F4</kbd></td>
-                                    <td><kbd>Alt + F4</kbd></td>
-                                </tr>
-                                <tr>
-                                    <td>Ouvrir le menu contextuel (clic droit)</td>
-                                    <td><kbd>Maj + F10</kbd></td>
-                                    <td><kbd>Maj + F10</kbd></td>
-                                </tr>
-                                <tr>
-                                    <td>Sélectionner un élément</td>
-                                    <td><kbd>Flèches</kbd> + <kbd>Tab</kbd></td>
-                                    <td><kbd>Flèches</kbd> + <kbd>Tab</kbd></td>
-                                </tr>
-                                <tr>
-                                    <td>Valider / Ouvrir</td>
-                                    <td><kbd>Entrée</kbd></td>
-                                    <td><kbd>Entrée</kbd></td>
-                                </tr>
-                                <tr>
-                                    <td>Annuler</td>
-                                    <td><kbd>Échap</kbd></td>
-                                    <td><kbd>Échap</kbd></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p><strong>Exercice :</strong> Ouvrez l’Explorateur de fichiers et naviguez jusqu’au dossier <code>TP_Interface</code> en utilisant uniquement le clavier.</p>
-                        <div class="callout deliver">
-                            <span class="lbl">Validation</span>
-                            <p>Vous avez ouvert l’Explorateur de fichiers et navigué jusqu’à <code>TP_Interface</code> sans souris.</p>
+                        <p>Verrouillez votre session Windows, puis déverrouillez-la.</p>
+
+
+                        <div class="question">
+                            <span class="lbl">Question 0</span>
+                            <p><strong>A quoi sert de savoir travailler sans souris ?</strong></p>
+                        </div>
+
+                        <div class="question">
+                            <span class="lbl">Question 1</span>
+                            <p><strong>Quelle solution est la plus simple pour verrouiller rapidement votre session Windows ?</strong></p>
                         </div>
                     </div>
                 </li>
 
-                <!-- Étape 2 : Rechercher sur Internet -->
                 <li class="step">
                     <div class="step-num">2</div>
                     <div class="step-head">
-                        <span class="step-title">Rechercher sur Internet</span>
-                        <label class="tick"><input type="checkbox" data-step="k2"><span>Fait</span></label>
+                        <span class="step-title">Ouvrir Bloc-notes et écrire un texte</span>
+                        <label class="tick"><input type="checkbox" data-step="m1-2"><span>Fait</span></label>
                     </div>
                     <div class="step-body">
-                        <p>Ouvrez votre navigateur et effectuez une recherche sur Internet <strong>sans souris</strong> :</p>
-                        <ol class="plain">
-                            <li>Ouvrez votre navigateur :
-                                <ul class="plain">
-                                    <li><strong>Windows</strong> : <kbd>Win</kbd> → tapez <code>Chrome</code> ou <code>Firefox</code> → <kbd>Entrée</kbd>.</li>
-                                    <li><strong>Linux</strong> : <kbd>Alt + F2</kbd> → tapez <code>firefox</code> → <kbd>Entrée</kbd>.</li>
-                                </ul>
-                            </li>
-                            <li>Naviguez jusqu’à la barre d’adresse :
-                                <ul class="plain">
-                                    <li><kbd>Tab</kbd> jusqu’à ce que la barre d’adresse soit sélectionnée.</li>
-                                </ul>
-                            </li>
-                            <li>Tapez <code>https://www.google.fr</code> et validez avec <kbd>Entrée</kbd>.</li>
-                            <li>Effectuez une recherche :
-                                <ul class="plain">
-                                    <li><kbd>Tab</kbd> pour sélectionner la barre de recherche.</li>
-                                    <li>Tapez <code>métadonnées fichier</code> et validez avec <kbd>Entrée</kbd>.</li>
-                                </ul>
-                            </li>
-                            <li>Naviguez dans les résultats :
-                                <ul class="plain">
-                                    <li>Utilisez <kbd>Tab</kbd> pour sélectionner un résultat.</li>
-                                    <li><kbd>Entrée</kbd> pour ouvrir le lien.</li>
-                                </ul>
-                            </li>
-                        </ol>
-                        <div class="callout deliver">
-                            <span class="lbl">Validation</span>
-                            <p>Vous avez effectué une recherche sur Internet sans souris.</p>
+                        <p>Ouvrez Bloc-notes et écrivez la phrase suivante :</p>
+                        <p><code>Je suis capable d'utiliser Windows sans souris</code></p>
+                        <div class="question">
+                            <span class="lbl">Question 2</span>
+                            <p><strong>Quelle solution est la plus simple pour ouvrir un logiciel comme Bloc-notes sans souris ?</strong></p>
                         </div>
                     </div>
                 </li>
 
-                <!-- Étape 3 : Créer un nouveau document texte et l'enregistrer -->
                 <li class="step">
                     <div class="step-num">3</div>
                     <div class="step-head">
-                        <span class="step-title">Créer un nouveau document texte et l'enregistrer</span>
-                        <label class="tick"><input type="checkbox" data-step="k3"><span>Fait</span></label>
+                        <span class="step-title">Enregistrer le fichier et afficher le bureau</span>
+                        <label class="tick"><input type="checkbox" data-step="m1-3"><span>Fait</span></label>
                     </div>
                     <div class="step-body">
-                        <p>Créez un nouveau document texte et enregistrez-le <strong>sans souris</strong> :</p>
-                        <ol class="plain">
-                            <li>Ouvrez un éditeur de texte :
-                                <ul class="plain">
-                                    <li><strong>Windows</strong> : <kbd>Win</kbd> → tapez <code>Bloc-notes</code> → <kbd>Entrée</kbd>.</li>
-                                    <li><strong>Linux</strong> : <kbd>Alt + F2</kbd> → tapez <code>gedit</code> → <kbd>Entrée</kbd>.</li>
-                                </ul>
-                            </li>
-                            <li>Tapez le texte suivant :
-                                <pre class="tree">Ce document a été créé sans utiliser la souris.
-Je maîtrise maintenant les raccourcis clavier !</pre>
-                            </li>
-                            <li>Enregistrez le fichier :
-                                <ul class="plain">
-                                    <li><kbd>Ctrl + S</kbd> (ou <kbd>Ctrl + Maj + S</kbd> pour "Enregistrer sous").</li>
-                                    <li>Naviguez jusqu’au dossier <code>TP_Interface/Documents/TP/TP2_Clavier/</code> avec les flèches.</li>
-                                    <li>Nommez le fichier <code>document_sans_souris.txt</code>.</li>
-                                    <li>Validez avec <kbd>Entrée</kbd>.</li>
-                                </ul>
-                            </li>
-                        </ol>
+                        <p>Enregistrez le fichier avec le nom <code>mission1.txt</code> sur le bureau, puis fermez Bloc-notes.</p>
+                        <p>Affichez le bureau pour prouver l'existence du fichier.</p>
+                        <div class="question">
+                            <span class="lbl">Question 3</span>
+                            <p><strong>Quelle solution est la plus simple pour enregistrer un fichier sans souris ?</strong></p>
+                        </div>
                         <div class="callout deliver">
                             <span class="lbl">Validation</span>
-                            <p>Le fichier <code>document_sans_souris.txt</code> est créé dans <code>TP_Interface/Documents/TP/TP2_Clavier/</code>.</p>
+                            <p>Le fichier <code>mission1.txt</code> est enregistré sur le bureau et visible.</p>
+                            <p><strong>À noter dans votre carnet de bord :</strong></p>
+                            <p>Copiez-collez le texte de votre bloc-note</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Mission 2 : Naviguer entre les fenêtres -->
+        <section id="mission2">
+            <div class="sec-head">
+                <span class="sec-num">04</span>
+                <h2>Mission 2 — Naviguer entre les fenêtres</h2>
+                <span class="sec-tag">4 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette mission, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Ouvrir plusieurs applications.</li>
+                    <li>Passer d'une application à l'autre.</li>
+                    <li>Réduire toutes les fenêtres.</li>
+                    <li>Fermer une application spécifique.</li>
+                </ul>
+                <div class="callout">
+                    <span class="lbl">📝 Dans votre carnet de bord</span>
+                    <p>
+                        À la fin de cette mission, notez dans <span class="filename">TP-SANSSOURIS-[VOTRE_NOM].txt</span>
+                        <ul class="plain">
+                            <li>Le raccourci clavier utilisé pour <strong>basculer entre les fenêtres</strong>.</li>
+                            <li>Le raccourci clavier utilisé pour <strong>réduire toutes les fenêtres</strong>.</li>
+                            <li>Le raccourci clavier utilisé pour <strong>fermer une fenêtre</strong>.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Ouvrir Bloc-notes, la Calculatrice et l'Explorateur de fichiers</span>
+                        <label class="tick"><input type="checkbox" data-step="m2-1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Ouvrez les trois applications suivantes :</p>
+                        <ul class="plain">
+                            <li>Bloc-notes.</li>
+                            <li>Calculatrice.</li>
+                            <li>Explorateur de fichiers.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Passer d'une application à l'autre</span>
+                        <label class="tick"><input type="checkbox" data-step="m2-2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Passez d'une application à l'autre.</p>
+                        <p>Essayez de passer de Bloc-notes à la Calculatrice, puis à l'Explorateur de fichiers.</p>
+                        <div class="question">
+                            <span class="lbl">Question 4</span>
+                            <p><strong>Quelle solution est la plus simple pour basculer entre plusieurs fenêtres ouvertes ?</strong></p>
                         </div>
                     </div>
                 </li>
 
-                <!-- Étape 4 : Envoyer un email -->
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Réduire toutes les fenêtres</span>
+                        <label class="tick"><input type="checkbox" data-step="m2-3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Réduisez toutes les fenêtres pour afficher le bureau.</p>
+                    </div>
+                </li>
+
                 <li class="step">
                     <div class="step-num">4</div>
                     <div class="step-head">
-                        <span class="step-title">Envoyer un email</span>
-                        <label class="tick"><input type="checkbox" data-step="k4"><span>Fait</span></label>
+                        <span class="step-title">Fermer uniquement la Calculatrice</span>
+                        <label class="tick"><input type="checkbox" data-step="m2-4"><span>Fait</span></label>
                     </div>
                     <div class="step-body">
-                        <p>Envoyez un email à votre professeur <strong>sans souris</strong> :</p>
-                        <ol class="plain">
-                            <li>Ouvrez Proton Mail :
-                                <ul class="plain">
-                                    <li><kbd>Win</kbd> → tapez <code>Proton Mail</code> → <kbd>Entrée</kbd>.</li>
-                                    <li>Connectez-vous avec <kbd>Tab</kbd> et <kbd>Entrée</kbd>.</li>
-                                </ul>
-                            </li>
-                            <li>Créez un nouvel email :
-                                <ul class="plain">
-                                    <li><kbd>N</kbd> (raccourci pour "Nouveau message").</li>
-                                </ul>
-                            </li>
-                            <li>Remplissez les champs :
-                                <ul class="plain">
-                                    <li><kbd>Tab</kbd> pour passer d’un champ à l’autre.</li>
-                                    <li><strong>Destinataire</strong> : <code>tanguy.signoret@ac-lyon.fr</code>.</li>
-                                    <li><strong>Objet</strong> : <code>TP Sans Souris - [VOTRE_NOM]</code>.</li>
-                                    <li><strong>Contenu</strong> :
-                                        <pre class="tree">Bonjour Monsieur,
-
-Je vous envoie ce mail pour vous informer que j’ai terminé le TP sur l’utilisation du clavier.
-Ce mail a été rédigé et envoyé sans utiliser la souris.
-
-Cordialement,
-[VOTRE_PRÉNOM] [VOTRE_NOM]</pre>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>Envoyez l’email :
-                                <ul class="plain">
-                                    <li><kbd>Ctrl + Entrée</kbd>.</li>
-                                </ul>
-                            </li>
-                        </ol>
+                        <p>Fermez uniquement la Calculatrice.</p>
+                        <p>Bloc-notes et l'Explorateur de fichiers doivent rester ouverts.</p>
+                        <div class="question">
+                            <span class="lbl">Question 5</span>
+                            <p><strong>Quelle solution est la plus simple pour fermer une fenêtre sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour fermer la fenêtre active.</p>
+                        </div>
                         <div class="callout deliver">
                             <span class="lbl">Validation</span>
-                            <p>Votre email est envoyé à votre professeur sans utiliser la souris.</p>
+                            <p>La Calculatrice est fermée, Bloc-notes et l'Explorateur de fichiers restent ouverts.</p>
+                            <p><strong>À noter dans votre carnet de bord :</strong></p>
+                            <p><code>Mission 2 terminée : Bascule entre fenêtres réussie, Calculatrice fermée.</code></p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Mission 3 : Organiser des fichiers -->
+        <section id="mission3">
+            <div class="sec-head">
+                <span class="sec-num">05</span>
+                <h2>Mission 3 — Organiser des fichiers comme un technicien</h2>
+                <span class="sec-tag">5 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette mission, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Créer une arborescence de dossiers.</li>
+                    <li>Copier et renommer un fichier.</li>
+                    <li>Créer un nouveau fichier texte.</li>
+                </ul>
+                <div class="callout">
+                    <span class="lbl">📝 Dans votre carnet de bord</span>
+                    <p>
+                        À la fin de cette mission, notez dans <span class="filename">TP-SANSSOURIS-[VOTRE_NOM].txt</span> 
+                        <ul class="plain">
+                            <li>Le raccourci clavier utilisé pour <strong>créer un nouveau dossier</strong>.</li>
+                            <li>Le raccourci clavier utilisé pour <strong>copier un fichier</strong>.</li>
+                            <li>Le raccourci clavier utilisé pour <strong>renommer un fichier</strong>.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer l'arborescence</span>
+                        <label class="tick"><input type="checkbox" data-step="m3-1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Créez l'arborescence suivante dans le dossier <code>Documents</code> :</p>
+                        <pre class="tree">Intervention_PC/
+├── Captures/
+├── Diag/
+├── Documents/
+└── Rapport/</pre>
+                        <div class="question">
+                            <span class="lbl">Question 6</span>
+                            <p><strong>Quelle solution est la plus simple pour créer un nouveau dossier sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour créer un nouveau dossier.</p>
                         </div>
                     </div>
                 </li>
 
-                <!-- Étape 5 : Fermer un onglet et en ouvrir un nouveau -->
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Copier et renommer le fichier mission1.txt</span>
+                        <label class="tick"><input type="checkbox" data-step="m3-2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Copiez le fichier <code>mission1.txt</code> dans le dossier <code>Documents</code> et renommez-le en <code>preuve_clavier.txt</code>.</p>
+                        <div class="question">
+                            <span class="lbl">Question 7</span>
+                            <p><strong>Quelle solution est la plus simple pour copier un fichier sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour copier le fichier.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer un fichier dans le dossier Rapport</span>
+                        <label class="tick"><input type="checkbox" data-step="m3-3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Créez un fichier texte dans le dossier <code>Rapport</code> et nommez-le <code>compte-rendu.txt</code>.</p>
+                        <div class="question">
+                            <span class="lbl">Question 8</span>
+                            <p><strong>Quelle solution est la plus simple pour enregistrer un fichier dans un dossier spécifique sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour enregistrer le fichier et naviguer dans l'arborescence avec les flèches.</p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>L'arborescence <code>Intervention_PC/</code> est créée avec tous les sous-dossiers et fichiers demandés.</p>
+                            <p><strong>À noter dans votre carnet de bord :</strong></p>
+                            <p><code>Mission 3 terminée : Arborescence Intervention_PC créée, fichiers copiés et renommés.</code></p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Mission 4 : Rechercher une information rapidement -->
+        <section id="mission4">
+            <div class="sec-head">
+                <span class="sec-num">06</span>
+                <h2>Mission 4 — Rechercher une information rapidement</h2>
+                <span class="sec-tag">5 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette mission, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Lancer le navigateur Internet.</li>
+                    <li>Rechercher une information spécifique.</li>
+                    <li>Convertir un nombre en binaire.</li>
+                    <li>Insérer le résultat dans un fichier.</li>
+                </ul>
+                <div class="callout">
+                    <span class="lbl">📝 Dans votre carnet de bord</span>
+                    <p>
+                        À la fin de cette mission, notez dans <span class="filename">TP-SANSSOURIS-[VOTRE_NOM].txt</span>
+                        <ul class="plain">
+                            <li>Le nombre trouvé pour "La réponse à la grande question de la vie".</li>
+                            <li>La valeur binaire correspondante (sur 8 caractères).</li>
+                            <li>Le raccourci clavier utilisé pour <strong>ouvrir un nouvel onglet</strong>.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Lancer le navigateur Internet</span>
+                        <label class="tick"><input type="checkbox" data-step="m4-1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Lancez votre navigateur Internet.</p>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Rechercher "l'adresse du lycée"</span>
+                        <label class="tick"><input type="checkbox" data-step="m4-2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <div class="question">
+                            <span class="lbl">Question 9</span>
+                            <p><strong>Quel nombre avez-vous trouvé pour "Quel est l'adresse du lycée" ?</strong></p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Convertir ce nombre en binaire</span>
+                        <label class="tick"><input type="checkbox" data-step="m4-3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Convertissez ce nombre en binaire.</p>
+                        <p>Notez la valeur binaire sur 8 caractères (ex: <code>00101010</code>).</p>
+                        <div class="question">
+                            <span class="lbl">Question 10</span>
+                            <p><strong>Quelle est la valeur binaire de 42 sur 8 bits ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> La valeur binaire est <code>....</code>.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Insérer le nombre binaire dans compte-rendu.txt</span>
+                        <label class="tick"><input type="checkbox" data-step="m4-4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Insérez le nombre binaire dans le fichier <code>compte-rendu.txt</code>.</p>
+                        <ol class="plain">
+                            <li>Ouvrez le fichier <code>compte-rendu.txt</code>.</li>
+                            <li>Ajoutez le nombre binaire (ex: <code>....</code>).</li>
+                            <li>Enregistrez le fichier.</li>
+                            <li>Fermez Bloc-notes.</li>
+                        </ol>
+                    </div>
+                </li>
+
                 <li class="step">
                     <div class="step-num">5</div>
+                    <div class="step-head">
+                        <span class="step-title">Fermer le navigateur et ouvrir le répertoire Rapport</span>
+                        <label class="tick"><input type="checkbox" data-step="m4-5"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Fermez le navigateur et ouvrez le répertoire <code>Rapport</code>.</p>
+                        <div class="question">
+                            <span class="lbl">Question 11</span>
+                            <p><strong>Quelle solution est la plus simple pour fermer un onglet ou une fenêtre de navigateur sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour fermer l'onglet ou la fenêtre.</p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Le navigateur est fermé et le répertoire <code>Rapport</code> est ouvert.</p>
+                            <p><strong>À noter dans votre carnet de bord :</strong></p>
+                            <p><code>Mission 4 terminée : Nombre binaire ...... trouvé et inséré dans compte-rendu.txt.</code></p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Mission 5 : Faire une capture d'écran sans souris -->
+        <section id="mission5">
+            <div class="sec-head">
+                <span class="sec-num">07</span>
+                <h2>Mission 5 — Faire une capture d'écran sans souris</h2>
+                <span class="sec-tag">4 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette mission, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Ouvrir le dossier <code>Intervention_PC</code>.</li>
+                    <li>Réaliser une capture d'écran.</li>
+                    <li>Coller la capture dans Paint.</li>
+                    <li>Enregistrer l'image.</li>
+                </ul>
+                <div class="callout">
+                    <span class="lbl">📝 Dans votre carnet de bord</span>
+                    <p>
+                        À la fin de cette mission, notez dans <span class="filename">TP-SANSSOURIS-[VOTRE_NOM].txt</span>
+                        <ul class="plain">
+                            <li>Le raccourci clavier utilisé pour <strong>faire une capture d'écran</strong>.</li>
+                            <li>Le raccourci clavier utilisé pour <strong>coller la capture dans Paint</strong>.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Ouvrir le dossier Intervention_PC</span>
+                        <label class="tick"><input type="checkbox" data-step="m5-1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Ouvrez le dossier <code>Intervention_PC</code>.</p>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Réaliser une capture d'écran</span>
+                        <label class="tick"><input type="checkbox" data-step="m5-2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Réalisez une capture d'écran de la fenêtre de l'Explorateur de fichiers.</p>
+                        <div class="question">
+                            <span class="lbl">Question 12</span>
+                            <p><strong>Quelle solution est la plus simple pour faire une capture d'écran sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour faire une capture d'écran.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Coller la capture dans Paint</span>
+                        <label class="tick"><input type="checkbox" data-step="m5-3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Ouvrez Paint et collez la capture d'écran.</p>
+                        <div class="question">
+                            <span class="lbl">Question 13</span>
+                            <p><strong>Quelle solution est la plus simple pour coller une image dans Paint sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour coller.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Enregistrer l'image</span>
+                        <label class="tick"><input type="checkbox" data-step="m5-4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Enregistrez l'image dans <code>Intervention_PC/Captures/</code> avec le nom <code>preuve_intervention.png</code>.</p>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>L'image <code>preuve_intervention.png</code> est enregistrée dans <code>Intervention_PC/Captures/</code>.</p>
+                            <p><strong>À noter dans votre carnet de bord :</strong></p>
+                            <p><code>Mission 5 terminée : Capture d'écran preuve_intervention.png enregistrée.</code></p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Mission 6 : Diagnostic -->
+        <section id="mission6">
+            <div class="sec-head">
+                <span class="sec-num">08</span>
+                <h2>Mission 6 — Diagnostic</h2>
+                <span class="sec-tag">5 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette mission, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Ouvrir le gestionnaire de tâches.</li>
+                    <li>Relever des informations sur le PC.</li>
+                    <li>Enregistrer ces informations dans un fichier.</li>
+                </ul>
+                <div class="callout">
+                    <span class="lbl">📝 Dans votre carnet de bord</span>
+                    <p>
+                        À la fin de cette mission, notez dans <span class="filename">TP-SANSSOURIS-[VOTRE_NOM].txt</span>
+                        <ul class="plain">
+                            <li>Le raccourci clavier utilisé pour <strong>ouvrir le gestionnaire de tâches</strong>.</li>
+                            <li>Les informations que vous avez relevées sur le CPU, la mémoire et le disque.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Ouvrir le gestionnaire de tâches</span>
+                        <label class="tick"><input type="checkbox" data-step="m6-1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Ouvrez le gestionnaire de tâches.</p>
+                        <div class="question">
+                            <span class="lbl">Question 14</span>
+                            <p><strong>Quelle solution est la plus simple pour ouvrir le gestionnaire de tâches sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour ouvrir le gestionnaire de tâches.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Aller dans l'onglet Performance</span>
+                        <label class="tick"><input type="checkbox" data-step="m6-2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Accédez à l'onglet <strong>Performance</strong>.</p>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Ouvrir Bloc-notes et renseigner les informations</span>
+                        <label class="tick"><input type="checkbox" data-step="m6-3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Ouvrez Bloc-notes et renseignez les informations du gestionnaire de tâches :</p>
+                        <pre class="tree">CPU :
+Vitesse de base : xxx
+Sockets : xxx
+Cœurs : xxx
+Processeurs logiques : xxx
+
+Mémoire :
+Vitesse : xxx
+Facteur de forme : xxx
+Mémoire totale : xxx
+
+Disque :
+Capacité : xxx</pre>
+                        <div class="question">
+                            <span class="lbl">Question 15</span>
+                            <p><strong>Quelle solution est la plus simple pour naviguer dans les onglets du gestionnaire de tâches sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser le raccourci clavier pour naviguer entre les onglets.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Enregistrer le fichier diagnostic_pc.txt</span>
+                        <label class="tick"><input type="checkbox" data-step="m6-4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Enregistrez le fichier dans <code>Intervention_PC/Diag/</code> avec le nom <code>diagnostic_pc.txt</code>.</p>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-head">
+                        <span class="step-title">Ouvrir deux fenêtres côte à côte</span>
+                        <label class="tick"><input type="checkbox" data-step="m6-5"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Ouvrez deux fenêtres côte à côte :</p>
+                        <p>Le fichier <code>diagnostic_pc.txt</code> avec Bloc-notes à gauche de l’écran et l'Explorateur de fichiers <code>Intervention_PC/Diag/</code> à droite.</p>
+                        <div class="question">
+                            <span class="lbl">Question 16</span>
+                            <p><strong>Quelle solution est la plus simple pour organiser deux fenêtres côte à côte sans souris ?</strong></p>
+                            <p><em>Réponse à noter dans votre carnet de bord :</em> Utiliser les raccourcis clavier pour ancrer les fenêtres à gauche et à droite.</p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Les fenêtres Bloc-notes et l'Explorateur de fichiers sont ouvertes côte à côte.</p>
+                            <p><strong>À noter dans votre carnet de bord :</strong></p>
+                            <p><code>Mission 6 terminée : Fichier diagnostic_pc.txt créé et fenêtres organisées côte à côte.</code></p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Mission 7 : Compte-rendu final -->
+        <section id="mission7">
+            <div class="sec-head">
+                <span class="sec-num">09</span>
+                <h2>Mission 7 — Finaliser le carnet de bord et l'envoyer par email</h2>
+                <span class="sec-tag">2 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette dernière mission, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Finaliser votre carnet de bord.</li>
+                    <li>L'envoyer par email à votre professeur.</li>
+                </ul>
+            </div>
+            <!-- <ol class="steps">
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Finaliser le carnet de bord</span>
+                        <label class="tick"><input type="checkbox" data-step="m7-1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Ouvrez votre carnet de bord <span class="filename">TP-SANSSOURIS-[VOTRE_NOM].txt</span> et ajoutez les informations suivantes :</p>
+                        <pre class="tree">
+---
+### TP — Utilisation d'un PC sans souris
+**Nom :** [VOTRE_NOM]
+**Prénom :** [VOTRE_PRÉNOM]
+**Classe :** 2CIEL
+**Date :** [DATE_DU_JOUR]
+
+---
+
+### 📌 Raccourcis clavier découverts
+1. Verrouiller la session : [VOTRE_RÉPONSE]
+2. Ouvrir Bloc-notes : [VOTRE_RÉPONSE]
+3. Enregistrer un fichier : [VOTRE_RÉPONSE]
+4. Basculer entre les fenêtres : [VOTRE_RÉPONSE]
+5. Réduire toutes les fenêtres : [VOTRE_RÉPONSE]
+6. Fermer une fenêtre : [VOTRE_RÉPONSE]
+7. Créer un nouveau dossier : [VOTRE_RÉPONSE]
+8. Copier un fichier : [VOTRE_RÉPONSE]
+9. Renommer un fichier : [VOTRE_RÉPONSE]
+10. Ouvrir un nouvel onglet : [VOTRE_RÉPONSE]
+11. Fermer un onglet : [VOTRE_RÉPONSE]
+12. Faire une capture d'écran : [VOTRE_RÉPONSE]
+13. Coller une image : [VOTRE_RÉPONSE]
+14. Ouvrir le gestionnaire de tâches : [VOTRE_RÉPONSE]
+15. Naviguer dans les onglets : [VOTRE_RÉPONSE]
+16. Organiser deux fenêtres côte à côte : [VOTRE_RÉPONSE]
+
+---
+
+### 📝 Réponses aux questions
+1. Quelle solution est la plus simple pour verrouiller rapidement votre session Windows ?
+   → [VOTRE_RÉPONSE]
+
+2. Quelle solution est la plus simple pour ouvrir un logiciel comme Bloc-notes sans souris ?
+   → [VOTRE_RÉPONSE]
+
+3. Quelle solution est la plus simple pour enregistrer un fichier sans souris ?
+   → [VOTRE_RÉPONSE]
+
+4. Quelle solution est la plus simple pour basculer entre plusieurs fenêtres ouvertes ?
+   → [VOTRE_RÉPONSE]
+
+5. Quelle solution est la plus simple pour fermer une fenêtre sans souris ?
+   → [VOTRE_RÉPONSE]
+
+6. Quelle solution est la plus simple pour créer un nouveau dossier sans souris ?
+   → [VOTRE_RÉPONSE]
+
+7. Quelle solution est la plus simple pour copier un fichier sans souris ?
+   → [VOTRE_RÉPONSE]
+
+8. Quelle solution est la plus simple pour enregistrer un fichier dans un dossier spécifique sans souris ?
+   → [VOTRE_RÉPONSE]
+
+9. Quel nombre avez-vous trouvé pour "La réponse à la grande question de la vie" ?
+   → [VOTRE_RÉPONSE]
+
+10. Quelle est la valeur binaire de 42 sur 8 bits ?
+    → [VOTRE_RÉPONSE]
+
+11. Quelle solution est la plus simple pour fermer un onglet ou une fenêtre de navigateur sans souris ?
+    → [VOTRE_RÉPONSE]
+
+12. Quelle solution est la plus simple pour faire une capture d'écran sans souris ?
+    → [VOTRE_RÉPONSE]
+
+13. Quelle solution est la plus simple pour coller une image dans Paint sans souris ?
+    → [VOTRE_RÉPONSE]
+
+14. Quelle solution est la plus simple pour ouvrir le gestionnaire de tâches sans souris ?
+    → [VOTRE_RÉPONSE]
+
+15. Quelle solution est la plus simple pour naviguer dans les onglets du gestionnaire de tâches sans souris ?
+    → [VOTRE_RÉPONSE]
+
+16. Quelle solution est la plus simple pour organiser deux fenêtres côte à côte sans souris ?
+    → [VOTRE_RÉPONSE]
+
+---
+
+### ✅ Preuves de réalisation
+- Mission 1 : [VOTRE_PREUVE]
+- Mission 2 : [VOTRE_PREUVE]
+- Mission 3 : [VOTRE_PREUVE]
+- Mission 4 : [VOTRE_PREUVE]
+- Mission 5 : [VOTRE_PREUVE]
+- Mission 6 : [VOTRE_PREUVE]
+
+---
+### 💡 Bilan
+**Mes difficultés lors de cette activité :**
+- [Décrivez une difficulté]
+- [Décrivez une autre difficulté]
+
+**Ce que j'ai aimé :**
+- [Décrivez ce que vous avez aimé]
+- [Décrivez une autre chose que vous avez aimée]
+
+**Ce que j'ai moins aimé :**
+- [Décrivez ce que vous avez moins aimé]
+- [Décrivez une autre chose que vous avez moins aimée]
+                        </pre>
+                    </div>
+                </li> -->
+
+                <li class="step">
+                    <div class="step-num">0</div>
+                    <div class="step-head">
+                        <span class="step-title">Envoyer le carnet de bord par email</span>
+                        <label class="tick"><input type="checkbox" data-step="m7-2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Envoyez votre carnet de bord par email à votre professeur</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+
+
+        <!-- Mission 8 : Concours de vitesse de frappe -->
+        <section id="mission7">
+            <div class="sec-head">
+                <span class="sec-num">10</span>
+                <h2>Mission 8 — Savoir tapper vite au clavier</h2>
+                <span class="sec-tag">2 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette dernière mission, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Récupérer votre souris</li>
+                    <li>Tester votre rapiditer de frappe au clavier</li>
+                </ul>
+            </div>
+
+            <ol class="steps">
+                <!-- Étape 5 : Fermer un onglet et en ouvrir un nouveau -->
+                <li class="step">
+                    <div class="step-num">1</div>
                     <div class="step-head">
                         <span class="step-title">Fermer un onglet et en ouvrir un nouveau</span>
                         <label class="tick"><input type="checkbox" data-step="k5"><span>Fait</span></label>
@@ -276,64 +871,14 @@ Cordialement,
                         <p>Fermez un onglet et ouvrez-en un nouveau <strong>sans souris</strong> :</p>
                         <ol class="plain">
                             <li>Ouvrez votre navigateur (si ce n’est pas déjà fait).</li>
-                            <li>Ouvrez un nouvel onglet :
-                                <ul class="plain">
-                                    <li><kbd>Ctrl + T</kbd>.</li>
-                                </ul>
-                            </li>
-                            <li>Naviguez jusqu’à la barre d’adresse et tapez <code>https://www.ratatype.com/</code>.</li>
-                            <li>Fermer l’onglet actuel :
-                                <ul class="plain">
-                                    <li><kbd>Ctrl + W</kbd>.</li>
-                                </ul>
-                            </li>
-                            <li>Rouvrez un nouvel onglet et accédez à Proton Mail.</li>
+                            <li>Ouvrez un nouvel onglet et tapez <code>https://www.ratatype.com/</code>.</li>
                         </ol>
-                        <div class="callout">
-                            <span class="lbl">Raccourcis utiles pour les onglets</span>
-                            <p>
-                                <table class="tw raccourcis-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Action</th>
-                                            <th>Raccourci Windows/Linux</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Nouvel onglet</td>
-                                            <td><kbd>Ctrl + T</kbd></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Fermer l'onglet</td>
-                                            <td><kbd>Ctrl + W</kbd></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Onglet suivant</td>
-                                            <td><kbd>Ctrl + Tab</kbd></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Onglet précédent</td>
-                                            <td><kbd>Ctrl + Maj + Tab</kbd></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Rouvrir le dernier onglet fermé</td>
-                                            <td><kbd>Ctrl + Maj + T</kbd></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </p>
-                        </div>
-                        <div class="callout deliver">
-                            <span class="lbl">Validation</span>
-                            <p>Vous avez fermé et rouvert des onglets sans souris.</p>
-                        </div>
                     </div>
                 </li>
 
                 <!-- Étape 6 : Taper rapidement au clavier (concours) -->
                 <li class="step">
-                    <div class="step-num">6</div>
+                    <div class="step-num">2</div>
                     <div class="step-head">
                         <span class="step-title">Taper rapidement au clavier (concours)</span>
                         <label class="tick"><input type="checkbox" data-step="k6"><span>Fait</span></label>
@@ -341,9 +886,8 @@ Cordialement,
                     <div class="step-body">
                         <p>Participez à un <strong>concours de frappe</strong> pour améliorer votre vitesse de saisie :</p>
                         <ol class="plain">
-                            <li>Ouvrez votre navigateur et accédez à <a href="https://www.ratatype.com/" target="_blank">Ratatype</a> (utilisez les raccourcis clavier pour naviguer).</li>
-                            <li>Cliquez sur <strong>"Typing Test"</strong> (utilisez <kbd>Tab</kbd> et <kbd>Entrée</kbd>).</li>
-                            <li>Choisissez un test de frappe (ex: 1 minute, 3 minutes ou 5 minutes).</li>
+                            <li>Cliquez sur <strong>"Typing Test"</strong>.</li>
+                            <li>Choisissez un test de frappe de 1 minute.</li>
                             <li>Tapez le texte qui s’affiche <strong>aussi vite et précisément que possible</strong>.</li>
                             <li>À la fin du test, notez :
                                 <ul class="plain">
@@ -363,139 +907,14 @@ Cordialement,
                             </p>
                         </div>
                         <div class="callout deliver">
-                            <span class="lbl">Validation</span>
-                            <p>Vous avez participé au concours de frappe et noté vos résultats.</p>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Étape 7 : Concours en classe -->
-                <li class="step">
-                    <div class="step-num">7</div>
-                    <div class="step-head">
-                        <span class="step-title">Concours en classe</span>
-                        <label class="tick"><input type="checkbox" data-step="k7"><span>Fait</span></label>
-                    </div>
-                    <div class="step-body">
-                        <p>Organisez un <strong>concours de frappe en classe</strong> :</p>
-                        <ol class="plain">
-                            <li>Chaque élève effectue un test de 3 minutes sur <a href="https://www.ratatype.com/" target="_blank">Ratatype</a>.</li>
-                            <li>Notez les résultats de chaque élève dans un tableau (ex: sur le tableau du cours).</li>
-                            <li>Déterminez :
-                                <ul class="plain">
-                                    <li>L’élève avec la <strong>meilleure vitesse de frappe</strong> (WPM).</li>
-                                    <li>L’élève avec la <strong>meilleure précision</strong> (%).</li>
-                                    <li>L’élève avec le <strong>meilleur score global</strong> (vitesse + précision).</li>
-                                </ul>
-                            </li>
-                        </ol>
-                        <div class="callout">
-                            <span class="lbl">Exemple de tableau de résultats</span>
-                            <p>
-                                <table class="tw raccourcis-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Élève</th>
-                                            <th>Vitesse (WPM)</th>
-                                            <th>Précision (%)</th>
-                                            <th>Score global</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Jean DUPONT</td>
-                                            <td>45</td>
-                                            <td>98%</td>
-                                            <td>44.1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Marie MARTIN</td>
-                                            <td>50</td>
-                                            <td>95%</td>
-                                            <td>47.5</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p><strong>Score global</strong> = Vitesse × (Précision / 100).</p>
-                            </p>
-                        </div>
-                        <div class="callout deliver">
-                            <span class="lbl">Validation</span>
-                            <p>Le concours est organisé et les résultats sont notés.</p>
+                            <span class="lbl">Info</span>
+                            <p>Les personnes dépassants <b>40 mpm (mot par minute)</b> auront un bonus sur la note du tp.</p>
                         </div>
                     </div>
                 </li>
             </ol>
         </section>
 
-        <!-- Livrables -->
-        <section id="livrables">
-            <div class="sec-head">
-                <span class="sec-num">04</span>
-                <h2>Ce que vous devez rendre</h2>
-                <span class="sec-tag">Checklist</span>
-            </div>
-            <div class="col">
-                <p>À la fin de ce TP, vous devez avoir :</p>
-                <ol class="steps">
-                    <li class="step">
-                        <div class="step-num">✓</div>
-                        <div class="step-head">
-                            <span class="step-title">Arborescence de dossiers</span>
-                            <label class="tick"><input type="checkbox" data-step="r1"><span>Rendu</span></label>
-                        </div>
-                        <div class="step-body">
-                            <p>Une arborescence complète dans <code>TP_Interface/</code> avec tous les dossiers et fichiers demandés.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-num">✓</div>
-                        <div class="step-head">
-                            <span class="step-title">Archive compressée</span>
-                            <label class="tick"><input type="checkbox" data-step="r2"><span>Rendu</span></label>
-                        </div>
-                        <div class="step-body">
-                            <p>Une archive <code>archive_documents.zip</code> dans <code>TP_Interface/Archives/</code>.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-num">✓</div>
-                        <div class="step-head">
-                            <span class="step-title">Document sans souris</span>
-                            <label class="tick"><input type="checkbox" data-step="r3"><span>Rendu</span></label>
-                        </div>
-                        <div class="step-body">
-                            <p>Un fichier <code>document_sans_souris.txt</code> dans <code>TP_Interface/Documents/TP/TP2_Clavier/</code>.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-num">✓</div>
-                        <div class="step-head">
-                            <span class="step-title">Email sans souris</span>
-                            <label class="tick"><input type="checkbox" data-step="r4"><span>Rendu</span></label>
-                        </div>
-                        <div class="step-body">
-                            <p>Un email envoyé à <code>tanguy.signoret@ac-lyon.fr</code> avec :
-                                <ul class="plain">
-                                    <li>Objet : <code>TP Sans Souris - [VOTRE_NOM]</code>.</li>
-                                    <li>Contenu : Message clair, envoyé sans souris.</li>
-                                </ul>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-num">✓</div>
-                        <div class="step-head">
-                            <span class="step-title">Résultats du concours de frappe</span>
-                            <label class="tick"><input type="checkbox" data-step="r5"><span>Rendu</span></label>
-                        </div>
-                        <div class="step-body">
-                            <p>Vos résultats du test de frappe sur Ratatype (vitesse en WPM et précision en %).</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </section>
 
         <!-- Footer -->
         <footer>
