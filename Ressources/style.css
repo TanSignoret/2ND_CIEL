@@ -637,6 +637,26 @@ footer {
     color: var(--muted);
     font-style: italic;
 }
+/* Question */
+.question {
+            background: var(--accent-soft);
+            border-left: 3px solid var(--accent);
+            padding: 0.9rem 1.1rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.2rem 0;
+            font-size: 0.97rem;
+        }
+
+.question .lbl {
+    display: block;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — Découverte et utilisation de Bitwarden</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Séance 4 — Sécurité et gestion des mots de passe</div>
+            <h1>TP — Découverte et utilisation de Bitwarden</h1>
+            <p class="lede">Dans ce TP, vous allez découvrir Bitwarden, un gestionnaire de mots de passe open-source, pour comprendre l'importance des mots de passe forts, de la saisie automatique et de la centralisation de vos identifiants.</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 2h</span>
+                <span class="chip">Travail individuel</span>
+            </div>
+        </header>
+
+        <!-- Contexte professionnel -->
+        <section id="context">
+            <div class="sec-head">
+                <span class="sec-num">01</span>
+                <h2>Contexte professionnel</h2>
+                <span class="sec-tag">Introduction</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans une entreprise, la <strong>sécurité des mots de passe</strong> est une priorité absolue. Les employés doivent :
+                </p>
+                <ul class="plain">
+                    <li>Utiliser des <strong>mots de passe forts et uniques</strong> pour chaque compte.</li>
+                    <li>Éviter de <strong>réutiliser les mêmes mots de passe</strong> sur plusieurs services.</li>
+                    <li>Stocker leurs mots de passe de manière <strong>sécurisée</strong> (ex: gestionnaire de mots de passe).</li>
+                    <li>Activer la <strong>saisie automatique</strong> pour gagner du temps et éviter les erreurs.</li>
+                </ul>
+                <p>
+                    Aujourd’hui, vous allez utiliser <strong>Bitwarden</strong>, un gestionnaire de mots de passe <strong>open-source, sécurisé et respectueux de la vie privée</strong>, pour :
+                </p>
+                <ul class="plain">
+                    <li>Découvrir l’<strong>intérêt d’un gestionnaire de mots de passe</strong>.</li>
+                    <li>Enregistrer vos mots de passe existants (ENT, Proton Mail).</li>
+                    <li>Changer le mot de passe de votre boîte mail Proton et l’enregistrer dans Bitwarden.</li>
+                    <li>Utiliser la <strong>saisie automatique</strong> pour vous connecter.</li>
+                    <li>Installer l’<strong>extension Bitwarden</strong> dans votre navigateur.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TP 1 : Découverte de Bitwarden -->
+        <section id="tp1">
+            <div class="sec-head">
+                <span class="sec-num">02</span>
+                <h2>TP 1 — Découverte de Bitwarden</h2>
+                <span class="sec-tag">3 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette première partie, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Créer un compte Bitwarden.</li>
+                    <li>Installer l’extension Bitwarden dans votre navigateur.</li>
+                    <li>Découvrir l’interface de Bitwarden.</li>
+                </ul>
+            </div>
+
+            <ol class="steps">
+                <!-- Étape 1 : Créer un compte Bitwarden -->
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Créer un compte Bitwarden</span>
+                        <label class="tick"><input type="checkbox" data-step="b1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Rendez-vous sur <a href="https://bitwarden.com/" target="_blank">Bitwarden</a> et créez un compte gratuit :</p>
+                        <ol class="plain">
+                            <li>Cliquez sur <strong>"Créer un compte gratuit"</strong>.</li>
+                            <li>Remplissez le formulaire :
+                                <ul class="plain">
+                                    <li><strong>Adresse email</strong> : Utilisez votre adresse Proton Mail (<code>prenom.nom@proton.me</code>).</li>
+                                    <li><strong>Nom d'utilisateur</strong> : Choisissez un nom d'utilisateur (ex: <code>prenom.nom</code>).</li>
+                                    <li><strong>Mot de passe maître</strong> : Créez un mot de passe <strong>très robuste</strong> (min. 16 caractères, majuscules, chiffres, symboles).</li>
+                                </ul>
+                            </li>
+                            <li>Validez votre adresse email via le lien envoyé par Bitwarden.</li>
+                            <li>Connectez-vous à votre compte.</li>
+                        </ol>
+                        <div class="question">
+                            <span class="lbl">Question 1</span>
+                            <p><strong>Pourquoi le mot de passe maître doit-il être très robuste ?</strong></p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 2 : Installer l'extension Bitwarden -->
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Installer l'extension Bitwarden</span>
+                        <label class="tick"><input type="checkbox" data-step="b2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Installez l’extension Bitwarden dans votre navigateur pour activer la saisie automatique :</p>
+                        <ol class="plain">
+                            <li>Selon votre navigateur :
+                                <ul class="plain">
+                                    <li><strong>Firefox</strong> : <a href="https://addons.mozilla.org/fr/firefox/addon/bitwarden-password-manager/" target="_blank">Lien vers l'extension</a>.</li>
+                                    <li><strong>Chrome/Edge</strong> : <a href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahknhihjbj" target="_blank">Lien vers l'extension</a>.</li>
+                                </ul>
+                            </li>
+                            <li>Cliquez sur <strong>"Ajouter à [Navigateur]"</strong>.</li>
+                            <li>Connectez-vous à l’extension avec votre compte Bitwarden.</li>
+                        </ol>
+                        <div class="question">
+                            <span class="lbl">Question 2</span>
+                            <p><strong>Pourquoi installer l’extension Bitwarden dans son navigateur ?</strong></p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>L’extension Bitwarden est installée et connectée à votre compte.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 3 : Découvrir l'interface de Bitwarden -->
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Découvrir l'interface de Bitwarden</span>
+                        <label class="tick"><input type="checkbox" data-step="b3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Explorez l’interface de Bitwarden (web ou extension) et repérez les éléments suivants :</p>
+                        <ul class="plain">
+                            <li><strong>Coffre-fort</strong> : Où sont stockés vos mots de passe.</li>
+                            <li><strong>Générateur de mots de passe</strong> : Pour créer des mots de passe forts.</li>
+                            <li><strong>Paramètres</strong> : Pour configurer votre compte.</li>
+                            <li><strong>Extensions et applications</strong> : Pour installer Bitwarden sur d’autres appareils.</li>
+                        </ul>
+                        <p>A quoi sert bitwarden ?</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- TP 2 : Enregistrer des mots de passe existants -->
+        <section id="tp2">
+            <div class="sec-head">
+                <span class="sec-num">03</span>
+                <h2>TP 2 — Enregistrer des mots de passe existants</h2>
+                <span class="sec-tag">3 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette partie, vous allez enregistrer vos mots de passe existants (ENT, Proton Mail) dans Bitwarden.
+                </p>
+            </div>
+
+            <ol class="steps">
+                <!-- Étape 1 : Enregistrer le mot de passe de l'ENT -->
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Enregistrer le mot de passe de l'ENT</span>
+                        <label class="tick"><input type="checkbox" data-step="e1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Enregistrez votre mot de passe de l’ENT dans Bitwarden :</p>
+                        <ol class="plain">
+                            <li>Dans Bitwarden, cliquez sur <strong>"Ajouter un élément"</strong>.</li>
+                            <li>Remplissez les champs :
+                                <ul class="plain">
+                                    <li><strong>Type</strong> : <code>Connexion</code>.</li>
+                                    <li><strong>Nom</strong> : <code>ENT - Lycée Charlie Chaplin</code>.</li>
+                                    <li><strong>Nom d'utilisateur</strong> : Votre identifiant ENT.</li>
+                                    <li><strong>Mot de passe</strong> : Votre mot de passe ENT.</li>
+                                    <li><strong>URL</strong> : <code>https://charlie-chaplin.ent.auvergnerhonealpes.fr</code>.</li>
+                                </ul>
+                            </li>
+                            <li>Cliquez sur <strong>"Enregistrer"</strong>.</li>
+                        </ol>
+                        <div class="question">
+                            <span class="lbl">Question 3</span>
+                            <p><strong>Comment avez-vous fait pour enregistrer le mot de passe de l’ENT dans Bitwarden ?</strong></p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Le mot de passe de l’ENT est enregistré dans Bitwarden.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 2 : Enregistrer le mot de passe de Proton Mail -->
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Enregistrer le mot de passe de Proton Mail</span>
+                        <label class="tick"><input type="checkbox" data-step="e2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Enregistrez votre mot de passe de Proton Mail dans Bitwarden :</p>
+                        <ol class="plain">
+                            <li>Dans Bitwarden, cliquez sur <strong>"Ajouter un élément"</strong>.</li>
+                            <li>Remplissez les champs :
+                                <ul class="plain">
+                                    <li><strong>Type</strong> : <code>Connexion</code>.</li>
+                                    <li><strong>Nom</strong> : <code>Proton Mail</code>.</li>
+                                    <li><strong>Nom d'utilisateur</strong> : Votre adresse Proton Mail (<code>prenom.nom@proton.me</code>).</li>
+                                    <li><strong>Mot de passe</strong> : Votre mot de passe Proton Mail.</li>
+                                    <li><strong>URL</strong> : <code>https://mail.proton.me</code>.</li>
+                                </ul>
+                            </li>
+                            <li>Cliquez sur <strong>"Enregistrer"</strong>.</li>
+                        </ol>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Le mot de passe de Proton Mail est enregistré dans Bitwarden.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 3 : Tester la saisie automatique -->
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Tester la saisie automatique</span>
+                        <label class="tick"><input type="checkbox" data-step="e3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Testez la saisie automatique avec Bitwarden :</p>
+                        <ol class="plain">
+                            <li>Ouvrez une nouvelle fenêtre de navigateur et accédez à <a href="https://mail.proton.me" target="_blank">Proton Mail</a>.</li>
+                            <li>Cliquez sur le champ <strong>"Email"</strong>.</li>
+                            <li>Bitwarden devrait vous proposer de <strong>remplir automatiquement</strong> votre email et mot de passe.</li>
+                            <li>Sélectionnez votre compte Proton Mail dans la liste.</li>
+                            <li>Validez la connexion.</li>
+                        </ol>
+                        <div class="question">
+                            <span class="lbl">Question 4</span>
+                            <p><strong>Quel est l’intérêt de la saisie automatique avec Bitwarden ?</strong></p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>La saisie automatique fonctionne pour Proton Mail.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- TP 3 : Changer le mot de passe de Proton Mail et l'enregistrer dans Bitwarden -->
+        <section id="tp3">
+            <div class="sec-head">
+                <span class="sec-num">04</span>
+                <h2>TP 3 — Changer le mot de passe de Proton Mail et l'enregistrer dans Bitwarden</h2>
+                <span class="sec-tag">4 étapes</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans cette partie, vous allez :
+                </p>
+                <ul class="plain">
+                    <li>Changer le mot de passe de votre boîte mail Proton.</li>
+                    <li>Mettre à jour le mot de passe dans Bitwarden.</li>
+                    <li>Tester la nouvelle connexion.</li>
+                </ul>
+            </div>
+
+            <ol class="steps">
+                <!-- Étape 1 : Changer le mot de passe de Proton Mail -->
+                <li class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-head">
+                        <span class="step-title">Changer le mot de passe de Proton Mail</span>
+                        <label class="tick"><input type="checkbox" data-step="p1"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Changez le mot de passe de votre compte Proton Mail :</p>
+                        <ol class="plain">
+                            <li>Connectez-vous à <a href="https://mail.proton.me" target="_blank">Proton Mail</a>.</li>
+                            <li>Cliquez sur l’icône <strong>⚙️ Paramètres</strong> → <strong>"Compte"</strong> → <strong>"Mot de passe"</strong>.</li>
+                            <li>Cliquez sur <strong>"Changer le mot de passe"</strong>.</li>
+                            <li>Remplissez les champs :
+                                <ul class="plain">
+                                    <li><strong>Mot de passe actuel</strong> : Votre ancien mot de passe.</li>
+                                    <li><strong>Nouveau mot de passe</strong> : Créez un mot de passe <strong>très robuste</strong> (min. 16 caractères, majuscules, chiffres, symboles).</li>
+                                    <li><strong>Confirmer le nouveau mot de passe</strong> : Répétez le nouveau mot de passe.</li>
+                                </ul>
+                            </li>
+                            <li>Cliquez sur <strong>"Enregistrer"</strong>.</li>
+                        </ol>
+                        <div class="question">
+                            <span class="lbl">Question 5</span>
+                            <p><strong>Pourquoi est-il important de changer régulièrement son mot de passe ?</strong></p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 2 : Mettre à jour le mot de passe dans Bitwarden -->
+                <li class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-head">
+                        <span class="step-title">Mettre à jour le mot de passe dans Bitwarden</span>
+                        <label class="tick"><input type="checkbox" data-step="p2"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Mettez à jour le mot de passe de Proton Mail dans Bitwarden :</p>
+                        <ol class="plain">
+                            <li>Dans Bitwarden, trouvez l’élément <strong>"Proton Mail"</strong> que vous avez enregistré précédemment.</li>
+                            <li>Cliquez sur <strong>"Modifier"</strong>.</li>
+                            <li>Mettez à jour le champ <strong>"Mot de passe"</strong> avec votre nouveau mot de passe.</li>
+                            <li>Cliquez sur <strong>"Enregistrer"</strong>.</li>
+                        </ol>
+                        <div class="question">
+                            <span class="lbl">Question 6</span>
+                            <p><strong>Comment avez-vous fait pour mettre à jour le mot de passe de Proton Mail dans Bitwarden ?</strong></p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Le mot de passe de Proton Mail est mis à jour dans Bitwarden.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 3 : Tester la nouvelle connexion -->
+                <li class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-head">
+                        <span class="step-title">Tester la nouvelle connexion</span>
+                        <label class="tick"><input type="checkbox" data-step="p3"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Testez la nouvelle connexion avec Bitwarden :</p>
+                        <ol class="plain">
+                            <li>Ouvrez une nouvelle fenêtre de navigateur en mode privé (pour éviter les caches).</li>
+                            <li>Accédez à <a href="https://mail.proton.me" target="_blank">Proton Mail</a>.</li>
+                            <li>Cliquez sur le champ <strong>"Email"</strong>.</li>
+                            <li>Bitwarden devrait vous proposer de remplir automatiquement vos identifiants.</li>
+                            <li>Sélectionnez votre compte Proton Mail et validez.</li>
+                            <li>Vérifiez que vous êtes bien connecté avec le <strong>nouveau mot de passe</strong>.</li>
+                        </ol>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Vous êtes connecté à Proton Mail avec le nouveau mot de passe via Bitwarden.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 4 : Ajouter un site ou une application mobile -->
+                <li class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-head">
+                        <span class="step-title">Ajouter un site ou une application mobile</span>
+                        <label class="tick"><input type="checkbox" data-step="p4"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Ajoutez un nouveau mot de passe pour un site ou une application mobile :</p>
+                        <ol class="plain">
+                            <li>Choisissez un site ou une application que vous utilisez (ex: un réseau social, un jeu, etc.).</li>
+                            <li>Dans Bitwarden, cliquez sur <strong>"Ajouter un élément"</strong>.</li>
+                            <li>Remplissez les champs :
+                                <ul class="plain">
+                                    <li><strong>Type</strong> : <code>Connexion</code>.</li>
+                                    <li><strong>Nom</strong> : Le nom du site ou de l’application (ex: <code>Twitter</code>).</li>
+                                    <li><strong>Nom d'utilisateur</strong> : Votre identifiant pour ce site.</li>
+                                    <li><strong>Mot de passe</strong> : Votre mot de passe pour ce site.</li>
+                                    <li><strong>URL</strong> : L’URL du site (ex: <code>https://twitter.com</code>).</li>
+                                </ul>
+                            </li>
+                            <li>Cliquez sur <strong>"Enregistrer"</strong>.</li>
+                        </ol>
+                        <div class="question">
+                            <span class="lbl">Question 7</span>
+                            <p><strong>Quel est l’intérêt d’ajouter un site ou une application dans Bitwarden ?</strong></p>
+                        </div>
+                        <div class="callout deliver">
+                            <span class="lbl">Validation</span>
+                            <p>Un nouveau site ou une nouvelle application est enregistré dans Bitwarden.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Livrables -->
+        <section id="livrables">
+            <div class="sec-head">
+                <span class="sec-num">05</span>
+                <h2>Ce que vous devez rendre</h2>
+                <span class="sec-tag">Checklist</span>
+            </div>
+            <div class="col">
+                <p>À la fin de ce TP, vous devez avoir :</p>
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-num">✓</div>
+                        <div class="step-head">
+                            <span class="step-title">Compte Bitwarden</span>
+                            <label class="tick"><input type="checkbox" data-step="r1"><span>Rendu</span></label>
+                        </div>
+                        <div class="step-body">
+                            <p>Un compte Bitwarden créé avec un <strong>mot de passe maître robuste</strong>.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num">✓</div>
+                        <div class="step-head">
+                            <span class="step-title">Extension Bitwarden</span>
+                            <label class="tick"><input type="checkbox" data-step="r2"><span>Rendu</span></label>
+                        </div>
+                        <div class="step-body">
+                            <p>L’extension Bitwarden installée et connectée dans votre navigateur.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num">✓</div>
+                        <div class="step-head">
+                            <span class="step-title">Mots de passe enregistrés</span>
+                            <label class="tick"><input type="checkbox" data-step="r3"><span>Rendu</span></label>
+                        </div>
+                        <div class="step-body">
+                            <p>Les mots de passe de l’ENT et de Proton Mail enregistrés dans Bitwarden.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num">✓</div>
+                        <div class="step-head">
+                            <span class="step-title">Mot de passe Proton Mail mis à jour</span>
+                            <label class="tick"><input type="checkbox" data-step="r4"><span>Rendu</span></label>
+                        </div>
+                        <div class="step-body">
+                            <p>Le mot de passe de Proton Mail a été changé et mis à jour dans Bitwarden.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num">✓</div>
+                        <div class="step-head">
+                            <span class="step-title">Nouveau site/application enregistré</span>
+                            <label class="tick"><input type="checkbox" data-step="r5"><span>Rendu</span></label>
+                        </div>
+                        <div class="step-body">
+                            <p>Un nouveau site ou une nouvelle application est enregistré dans Bitwarden.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Ressources supplémentaires -->
+        <section id="ressources">
+            <div class="sec-head">
+                <span class="sec-num">07</span>
+                <h2>Ressources supplémentaires</h2>
+                <span class="sec-tag">Pour aller plus loin</span>
+            </div>
+            <div class="col">
+                <p>Voici quelques ressources pour approfondir vos connaissances sur Bitwarden et la sécurité des mots de passe :</p>
+
+                <div class="callout">
+                    <span class="lbl">📚 Sites web</span>
+                    <p>
+                        <ul class="plain">
+                            <li><a href="https://bitwarden.com/" target="_blank">Site officiel de Bitwarden</a></li>
+                            <li><a href="https://bitwarden.com/getting-started/" target="_blank">Guide de démarrage Bitwarden</a></li>
+                            <li><a href="https://www.cnil.fr/fr/mots-de-passe-comment-bien-les-choisir-et-les-conserver" target="_blank">CNIL — Comment bien choisir et conserver ses mots de passe</a></li>
+                            <li><a href="https://www.ssi.gouv.fr/guide/mots-de-passe/" target="_blank">ANSSI — Guide sur les mots de passe</a></li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="callout">
+                    <span class="lbl">🎥 Vidéos</span>
+                    <p>
+                        <ul class="plain">
+                            <li><a href="https://www.youtube.com/watch?v=5q6BQ7Xk7YQ" target="_blank">Tutoriel Bitwarden pour débutants (YouTube)</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=7x6XkXqYouE" target="_blank">Pourquoi utiliser un gestionnaire de mots de passe ? (YouTube)</a></li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="callout">
+                    <span class="lbl">📖 Documentation</span>
+                    <p>
+                        <ul class="plain">
+                            <li><a href="https://bitwarden.com/help/" target="_blank">Centre d'aide Bitwarden</a></li>
+                            <li><a href="https://bitwarden.com/blog/" target="_blank">Blog Bitwarden (actualités et conseils)</a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>TP — Découverte et utilisation de Bitwarden · Seconde Bac Pro CIEL · Lycée Charlie Chaplin · T. Signoret</p>
+        </footer>
+    </div>
+</body>
+</html>
