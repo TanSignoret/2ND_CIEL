@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours — Cybersécurité : Antivirus, bonnes pratiques, CNIL, 2FA et RGPD</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Module — Sécurité informatique</div>
+            <h1>Cours — Cybersécurité : Antivirus, bonnes pratiques, CNIL, 2FA et RGPD</h1>
+            <p class="lede">Dans un monde de plus en plus connecté, la cybersécurité est devenue un enjeu majeur pour les particuliers comme pour les entreprises.</p>
+            <p class="lede">Ce cours vous permettra de comprendre les bases de la cybersécurité, les bonnes pratiques à adopter, et les réglementations en vigueur comme le RGPD.</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 30min</span>
+                <span class="chip">Théorie et bonnes pratiques</span>
+            </div>
+        </header>
+
+        <!-- Contexte professionnel -->
+        <section id="context">
+            <div class="sec-head">
+                <span class="sec-num">01</span>
+                <h2>Contexte professionnel</h2>
+                <span class="sec-tag">Introduction</span>
+            </div>
+            <div class="col">
+                <p>
+                    Dans une entreprise, la <strong>cybersécurité</strong> est un enjeu critique pour :
+                </p>
+                <ul class="plain">
+                    <li><strong>Protéger les données sensibles</strong> : Informations clients, secrets industriels, données financières.</li>
+                    <li><strong>Garantir la continuité de l'activité</strong> : Éviter les pannes ou les attaques qui pourraient paralyser l'entreprise.</li>
+                    <li><strong>Respecter les réglementations</strong> : Comme le <strong>RGPD</strong> (Règlement Général sur la Protection des Données).</li>
+                    <li><strong>Préserver la réputation</strong> : Une faille de sécurité peut nuire à l'image de l'entreprise.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 1: Les antivirus -->
+        <section id="antivirus">
+            <div class="sec-head">
+                <span class="sec-num">02</span>
+                <h2>Les antivirus</h2>
+                <span class="sec-tag">Protection de base</span>
+            </div>
+            <div class="col">
+                <h3>1.1. Qu'est-ce qu'un antivirus ?</h3>
+                <p>
+                    Un <strong>antivirus</strong> est un logiciel conçu pour :
+                </p>
+                <ul class="plain">
+                    <li><strong>Détecter</strong> les logiciels malveillants (virus, ransomware, spyware, etc.).</li>
+                    <li><strong>Bloquer</strong> les menaces avant qu'elles n'infectent votre système.</li>
+                    <li><strong>Supprimer</strong> les fichiers infectés ou les mettre en quarantaine.</li>
+                    <li><strong>Mettre à jour</strong> régulièrement sa base de données de signatures de virus.</li>
+                </ul>
+                <div class="callout">
+                    <span class="lbl">Pourquoi un antivirus est-il indispensable ?</span>
+                    <p>
+                        Même si vous êtes prudent, un antivirus est nécessaire car :
+                        <ul class="plain">
+                            <li>Les <strong>menaces évoluent constamment</strong> : De nouveaux virus apparaissent chaque jour.</li>
+                            <li>Les <strong>failles zero-day</strong> : Des vulnérabilités inconnues peuvent être exploitées avant qu'un correctif ne soit disponible.</li>
+                            <li>Les <strong>attaques ciblées</strong> : Certaines attaques sont conçues pour contourner les défenses classiques.</li>
+                        </ul>
+                    </p>
+                </div>
+
+                <h3>1.2. Exemples d'antivirus</h3>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Antivirus</th>
+                                <th>Type</th>
+                                <th>Avantages</th>
+                                <th>Inconvénients</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Windows Defender</strong></td>
+                                <td>Intégré à Windows</td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Gratuit et préinstallé.</li>
+                                        <li>Mises à jour automatiques.</li>
+                                        <li>Intégration avec le système.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Moins efficace que certains antivirus tiers.</li>
+                                        <li>Pas de protection contre les ransomwares avancés.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bitdefender</strong></td>
+                                <td>Payant (version gratuite limitée)</td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Protection complète (virus, ransomware, phishing).</li>
+                                        <li>Faible impact sur les performances.</li>
+                                        <li>VPN intégré.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Version complète payante.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kaspersky</strong></td>
+                                <td>Payant</td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Détection avancée des menaces.</li>
+                                        <li>Protection contre les attaques ciblées.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Coût élevé.</li>
+                                        <li>Controverses liées à son origine russe.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>ClamAV</strong></td>
+                                <td>Open-source (Linux/Windows)</td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Gratuit et open-source.</li>
+                                        <li>Idéal pour les serveurs Linux.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Interface moins intuitive.</li>
+                                        <li>Moins efficace sur Windows.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Bonnes pratiques sur le net -->
+        <section id="bonnes-pratiques">
+            <div class="sec-head">
+                <span class="sec-num">03</span>
+                <h2>Bonnes pratiques sur l'internet</h2>
+                <span class="sec-tag">Prévention</span>
+            </div>
+            <div class="col">
+                <p><i>Pourquoi parle-t-on de l'internet ? Internet est la contraction de 2 mots anglais <code>interconnection</code> (interconnextion) et <code>network</code> (réseau).</i></p>
+                <h3>2.1. Mots de passe</h3>
+                <p>
+                    Les mots de passe sont la <strong>première ligne de défense</strong> contre les attaques.
+                    Voici les bonnes pratiques à adopter :
+                </p>
+                <div class="callout">
+                    <span class="lbl">🔐 Comment créer un mot de passe robuste ?</span>
+                    <p>
+                        Un mot de passe robuste doit :
+                        <ul class="plain">
+                            <li>Faire <strong>au moins 12 caractères</strong> (idéalement 16 ou plus).</li>
+                            <li>Contenir :
+                                <ul class="plain">
+                                    <li>Des <strong>majuscules</strong> (A-Z).</li>
+                                    <li>Des <strong>minuscules</strong> (a-z).</li>
+                                    <li>Des <strong>chiffres</strong> (0-9).</li>
+                                    <li>Des <strong>symboles</strong> (!, @, #, $, etc.).</li>
+                                </ul>
+                            </li>
+                            <li>Être <strong>unique</strong> : Ne pas réutiliser le même mot de passe sur plusieurs comptes.</li>
+                            <li>Ne pas contenir d'<strong>informations personnelles</strong> (nom, date de naissance, etc.).</li>
+                        </ul>
+                    </p>
+                    <p>Troy Hunt, un chercheur en cybersécurité, a créé un site web pour savoir si nos informations ont déjà été priratée : <a href="haveibeenpwned.com">haveibeenpwned.com</a></p>
+                </div>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>❌ À éviter</th>
+                                <th>✅ À faire</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>123456</td>
+                                <td>T3mP@ssW0rd!2026</td>
+                            </tr>
+                            <tr>
+                                <td>motdepasse</td>
+                                <td>M0tDeP@sse#CIEL</td>
+                            </tr>
+                            <tr>
+                                <td>azerty</td>
+                                <td>Az3rTy!@#123</td>
+                            </tr>
+                            <tr>
+                                <td>nom+prénom</td>
+                                <td>Phr@seP@ss3C0mpl3x3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="callout">
+                    <span class="lbl">💡 Utiliser un gestionnaire de mots de passe</span>
+                    <p>
+                        Pour gérer vos mots de passe de manière sécurisée, utilisez un <strong>gestionnaire de mots de passe</strong> comme :
+                        <ul class="plain">
+                            <li><strong>Bitwarden</strong> : Open-source, gratuit, chiffré de bout en bout.</li>
+                            <li><strong>KeePass</strong> : Open-source, stockage local.</li>
+                            <li><strong>1Password</strong> : Payant, interface intuitive.</li>
+                        </ul>
+                        <strong>Avantages :</strong>
+                        <ul class="plain">
+                            <li>Génération de mots de passe <strong>robustes et uniques</strong>.</li>
+                            <li>Stockage <strong>chiffré</strong> de vos mots de passe.</li>
+                            <li>Saisie <strong>automatique</strong> des identifiants.</li>
+                            <li>Synchronisation entre vos appareils.</li>
+                        </ul>
+                    </p>
+                </div>
+
+                <h3>2.2. Phishing et emails frauduleux</h3>
+                <p>
+                    Le <strong>phishing</strong> (ou hameçonnage) est une technique de fraude qui consiste à tromper un utilisateur pour lui voler ses identifiants ou ses données personnelles.
+                </p>
+                <div class="callout">
+                    <span class="lbl">🎣 Comment reconnaître un email de phishing ?</span>
+                    <p>
+                        Voici les signes d'un email de phishing :
+                        <ul class="plain">
+                            <li><strong>Expéditeur suspect</strong> : L'email provient d'une adresse inconnue ou qui imite une adresse officielle (ex: <code>support@amazon-security.com</code> au lieu de <code>support@amazon.fr</code>).</li>
+                            <li><strong>Objet urgent ou alarmiste</strong> : "Votre compte sera suspendu !", "Action requise immédiatement !".</li>
+                            <li><strong>Fautes d'orthographe ou de grammaire</strong> : Les emails de phishing contiennent souvent des erreurs.</li>
+                            <li><strong>Liens suspects</strong> : Passez votre souris sur le lien (sans cliquer) pour voir l'URL réelle. Si elle ne correspond pas au site officiel, ne cliquez pas.</li>
+                            <li><strong>Pièces jointes inattendues</strong> : Méfiez-vous des pièces jointes (surtout les fichiers <code>.exe</code>, <code>.zip</code>, <code>.js</code>).</li>
+                            <li><strong>Demande d'informations personnelles</strong> : Un email légitime ne vous demandera jamais votre mot de passe ou vos coordonnées bancaires.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="example">
+                    <h4>Exemple d'email de phishing</h4>
+                    <pre class="tree">
+Objet : URGENT : Votre compte PayPal sera suspendu !
+
+Bonjour [Votre Nom],
+
+Votre compte PayPal a été compromis. Pour éviter une suspension, veuillez cliquer sur le lien ci-dessous et mettre à jour vos informations :
+
+[https://paypal-secure-verification.com/login](https://paypal-secure-verification.com/login)
+
+Cordialement,
+L'équipe PayPal</pre>
+                    <p>
+                        <strong>Signes d'alerte :</strong>
+                        <ul class="plain">
+                            <li>Objet urgent et alarmiste.</li>
+                            <li>Lien vers un site qui n'est pas <code>paypal.com</code>.</li>
+                            <li>Demande de "mettre à jour vos informations" (une entreprise légitime ne demandera jamais cela par email).</li>
+                        </ul>
+                    </p>
+                </div>
+
+                <h3>2.3. Navigation sécurisée</h3>
+                <p>
+                    Voici les bonnes pratiques pour naviguer sur le web en toute sécurité :
+                </p>
+                <ul class="plain">
+                    <li><strong>Utilisez un navigateur à jour</strong> : Chrome, Firefox, Edge ou Safari (évitez les navigateurs obsolètes comme Internet Explorer).</li>
+                    <li><strong>Vérifiez le protocole HTTPS</strong> :
+                        <ul class="plain">
+                            <li>Assurez-vous que l'URL commence par <code>https://</code> (et non <code>http://</code>).</li>
+                            <li>Recherchez l'icône 🔒 dans la barre d'adresse.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Évitez les sites non sécurisés</strong> : Ne saisissez jamais d'informations sensibles (mots de passe, coordonnées bancaires) sur un site non sécurisé.</li>
+                    <li><strong>Utilisez un bloqueur de publicités</strong> : Comme <strong>uBlock Origin</strong> pour bloquer les publicités malveillantes.</li>
+                    <li><strong>Ne téléchargez pas de fichiers suspects</strong> : Méfiez-vous des fichiers <code>.exe</code>, <code>.bat</code>, <code>.js</code> ou <code>.vbs</code>.</li>
+                    <li><strong>Utilisez un VPN sur les réseaux publics</strong> : Pour chiffrer votre connexion sur les réseaux Wi-Fi publics (ex: cafés, aéroports).</li>
+                </ul>
+
+                <h3>2.4. Mises à jour</h3>
+                <p>
+                    Les mises à jour sont essentielles pour corriger les <strong>failles de sécurité</strong> de vos logiciels et systèmes.
+                </p>
+                <div class="callout">
+                    <span class="lbl">🔄 Pourquoi les mises à jour sont-elles importantes ?</span>
+                    <p>
+                        Les mises à jour permettent de :
+                        <ul class="plain">
+                            <li><strong>Corriger les failles de sécurité</strong> : Les pirates exploitent souvent des failles connues pour attaquer les systèmes non mis à jour.</li>
+                            <li><strong>Améliorer les performances</strong> : Les mises à jour incluent souvent des optimisations.</li>
+                            <li><strong>Ajouter de nouvelles fonctionnalités</strong> : Certaines mises à jour apportent des améliorations.</li>
+                        </ul>
+                    </p>
+                </div>
+                <p>
+                    <strong>Comment mettre à jour vos logiciels ?</strong>
+                </p>
+                <ul class="plain">
+                    <li><strong>Windows</strong> :
+                        <ul class="plain">
+                            <li>Allez dans <strong>Paramètres</strong> → <strong>Mise à jour et sécurité</strong> → <strong>Windows Update</strong>.</li>
+                            <li>Cliquez sur <strong>Rechercher les mises à jour</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Linux (Ubuntu/Debian)</strong> :
+                        <ul class="plain">
+                            <li>Ouvrez un terminal et tapez : <code>sudo apt update && sudo apt upgrade -y</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>MacOS</strong> :
+                        <ul class="plain">
+                            <li>Allez dans <strong>Préférences Système</strong> → <strong>Mise à jour de logiciels</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Navigateurs</strong> :
+                        <ul class="plain">
+                            <li>Chrome/Firefox/Edge : Les mises à jour sont généralement automatiques.</li>
+                            <li>Pour vérifier : <strong>Paramètres</strong> → <strong>À propos de [Navigateur]</strong>.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 3: Bonnes pratiques de la CNIL -->
+        <section id="cnil">
+            <div class="sec-head">
+                <span class="sec-num">04</span>
+                <h2>Bonnes pratiques de la CNIL</h2>
+                <span class="sec-tag">Recommandations officielles</span>
+            </div>
+            <div class="col">
+                <h3>3.1. Qu'est-ce que la CNIL ?</h3>
+                <p>
+                    La <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) est l'autorité française chargée de :
+                </p>
+                <ul class="plain">
+                    <li><strong>Protéger les données personnelles</strong> des citoyens.</li>
+                    <li><strong>Veiller au respect du RGPD</strong> (Règlement Général sur la Protection des Données).</li>
+                    <li><strong>Informer et sensibiliser</strong> le public aux enjeux de la protection des données.</li>
+                    <li><strong>Sanctionner les manquements</strong> au RGPD (amendes pouvant aller jusqu'à 4% du chiffre d'affaires mondial).</li>
+                </ul>
+                <p>
+                    Site officiel : <a href="https://www.cnil.fr/" target="_blank">www.cnil.fr</a>
+                </p>
+
+                <h3>3.2. Recommandations de la CNIL</h3>
+                <p>
+                    La CNIL propose des <strong>recommandations</strong> pour protéger vos données personnelles :
+                </p>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Catégorie</th>
+                                <th>Recommandations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mots de passe</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Utilisez des mots de passe <strong>robustes et uniques</strong>.</li>
+                                        <li>Utilisez un <strong>gestionnaire de mots de passe</strong>.</li>
+                                        <li>Activez la <strong>2FA</strong> (Authentification à Deux Facteurs).</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Navigation sur le web</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Vérifiez que les sites utilisent le protocole <strong>HTTPS</strong>.</li>
+                                        <li>Ne saisissez pas d'informations sensibles sur des sites non sécurisés.</li>
+                                        <li>Utilisez un <strong>bloqueur de publicités</strong> (ex: uBlock Origin).</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Réseaux sociaux</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Limitez les <strong>informations personnelles</strong> que vous partagez.</li>
+                                        <li>Vérifiez les <strong>paramètres de confidentialité</strong>.</li>
+                                        <li>Méfiez-vous des <strong>demandes d'ami</strong> de personnes inconnues.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Appareils connectés</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Mettez à jour <strong>régulièrement</strong> vos appareils (smartphones, tablettes, objets connectés).</li>
+                                        <li>Désactivez les <strong>fonctionnalités inutiles</strong> (ex: Bluetooth, Wi-Fi, GPS).</li>
+                                        <li>Utilisez un <strong>mot de passe</strong> pour verrouiller vos appareils.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sauvegardes</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Effectuez des <strong>sauvegardes régulières</strong> de vos données.</li>
+                                        <li>Utilisez la <strong>règle 3-2-1</strong> :
+                                            <ul class="plain">
+                                                <li>3 copies de vos données.</li>
+                                                <li>2 supports différents (ex: disque dur, cloud).</li>
+                                                <li>1 sauvegarde hors site (ex: chez un proche, dans un coffre-fort numérique).</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Authentification à Deux Facteurs (2FA) -->
+        <section id="2fa">
+            <div class="sec-head">
+                <span class="sec-num">05</span>
+                <h2>Authentification à Deux Facteurs (2FA)</h2>
+                <span class="sec-tag">Sécurité renforcée</span>
+            </div>
+            <div class="col">
+                <h3>4.1. Qu'est-ce que la 2FA ?</h3>
+                <p>
+                    La <strong>2FA</strong> (Authentification à Deux Facteurs) est une méthode de sécurité qui nécessite <strong>deux preuves d'identité</strong> pour accéder à un compte.
+                    Cela rend les comptes <strong>beaucoup plus sécurisés</strong>, car même si un pirate connaît votre mot de passe, il ne pourra pas accéder à votre compte sans le deuxième facteur.
+                </p>
+                <div class="schema">
+                    <h4>🔐 Schéma : Fonctionnement de la 2FA</h4>
+                    <pre>
+    +---------------------+       +---------------------+       +---------------------+
+    |   Étape 1 : Mot de   |------>|   Étape 2 : Deuxième |------>|   Accès autorisé    |
+    |      passe          |       |      facteur        |       |                     |
+    +---------------------+       +---------------------+       +---------------------+
+          |                               |                               |
+          v                               v                               v
+    +---------------------+       +---------------------+       +---------------------+
+    |   Saisie du mot de   |       |   Saisie du code SMS |       |   Connexion réussie |
+    |   passe              |       |   ou application     |       |                     |
+    +---------------------+       +---------------------+       +---------------------+
+                    </pre>
+                    <p>
+                        <strong>Explications :</strong>
+                        <ol class="plain">
+                            <li>L'utilisateur saisit son <strong>mot de passe</strong>.</li>
+                            <li>Le système demande un <strong>deuxième facteur</strong> (ex: code SMS, application d'authentification).</li>
+                            <li>Si les deux preuves sont valides, l'accès est <strong>autorisé</strong>.</li>
+                        </ol>
+                    </p>
+                </div>
+
+                <h3>4.2. Types de facteurs d'authentification</h3>
+                <p>
+                    La 2FA repose sur <strong>trois types de facteurs</strong> :
+                </p>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type de facteur</th>
+                                <th>Exemples</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Quelque chose que vous savez</strong></td>
+                                <td>Mot de passe, code PIN</td>
+                                <td>Informations que vous connaissez par cœur.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quelque chose que vous possédez</strong></td>
+                                <td>Téléphone, carte à puce, clé USB</td>
+                                <td>Objet physique en votre possession.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quelque chose que vous êtes</strong></td>
+                                <td>Empreinte digitale, reconnaissance faciale, iris</td>
+                                <td>Caractéristiques biométriques uniques.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout">
+                    <span class="lbl">💡 Pourquoi la 2FA est-elle importante ?</span>
+                    <p>
+                        La 2FA est cruciale pour :
+                        <ul class="plain">
+                            <li><strong>Protéger contre les attaques par force brute</strong> : Même si un pirate devine votre mot de passe, il ne pourra pas accéder à votre compte sans le deuxième facteur.</li>
+                            <li><strong>Limiter les risques de piratage</strong> : Les comptes protégés par 2FA sont <strong>99,9% moins susceptibles</strong> d'être piratés.</li>
+                            <li><strong>Respecter les normes de sécurité</strong> : De nombreuses entreprises et administrations <strong>exigent</strong> la 2FA pour accéder à leurs systèmes.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: RGPD -->
+        <section id="rgpd">
+            <div class="sec-head">
+                <span class="sec-num">06</span>
+                <h2>Règlement Général sur la Protection des Données (RGPD)</h2>
+                <span class="sec-tag">Cadre légal</span>
+            </div>
+            <div class="col">
+                <h3>5.1. Qu'est-ce que le RGPD ?</h3>
+                <p>
+                    Le <strong>RGPD</strong> (Règlement Général sur la Protection des Données) est une <strong>loi européenne</strong> entrée en vigueur le <strong>25 mai 2018</strong>.
+                    Son objectif est de <strong>protéger les données personnelles</strong> des citoyens de l’Union Européenne (UE) et de <strong>réguler leur traitement</strong> par les entreprises et organisations.
+                </p>
+                <div class="callout">
+                    <span class="lbl">📜 Qui est concerné par le RGPD ?</span>
+                    <p>
+                        Le RGPD s'applique à :
+                        <ul class="plain">
+                            <li>Toutes les <strong>entreprises</strong> (y compris les TPE/PME) qui traitent des données personnelles de citoyens de l'UE.</li>
+                            <li>Toutes les <strong>organisations</strong> (associations, administrations, etc.).</li>
+                            <li>Toutes les <strong>personnes</strong> qui manipulent des données personnelles (ex: employés, sous-traitants).</li>
+                        </ul>
+                        <strong>Exemples de données personnelles :</strong>
+                        <ul class="plain">
+                            <li>Nom, prénom, adresse email.</li>
+                            <li>Adresse postale, numéro de téléphone.</li>
+                            <li>Données biométriques (empreintes digitales, reconnaissance faciale).</li>
+                            <li>Données de santé, données financières.</li>
+                            <li>Adresse IP, cookies, historique de navigation.</li>
+                        </ul>
+                    </p>
+                </div>
+
+                <h3>5.2. Principes clés du RGPD</h3>
+                <p>
+                    Le RGPD repose sur <strong>7 principes fondamentaux</strong> :
+                </p>
+                <ol class="plain">
+                    <li><strong>Licéité, loyauté et transparence</strong> :
+                        <ul class="plain">
+                            <li>Les données doivent être traitées de manière <strong>légale</strong>, <strong>équitable</strong> et <strong>transparente</strong>.</li>
+                            <li>L’utilisateur doit être informé de l’utilisation de ses données.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Finalité</strong> :
+                        <ul class="plain">
+                            <li>Les données doivent être collectées pour des <strong>objectifs précis</strong>.</li>
+                            <li>Elles ne peuvent pas être utilisées pour d’autres finalités sans le consentement de l’utilisateur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Minimisation des données</strong> :
+                        <ul class="plain">
+                            <li>Seules les données <strong>strictement nécessaires</strong> doivent être collectées.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Exactitude</strong> :
+                        <ul class="plain">
+                            <li>Les données doivent être <strong>mises à jour</strong> et <strong>exactes</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Limitation de la conservation</strong> :
+                        <ul class="plain">
+                            <li>Les données ne doivent pas être conservées <strong>plus longtemps que nécessaire</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Intégrité et confidentialité</strong> :
+                        <ul class="plain">
+                            <li>Les données doivent être <strong>protégées</strong> contre les accès non autorisés (chiffrement, MFA, etc.).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Responsabilité</strong> :
+                        <ul class="plain">
+                            <li>Les entreprises doivent pouvoir <strong>prouver</strong> qu’elles respectent le RGPD.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>5.3. Droits des utilisateurs selon le RGPD</h3>
+                <p>
+                    Le RGPD accorde aux utilisateurs <strong>8 droits fondamentaux</strong> :
+                </p>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Droit</th>
+                                <th>Description</th>
+                                <th>Exemple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Droit à l'information</strong></td>
+                                <td>Être informé de la collecte et de l'utilisation de ses données.</td>
+                                <td>Un site web doit afficher une politique de confidentialité.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Droit d'accès</strong></td>
+                                <td>Demander quelles données personnelles sont stockées sur soi.</td>
+                                <td>Un client peut demander à une entreprise de lui fournir ses données.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Droit de rectification</strong></td>
+                                <td>Corriger des données personnelles inexactes.</td>
+                                <td>Un utilisateur peut demander la correction de son adresse email.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Droit à l'oubli</strong></td>
+                                <td>Demander la suppression de ses données personnelles.</td>
+                                <td>Un utilisateur peut demander à Google de supprimer ses données.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Droit à la limitation du traitement</strong></td>
+                                <td>Demander la suspension du traitement de ses données.</td>
+                                <td>Un client peut demander à une entreprise de ne plus utiliser ses données.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Droit à la portabilité</strong></td>
+                                <td>Récupérer ses données dans un format lisible et les transférer à un autre service.</td>
+                                <td>Un utilisateur peut exporter ses données depuis Facebook et les importer sur un autre réseau social.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Droit d'opposition</strong></td>
+                                <td>S'opposer au traitement de ses données pour des raisons légitimes.</td>
+                                <td>Un utilisateur peut refuser de recevoir des emails marketing.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Droit de ne pas être soumis à une décision automatisée</strong></td>
+                                <td>Ne pas être soumis à une décision basée uniquement sur un traitement automatisé (ex: algorithme).</td>
+                                <td>Un client peut demander une révision humaine d'un refus de crédit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Synthèse et bonnes pratiques -->
+        <section id="synthese">
+            <div class="sec-head">
+                <span class="sec-num">07</span>
+                <h2>Synthèse : Bonnes pratiques en cybersécurité</h2>
+                <span class="sec-tag">Récapitulatif</span>
+            </div>
+            <div class="col">
+                <p>
+                    Voici une <strong>synthèse des bonnes pratiques</strong> à adopter pour une cybersécurité optimale :
+                </p>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Domaine</th>
+                                <th>Bonnes pratiques</th>
+                                <th>Exemple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Antivirus</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Installer un antivirus <strong>à jour</strong>.</li>
+                                        <li>Configurer des <strong>analyses automatiques</strong>.</li>
+                                        <li>Mettre en quarantaine les fichiers infectés.</li>
+                                    </ul>
+                                </td>
+                                <td>Windows Defender, Bitdefender, ClamAV.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mots de passe</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Utiliser des mots de passe <strong>robustes et uniques</strong>.</li>
+                                        <li>Utiliser un <strong>gestionnaire de mots de passe</strong>.</li>
+                                        <li>Activer la <strong>2FA</strong>.</li>
+                                    </ul>
+                                </td>
+                                <td>Bitwarden, KeePass, 1Password.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Navigation sur le web</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Vérifier le protocole <strong>HTTPS</strong>.</li>
+                                        <li>Éviter les sites non sécurisés.</li>
+                                        <li>Utiliser un <strong>bloqueur de publicités</strong>.</li>
+                                    </ul>
+                                </td>
+                                <td>uBlock Origin, HTTPS Everywhere.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phishing</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Vérifier l'<strong>expéditeur</strong> de l'email.</li>
+                                        <li>Ne pas cliquer sur les <strong>liens suspects</strong>.</li>
+                                        <li>Ne pas ouvrir les <strong>pièces jointes inattendues</strong>.</li>
+                                    </ul>
+                                </td>
+                                <td>Signaler les emails suspects à la CNIL.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mises à jour</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Mettre à jour <strong>régulièrement</strong> son système et ses logiciels.</li>
+                                        <li>Activer les <strong>mises à jour automatiques</strong>.</li>
+                                    </ul>
+                                </td>
+                                <td>Windows Update, <code>sudo apt update</code> (Linux).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2FA</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Activer la 2FA sur <strong>tous vos comptes</strong>.</li>
+                                        <li>Utiliser une <strong>application d'authentification</strong>.</li>
+                                        <li>Conserver ses <strong>codes de récupération</strong>.</li>
+                                    </ul>
+                                </td>
+                                <td>Google Authenticator, Authy, YubiKey.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RGPD</strong></td>
+                                <td>
+                                    <ul class="plain">
+                                        <li>Respecter les <strong>droits des utilisateurs</strong>.</li>
+                                        <li>Mettre en place des <strong>mesures de sécurité</strong>.</li>
+                                        <li>Signaler les <strong>violations de données</strong>.</li>
+                                    </ul>
+                                </td>
+                                <td>Désigner un DPO, tenir un registre des traitements.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Ressources supplémentaires -->
+        <section id="ressources">
+            <div class="sec-head">
+                <span class="sec-num">08</span>
+                <h2>Ressources supplémentaires</h2>
+                <span class="sec-tag">Pour aller plus loin</span>
+            </div>
+            <div class="col">
+                <div class="callout">
+                    <span class="lbl">📚 Sites web</span>
+                    <p>
+                        <ul class="plain">
+                            <li><a href="https://www.cnil.fr/" target="_blank">Site officiel de la CNIL</a></li>
+                            <li><a href="https://www.ssi.gouv.fr/" target="_blank">ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information)</a></li>
+                            <li><a href="https://www.cybermalveillance.gouv.fr/" target="_blank">Cybermalveillance.gouv.fr</a></li>
+                            <li><a href="https://ec.europa.eu/info/law/law-topic/data-protection/reform_fr" target="_blank">RGPD (Union Européenne)</a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Cours — Cybersécurité : Antivirus, bonnes pratiques, CNIL, 2FA et RGPD · Seconde Bac Pro CIEL · Lycée Charlie Chaplin · T. Signoret</p>
+        </footer>
+    </div>
+</body>
+</html>

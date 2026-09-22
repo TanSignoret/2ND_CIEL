@@ -9,8 +9,8 @@
 <body>
     <div class="wrap">
         <header class="hero">
-            <div class="eyebrow">Séance 2 — Découverte de l'interface utilisateur et du clavier</div>
-            <h1>TP — Utiliser un ordinateur dans le contexte profesionnel</h1>
+            <div class="eyebrow">Séance — utilisation avancée en bureautique</div>
+            <h1>TP — Utiliser la bureautique dans le contexte profesionnel</h1>
             <p class="lede">Dans ce TP, vous allez maîtriser l'interface graphique (dossiers, fichiers, archives) et apprendre à utiliser un ordinateur uniquement avec le clavier, comme le feraient des professionnels dans un environnement sans souris.</p>
             <div class="chips">
                 <span class="chip">Seconde Bac Pro CIEL</span>
@@ -32,7 +32,6 @@
                 </p>
                 <ul class="plain">
                     <li><strong>Gérer des fichiers et dossiers</strong> : Créer, organiser, compresser et sécuriser des documents.</li>
-                    <li><strong>Travailler sans souris</strong> : Utiliser des raccourcis clavier pour naviguer, créer des fichiers ou envoyer des emails (ex: sur des serveurs sans interface graphique).</li>
                     <li><strong>Respecter les autorisations</strong> : Comprendre les droits d’accès aux fichiers (lecture, écriture, exécution).</li>
                     <li><strong>Optimiser leur productivité</strong> : Utiliser des outils comme les métadonnées ou les archives pour gagner du temps.</li>
                 </ul>
@@ -40,11 +39,11 @@
                     Aujourd’hui, vous allez :
                 </p>
                 <ul class="plain">
-                    <li>Maîtriser l’<strong>interface graphique</strong> (dossiers, fichiers, archives).</li>
+                    <li>Gérer la <b>compression</b> de fichiers, de dossiers et le <b>partage</b> de documents.</li>
                     <li>Découvrir les <strong>métadonnées</strong> et les <strong>autorisations</strong> des fichiers.</li>
-                    <li>Utiliser un ordinateur <strong>uniquement avec le clavier</strong> (recherche sur Internet, création de fichiers, envoi d’emails, etc.).</li>
                     <li>Participer à un <strong>concours de frappe</strong> pour améliorer votre vitesse de saisie.</li>
                 </ul>
+                <p>Télécharger le <a href="../Ressources/TP_Archive.odt">contre rendu</a> du TP (a déposer sur pronote en fin de séance).</p>
             </div>
         </section>
 
@@ -52,20 +51,8 @@
         <section id="tp1">
             <div class="sec-head">
                 <span class="sec-num">02</span>
-                <h2>TP 1 — Maîtriser l'interface graphique</h2>
+                <h2>Exo 1 — Compression</h2>
                 <span class="sec-tag">6 étapes</span>
-            </div>
-            <div class="col">
-                <p>
-                    Dans cette première partie, vous allez apprendre à :
-                </p>
-                <ul class="plain">
-                    <li>Créer et organiser des <strong>dossiers et fichiers</strong>.</li>
-                    <li>Comprendre les <strong>types de fichiers</strong> et leurs extensions.</li>
-                    <li>Découvrir les <strong>autorisations</strong> (lecture, écriture, exécution).</li>
-                    <li>Explorer les <strong>métadonnées</strong> des fichiers.</li>
-                    <li>Compresser et décompresser des <strong>archives</strong>.</li>
-                </ul>
             </div>
 
             <ol class="steps">
@@ -77,92 +64,53 @@
                         <label class="tick"><input type="checkbox" data-step="i1"><span>Fait</span></label>
                     </div>
                     <div class="step-body">
-                        <p>Créez la structure de dossiers suivante sur votre bureau ou dans votre dossier personnel :</p>
+                        <p>Créez la structure de dossiers et de fichiers suivante :</p>
                         <pre class="tree">TP_Interface/
 ├── Documents/
-│   ├── Cours/
-│   │   ├── CIEL/
-│   │   └── CultureG/
-│   └── TP/
-│       ├── TP1_Interface/
-│       └── TP2_Clavier/
+│   ├── TP_CIEL_2026/
+|   |   ├── notes.txt
+│   ├── Contre-Rendus/
+│   │   ├── TP_Bureautique_Dupont_Jean.doc
+│   │   ├── TP_Bureautique_Dupont_Jean.pdf
 ├── Images/
 │   ├── Logos/
 │   └── Captures/
 └── Archives/</pre>
-                        <ol class="plain">
-                            <li>Dans votre contre rendu de TP, expliquer ce qu'est un <strong>Explorateur de fichiers</strong>.</li>
-                            <li>Sur votre bureau, créez un dossier nommé <code>TP_Interface</code>.</li>
-                            <li>À l’intérieur, créez les sous-dossiers selon l’arborescence ci-dessus.</li>
-                            <li><i>Donner la définition d'une arboressance de fichier</i></li>
-                        </ol>
-                    </div>
-                </li>
 
-                <!-- Étape 2 : Créer des fichiers de différents types -->
-                <li class="step">
-                    <div class="step-num">2</div>
-                    <div class="step-head">
-                        <span class="step-title">Créer des fichiers de différents types</span>
-                        <label class="tick"><input type="checkbox" data-step="i2"><span>Fait</span></label>
-                    </div>
-                    <div class="step-body">
-                        <p>Créez les fichiers suivants dans les dossiers appropriés :</p>
-                        <table class="tw raccourcis-table">
-                            <thead>
-                                <tr>
-                                    <th>Type de fichier</th>
-                                    <th>Nom du fichier</th>
-                                    <th>Emplacement</th>
-                                    <th>Contenu</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Texte (.txt)</td>
-                                    <td><code>notes.txt</code></td>
-                                    <td><code>TP_Interface/Documents/Cours/CIEL/</code></td>
-                                    <td>Ajoutez le texte : <code>Ceci est un fichier texte pour le TP Interface.</code></td>
-                                </tr>
-                                <tr>
-                                    <td>PDF (.pdf)</td>
-                                    <td><code>cours_CIEL.pdf</code></td>
-                                    <td><code>TP_Interface/Documents/Cours/CIEL/</code></td>
-                                    <td>Exportez un document texte en PDF (ex: depuis LibreOffice).</td>
-                                </tr>
-                                <tr>
-                                    <td>Image (.png)</td>
-                                    <td><code>logo_lycee.png</code></td>
-                                    <td><code>TP_Interface/Images/Logos/</code></td>
-                                    <td>Téléchargez le logo du lycée depuis son site web.</td>
-                                </tr>
-                                <tr>
-                                    <td>Archive (.zip)</td>
-                                    <td><code>archive_documents.zip</code></td>
-                                    <td><code>TP_Interface/Archives/</code></td>
-                                    <td>Compressez le dossier <code>Documents</code> (voir étape 5).</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="question">
+                            <span class="lbl">Question 1</span>
+                            <p><strong>Expliquez ce qu'est un explorateur de fichier.</strong></p>
+                        </div>
+
+                        <div class="question">
+                            <span class="lbl">Question 2</span>
+                            <p><strong>Expliquez ce qu'est une arboressance de fichier.</strong></p>
+                        </div>
                     </div>
                 </li>
 
                 <!-- Étape 3 : Découvrir les types de fichiers et leurs extensions -->
                 <li class="step">
-                    <div class="step-num">3</div>
+                    <div class="step-num">2</div>
                     <div class="step-head">
                         <span class="step-title">Découvrir les types de fichiers et leurs extensions</span>
                         <label class="tick"><input type="checkbox" data-step="i3"><span>Fait</span></label>
                     </div>
                     <div class="step-body">
                         <p>Les fichiers ont des <strong>extensions</strong> qui indiquent leur type. Voici une liste des extensions courantes :</p>
-                        <p>Dans votre contre rendu de TP, créer un tableau et donner pour chaque extention de fichier, le type de fichier et comment le créer :</p>
                         <ul class="plain">
                             <li><code>.txt</code></li>
                             <li><code>.pdf</code></li>
+                            <li><code>.pptx</code></li>
+                            <li><code>.odt</code></li>
                             <li><code>.png</code></li>
                             <li><code>.zip</code></li>
                         </ul>
+
+                        <div class="question">
+                            <span class="lbl">Question 3</span>
+                            <p><strong>Expliquez ce que signifie chaque extension.</strong></p>
+                        </div>
                     </div>
                 </li>
 
@@ -201,11 +149,20 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <p><strong>Exercice :</strong> Vérifiez les autorisations des fichiers que vous avez créés :</p>
-                        <ol class="plain">
-                            <li>Faites un clic droit sur votre contre rendu de tp -> <strong>Propriétés</strong> → Onglet <strong>Sécurité</strong>.</li>
-                            <li>Quels sont les droits pour votre contre rendu de tp ?</li>
-                        </ol>
+
+                        <div class="callout">
+                            <span class="lbl">Aide</span>
+                            <p><strong>Comment acceder aux droits d'un fichier ou d'un dossier ?</strong></p>
+                            <p>Selectionner le fichier psui <code>Propriété</code> -> <code>Sécurité</code>.</p>
+                            <p>Pour modifier ces droits, selectionner ensuite <code>Modifier</code>.</p>
+                        </div>
+                        
+                        <div class="question">
+                            <span class="lbl">Question 4</span>
+                            <p><strong>Quels sont les droits de contre rendu de tp.</strong> <i>Insérer une capture d'écran dans votre contre rendu.</i></p>
+                            <p>Modifiez les droits pour que l'utilisateur <code>1CIEL1</code> ne puisse pas y accéder en lecture.</p>
+                            <p><strong>Comment vérifier que cela est bien le cas ?.</strong> <i>Insérer une capture d'écran dans votre contre rendu.</i></p>
+                        </div>
                     </div>
                 </li>
 
@@ -222,7 +179,11 @@
                             <li>Faites un clic droit sur <code>notes.txt</code> → <strong>Propriétés</strong>.</li>
                             <li>Observez les onglets <strong>Général</strong> et <strong>Détails</strong>.</li>
                         </ol>
-                        <p><i>A quoi servent les méta données ?</i></p>
+
+                        <div class="question">
+                            <span class="lbl">Question 5</span>
+                            <p><strong>Expliquez a quoi servent les méta données.</strong></p>
+                        </div>
                     </div>
                 </li>
 
@@ -263,7 +224,63 @@
                                 </ul>
                             </li>
                         </ol>
-                        <p>A quoi sert la compression de dossier et de fichier ?</p>
+
+                        <div class="question">
+                            <span class="lbl">Question 5</span>
+                            <p><strong>A quoi sert la compression de dossier et de fichier ?</strong></p>
+                        </div>
+
+                        <p></p>
+                    </div>
+                </li>
+
+                <!-- Étape 7 : Compresser et décompresser des archives -->
+                <li class="step">
+                    <div class="step-num">7</div>
+                    <div class="step-head">
+                        <span class="step-title">Compresser et décompresser une archive - 2</span>
+                        <label class="tick"><input type="checkbox" data-step="i6"><span>Fait</span></label>
+                    </div>
+                    <div class="step-body">
+                        <p>Compressez votre TP dans le fichier <code>TP_Archive_[nom].zip</code>.</p>
+                        <p>Partagez votre archive avec un de vos camarade, par un email professionnel.</p>
+                        <p><i>N'oubliez pas de mettre votre enseignant en copie.</i></p>
+                        <p>Modifiez le contenu de son TP en ajoutant une question 6 : <code>J'ai modifié ton TP !</code></p>
+                        <p>Renvoyer le contre-rendu compréssé à votre camarade.</p>
+
+                        <div class="question">
+                            <span class="lbl">Question 7</span>
+                            <p><strong>Qui est le propriétaire de l'archive au retour (après avoir modifier le fichier) ?</strong></p>
+                        </div>
+                        <div class="question">
+                            <span class="lbl">Question 8</span>
+                            <p><strong>Qui est le propriétaire du document au retour (après avoir modifier le fichier) ?</strong></p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Étape 8 : Déposer son CR de TP -->
+                <li class="step">
+                    <div class="step-num">7</div>
+                    <div class="step-head">
+                        <span class="step-title">Exporter au format pdf</span>
+                        <label class="tick"><input type="checkbox" data-step="i6"><span>Fait</span></label>
+                    </div>
+
+                    <div class="step-body">
+                        <p>Exportez votre contre-rendu au format <code>PDF</code> !</p>
+                        <p>Déposez le dans sur Pronote.</p>
+
+                        <div class="callout">
+                            <span class="lbl">Aide</span>
+                            <p><strong>Comment exporter au format pdf ?</strong></p>
+                            <ul>
+                                <li>Cliquez sur l'onglet <code>Fichier</code> en haut à gauche</li>
+                                <li>Sélectionnez <code>Enregistrer</code> sous ou <code>Exporter</code></li>
+                                <li>Choisissez PDF dans le menu déroulant du format de fichier.</li>
+                                <li>Puis cliquez sur <code>Enregister</code></li>
+                            </ul>
+                        </div>
                     </div>
                 </li>
             </ol>
