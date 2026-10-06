@@ -658,6 +658,198 @@ footer {
     margin-bottom: 0.35rem;
 }
 
+.dicp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 1.25rem 0
+}
+
+.dicp-grid .card {
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    border: 1px solid
+}
+
+.dicp-grid .card .letter {
+    display: block;
+    font-size: 2.2em;
+    font-weight: bold;
+    line-height: 1.1
+}
+
+.dicp-grid .card b.name {
+    font-size: 1.15em
+}
+
+.dicp-grid .card small {
+    display: block;
+    margin-top: 4px;
+    font-size: .95em;
+    opacity: .85
+}
+
+.dicp-grid .d {
+    background: rgba(37, 99, 235, .10);
+    border-color: rgba(37, 99, 235, .45);
+    color: #1e3a8a
+}
+
+.dicp-grid .i {
+    background: rgba(22, 163, 74, .10);
+    border-color: rgba(22, 163, 74, .45);
+    color: #14532d
+}
+
+.dicp-grid .c {
+    background: rgba(217, 119, 6, .10);
+    border-color: rgba(217, 119, 6, .45);
+    color: #78350f
+}
+
+.dicp-grid .p {
+    background: rgba(220, 38, 38, .10);
+    border-color: rgba(220, 38, 38, .45);
+    color: #7f1d1d
+}
+
+.flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+    margin: 1.25rem 0
+}
+
+.flow .box {
+    flex: 1 1 170px;
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid;
+    font-size: .98em;
+    text-align: center
+}
+
+.flow .box .ico {
+    display: block;
+    font-size: 1.7em;
+    margin-bottom: 4px
+}
+
+.flow .box b {
+    font-size: 1.15em
+}
+
+.flow .box small {
+    display: block;
+    margin-top: 4px;
+    font-size: .95em;
+    opacity: .85
+}
+
+.flow .arr {
+    align-self: center;
+    font-size: 1.6em;
+    color: #64748b;
+    font-weight: bold
+}
+
+.flow .b1 {
+    background: rgba(37, 99, 235, .10);
+    border-color: rgba(37, 99, 235, .45);
+    color: #1e3a8a
+}
+
+.flow .b2 {
+    background: rgba(22, 163, 74, .10);
+    border-color: rgba(22, 163, 74, .45);
+    color: #14532d
+}
+
+.flow .b3 {
+    background: rgba(217, 119, 6, .10);
+    border-color: rgba(217, 119, 6, .45);
+    color: #78350f
+}
+
+@media (max-width:560px) {
+    .flow {
+        flex-direction: column
+    }
+
+    .flow .arr {
+        align-self: center;
+        transform: rotate(90deg)
+    }
+
+    .flow .box {
+        flex: auto
+    }
+    
+    .dicp-grid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .dicp-grid .card {
+        padding: 10px
+    }
+
+    .dicp-grid .card .letter {
+        font-size: 1.8em
+    }
+
+    .dicp-grid .card b.name {
+        font-size: 1.05em
+    }
+}
+
+.si-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 1.25rem 0
+}
+
+.si-grid .card {
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: rgba(22, 163, 74, .10);
+    border: 1px solid rgba(22, 163, 74, .35);
+    text-align: center
+}
+
+.si-grid .card .ico {
+    font-size: 1.7em;
+    display: block;
+    margin-bottom: 4px
+}
+
+.si-grid .card b {
+    font-size: 1.15em
+}
+
+.si-grid .card small {
+    display: block;
+    margin-top: 4px;
+    font-size: .95em;
+    opacity: .85
+}
+
+@media (max-width:560px) {
+    .si-grid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .si-grid .card {
+        padding: 10px
+    }
+
+    .si-grid .card b {
+        font-size: 1.05em
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .display-cards {

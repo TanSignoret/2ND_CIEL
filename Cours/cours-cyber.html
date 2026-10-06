@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours — Sécurité et hygiène numérique</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Module — Sécurité informatique</div>
+            <h1>Sécurité et hygiène numérique</h1>
+            <p class="lede">Pourquoi sécuriser un système d'information ? Quelles attaques connaître ? Et quelles bonnes
+                pratiques adopter au quotidien ?</p>
+            <div class="chips">
+                <span class="chip">Seconde Bac Pro CIEL</span>
+                <span class="chip">Durée : 45 min</span>
+                <span class="chip">Théorie et bonnes pratiques</span>
+            </div>
+        </header>
+
+        <!-- Contexte professionnel -->
+        <section id="contexte">
+            <div class="sec-head">
+                <span class="sec-num">01</span>
+                <h2>Contexte professionnel</h2>
+                <span class="sec-tag">Introduction</span>
+            </div>
+            <div class="col">
+                <h3>1.1. Qu'est-ce qu'un système d'information (SI) ?</h3>
+                <p>
+                    Un <strong>système d'information</strong> est l'ensemble des moyens qui permettent à une
+                    organisation de <strong>collecter</strong>, <strong>stocker</strong>, <strong>traiter</strong>
+                    et <strong>diffuser</strong> l'information. Il regroupe :
+                </p>
+                <div class="si-grid" role="img" aria-label="Composition d'un système d'information">
+                    <div class="card"><span class="ico">🖥️</span><b>Matériels</b><small>serveurs, PC, réseau</small></div>
+                    <div class="card"><span class="ico">💿</span><b>Logiciels</b><small>OS, apps, messagerie</small></div>
+                    <div class="card"><span class="ico">🗄️</span><b>Données</b><small>fichiers, mails, BDD</small></div>
+                    <div class="card"><span class="ico">👥</span><b>Personnes</b><small>utilisateurs, procédures</small></div>
+                </div>
+                <p class="note">Exemple au lycée : l'ENT (site, messagerie, fichiers) est le système d'information du lycée.</p>
+
+                <h3>1.2. Pourquoi sécuriser un SI ?</h3>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Enjeu</th>
+                                <th>Si le S.I. est attaqué…</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>💰 Financier</strong></td>
+                                <td>Vol d'argent, rançon (rançongiciel), activité à l'arrêt.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>⚖️ Juridique</strong></td>
+                                <td>Non-respect du RGPD, amendes, responsabilité envers les clients.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>📣 Réputationnel</strong></td>
+                                <td>Perte de confiance, image dégradée, fuite médiatisée.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>⚙️ Organisationnel</strong></td>
+                                <td>Travail bloqué, travail perdu, délais non tenus.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>1.3. Pourquoi attaquer un SI ?</h3>
+                <ul class="plain">
+                    <li><strong>Utiliser les ressources</strong> : miner des cryptomonnaies, relayer des attaques.</li>
+                    <li><strong>Gain monétaire</strong> : vol d'argent, fraude.</li>
+                    <li><strong>Chantage</strong> : rançongiciel, puis demande de rançon.</li>
+                    <li><strong>Vente de données</strong> : revendues sur le dark web.</li>
+                    <li><strong>Concurrence / sabotage</strong> : vol de secrets industriels.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DICP et attaques -->
+        <section id="dicp">
+            <div class="sec-head">
+                <span class="sec-num">02</span>
+                <h2>La sécurité : critères DICP et types d'attaques</h2>
+                <span class="sec-tag">Fondamentaux</span>
+            </div>
+            <div class="col">
+                <style>
+                </style>
+                <p>La sécurité d'un SI repose sur <strong>4 critères</strong> : <strong>DICP</strong>. Chaque attaque vise un critère
+                    précis.</p>
+
+                <div class="dicp-grid" role="img" aria-label="Les 4 critères DICP de la sécurité">
+                    <div class="card d"><span class="letter">D</span><b class="name">Disponibilité</b><small>accessible quand on en a
+                            besoin</small></div>
+                    <div class="card i"><span class="letter">I</span><b class="name">Intégrité</b><small>non modifié sans
+                            autorisation</small></div>
+                    <div class="card c"><span class="letter">C</span><b class="name">Confidentialité</b><small>accès aux autorisés
+                            seulement</small></div>
+                    <div class="card p"><span class="letter">P</span><b class="name">Preuve</b><small>tracer qui fait quoi,
+                            quand</small></div>
+                </div>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Critère</th>
+                                <th>Définition</th>
+                                <th>Exemple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>D — Disponibilité</strong></td>
+                                <td>Le SI doit être accessible quand on en a besoin.</td>
+                                <td>Un site de vente reste en ligne 24h/24.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>I — Intégrité</strong></td>
+                                <td>Les données ne doivent pas être modifiées sans autorisation.</td>
+                                <td>Une facture n'est pas modifiable par un pirate.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>C — Confidentialité</strong></td>
+                                <td>Seules les personnes autorisées accèdent aux données.</td>
+                                <td>Un dossier médical n'est vu que par le médecin.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>P — Preuve</strong></td>
+                                <td>On doit pouvoir tracer qui a fait quoi et quand.</td>
+                                <td>Les logs identifient l'auteur d'une action.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Les attaques et le critère visé</h3>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Attaque</th>
+                                <th>Principe</th>
+                                <th>Critère visé</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>DDoS</strong></td>
+                                <td>Le serveur est saturé de requêtes par des milliers de machines jusqu'à tomber.</td>
+                                <td class="pts">D</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phishing</strong></td>
+                                <td>Un faux mail ou faux site imite une entreprise de confiance pour voler tes
+                                    identifiants.</td>
+                                <td class="pts">C</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rançongiciel</strong></td>
+                                <td>Les données sont chiffrées par le pirate, qui réclame une rançon.</td>
+                                <td class="pts">I + D</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Man-in-the-middle</strong></td>
+                                <td>Le pirate s'intercale entre toi et le site (ex. Wi-Fi public) et modifie les
+                                    échanges.</td>
+                                <td class="pts">I + C</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vol / effacement de logs</strong></td>
+                                <td>Le pirate supprime ses traces pour ne pas être identifié.</td>
+                                <td class="pts">P</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Exercice : quel critère est en jeu ?</h3>
+                <p>Identifie le critère DICP visé par chaque situation :</p>
+                <div class="tw">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Le mot de passe et la 2FA empêchent un inconnu de lire ma boîte mail.</td>
+                                <td class="pts">C</td>
+                            </tr>
+                            <tr>
+                                <td>Le document partagé affiche l'historique des modifications.</td>
+                                <td class="pts">P</td>
+                            </tr>
+                            <tr>
+                                <td>Un disque de sauvegarde et un onduleur sont installés.</td>
+                                <td class="pts">D</td>
+                            </tr>
+                            <tr>
+                                <td>Un hash (somme de contrôle) accompagne le fichier pour vérifier qu'il n'a pas été
+                                    altéré.</td>
+                                <td class="pts">I</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="note">On corrige ensemble en fin de séance.</p>
+
+                <div class="callout">
+                    <span class="lbl">🎣 Repérer un phishing en 3 secondes</span>
+                    <p>Expéditeur suspect, objet alarmiste (« Ton compte sera suspendu ! »), fautes d'orthographe, lien
+                        qui ne pointe pas vers le site officiel, pièce jointe inattendue. <strong>Une entreprise
+                            légitime ne demande jamais ton mot de passe par mail.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hygiène numérique -->
+        <section id="hygiene">
+            <div class="sec-head">
+                <span class="sec-num">03</span>
+                <h2>L'hygiène numérique</h2>
+                <span class="sec-tag">Bonnes pratiques</span>
+            </div>
+            <div class="col">
+                <h3>3.1. Mots de passe, gestionnaire et 2FA</h3>
+                <p>
+                    Un mot de passe robuste est <strong>long (12 caractères minimum)</strong>, mélange majuscules,
+                    minuscules, chiffres et symboles,
+                    et surtout est <strong>unique</strong> pour chaque compte.
+                </p>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>❌ À éviter</th>
+                                <th>✅ À faire</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>123456</code></td>
+                                <td><code>T3mP@ssW0rd!2026</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>azerty</code> / <code>nom+prénom</code></td>
+                                <td>Phrase de passe : <code>3Chats-Noirs!auSoleil</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="plain">
+                    <li>Un <strong>gestionnaire de mots de passe</strong> (ex. <strong>Bitwarden</strong>) génère et
+                        stocke tes mots de passe, chiffrés : tu n'as plus qu'<strong>un seul mot de passe
+                            maître</strong> à retenir.</li>
+                    <li>La <strong>2FA</strong> ajoute une seconde preuve d'identité (code, application, clé USB). Même
+                        si ton mot de passe est volé, le compte reste protégé.</li>
+                </ul>
+                
+                <div class="flow" role="img" aria-label="Fonctionnement de l'authentification à deux facteurs">
+                    <div class="box b1"><span class="ico">🔑</span><b>1. Mot de passe</b><small>ce que tu sais</small></div>
+                    <span class="arr">→</span>
+                    <div class="box b2"><span class="ico">📱</span><b>2. Second facteur</b><small>code, application, clé USB</small>
+                    </div>
+                    <span class="arr">→</span>
+                    <div class="box b3"><span class="ico">✔</span><b>Accès autorisé</b><small>compte protégé</small></div>
+                </div>
+                <p class="note">Tes identifiants ont-ils fuité ? Teste sur <a href="https://haveibeenpwned.com"
+                        target="_blank">haveibeenpwned.com</a></p>
+
+                <h3>3.2. Mises à jour et navigation sécurisée</h3>
+                <p>Un système ou un navigateur <strong>non à jour</strong> est une porte ouverte : chaque mise à jour
+                    corrige des failles de sécurité.</p>
+                <ul class="plain">
+                    <li>Mets à jour <strong>régulièrement</strong> ton système, tes logiciels et ton navigateur
+                        (automatique si possible).</li>
+                    <li>Vérifie le <strong>HTTPS</strong> 🔒 dans la barre d'adresse avant de saisir des informations
+                        sensibles.</li>
+                    <li>Sur un <strong>Wi-Fi public</strong> (café, aéroport), utilise un <strong>VPN</strong> pour
+                        chiffrer ta connexion.</li>
+                    <li>Ne télécharge pas de fichiers suspects (<code>.exe</code>, <code>.bat</code>, <code>.js</code>).
+                    </li>
+                </ul>
+
+                <h3>3.3. L'antivirus, l'essentiel</h3>
+                <p>
+                    Un <strong>antivirus</strong> est un logiciel qui <strong>détecte</strong>, <strong>bloque</strong>
+                    et <strong>met en quarantaine</strong>
+                    les logiciels malveillants. Il doit être <strong>toujours à jour</strong> (sa base de signatures
+                    évolue chaque jour).
+                </p>
+                <p class="note">Exemples : Windows Defender (intégré à Windows), Bitdefender, ClamAV (open-source,
+                    serveurs Linux).</p>
+            </div>
+        </section>
+
+        <!-- Cadre légal -->
+        <section id="legal">
+            <div class="sec-head">
+                <span class="sec-num">04</span>
+                <h2>Le cadre légal : CNIL, ANSSI et RGPD</h2>
+                <span class="sec-tag">Découverte</span>
+            </div>
+            <div class="col">
+                <h3>4.1. Les institutions françaises</h3>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Institution</th>
+                                <th>Rôle en une phrase</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>CNIL</strong></td>
+                                <td>Protège les <strong>données personnelles</strong> et veille au respect du RGPD en
+                                    France.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ANSSI</strong></td>
+                                <td>Agence en charge de la <strong>sécurité des systèmes d'information</strong> de
+                                    l'État.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>4.2. Le RGPD : l'essentiel</h3>
+                <p>
+                    Le <strong>RGPD</strong> (loi européenne, 2018) protège les données personnelles des citoyens de
+                    l'UE.
+                    Toute organisation qui traite des données doit :
+                </p>
+                <ul class="plain">
+                    <li>Ne collecter que le <strong>strict nécessaire</strong> et <strong>informer</strong> les
+                        utilisateurs ;</li>
+                    <li><strong>Sécuriser</strong> les données et <strong>signaler toute fuite à la CNIL sous 72
+                            h</strong>.</li>
+                </ul>
+                <p>
+                    Et chaque utilisateur dispose de <strong>droits</strong> : être informé, accéder à ses données, les
+                    faire rectifier ou
+                    <strong>supprimer</strong> (droit à l'oubli), les récupérer (portabilité), s'y opposer.
+                </p>
+                <p class="note">En cas de manquement : jusqu'à <strong>4 % du chiffre d'affaires mondial</strong> ou 20
+                    M€ d'amende. Pour aller plus loin : <a href="https://www.cnil.fr/" target="_blank">cnil.fr</a></p>
+            </div>
+        </section>
+
+        <!-- Synthèse -->
+        <section id="synthese">
+            <div class="sec-head">
+                <span class="sec-num">06</span>
+                <h2>Synthèse</h2>
+                <span class="sec-tag">À retenir</span>
+            </div>
+            <div class="col">
+                <div class="tw">
+                    <table>
+                        <thead><tr><th>Domaine</th><th>Bonnes pratiques</th><th>Exemples</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Mots de passe</strong></td><td>Robustes, uniques, gestionnaire.</td><td>Bitwarden, KeePass, 1Password.</td></tr>
+                            <tr><td><strong>2FA</strong></td><td>Activée partout, codes de récupération conservés.</td><td>Application d'authentification, YubiKey.</td></tr>
+                            <tr><td><strong>Phishing</strong></td><td>Vérifier l'expéditeur, ne pas cliquer sur les liens suspects, ne pas ouvrir les pièces jointes inattendues.</td><td>Signaler les mails suspects.</td></tr>
+                            <tr><td><strong>Navigation</strong></td><td>HTTPS, bloqueur de publicités, VPN sur Wi-Fi public.</td><td>uBlock Origin.</td></tr>
+                            <tr><td><strong>Mises à jour</strong></td><td>Régulières, automatiques si possible.</td><td>Windows Update, <code>sudo apt upgrade</code>.</td></tr>
+                            <tr><td><strong>Antivirus</strong></td><td>Installé, à jour, analyses automatiques.</td><td>Windows Defender, Bitdefender, ClamAV.</td></tr>
+                            <tr><td><strong>Cadre légal</strong></td><td>Respecter le RGPD, signaler une fuite sous 72 h.</td><td>CNIL, ANSSI.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="callout deliver">
+                    <span class="lbl">À retenir</span>
+                    <p>Sécuriser un SI = protéger la <strong>Disponibilité</strong>, l'<strong>Intégrité</strong>, la <strong>Confidentialité</strong> et la <strong>Preuve</strong> (DICP), avec une bonne hygiène numérique : mots de passe robustes, 2FA, mises à jour, antivirus, vigilance face au phishing… et le respect du RGPD.</p>
+                </div>
+                <p class="note">Pour aller plus loin : <a href="https://www.cnil.fr/" target="_blank">cnil.fr</a> · <a href="https://www.ssi.gouv.fr/" target="_blank">ANSSI</a> · <a href="https://www.cybermalveillance.gouv.fr/" target="_blank">cybermalveillance.gouv.fr</a></p>
+            </div>
+        </section>
+
+        <!-- Synthèse -->
+        <section id="synthese">
+            <div class="sec-head">
+                <span class="sec-num">06</span>
+                <h2>Synthèse</h2>
+                <span class="sec-tag">À retenir</span>
+            </div>
+            <div class="col">
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Domaine</th>
+                                <th>Bonnes pratiques</th>
+                                <th>Exemples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mots de passe</strong></td>
+                                <td>Robustes, uniques, gestionnaire.</td>
+                                <td>Bitwarden, KeePass, 1Password.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2FA</strong></td>
+                                <td>Activée partout, codes de récupération conservés.</td>
+                                <td>Application d'authentification, YubiKey.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phishing</strong></td>
+                                <td>Vérifier l'expéditeur, ne pas cliquer sur les liens suspects, ne pas ouvrir les pièces
+                                    jointes inattendues.</td>
+                                <td>Signaler les mails suspects.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Navigation</strong></td>
+                                <td>HTTPS, bloqueur de publicités, VPN sur Wi-Fi public.</td>
+                                <td>uBlock Origin.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mises à jour</strong></td>
+                                <td>Régulières, automatiques si possible.</td>
+                                <td>Windows Update, <code>sudo apt upgrade</code>.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Antivirus</strong></td>
+                                <td>Installé, à jour, analyses automatiques.</td>
+                                <td>Windows Defender, Bitdefender, ClamAV.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cadre légal</strong></td>
+                                <td>Respecter le RGPD, signaler une fuite sous 72 h.</td>
+                                <td>CNIL, ANSSI.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="callout deliver">
+                    <span class="lbl">À retenir</span>
+                    <p>Sécuriser un SI = protéger la <strong>Disponibilité</strong>, l'<strong>Intégrité</strong>, la
+                        <strong>Confidentialité</strong> et la <strong>Preuve</strong> (DICP), avec une bonne hygiène numérique
+                        : mots de passe robustes, 2FA, mises à jour, antivirus, vigilance face au phishing… et le respect du
+                        RGPD.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+            <p>Cours et TP par <strong>T Signoret</strong></p>
+            <p>Mise à jour : septembre 2026</p>
+        </footer>
+    </div>
+</body>
+
+</html>
