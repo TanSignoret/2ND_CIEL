@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — Monter son premier PC</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">TP2 — Assemblage d'un PC</div>
+        <h1>Monter son premier PC</h1>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">Durée : 1h</span>
+            <span class="chip">Elève 1 : ____________________ ____________________</span>
+            <span class="chip">Elève 2 : ____________________ ____________________</span>
+        </div>
+    </header>
+
+    <div class="callout">
+        <span class="lbl">Consignes du TP</span>
+        <p>Ce TP est un TP <strong>noté</strong>. Cela signifie que votre <strong>implication</strong> dans le TP et la <strong>réalisation</strong> de ce dernier seront pris en compte dans la notation.</p>
+        <p>Par binôme, vous disposez de :
+            <ul>
+                <li>Une paillasse</li>
+                <li>Un ordinateur, pour faire des recherches</li>
+                <li>L'ensemble des composant permettant d'assembler un ordinateur</li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Objectifs -->
+    <section id="objectifs">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Objectifs</h2>
+            <span class="sec-tag">À retenir</span>
+        </div>
+        <p>À la fin de ce TP, vous serez capable de :</p>
+        <ul class="plain">
+            <li><strong>Identifier</strong> chaque composant et son connecteur sur la carte mère.</li>
+            <li><strong>Associer</strong> chaque composant au bon bus (SATA, PCIe, DIMM...).</li>
+            <li><strong>Assembler</strong> un PC fonctionnel en respectant l'ordre de montage.</li>
+            <li><strong>Tester</strong> un premier démarrage et interpréter le POST.</li>
+            <li><strong>Diagnostiquer</strong> une panne simple (composant mal enfiché, câble oublié).</li>
+        </ul><div class="callout">
+            <span class="lbl">🎯 Fil rouge du TP</span>
+            <p>Vous irez chercher différents composants sur une paillasse.</p>
+            <p>Votre mission : les identifier, trouver où chacun se connecte, assembler le PC, le faire démarrer et
+                diagnostiquer les anomalies.</p>
+        </div>
+    </section>
+
+    <!-- Sécurité -->
+    <section id="securite">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Consignes de sécurité</h2>
+            <span class="sec-tag">Important</span>
+        </div>
+        <div class="callout warn">
+            <span class="lbl">⚠️ Attention</span>
+            <p><strong>Avant de toucher un composant</strong> : toucher une partie <strong>métallique nue du
+                    boîtier</strong> (décharge électrostatique).</p>
+            <p><strong>À ne pas faire</strong> :</p>
+            <ul class="plain">
+                <li>Forcer sur un composant (si ça ne rentre pas, c'est le <strong>mauvais connecteur</strong> !).</li>
+                <li>Toucher les pattes dorées du processeur ou les contacts des barrettes RAM.</li>
+                <li>Brancher l'alimentation secteur avant <strong>validation par le professeur</strong>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Etape 1 : identification -->
+    <section id="etape1">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>Étape 1 — Identifier le matériel</h2>
+            <span class="sec-tag">20 min</span>
+        </div>
+        <p>Listez les éléments présent sur votre paillasse. Complétez le tableau :</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Composant (à nommer)</th>
+                    <th>Marque / modèle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="fill"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="fill"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="fill"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="fill"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="fill"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="fill"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <p><em>Matériel attendu : boîtier, alimentation, carte mère, processeur (+ ventirad), barrettes RAM, disque (HDD
+                ou SSD), câbles SATA.</em></p>
+
+        <div class="question">
+            <span class="lbl">Question 1</span>
+            <p>Quel est le facteur d'encombrement de votre carte mère (ATX, micro-ATX, ITX) ? Comment le savez-vous ?
+            </p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 2</span>
+            <p>Quel est le socket de votre carte mère ? Votre processeur est-il compatible ? Justifiez.</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <div class="question">
+            <span class="lbl">Question 3</span>
+            <p>Avant de visser quoi que ce soit : le <strong>jeu des correspondances</strong>. Pour chaque composant,
+                trouvez le connecteur correspondant sur la carte mère et complétez :</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Composant</th>
+                    <th>Connecteur / support sur la carte mère</th>
+                    <th>Type de bus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Processeur</td>
+                    <td class="fill"></td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Barrette RAM</td>
+                    <td class="fill"></td>
+                    <td>Bus mémoire (64 bits)</td>
+                </tr>
+                <tr>
+                    <td>Disque dur / SSD</td>
+                    <td class="fill"></td>
+                    <td>SATA (série)</td>
+                </tr>
+                <tr>
+                    <td>Carte graphique</td>
+                    <td class="fill"></td>
+                    <td>PCIe x16</td>
+                </tr>
+                <tr>
+                    <td>Alimentation (carte mère)</td>
+                    <td class="fill"></td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Alimentation (disque)</td>
+                    <td class="fill"></td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Façade du boîtier (Power, LED)</td>
+                    <td class="fill"></td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout">
+            <span class="lbl">💡 Indices pour se repérer</span>
+            <ul class="plain">
+                <li>Les slots <strong>DIMM</strong> sont reconnaissables à leurs <strong>clips latéraux</strong> — et à
+                    l'<strong>encoche</strong> qui doit correspondre à celle de la barrette (une DDR3 ne rentre pas dans
+                    un slot DDR4 !).</li>
+                <li>Les connecteurs <strong>SATA</strong> sont petits, en forme de <strong>L</strong>.</li>
+                <li>Le slot <strong>PCIe x16</strong> est le <strong>plus long</strong> des slots d'extension.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Etape 3 : assemblage -->
+    <section id="etape3">
+        <div class="sec-head">
+            <span class="sec-num">05</span>
+            <h2>Étape 3 — Assemblage</h2>
+            <span class="sec-tag">40 min</span>
+        </div>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Préparer le boîtier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Ouvrir le panneau latéral, dévisser les entretoises si nécessaire.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Installer le processeur</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <ul class="plain">
+                        <li>Lever le levier du socket (<strong>ZIF</strong> : Zero Insertion Force).</li>
+                        <li>Repérer le <strong>triangle d'alignement</strong> sur le coin du CPU et celui du socket.
+                        </li>
+                        <li>Poser <strong>sans forcer</strong>, rabattre le levier.</li>
+                    </ul>
+                    <p><em>⚠️ Ne pas toucher les pattes dorées.</em></p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Installer le ventirad</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    Fixer le ventirad, brancher son ventilateur sur le connecteur <strong>CPU_FAN</strong> de la
+                            carte mère.
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">4</span>
+                <div class="step-head">
+                    <span class="step-title">Installer les barrettes RAM</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Ouvrir les clips, aligner l'encoche, <strong>enfoncer fermement</strong> jusqu'au clic des deux
+                        clips.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">5</span>
+                <div class="step-head">
+                    <span class="step-title">Installer la carte mère dans le boîtier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <ul class="plain">
+                        <li>Visser la carte mère aux entretoises (<strong>toutes les vis !</strong>).</li>
+                        <li>Brancher les fils de la façade : Power SW, Power LED, HDD LED, Reset SW (le brochage est
+                            sérigraphié près des pins).</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">6</span>
+                <div class="step-head">
+                    <span class="step-title">Installer l'alimentation</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <ul class="plain">
+                        <li>Visser l'alimentation au boîtier.</li>
+                        <li>Brancher le connecteur principal (<strong>24 broches</strong>) et le connecteur CPU
+                            (<strong>4/8 broches</strong>).</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">7</span>
+                <div class="step-head">
+                    <span class="step-title">Installer le disque dur SSD</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <ul class="plain">
+                        <li>Visser le disque dans la baie.</li>
+                        <li>Brancher le câble <strong>SATA data</strong> (carte mère ↔ disque).</li>
+                        <li>Brancher le câble <strong>SATA power</strong> (alimentation ↔ disque).</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">8</span>
+                <div class="step-head">
+                    <span class="step-title">Vérification avant démarrage</span>
+                    </div>
+                <div class="step-body">
+                    <div class="validation">
+                        <span class="lbl">✅ À faire valider par le professeur</span>
+                        <label class="tick"><input type="checkbox"> Toutes les vis de la carte mère sont posées</label>
+                        <label class="tick"><input type="checkbox"> Ventilateur CPU branché sur CPU_FAN</label>
+                        <label class="tick"><input type="checkbox"> Connecteurs 24 broches et CPU branchés et
+                            clipsés</label>
+                        <label class="tick"><input type="checkbox"> RAM enfoncée (clips fermés)</label>
+                        <label class="tick"><input type="checkbox"> Câbles SATA data et power branchés</label>
+                        <label class="tick"><input type="checkbox"> Aucune vis ou pièce métallique libre dans le
+                            boîtier</label>
+                        <p class="signature">Validation professeur : ____________________</p>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Etape 4 : tests -->
+    <section id="etape4">
+        <div class="sec-head">
+            <span class="sec-num">06</span>
+            <h2>Étape 4 — Premier démarrage et tests</h2>
+            <span class="sec-tag">25 min</span>
+        </div>
+        <p>⚠️ Ne brancher le secteur <strong>qu'après validation</strong>. Brancher écran (VGA/HDMI), clavier, souris.
+        </p>
+
+        <h3>Test 1 — Le POST</h3>
+        <p>Allumer le PC. Le POST (<em>Power On Self Test</em>) s'exécute :</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Observation</th>
+                    <th>Conclusion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Écran d'affichage du BIOS (marque de la carte mère, invite « Press DEL »)</td>
+                    <td>✅ Le PC fonctionne : passez à la suite</td>
+                </tr>
+                <tr>
+                    <td>Écran noir, aucun bip, aucune LED</td>
+                    <td>❌ Alimentation ou carte mère : vérifiez les connecteurs 24 broches et CPU</td>
+                </tr>
+                <tr>
+                    <td>Bips répétés, écran noir</td>
+                    <td>❌ Problème RAM : réenfoncer les barrettes</td>
+                </tr>
+                <tr>
+                    <td>Message « No bootable device » ou « Reboot and select proper boot device »</td>
+                    <td>✅ <strong>Normal !</strong> Aucun OS n'est installé. Le PC a bien démarré et cherche un système
+                    </td>
+                </tr>
+                <tr>
+                    <td>Message « CPU fan error »</td>
+                    <td>❌ Ventilateur CPU mal branché</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="question">
+            <span class="lbl">Question 4</span>
+            <p>Le message « No bootable device » est-il une panne ? Expliquez ce que fait le BIOS quand il affiche ce
+                message.</p>
+            <span class="rule"></span><span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h3>Test 2 — Entrer dans le BIOS</h3>
+        <p>Appuyer sur <strong>Suppr</strong> (ou F2) au démarrage pour entrer dans le Setup. Vérifier et noter :</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Information à relever</th>
+                    <th>Valeur relevée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Processeur détecté (modèle et fréquence)</td>
+                    <td class="fill"></td>
+                </tr>
+                <tr>
+                    <td>Quantité de RAM détectée</td>
+                    <td class="fill"></td>
+                </tr>
+                <tr>
+                    <td>Disque détecté (modèle, capacité)</td>
+                    <td class="fill"></td>
+                </tr>
+                <tr>
+                    <td>Température du CPU</td>
+                    <td class="fill"></td>
+                </tr>
+                <tr>
+                    <td>Version du BIOS</td>
+                    <td class="fill"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="question">
+            <span class="lbl">Question 5</span>
+            <p>Toute la RAM installée est-elle détectée ? Si non, quelle est la cause la plus probable ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+    </section>
+
+    <!-- Etape 5 : rangement -->
+    <section id="etape5">
+        <div class="sec-head">
+            <span class="sec-num">07</span>
+            <h2>Étape 5 — Démontage et rangement</h2>
+            <span class="sec-tag">10 min</span>
+        </div>
+        <p>Éteindre, débrancher, démonter dans <strong>l'ordre inverse</strong>, ranger chaque composant à sa place sur
+            la paillasse. Faire vérifier la paillasse par le professeur.</p>
+        <p class="signature">Paillasse vérifiée : ____________________</p>
+    </section>
+
+    <!-- Synthèse -->
+    <section id="synthese">
+        <div class="sec-head">
+            <span class="sec-num">08</span>
+            <h2>Questions de synthèse</h2>
+            <span class="sec-tag">À répondre</span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 6</span>
+            <p>Pourquoi monte-t-on le processeur et la RAM <strong>avant</strong> de visser la carte mère dans le
+                boîtier ?</p>
+            <span class="rule"></span><span class="rule"></span><span class="rule"></span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 7</span>
+            <p>Citez les deux bus que vous avez utilisés dans ce TP et ce qui y était connecté.</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 8</span>
+            <p>Un camarade a « oublié » de brancher le câble SATA data du disque. Que verra-t-il à l'allumage, et
+                pourquoi le PC démarre quand même ?</p>
+            <span class="rule"></span><span class="rule"></span><span class="rule"></span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>TP réalisé par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : octobre 2026</p>
+    </footer>
+</body>
+
+</html>

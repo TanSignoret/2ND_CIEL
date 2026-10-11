@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-cours 2 CIEL - SRAM, DRAM et DDR</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const listItems = document.querySelectorAll('ul.plain > li');
+            listItems.forEach(item => {
+                if (item.querySelector('ul')) {
+                    item.addEventListener('click', function(e) {
+                        if (e.target.tagName === 'A') return;
+                        this.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+<header class="hero col">
+    <div class="eyebrow">Cours — Les mémoires d'un ordinateur</div>
+    <h1>SRAM, DRAM et DDR</h1>
+    <p>Comprendre les différents types de mémoire vive et reconnaître les grandes familles de barrettes utilisées dans un ordinateur.</p>
+    <div class="chips">
+        <span class="chip">Seconde Bac Pro CIEL</span>
+        <span class="chip">Durée : 15 min</span>
+        <span class="chip">Travail individuel</span>
+        <span class="chip">QCM Pronote</span>
+    </div>
+</header>
+
+<section id="objectifs">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Ce que vous allez apprendre</h2><span class="sec-tag">Objectifs</span></div>
+    <div class="col">
+        <ul class="plain">
+            <li>Faire la différence entre <b>SRAM</b> et <b>DRAM</b>.</li>
+            <li>Comprendre le rôle de la <b>mémoire cache</b>.</li>
+            <li>Comprendre ce que signifie <b>DDR</b>.</li>
+            <li>Identifier les principales générations de mémoire DDR.</li>
+            <li>Comprendre pourquoi une barrette DDR3 n'est pas compatible avec une carte mère DDR4.</li>
+            <li>Reconnaître les formats <b>DIMM</b> et <b>SO-DIMM</b>.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="sram-dram">
+    <div class="sec-head"><span class="sec-num">02</span><h2>SRAM et DRAM</h2><span class="sec-tag">Deux technologies</span></div>
+    <div class="col">
+        <p>La mémoire vive n'utilise pas une seule technologie. Deux familles importantes sont la <b>SRAM</b> et la <b>DRAM</b>.</p>
+        <div class="tw">
+            <table>
+                <thead><tr><th>Type</th><th>Caractéristique</th><th>Utilisation</th></tr></thead>
+                <tbody>
+                    <tr><td><b>SRAM</b></td><td>Très rapide</td><td>Mémoire cache du processeur</td></tr>
+                    <tr><td><b>DRAM</b></td><td>Utilisée comme mémoire principale</td><td>RAM de l'ordinateur</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout deliver">
+            <span class="lbl">À retenir</span>
+            <p><b>SRAM → cache</b> · <b>DRAM → mémoire principale</b>.</p>
+        </div>
+    </div>
+</section>
+
+<section id="sram">
+    <div class="sec-head"><span class="sec-num">03</span><h2>La SRAM : la mémoire cache</h2><span class="sec-tag">Très rapide</span></div>
+    <div class="col">
+        <p>La <b>SRAM</b> (Static RAM) est une mémoire très rapide. Elle est notamment utilisée pour constituer la <b>mémoire cache du processeur</b>.</p>
+        <p>La mémoire cache permet au processeur d'accéder très rapidement à certaines informations dont il a besoin.</p>
+        <div class="callout">
+            <span class="lbl">Repère</span>
+            <p>Quand tu vois <b>SRAM</b> dans ce cours, pense d'abord à <b>cache du processeur</b>.</p>
+        </div>
+    </div>
+</section>
+
+<section id="dram">
+    <div class="sec-head"><span class="sec-num">04</span><h2>La DRAM : la mémoire principale</h2><span class="sec-tag">RAM</span></div>
+    <div class="col">
+        <p>La <b>DRAM</b> (Dynamic RAM) est utilisée comme mémoire principale de l'ordinateur.</p>
+        <p>Les barrettes de RAM que l'on installe dans un ordinateur appartiennent à cette famille.</p>
+        <div class="question">
+            <span class="lbl">Question</span>
+            <p>Un ordinateur possède une mémoire cache et des barrettes de RAM. Quelle technologie associer à chacune ?</p>
+            <p><b>Réponse :</b> SRAM → cache ; DRAM → mémoire principale.</p>
+        </div>
+    </div>
+</section>
+
+<section id="ddr">
+    <div class="sec-head"><span class="sec-num">05</span><h2>DDR : Double Data Rate</h2><span class="sec-tag">Mémoire vive</span></div>
+    <div class="col">
+        <p><b>DDR</b> signifie <b>Double Data Rate</b>.</p>
+        <p>Le principe est de réaliser <b>deux transferts de données par cycle d'horloge</b>.</p>
+        <pre class="tree">DDR
+ │
+ └── Double Data Rate
+       │
+       └── 2 transferts de données par cycle d'horloge</pre>
+        <p>Les générations ont évolué : <b>DDR</b>, <b>DDR2</b>, <b>DDR3</b>, <b>DDR4</b>, puis <b>DDR5</b>.</p>
+        <div class="callout deliver">
+            <span class="lbl">À retenir</span>
+            <p><b>DDR = deux transferts de données par cycle.</b></p>
+        </div>
+    </div>
+</section>
+
+<section id="compatibilite">
+    <div class="sec-head"><span class="sec-num">06</span><h2>DDR3, DDR4 : attention à la compatibilité</h2><span class="sec-tag">Installation</span></div>
+    <div class="col">
+        <p>Les différentes générations de DDR ne sont pas interchangeables.</p>
+        <p>Par exemple, une barrette <b>DDR4</b> ne peut pas être installée sur une carte mère prévue pour la <b>DDR3</b>.</p>
+        <div class="callout">
+            <span class="lbl">Pourquoi ?</span>
+            <p>La position de l'encoche sur la barrette et les caractéristiques électriques diffèrent selon les générations.</p>
+        </div>
+        <div class="tw">
+            <table>
+                <thead><tr><th>Situation</th><th>Compatible ?</th></tr></thead>
+                <tbody>
+                    <tr><td>Barrette DDR3 + carte mère DDR3</td><td><b>Oui</b>, si les autres caractéristiques conviennent.</td></tr>
+                    <tr><td>Barrette DDR4 + carte mère DDR3</td><td><b>Non</b>.</td></tr>
+                    <tr><td>Barrette DDR3 + carte mère DDR4</td><td><b>Non</b>.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section id="format">
+    <div class="sec-head"><span class="sec-num">07</span><h2>DIMM et SO-DIMM</h2><span class="sec-tag">Format</span></div>
+    <div class="col">
+        <p>Il faut également reconnaître le <b>format physique</b> de la barrette.</p>
+        <ul class="plain">
+            <li><b>DIMM :</b> format courant dans les ordinateurs de bureau.</li>
+            <li><b>SO-DIMM :</b> format compact, notamment utilisé dans les ordinateurs portables.</li>
+        </ul>
+        <div class="callout deliver">
+            <span class="lbl">Repère</span>
+            <p>Portable → pense généralement <b>SO-DIMM</b>. Ordinateur de bureau → pense généralement <b>DIMM</b>.</p>
+        </div>
+    </div>
+</section>
+
+<section id="synthese">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Synthèse</h2><span class="sec-tag">À retenir</span></div>
+    <div class="col">
+        <pre class="tree">Mémoire
+ │
+ ├── SRAM → cache processeur
+ │
+ └── DRAM → mémoire principale
+       │
+       └── DDR → 2 transferts par cycle
+             ├── DDR3
+             ├── DDR4
+             └── DDR5</pre>
+        <div class="callout deliver">
+            <span class="lbl">Mini-mission</span>
+            <p>On te donne un ordinateur portable à mettre à niveau. Quel format de mémoire dois-tu rechercher en priorité ?</p>
+            <p><b>Réponse :</b> SO-DIMM, puis vérifier la génération DDR compatible avec la carte mère.</p>
+        </div>
+    </div>
+</section>
+
+<section id="qcm">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Je vérifie mes connaissances</h2><span class="sec-tag">QCM</span></div>
+    <div class="col">
+        <p>Après avoir lu le micro-cours, réalise le <b>QCM sur Pronote</b>. Une seule réponse est correcte par question.</p>
+        <ol class="steps">
+            <li class="step"><div class="step-num">1</div><div class="step-head"><span class="step-title">Quel type de mémoire est utilisé pour la mémoire cache du processeur ?</span></div><div class="step-body"><p><b>Réponse attendue :</b> SRAM.</p></div></li>
+            <li class="step"><div class="step-num">2</div><div class="step-head"><span class="step-title">Quel type de mémoire constitue principalement la RAM de l'ordinateur ?</span></div><div class="step-body"><p><b>Réponse attendue :</b> DRAM.</p></div></li>
+            <li class="step"><div class="step-num">3</div><div class="step-head"><span class="step-title">Que signifie DDR ?</span></div><div class="step-body"><p><b>Réponse attendue :</b> Double Data Rate.</p></div></li>
+            <li class="step"><div class="step-num">4</div><div class="step-head"><span class="step-title">Que permet le principe DDR ?</span></div><div class="step-body"><p><b>Réponse attendue :</b> deux transferts de données par cycle d'horloge.</p></div></li>
+            <li class="step"><div class="step-num">5</div><div class="step-head"><span class="step-title">Une barrette DDR4 peut-elle être installée sur une carte mère DDR3 ?</span></div><div class="step-body"><p><b>Réponse attendue :</b> non.</p></div></li>
+            <li class="step"><div class="step-num">6</div><div class="step-head"><span class="step-title">Quel format de RAM est courant dans un ordinateur portable ?</span></div><div class="step-body"><p><b>Réponse attendue :</b> SO-DIMM.</p></div></li>
+        </ol>
+    </div>
+</section>
+
+<section id="lexique">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Lexique</h2><span class="sec-tag">Vocabulaire</span></div>
+    <div class="tw">
+        <table>
+            <thead><tr><th>Mot</th><th>Définition</th></tr></thead>
+            <tbody>
+                <tr><td><b>SRAM</b></td><td>Mémoire rapide notamment utilisée pour le cache du processeur.</td></tr>
+                <tr><td><b>DRAM</b></td><td>Technologie utilisée pour la mémoire principale de l'ordinateur.</td></tr>
+                <tr><td><b>DDR</b></td><td>Double Data Rate : deux transferts de données par cycle d'horloge.</td></tr>
+                <tr><td><b>DIMM</b></td><td>Format de barrette de mémoire courant dans les ordinateurs de bureau.</td></tr>
+                <tr><td><b>SO-DIMM</b></td><td>Format compact de mémoire, notamment utilisé dans les ordinateurs portables.</td></tr>
+                <tr><td><b>Encoche</b></td><td>Découpe présente sur une barrette permettant notamment d'éviter certaines incompatibilités.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer>
+    <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+    <p>Cours et TP par <strong>Tanguy Signoret</strong></p>
+    <p>Mise à jour : septembre 2026</p>
+</footer>
+</div>
+</body>
+</html>
