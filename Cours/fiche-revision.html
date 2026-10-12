@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche synthèse — Cybersécurité, carte mère, mémoires</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+    <style>
+        @media print {
+            body {
+                font-size: 10.5pt;
+            }
+
+            section {
+                margin-top: 1.2rem;
+            }
+
+            .tw,
+            .callout {
+                box-shadow: none;
+            }
+        }
+
+        .synthese-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .mini {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 0.9rem 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .mini b.t {
+            font-family: "Archivo", sans-serif;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .mini ul {
+            margin: 0;
+            padding-left: 1.1rem;
+        }
+
+        .mini li {
+            margin-bottom: 0.3rem;
+            font-size: 0.92rem;
+        }
+
+        .mini li::marker {
+            color: var(--accent);
+        }
+
+        table {
+            min-width: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">Fiche de révision</div>
+        <h1>L'essentiel en une page</h1>
+        <p class="lede">Cybersécurité · Carte mère · Mémoires &amp; stockage</p>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">Examen</span>
+        </div>
+    </header>
+
+    <!-- 01 Cybersécurité -->
+    <section id="cyber">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Cybersécurité</h2>
+            <span class="sec-tag">DICP &amp; hygiène</span>
+        </div>
+
+        <div class="dicp-grid">
+            <div class="card d"><span class="letter">D</span><b class="name">Disponibilité</b><small>Accessible quand
+                    nécessaire</small></div>
+            <div class="card i"><span class="letter">I</span><b class="name">Intégrité</b><small>Non modifiée sans
+                    autorisation</small></div>
+            <div class="card c"><span class="letter">C</span><b class="name">Confidentialité</b><small>Accès aux seuls
+                    autorisés</small></div>
+            <div class="card p"><span class="letter">P</span><b class="name">Preuve</b><small>Tracer qui fait
+                    quoi</small></div>
+        </div>
+
+        <div class="synthese-grid">
+            <div class="mini">
+                <b class="t">🎯 Attaques principales</b>
+                <ul>
+                    <li><strong>Phishing</strong> → C (vol d'identifiants)</li>
+                    <li><strong>Rançongiciel</strong> → D (sauvegarde 3-2-1 = seule parade)</li>
+                    <li><strong>DDoS</strong> → D (saturation du serveur)</li>
+                    <li><strong>Man-in-the-middle</strong> → I + C (interception)</li>
+                </ul>
+            </div>
+            <div class="mini">
+                <b class="t">🧼 Hygiène numérique</b>
+                <ul>
+                    <li>Mot de passe : <strong>12+ caractères, unique</strong> + gestionnaire (Bitwarden)</li>
+                    <li><strong>2FA</strong> activée partout</li>
+                    <li>Mises à jour régulières (OS, navigateur)</li>
+                    <li>Antivirus à jour · Wi-Fi public → VPN</li>
+                    <li>Signaler une fuite RGPD à la CNIL sous <strong>72 h</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="callout">
+            <span class="lbl">🎣 Repérer un phishing</span>
+            <p>Expéditeur suspect · objet alarmiste · urgence artificielle · lien ≠ site officiel · pièce jointe
+                inattendue. <strong>Une entreprise légitime ne demande jamais ton mot de passe par mail.</strong></p>
+        </div>
+    </section>
+
+    <!-- 02 Carte mère -->
+    <section id="carte-mere">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Carte mère</h2>
+            <span class="sec-tag">Circuit principal</span>
+        </div>
+
+        <div class="synthese-grid">
+            <div class="mini">
+                <b class="t">🧩 À connaître</b>
+                <ul>
+                    <li><strong>Processeur</strong> : le cerveau de l'ordinateur</li>
+                    <li><strong>Socket</strong> : support du CPU, un par génération (LGA1155, AM3) — système
+                        <strong>ZIF</strong> (Zero Insertion Force)
+                    </li>
+                    <li><strong>Chipset</strong> : coordonne les échanges (anciens : North Bridge = mémoire/CPU rapide,
+                        South Bridge = USB/disques lent)</li>
+                    <li><strong>Bus</strong> : lignes de données, d'adresses, de contrôle</li>
+                </ul>
+            </div>
+            <div class="mini">
+                <b class="t">⚙️ BIOS &amp; démarrage</b>
+                <ul>
+                    <li>Stocké en <strong>EEPROM Flash</strong> (non volatile, flashable)</li>
+                    <li><strong>POST</strong> : diagnostic au démarrage</li>
+                    <li><strong>Setup</strong> (touche <kbd>Suppr</kbd>) : réglages gardés dans la <strong>RAM
+                            CMOS</strong>, alimentée par la pile</li>
+                    <li><strong>Chargeur d'amorce</strong> : cherche un secteur d'amorce → « No bootable device » =
+                        pas d'OS, pas une panne !</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">📐 Formule du débit</span>
+            <p><strong>Débit (b/s) = vitesse (Hz) × largeur (bits) × transferts/cycle</strong> — 1 octet = 8 bits ;
+                Mbps → Mo/s : <strong>diviser par 8</strong>.<br>
+                Ex. DDR PC-1600 : 64 × 100×10⁶ × 2 = 1 600 octets/s.</p>
+        </div>
+    </section>
+
+    <!-- 03 Mémoires & stockage -->
+    <section id="memoires">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>Mémoires &amp; stockage</h2>
+            <span class="sec-tag">Volatile ou non</span>
+        </div>
+
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Volatile ?</th>
+                        <th>En une phrase</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SRAM</strong></td>
+                        <td>Oui</td>
+                        <td>Bascule, très rapide, chère, sans rafraîchissement</td>
+                        <td>Cache CPU</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DRAM</strong></td>
+                        <td>Oui</td>
+                        <td>Condensateur qui fuit → rafraîchie des milliers de fois/s, économique</td>
+                        <td>Barrettes RAM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ROM → Flash</strong></td>
+                        <td>Non</td>
+                        <td>ROM → PROM (1 fois) → EPROM (UV) → EEPROM (électrique) → Flash (~100 000 écritures)</td>
+                        <td>BIOS, clés USB</td>
+                    </tr>
+                    <!-- <tr>
+                        <td><strong>HDD</strong></td>
+                        <td>Non</td>
+                        <td>Plateaux magnétiques + tête mobile, accès 5-10 ms</td>
+                        <td>Stockage de masse</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SSD</strong></td>
+                        <td>Non</td>
+                        <td>Flash NAND, électronique, accès 0,1 ms (<strong>×100</strong>)</td>
+                        <td>Système, applications</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+
+        <div class="synthese-grid">
+            <div class="mini">
+                <b class="t">⚡ Les 3 chiffres du SSD</b>
+                <ul>
+                    <li>SATA III : plafond <strong>~550 Mo/s</strong></li>
+                    <li>NVMe (PCIe, M.2) : <strong>3 000-7 000 Mo/s</strong></li>
+                    <li>M.2 = <strong>format</strong>, pas un bus (M.2 SATA ≠ M.2 NVMe)</li>
+                </ul>
+            </div>
+            <!-- <div class="mini">
+                <b class="t">🧠 Points mémoire</b>
+                <ul>
+                    <li>DDR = <strong>Double Data Rate</strong> : 2 transferts/cycle</li>
+                    <li>Générations <strong>incompatibles</strong> (encoches DDR3 ≠ DDR4)</li>
+                    <li>Synchrone : horloge + buffer → plus de wait-states (image du fast-food)</li>
+                </ul>
+            </div> -->
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>Fiche par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : octobre 2026</p>
+    </footer>
+</body>
+
+</html>
