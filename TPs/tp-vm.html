@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — Découvrir les systèmes d'exploitation</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">TP 1 — Systèmes d'exploitation</div>
+        <h1>Découvrir les OS : de la VM à la vraie machine</h1>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">Séance de 3h</span>
+            <span class="chip">Binôme : _______________</span>
+        </div>
+    </header>
+
+    <!-- Objectifs -->
+    <section id="objectifs">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Objectifs</h2>
+            <span class="sec-tag">À retenir</span>
+        </div>
+        <p>À la fin de ce TP, vous serez capable de :</p>
+        <ul class="plain">
+            <li>Expliquer ce qu'est un <strong>fichier ISO</strong> et le principe du <strong>boot</strong>.</li>
+            <li><strong>Paramétrer une machine virtuelle</strong> (RAM, disque, ISO, réseau).</li>
+            <li><strong>Installer Ubuntu</strong> et faire les vérifications post-installation.</li>
+            <li>Vous déplacer dans Linux en <strong>ligne de commande</strong> et créer des fichiers.</li>
+        </ul>
+    </section>
+
+    <!-- Sécurité -->
+    <section id="securite">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Consignes</h2>
+            <span class="sec-tag">Important</span>
+        </div>
+        <div>
+            <ul class="plain">
+                <li>Tout se passe dans la VM — aucune action n'abîme le poste hôte. Si la VM plante, on la supprime et on recommence.</li>
+                <li>Completer au fur et à mesure le compte rendu : <a href="../Ressources/CR_TP_OS">fichier à télécharger</a>.</li>
+                <li>Pour répondre au question, vous avez le droit à toutes les ressources en lignes. <strong>Attention</strong>, vous devez être capable de justifier votre réponse avec vos mots pour qu'elle soit comptée.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="seance1">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>Installation sur une machine virtuelle</h2>
+            <span class="sec-tag">Individuel</span>
+        </div>
+
+        <h3>Questions — Comprendre avant d'agir</h3>
+        <div class="question">
+            <span class="lbl">Question 1 - OS</span>
+            <p>Qu'est-ce qu'un fichier ISO ?</p>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 2 - OS</span>
+            <p>Qu'est-ce qu'une machine virtuelle ? Qu'est-ce qu'un hyperviseur ?</p>
+        </div>
+
+        <h3>Étape 1 — Préparer une machine virtuelle</h3>
+        <p>VirtualBox est un <strong>hyperviseur gratuit</strong> qui permet de créer et de faire tourner des machines virtuelles.</p>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Téléchargement officiel</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Aller sur <a href="https://www.virtualbox.org/wiki/Downloads"
+                            target="_blank">virtualbox.org/wiki/Downloads</a> (site officiel)</p>
+                    <p>Aller ensuite sur → <strong>VirtualBox platform packages</strong> → cliquer sur <strong>Windows hosts</strong>.</p>
+                    <p>Cela lance le téléchargement de l'installateur du logiciel.</p>
+                    
+                    <div class="question">
+                        <span class="lbl">Question 3 - Cybersécurité</span>
+                        <p>Pourquoi est-il important de télécharger l'instalateur sur le site officiel ?</p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Vérifier puis installer</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Lancer le fichier <code>VirtualBox-x.x.x-Win.exe</code> téléchargé</p>
+                    <p>Suivre l'installation par défaut (un avertissement sur la déconnexion du réseau est normal) →
+                        autoriser l'installation des pilotes si Windows le demande.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Premier lancement</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Ouvrir VirtualBox et vérifier la version (menu <em>Aide → À propos</em>).</p>
+
+
+                    <div class="question">
+                        <span class="lbl">Question 4</span>
+                        <p>Quel est la version installée ? Est-elle bien la même que celle annoncée en ligne ?</p>
+                    </div>
+                </div>
+            </li>
+
+            <div class="callout">
+                <span class="lbl">💡 À remarquer</span>
+                <p>VirtualBox s'installe <strong>comme n'importe quel logiciel</strong> (licence, dossier, raccourci) :
+                    c'est un simple programme Windows. La preuve qu'un hyperviseur n'est qu'un logiciel parmi
+                    d'autres !</p>
+            </div>
+        </ol>
+
+        <h3>Étape 2 — Télécharger l'ISO d'Ubuntu</h3>
+        <p>Avant de créer la VM, il faut récupérer l'image disque d'installation d'Ubuntu : c'est elle qui jouera le
+            rôle du « DVD d'installation » dans le lecteur optique virtuel.</p>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Téléchargement officiel</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Aller sur <a href="https://ubuntu.com/download" target="_blank">ubuntu.com/download</a></p>
+                    <p>Choisir <strong>Ubuntu Desktop</strong> → télécharger l'ISO.</p>
+                    <p>Enregistrer le fichier <code>ubuntu-24.04-desktop-amd64.iso</code> dans un
+                        dossier facile à retrouver (ex. <code>Téléchargements</code>).
+                    </p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Vérifier le fichier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Vérifier que le fichier porte bien l'extension <code>.iso</code> et que sa taille est
+                        cohérente (≈ 5 Go) : un téléchargement interrompu donne un fichier corrompu qui fera
+                        échouer l'installation.</p>
+                    <p>Ne <strong>jamais décompresser ni renommer</strong> l'ISO : c'est une image disque, pas un dossier !</p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Étape 2 — Créer et paramétrer la VM</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Lancer Virtual Box</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+            </li>
+
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Créer une nouvelle machine virtuelle</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p><em>Machine → Nouvelle</em>. Remplir les champs à partir du tableau ci dessous.</p>
+                    <p>Puis : <em>Configuration → Stockage</em> → cliquer sur le lecteur optique vide → disque optique → choisir
+                        l'image ISO <code>ubuntu-24.04-desktop-amd64.iso</code>.</p>
+                </div>
+            </li>
+        </ol>
+
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paramètre</th>
+                        <th>Valeur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nom / type / version</td>
+                        <td>Ubuntu / Linux / 64 bits</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RAM</strong></td>
+                        <td>4096 Mo (4 Go)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Disque dur virtuel</strong></td>
+                        <td>25 Go, VDI, dynamique</td>
+                    </tr>
+                    <tr>
+                        <td>Réseau</td>
+                        <td>NAT</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 5</span>
+            <p>À quoi sert de « monter l'ISO » dans le lecteur optique de la VM ?</p>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 6</span>
+            <p>Si votre poste (ordinateur) hôte possède 8 Go de RAM. Pourquoi ne pas allouer 7 Go à la VM ?</p>
+        </div>
+
+        <h3>Étape 3 — Installer Ubuntu</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Démarrer la VM</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>La VM boote sur l'ISO → écran d'accueil Ubuntu. Choisir « <strong>Installer Ubuntu</strong> »
+                        (français).</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Choix clavier et mode d'installation</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Clavier français, installation normale.</p>
+                    <p class="note">Retenez : l'option « <em>Essayer Ubuntu</em> » démarre l'OS entièrement en RAM,
+                        sans rien écrire sur le disque — la mémoire volatile en action !</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Partitionnement</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>« Effacer le disque et installer Ubuntu » : le disque <strong>virtuel</strong> de 25 Go est
+                        formaté et partitionné automatiquement.</p>
+                </div>
+            </li>
+
+            <div class="question">
+                <span class="lbl">Question 7</span>
+                <p>Que signifie une partition ?<span style="opacity: 0;">la définition de ce qu'est une partition de musisque</span></p>
+            </div>
+
+            <li class="step">
+                <span class="step-num">4</span>
+                <div class="step-head">
+                    <span class="step-title">Compte utilisateur</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Nom, nom d'ordinateur <code>vm-prenom</code>, utilisateur + mot de passe (retenez-le !).</p>
+                    <p>Patienter pendant la copie des fichiers (~15-20 min).</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">5</span>
+                <div class="step-head">
+                    <span class="step-title">Redémarrer</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>À la fin : « Redémarrer maintenant » → <em>Devices → Optical Drives → Remove disk from virtual
+                            drive</em> si demandé.</p>
+                    <p>La VM boote cette fois sur le <strong>disque virtuel</strong> : la
+                        boucle du boot est bouclée !</p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Étape 4 — Vérifications post-installation</h3>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vérification</th>
+                        <th>Résultat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Le système démarre sans l'ISO (boot sur disque)</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                    <tr>
+                        <td>RAM détectée par l'OS (Paramètres → À propos)</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                    <tr>
+                        <td>Espace disque (<code>df -h</code> dans un terminal)</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                    <tr>
+                        <td>Connexion réseau (ouvrir Firefox)</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Étape 5 — Premiers pas en ligne de commande</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Ouvrir un terminal</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Pour ouvrir un terminal faire le raccourci <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd></p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Découvrir Linux en ligne de commande</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Réalisez les différentes missions listée ci dessous.</p>
+                    <p>N'hésitez pas à vous aider à l'aide du <a href="../Ressources/linux-tips.html">mémos des commandes sous Linux</a>.</p>
+                </div>
+            </li>
+
+            <div class="question">
+                <span class="lbl">Question 8</span>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mission</th>
+                                <th>Commandes utilisées</th>
+                                <th>Résultat observé</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>🗺️ Où suis-je ? Qu'y a-t-il ici ?<br><i>Dans quel dossier suis-je ? Et qu'y a-t-il dedans ?</i></p>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>🚶 Aller dans <code>Documents</code> puis revenir à la maison.<br><i>Se déplacer dans les dossiers en ligne de commande</i></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>📁 Créer le dossier <code>TP3</code> dans votre dossier personnel</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>📄 Créer le fichier <code>notes.txt</code> dans <code>TP3</code> et l'éditer avec
+                                    <code>nano</code><br>Insérer 3 lignes : ce qu'est la RAM, la ROM, un SSD.
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>📄 Copier <code>notes.txt</code> en <code>sauvegarde.txt</code>, afficher leur contenu</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>🗑️ Supprimer <code>sauvegarde.txt</code> avec <code>rm</code></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </ol>
+        <div class="callout deliver">
+            <span class="lbl">🏆 Défi final — « Mission sans souris »</span>
+            <p>Uniquement avec le terminal :</p>
+            <ul>
+                <li>Créez le dossier <code>CIEL/TP_OS</code> dans votre dossier personnel</li>
+                <li>Créez le fichier <code>resume.txt</code> contenant votre nom et votre prénom.</li>
+                <li>Affichez son contenu avec <code>cat</code>.</li>
+            </ul>
+            <p>Validation du professeur : ____________________</p>
+        </div>
+    </section>
+
+    <!-- Synthèse -->
+    <section id="synthese">
+        <div class="sec-head">
+            <span class="sec-num">05</span>
+            <h2>Questions de synthèse</h2>
+            <span class="sec-tag">À répondre</span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 9</span>
+            <p>Qeuls peuvent être les usages d'une machine virtuelle ? <i>Donnez 2 exemples différents</i></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>TP réalisé par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : octobre 2026</p>
+    </footer>
+</body>
+
+</html>

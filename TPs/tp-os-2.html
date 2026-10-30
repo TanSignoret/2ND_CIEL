@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — Découvrir les systèmes d'exploitation</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">TP3 — Systèmes d'exploitation</div>
+        <h1>Découvrir les OS : de la VM à la vraie machine</h1>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">2 séances de 2h</span>
+            <span class="chip">Binôme : _______________</span>
+        </div>
+    </header>
+
+    <div class="callout">
+        <span class="lbl">🎯 Fil rouge du TP</span>
+            <strong>Séance 2</strong> : vous refaites l'installation complète sur une vraie machine, depuis le
+            téléchargement de l'ISO jusqu'à la clé bootable.
+        </p>
+    </div>
+
+    <!-- Objectifs -->
+    <section id="objectifs">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Objectifs</h2>
+            <span class="sec-tag">À retenir</span>
+        </div>
+        <p>À la fin de ce TP, vous serez capable de :</p>
+        <ul class="plain">
+            <li><strong>Installer Ubuntu</strong> et faire les vérifications post-installation.</li>
+            <li>Vous déplacer dans Linux en <strong>ligne de commande</strong> et créer des fichiers.</li>
+            <li>Créer une <strong>clé USB bootable</strong> avec Rufus et installer l'OS sur une <strong>vraie
+                    machine</strong>.</li>
+        </ul>
+    </section>
+    
+    <!-- Séance 2 -->
+    <section id="seance2">
+        <div class="sec-head">
+            <span class="sec-num">04</span>
+            <h2>Séance 2 — Installation sur une vraie machine</h2>
+            <span class="sec-tag">2h — Machine physique</span>
+        </div>
+
+        <h3>Étape 1 — Cours express : ce qui change pour de vrai (30 min)</h3>
+        <div class="question">
+            <span class="lbl">Question 5</span>
+            <p>Citez les trois différences principales entre l'installation sur une VM et l'installation sur une vraie
+                machine.</p>
+            <span class="rule"></span><span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h3>Étape 2 — Télécharger l'ISO (15 min)</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Téléchargement officiel</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Depuis un poste : <a href="https://ubuntu.com/download" target="_blank">ubuntu.com/download</a>
+                        → Ubuntu Desktop → télécharger l'ISO (≈ 5 Go). <strong>Uniquement le site officiel</strong> :
+                        pourquoi ? (voir Question 6)</p>
+                </div>
+            </li>
+        </ol>
+        <div class="question">
+            <span class="lbl">Question 6</span>
+            <p>Pourquoi télécharger l'ISO depuis le site officiel plutôt qu'un site tiers ? Quel critère DICP est en
+                jeu ?</p>
+            <p>Comment s'assurer que l'ISO télécharger a bien été créer par Ubuntu ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h3>Étape 3 — Créer la clé USB bootable avec Rufus (30 min)</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Lancer Rufus</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Brancher la clé fournie (elle sera <strong>effacée</strong> — vérifier qu'elle ne contient
+                        rien). Dans Rufus : <strong>Périphérique</strong> = votre clé.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Choisir l'ISO</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p><strong>Sélection de démarrage</strong> → <em>Sélectionner</em> → pointer l'ISO Ubuntu
+                        téléchargée. Schéma de partition : <strong>GPT</strong> (UEFI).</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Graver et vérifier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p><em>Démarrer</em> → confirmer l'effacement → patienter (5-10 min). En fin de processus, la clé
+                        contient le <strong>bootloader + fichiers d'installation</strong> : elle est bootable.</p>
+                </div>
+            </li>
+        </ol>
+        <div class="question">
+            <span class="lbl">Question 7</span>
+            <p>Que vient « écrire » Rufus sur la clé pour la rendre bootable ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h3>Étape 4 — Modifier l'ordre de boot et installer (40 min)</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Brancher la clé et allumer</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Sur la machine de test (débranchée de tout réseau personnel), brancher la clé, allumer et
+                        presser la touche du Setup : <kbd>Suppr</kbd>, <kbd>F2</kbd> ou <kbd>F12</kbd> selon la carte
+                        mère (indiqué brièvement au premier écran).</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Mettre la clé USB en premier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Dans le menu <strong>Boot</strong>, remonter « USB ... » en tête de l'ordre de boot, enregistrer
+                        et quitter (souvent <kbd>F10</kbd>). La machine redémarre sur la clé → écran d'installation
+                        Ubuntu.</p>
+                    <p class="note">Si le PC démarre sur son ancien disque : l'ordre de boot n'a pas été pris en
+                        compte — recommencer l'étape.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Installer Ubuntu</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Mêmes étapes que la séance 1 : langue, « Installer Ubuntu », « Effacer le disque et installer »
+                        (<strong>OK sur machine de test uniquement !</strong>), compte utilisateur, redémarrage.
+                        Retirer la clé quand le système le demande.</p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Étape 5 — Vérifications et comparaison (20 min)</h3>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vérification</th>
+                        <th>Séance 1 (VM)</th>
+                        <th>Séance 2 (machine réelle)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Temps total d'installation (estimation)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>RAM détectée (<code>free -h</code>)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Disque détecté (<code>df -h</code>)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Touche d'accès au Setup utilisée</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 8</span>
+            <p>Comparez les deux installations : quelle méthode est la plus simple ? La plus risquée ? Dans quel
+                cas un professionnel utilise-t-il une VM plutôt qu'une installation réelle ?</p>
+            <span class="rule"></span><span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h3>Étape 6 — Rangement (5 min)</h3>
+        <p>Éteindre proprement la machine de test, ranger clé et câbles, faire vérifier la paillasse par le
+            professeur.</p>
+        <p class="signature">Paillasse vérifiée : ____________________</p>
+    </section><!-- Footer -->
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>TP réalisé par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : octobre 2026</p>
+    </footer>
+</body>
+
+</html>

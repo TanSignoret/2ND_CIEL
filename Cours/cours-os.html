@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours — Les grands principes des systèmes d'exploitation</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">Systèmes d'exploitation</div>
+        <h1>Les grands principes d'un OS</h1>
+        <p class="lede">Noyau, processus, mémoire, fichiers, utilisateurs : ce que fait réellement un système
+            d'exploitation pendant que vous travaillez.</p>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">1 heure</span>
+            <span class="chip">Chapitre : OS</span>
+        </div>
+    </header>
+
+    <!-- 01 Rappel -->
+    <section id="rappel">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Rappel — le rôle d'un OS</h2>
+            <span class="sec-tag">5 min</span>
+        </div>
+        <p>Un OS est l'<strong>intermédiaire entre l'utilisateur et le matériel</strong>. Souvenez-vous de la
+            chaîne : <strong>Utilisateur → OS → Matériel</strong>.</p>
+        <p>Mais concrètement, pendant que vous tapez ce cours, écoutez de la musique et laissez un téléchargement
+            tourner... <strong>que fait l'OS, à chaque seconde ?</strong> C'est ce que nous allons voir : ses
+            quatre grandes missions.</p>
+        <div class="flow">
+            <div class="box b1">
+                <span class="ico">⚙️</span>
+                <b>Noyau</b>
+                <small>Le chef d'orchestre</small>
+            </div>
+            <span class="arr">→</span>
+            <div class="box b2">
+                <span class="ico">🧵</span>
+                <b>Processus</b>
+                <small>Qui a le CPU ?</small>
+            </div>
+            <span class="arr">→</span>
+            <div class="box b3">
+                <span class="ico">💾</span>
+                <b>Mémoire</b>
+                <small>Qui a la RAM ?</small>
+            </div>
+            <span class="arr">→</span>
+            <div class="box b3">
+                <span class="ico">📁</span>
+                <b>Fichiers</b>
+                <small>Où est enregistré ?</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 Noyau -->
+    <section id="noyau">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Le noyau (kernel)</h2>
+            <span class="sec-tag">10 min</span>
+        </div>
+        <p>Le <strong>noyau</strong> est le cœur de l'OS : le programme qui tourne <strong>en permanence</strong> et
+            qui a tous les pouvoirs sur la machine. C'est lui qui décide, pour chaque action, si elle est
+            autorisée ou non.</p>
+        <div class="callout">
+            <span class="lbl">💡 Image à retenir</span>
+            <p>Le noyau, c'est le <strong>chef d'orchestre</strong> : il ne joue pas de la musique lui-même, mais
+                sans lui, tous les musiciens (les programmes) joueraient en même temps et n'importe comment.</p>
+        </div>
+        <p>Tout le reste du système s'appuie sur lui :</p>
+        <ul class="plain">
+            <li>le <strong>bureau</strong>, les fenêtres, les applications : l'habillage visible par
+                l'utilisateur ;</li>
+            <li>les <strong>pilotes</strong> : les traducteurs entre le noyau et chaque périphérique (clavier,
+                carte graphique, imprimante...) ;</li>
+            <li>l'<strong>interface</strong> : graphique (fenêtres, icônes) ou en ligne de commande
+                (terminal).</li>
+        </ul>
+        <div class="callout">
+            <span class="lbl">💡 Linux : un noyau, des distributions</span>
+            <p>Rappel du cours précédent : Ubuntu, Mint, Debian partagent le <strong>même noyau Linux</strong> ;
+                ce qui change d'une distribution à l'autre, c'est l'habillage et les logiciels installés autour.
+                Android aussi utilise un noyau Linux !</p>
+        </div>
+    </section>
+
+    <!-- 03 Processus -->
+    <section id="processus">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>La gestion des processus</h2>
+            <span class="sec-tag">10 min</span>
+        </div>
+        <p>Un <strong>processus</strong>, c'est un programme <strong>en cours d'exécution</strong>. Le navigateur
+            ouvert ? Un processus. Le lecteur de musique ? Un autre processus. Même l'OS lui-même est fait de
+            dizaines de processus.</p>
+        <div class="callout">
+            <span class="lbl">🤔 Question piège</span>
+            <p>Un processeur à 4 cœurs ne peut exécuter que <strong>4 tâches en même temps</strong>. Alors
+                comment pouvez-vous avoir 50 fenêtres ouvertes à la fois ?</p>
+        </div>
+        <p><strong>Réponse</strong> : le noyau fait du <strong>partage de temps</strong> (*time sharing*). Il
+            donne chaque morceau de seconde à un processus, puis au suivant, puis au suivant... si vite que tout
+            semble simultané — comme un carrousel de tâches :</p>
+        <div class="flow">
+            <div class="box b1">
+                <span class="ico">🌐</span>
+                <b>Navigateur</b>
+                <small>10 ms</small>
+            </div>
+            <span class="arr">→</span>
+            <div class="box b2">
+                <span class="ico">🎵</span>
+                <b>Musique</b>
+                <small>10 ms</small>
+            </div>
+            <span class="arr">→</span>
+            <div class="box b3">
+                <span class="ico">⚙️</span>
+                <b>Système</b>
+                <small>10 ms</small>
+            </div>
+            <span class="arr">→</span>
+            <div class="box b1">
+                <span class="ico">🔁</span>
+                <b>... et on recommence</b>
+                <small>Des milliers de fois par seconde</small>
+            </div>
+        </div>
+        <p>Un programme qui se fige ? Son processus est bloqué : le <strong>Gestionnaire des tâches</strong>
+            (Ctrl+Maj+Échap sous Windows) liste tous les processus et permet de « tuer » celui qui pose
+            problème. C'est le noyau qui exécute cet ordre.</p>
+    </section>
+
+    <!-- 04 Mémoire -->
+    <section id="memoire">
+        <div class="sec-head">
+            <span class="sec-num">04</span>
+            <h2>La gestion de la mémoire</h2>
+            <span class="sec-tag">10 min</span>
+        </div>
+        <p>Chaque processus a besoin de RAM pour travailler. C'est le noyau qui <strong>découpe et distribue la
+                RAM</strong> entre tous les processus, et qui interdit à chacun de lire dans la zone d'un autre.</p>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Zone de RAM</th>
+                        <th>Occupant</th>
+                        <th>Qui décide ?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Zone 1</td>
+                        <td>Noyau + pilotes</td>
+                        <td rowspan="4" style="text-align:center">Le noyau</td>
+                    </tr>
+                    <tr>
+                        <td>Zone 2</td>
+                        <td>Navigateur</td>
+                    </tr>
+                    <tr>
+                        <td>Zone 3</td>
+                        <td>Lecteur de musique</td>
+                    </tr>
+                    <tr>
+                        <td>Zone 4</td>
+                        <td>Libre</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Et quand la RAM est pleine ? L'OS utilise le <strong>fichier d'échange</strong> (*swap*) : il dépose
+            temporairement sur le disque ce qui ne tient pas en RAM. C'est plus lent (souvenez-vous : SSD ≈
+            500 Mo/s, RAM ≈ 20 Go/s !), d'où l'intérêt d'avoir assez de RAM.</p>
+        <div class="callout">
+            <span class="lbl">💡 Lien avec le TP virtualisation</span>
+            <p>Voilà pourquoi la VM de 4 Go a besoin d'un hôte à 8 Go : l'hôte fait tourner le <strong>noyau
+                    Windows + la VM + tous les autres processus</strong>. La RAM est un bien partagé, pas un buffet
+                libre !</p>
+        </div>
+    </section>
+
+    <!-- 05 Fichiers -->
+    <section id="fichiers">
+        <div class="sec-head">
+            <span class="sec-num">05</span>
+            <h2>Le système de fichiers et l'arborescence</h2>
+            <span class="sec-tag">10 min</span>
+        </div>
+        <p>Le disque n'est qu'une suite de secteurs de 0 et de 1 (souvenez-vous du cours mémoires). C'est l'OS qui
+            organise tout ça en <strong>fichiers et dossiers</strong> grâce à un <strong>système de
+                fichiers</strong> (NTFS pour Windows, ext4 pour Linux).</p>
+        <p>Tous les OS organisent le stockage en <strong>arborescence</strong> : une racine, des branches
+            (dossiers), des feuilles (fichiers).</p>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Windows</th>
+                        <th>Linux</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Racine</strong></td>
+                        <td><code>C:\</code></td>
+                        <td><code>/</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dossier personnel</strong></td>
+                        <td><code>C:\Users\eleve</code></td>
+                        <td><code>/home/eleve</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exemple de chemin</strong></td>
+                        <td><code>C:\Users\eleve\Documents\notes.txt</code></td>
+                        <td><code>/home/eleve/Documents/notes.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Système de fichiers</strong></td>
+                        <td>NTFS</td>
+                        <td>ext4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout">
+            <span class="lbl">💡 Le coup du home</span>
+            <p>Retenez <code>/home/eleve</code> : c'est le chemin affiché par la commande <code>pwd</code> du TP
+                ! Et <code>cd ~</code> vous y ramène toujours — le <code>~</code> désigne votre dossier
+                personnel.</p>
+        </div>
+    </section>
+
+    <!-- 06 Utilisateurs et droits -->
+    <section id="utilisateurs">
+        <div class="sec-head">
+            <span class="sec-num">06</span>
+            <h2>Utilisateurs et droits</h2>
+            <span class="sec-tag">10 min</span>
+        </div>
+        <p>L'OS gère des <strong>comptes utilisateurs</strong> pour protéger chaque personne... et protéger la
+            machine de chaque personne ! Trois niveaux :</p>
+        <div class="si-grid">
+            <div class="card">
+                <span class="ico">👤</span>
+                <b>Utilisateur standard</b>
+                <small>Travaille dans son dossier, ne modifie pas le système</small>
+            </div>
+            <div class="card">
+                <span class="ico">🛡️</span>
+                <b>Administrateur</b>
+                <small>Peut tout installer et tout configurer (avec confirmation)</small>
+            </div>
+            <div class="card">
+                <span class="ico">⚙️</span>
+                <b>Invité</b>
+                <small>Session temporaire, rien n'est conservé</small>
+            </div>
+        </div>
+        <p>Sur Linux, chaque fichier appartient à un utilisateur et porte des <strong>droits</strong> : lire,
+            écrire, exécuter. Un utilisateur standard ne peut pas supprimer les fichiers d'un autre ni toucher
+            au système — c'est pour cela que certaines commandes exigent <code>sudo</code>
+            (<em>superuser do</em> : « faire en tant que super-utilisateur »).</p>
+        <div class="callout warn">
+            <span class="lbl">⚠️ Sécurité — lien avec le DICP</span>
+            <p>Travailler en <strong>compte standard</strong> au quotidien limite les dégâts d'un programme
+                malveillant : s'il ne peut pas modifier le système, il fait moins de dégâts. C'est le principe
+                du <strong>privilège minimum</strong> : on ne donne que les droits nécessaires.</p>
+        </div>
+    </section>
+
+    <!-- 07 Synthèse -->
+    <section id="synthese">
+        <div class="sec-head">
+            <span class="sec-num">07</span>
+            <h2>Synthèse — à la seconde où vous lisez cette ligne...</h2>
+            <span class="sec-tag">5 min</span>
+        </div>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mission de l'OS</th>
+                        <th>En une phrase</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Noyau</strong></td>
+                        <td>Le chef d'orchestre : contrôle tout, en permanence.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Processus</strong></td>
+                        <td>Partage le processeur entre tous les programmes, des milliers de fois par
+                            seconde.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mémoire</strong></td>
+                        <td>Découpe la RAM entre les processus ; le swap prend le relais quand elle est
+                            pleine.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fichiers</strong></td>
+                        <td>Organise le disque en arborescence (racine, dossiers, fichiers).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Utilisateurs</strong></td>
+                        <td>Comptes et droits : chacun ne touche qu'à ce qui lui appartient.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout deliver">
+            <span class="lbl">✅ À retenir</span>
+            <p>Un OS, c'est un <strong>noyau</strong> qui partage le <strong>processeur</strong> (processus) et
+                la <strong>RAM</strong> (mémoire), organise le <strong>disque</strong> (arborescence) et protège
+                chaque <strong>utilisateur</strong> (comptes et droits). Tout ce que vous voyez à l'écran —
+                fenêtres, icônes, terminal — n'est que l'habillage posé sur ce noyau.</p>
+        </div>
+
+        <h3>Mini-exercice (à l'oral ou en fin de copie)</h3>
+        <div class="callout">
+            <span class="lbl">📝 Pour vérifier la compréhension</span>
+            <p>1) Pourquoi une musique continue-t-elle de jouer quand le navigateur se fige ?<br>
+                2) La RAM est pleine : que fait l'OS, et pourquoi est-ce plus lent ?<br>
+                3) Où se trouve le fichier <code>notes.txt</code> créé au TP avec <code>touch</code> ? (chemin
+                complet)<br>
+                4) Vrai ou faux : une clé USB branchée apparaît dans l'arborescence sous <code>/</code> dans
+                Windows.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>Cours par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : octobre 2026</p>
+    </footer>
+</body>
+
+</html>

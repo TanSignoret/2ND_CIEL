@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémo — Les 10 commandes Linux à connaître</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">Mémo Linux</div>
+        <h1>🐧 Les 10 commandes à connaître</h1>
+        <p class="lede">Le minimum vital pour survivre dans un terminal : les commandes vues en TP, avec un
+            exemple prêt à copier pour chacune.</p>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">TP Systèmes d'exploitation</span>
+            <span class="chip">À garder sous la main</span>
+        </div>
+    </header>
+
+    <div class="callout">
+        <span class="lbl">⌨️ Avant de commencer</span>
+        <p>Ouvre un terminal avec <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>. Tape la commande, puis appuie sur
+            <kbd>Entrée</kbd>.<br>
+            💡 Astuce : la touche <kbd>Tab</kbd> complète automatiquement les noms, et <kbd>↑</kbd> rappelle les
+            dernières commandes.</p>
+    </div>
+
+    <!-- 01 -->
+    <section id="pwd">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2><code>pwd</code> — Où suis-je ?</h2>
+            <span class="sec-tag">Se situer</span>
+        </div>
+        <p>Affiche le <strong>dossier courant</strong> (<em>p</em>rint <em>w</em>orking <em>d</em>irectory).</p>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>pwd</code> → <code>/home/eleve</code></p>
+        </div>
+    </section>
+
+    <!-- 02 -->
+    <section id="ls">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2><code>ls</code> — Que contient ce dossier ?</h2>
+            <span class="sec-tag">Lister</span>
+        </div>
+        <p><strong>L</strong>i<strong>s</strong>te le contenu du dossier courant.</p>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>ls</code> → liste simple &nbsp;·&nbsp; <code>ls -l</code> → liste détaillée (taille, date)</p>
+        </div>
+    </section>
+
+    <!-- 03 -->
+    <section id="cd">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2><code>cd</code> — Se déplacer</h2>
+            <span class="sec-tag">Naviguer</span>
+        </div>
+        <p><strong>C</strong>hange <strong>D</strong>irectory : aller dans un autre dossier.</p>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Effet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>cd Documents</code></td>
+                        <td>Entrer dans le dossier Documents</td>
+                    </tr>
+                    <tr>
+                        <td><code>cd ..</code></td>
+                        <td>Revenir au dossier parent</td>
+                    </tr>
+                    <tr>
+                        <td><code>cd ~</code></td>
+                        <td>Retour au dossier personnel</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 04 -->
+    <section id="mkdir">
+        <div class="sec-head">
+            <span class="sec-num">04</span>
+            <h2><code>mkdir</code> — Créer un dossier</h2>
+            <span class="sec-tag">Créer</span>
+        </div>
+        <p><strong>M</strong>a<strong>k</strong>e <strong>Dir</strong>ectory.</p>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>mkdir TP3</code></p>
+        </div>
+    </section>
+
+    <!-- 05 -->
+    <section id="touch">
+        <div class="sec-head">
+            <span class="sec-num">05</span>
+            <h2><code>touch</code> — Créer un fichier vide</h2>
+            <span class="sec-tag">Créer</span>
+        </div>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>touch notes.txt</code></p>
+        </div>
+    </section>
+
+    <!-- 06 -->
+    <section id="nano">
+        <div class="sec-head">
+            <span class="sec-num">06</span>
+            <h2><code>nano</code> — Éditer un fichier texte</h2>
+            <span class="sec-tag">Écrire</span>
+        </div>
+        <p>Petit éditeur simple, directement dans le terminal.</p>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>nano notes.txt</code></p>
+        </div>
+        <div class="callout warn">
+            <span class="lbl">⌨️ Pour quitter</span>
+            <p><kbd>Ctrl</kbd>+<kbd>X</kbd> puis <kbd>O</kbd> (Oui) pour enregistrer, <kbd>Entrée</kbd> pour
+                confirmer le nom du fichier.</p>
+        </div>
+    </section>
+
+    <!-- 07 -->
+    <section id="cat">
+        <div class="sec-head">
+            <span class="sec-num">07</span>
+            <h2><code>cat</code> — Afficher un fichier</h2>
+            <span class="sec-tag">Lire</span>
+        </div>
+        <p>Affiche tout le contenu d'un fichier à l'écran.</p>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>cat notes.txt</code></p>
+        </div>
+    </section>
+
+    <!-- 08 -->
+    <section id="cp">
+        <div class="sec-head">
+            <span class="sec-num">08</span>
+            <h2><code>cp</code> — Copier un fichier</h2>
+            <span class="sec-tag">Copier</span>
+        </div>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>cp notes.txt sauvegarde.txt</code></p>
+        </div>
+        <p class="note">Variante : <code>mv</code> pour <strong>déplacer ou renommer</strong> un fichier.</p>
+    </section>
+
+    <!-- 09 -->
+    <section id="rm">
+        <div class="sec-head">
+            <span class="sec-num">09</span>
+            <h2><code>rm</code> — Supprimer ⚠️</h2>
+            <span class="sec-tag">Supprimer</span>
+        </div>
+        <p><strong>R</strong>e<strong>m</strong>ove. ⚠️ <strong>Pas de corbeille : la suppression est
+            définitive !</strong></p>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>rm sauvegarde.txt</code> (fichier) &nbsp;·&nbsp; <code>rm -r TP3</code> (dossier et son
+                contenu)</p>
+        </div>
+        <div class="callout warn">
+            <span class="lbl">⚠️ Règle de sécurité</span>
+            <p>Ne jamais supprimer en dehors de son dossier personnel.</p>
+        </div>
+    </section>
+
+    <!-- 10 -->
+    <section id="df">
+        <div class="sec-head">
+            <span class="sec-num">10</span>
+            <h2><code>df -h</code> — Espace disque</h2>
+            <span class="sec-tag">Diagnostic</span>
+        </div>
+        <p>Affiche l'espace <strong>libre et utilisé</strong> sur les disques (tailles lisibles en Go/Mo grâce à
+            l'option <code>-h</code>).</p>
+        <div class="callout">
+            <span class="lbl">💻 Exemple</span>
+            <p><code>df -h</code></p>
+        </div>
+    </section>
+    
+    <div class="callout deliver">
+        <span class="lbl">✅ À retenir</span>
+        <p>Le <strong>terminal</strong> fait tout ce que la souris fait, mais au clavier — et parfois bien plus
+            vite. <code>rm</code> supprime <strong>définitivement</strong> : réfléchir avant d'appuyer sur
+            <kbd>Entrée</kbd>. Et les noms des commandes sont logiques : c'est de l'anglais abrégé
+            (<em>print working directory</em>, <em>list</em>, <em>make directory</em>, <em>remove</em>...).</p>
+    </div>
+
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>Mémo par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : octobre 2026</p>
+    </footer>
+</body>
+
+</html>

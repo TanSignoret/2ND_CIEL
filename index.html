@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secondes — Cours CIEL | Tanguy Signoret</title>
     <link rel="stylesheet" href="Ressources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const listItems = document.querySelectorAll('ul.plain > li');
+
+            listItems.forEach(item => {
+                if (item.querySelector('ul')) {
+                    item.addEventListener('click', function (e) {
+                        // Évite de déclencher le clic si on clique sur un lien
+                        if (e.target.tagName === 'A') return;
+
+                        // Basculer la classe "active"
+                        this.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -26,249 +43,434 @@
             <a href="#ressources">Ressources</a>
         </nav>
 
-        <!-- Section TP -->
-        <section id="tps">
+        <!-- Section Numerique -->
+        <section id="numerique">
             <div class="section-title">
-                <h2>📝 Travaux Pratiques</h2>
-                <span class="section-tag">Exercices</span>
+                <h2>Séquence - Découverte du numérique profesionnel</h2>
+                <span class="section-tag">Septembre</span>
             </div>
-            <p>
-                Voici les TP disponibles. Les TP en cours de construction seront ajoutés prochainement.
-            </p>
+            <ul class="plain collapsible">
+                <li>
+                    <div class="section-subtitle">
+                        <h4>📝 Travaux Pratiques</h4>
+                        <span class="section-tag">Exercices</span>
+                    </div>
+                    <ul class="plain">
+                        <section id="python-sujets">
+                            <p>Voici les TP réalisé durant la séquence.</p>
 
-            <div class="display-cards">
-                <a href="TPs/tp-mail.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">TP : Mail et Drive</h3>
-                        <span class="card-tag">Fait en classe - 15/09</span>
-                    </div>
-                    <p class="card-description">
-                        Découverte des outils numériques que vous allez utilisez au cours de votre scolarité : mails et ged.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            2h
-                        </span>
-                        <span class="meta-item">
-                            <span class="meta-icon">🔗</span>
-                            ProtonMail
-                        </span>
-                    </div>
-                </a>
+                            <div class="display-cards">
+                                <a href="TPs/tp-mail.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : Mail et Drive</h3>
+                                        <span class="card-tag">Fait en classe - 15/09</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découverte des outils numériques que vous allez utilisez au cours de votre scolarité : mails et ged.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                        <span class="meta-item">
+                                            <span class="meta-icon">🔗</span>
+                                            ProtonMail
+                                        </span>
+                                    </div>
+                                </a>
 
-                <a href="TPs/tp-signature.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">TP : Mail professionnelle</h3>
-                        <span class="card-tag">Fait en classe - 15/09</span>
-                    </div>
-                    <p class="card-description">
-                        Découverte appronfondie d'une boite mail et de ses outils.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            2h
-                        </span>
-                        <span class="meta-item">
-                            <span class="meta-icon">🔗</span>
-                            ProtonMail
-                        </span>
-                    </div>
-                </a>
+                                <a href="TPs/tp-signature.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : Mail professionnelle</h3>
+                                        <span class="card-tag">Fait en classe - 15/09</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découverte appronfondie d'une boite mail et de ses outils.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                        <span class="meta-item">
+                                            <span class="meta-icon">🔗</span>
+                                            ProtonMail
+                                        </span>
+                                    </div>
+                                </a>
 
-                <a href="TPs/tp-sans-souris.html " class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">TP : Utiliser un PC sans souris</h3>
-                        <span class="card-tag">Fait en classe - 16/09</span>
-                    </div>
-                    <p class="card-description">
-                        Découverte de l'utilisation d'un pc sans souris et des raccourcis claviers.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            4h
-                        </span>
-                    </div>
-                </a>
+                                <a href="TPs/tp-sans-souris.html " class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : Utiliser un PC sans souris</h3>
+                                        <span class="card-tag">Fait en classe - 16/09</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découverte de l'utilisation d'un pc sans souris et des raccourcis claviers.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            4h
+                                        </span>
+                                    </div>
+                                </a>
 
-                <a href="TPs/tp-bureautique.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">TP : Bureautique profesionnelle</h3>
-                        <span class="card-tag">Fait en classe - 22/09</span>
+                                <a href="TPs/tp-bureautique.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : Bureautique profesionnelle</h3>
+                                        <span class="card-tag">Fait en classe - 22/09</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Utilisation avancée de la bureautique : compression de fichier, suite libre office.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </ul>
+                </li>
+                <li>
+                    <div class="section-subtitle">
+                        <h4>📚 Cours</h4>
+                        <span class="section-tag">Théorie</span>
                     </div>
-                    <p class="card-description">
-                        Utilisation avancée de la bureautique : compression de fichier, suite libre office.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            2h
-                        </span>
-                    </div>
-                </a>
+                    <ul class="plain">
+                        <section id="python-sujets">
+                            <p>Retrouvez ici les supports de cours pour approfondir vos connaissances.</p>
 
-                <a href="TPs/tp-pc.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">TP : Ordinateur</h3>
-                        <span class="card-tag">Fait en classe - 23/09</span>
-                    </div>
-                    <p class="card-description">
-                        Découverte des composants PC.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            2h
-                        </span>
-                    </div>
-                </a>
-
-                <a href="TPs/expose-pc.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Exposé : Ordinateur</h3>
-                        <span class="card-tag">Fait en classe - 23/09</span>
-                    </div>
-                    <p class="card-description">
-                        Exposé sur les composants d'un PC.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            2h
-                        </span>
-                    </div>
-                </a>
-                
-                <a href="Ressources/FicheExoSecNum_eleve.odt" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Exercices - Hygiène numérique</h3>
-                        <span class="card-tag">05/10</span>
-                    </div>
-                    <p class="card-description">Feuille d'exercices sur la sécurité numérique, à faire depuis la maison.</p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            2h
-                        </span>
-                    </div>
-                </a>
-                
-                <a href="TPs/tp-bitwarden.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">TP : Mots de passes sécurisés</h3>
-                        <span class="card-tag">05/10</span>
-                    </div>
-                    <p class="card-description">
-                        Découverte d'un gestionnaire de mot de passe.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            2h
-                        </span>
-                        <span class="meta-item">
-                            <span class="meta-icon">🔗</span>
-                            Bitwarden
-                        </span>
-                    </div>
-                </a>
-                
-                <a href="TPs/tp-pc-construction.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">TP : Construction de PC</h3>
-                        <span class="card-tag">12/10</span>
-                    </div>
-                    <p class="card-description">
-                        Remonter un PC à partir de différents composants.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            2h
-                        </span>
-                    </div>
-                </a>
+                            <div class="display-cards">
+                                <a href="Cours/cours-cyber.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Cours : Sécurité en ligne</h3>
+                                        <span class="card-tag">En classe et à la maison - 05/10</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découvrez les bases de la sécurité en ligne et son intérêt en entreprise.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            30min
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href="Cours/cours-comm-enligne.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Cours : Communiquer en ligne</h3>
+                                        <span class="card-tag">En classe </span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découvrez les bases de la communication proffesionnelle en ligne.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            10min
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- Section Composants de l'ordinateur -->
+        <section id="composants">
+            <div class="section-title">
+                <h2>Séquence - Les composants de l'ordinateur</h2>
+                <span class="section-tag">Octobre</span>
             </div>
+            <ul class="plain collapsible">
+                <li>
+                    <div class="section-subtitle">
+                        <h4>📝 Travaux Pratiques</h4>
+                        <span class="section-tag">Exercices</span>
+                    </div>
+                    <ul class="plain">
+
+                        <!-- Section TP -->
+                        <section id="tps">
+                            <p>Voici les TP disponibles et ceux déjà joué.</p>
+
+                            <div class="display-cards">
+                                <a href="TPs/tp-pc.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : Ordinateur</h3>
+                                        <span class="card-tag">Fait en classe - 23/09</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découverte des composants PC.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <a href="TPs/expose-pc.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Exposé : Ordinateur</h3>
+                                        <span class="card-tag">Fait en classe - 23/09</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Exposé sur les composants d'un PC.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                    </div>
+                                </a>
+                                
+                                <a href="Ressources/FicheExoSecNum_eleve.odt" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Exercices - Hygiène numérique</h3>
+                                        <span class="card-tag">05/10</span>
+                                    </div>
+                                    <p class="card-description">Feuille d'exercices sur la sécurité numérique, à faire depuis la maison.</p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                    </div>
+                                </a>
+                                
+                                <a href="TPs/tp-bitwarden.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : Mots de passes sécurisés</h3>
+                                        <span class="card-tag">05/10</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découverte d'un gestionnaire de mot de passe.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                        <span class="meta-item">
+                                            <span class="meta-icon">🔗</span>
+                                            Bitwarden
+                                        </span>
+                                    </div>
+                                </a>
+                                
+                                <a href="TPs/tp-pc-construction.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : Construction de PC</h3>
+                                        <span class="card-tag">12/10</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Remonter un PC à partir de différents composants.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </ul>
+                </li>
+                    
+                    <ul class="plain collapsible">
+                        <li>
+                            <div class="section-subtitle">
+                                <h4>📚 Cours</h4>
+                                <span class="section-tag">Théorie</span>
+                            </div>
+                            <ul class="plain">
+
+                        <!-- Section Cours -->
+                        <section id="cours">
+                            <p>
+                                Retrouvez ici les supports de cours pour approfondir vos connaissances.
+                            </p>
+
+                            <div class="display-cards">
+                                <a href="Cours/cours-pc.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Cours : La carte mère</h3>
+                                        <span class="card-tag">En classe - 23/09</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découverte des composants importants de l'ordinateur et de la carte mère.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            30min
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <a href="Cours/cours-memoire.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Cours : La mémoire</h3>
+                                        <span class="card-tag">En classe - 12/10</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Apprentissage sur les différents types de mémoire et leur applications dans l'ordinateur.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            30min
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <a href="Cours/fiche-revision.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Fiche de révision sur les premiers cours</h3>
+                                        <span class="card-tag">Autonomie</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Fiche de révision des 3 permiers cours de l'année.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            30min
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <section id="os">
+            <div class="section-title">
+                <h2>Séquence - Système d'exploitation</h2>
+                <span class="section-tag">Novembre</span>
+            </div>
+            <ul class="plain collapsible">
+                <li>
+                    <div class="section-subtitle">
+                        <h4>📝 Travaux Pratiques</h4>
+                        <span class="section-tag">Exercices</span>
+                    </div>
+                    <ul class="plain">
+                        <section id="tps">
+                            <p>Voici les TP disponibles et ceux déjà joué.</p>
+        
+                            <div class="display-cards">
+                                <a href="TPs/tp-vm.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : OS - Découverte</h3>
+                                        <span class="card-tag">En classe</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découverte de ce qu'est un système d'exploitation, avec une machine virtuelle.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <a href="TPs/tp-os.html" class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">TP : OS - Installation</h3>
+                                        <span class="card-tag">En classe</span>
+                                    </div>
+                                    <p class="card-description">
+                                        Découverte de ce qu'est un système d'exploitation, en l'installant sur une machine.
+                                    </p>
+                                    <div class="card-meta">
+                                        <span class="meta-item">
+                                            <span class="meta-icon">⏱️</span>
+                                            2h
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </ul>
+                </li>
+        
+                <ul class="plain collapsible">
+                    <li>
+                        <div class="section-subtitle">
+                            <h4>📚 Cours</h4>
+                            <span class="section-tag">Théorie</span>
+                        </div>
+                        <ul class="plain">
+                            <section id="cours">
+                                <p>
+                                    Retrouvez ici les supports de cours pour approfondir vos connaissances.
+                                </p>
+        
+                                <div class="display-cards">
+                                </div>
+                            </section>
+                        </ul>
+                    </li>
+                </ul>
         </section>
 
-        <!-- Section Cours -->
-        <section id="cours">
+        <!-- Section Vide -->
+        <!-- <section id="numerique">
             <div class="section-title">
-                <h2>📚 Cours</h2>
-                <span class="section-tag">Théorie</span>
+                <h2>Séquence - Vide</h2>
+                <span class="section-tag"><i>Mois de réalisation</i></span>
             </div>
-            <p>
-                Retrouvez ici les supports de cours pour approfondir vos connaissances.
-            </p>
-
-            <div class="display-cards">
-                <a href="Cours/cours-cyber.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Cours : Sécurité en ligne</h3>
-                        <span class="card-tag">En classe et à la maison - 05/10</span>
+            <ul class="plain collapsible">
+                <li>
+                    <div class="section-subtitle">
+                        <h4>📝 Travaux Pratiques</h4>
+                        <span class="section-tag">Exercices</span>
                     </div>
-                    <p class="card-description">
-                        Découvrez les bases de la sécurité en ligne et son intérêt en entreprise.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            30min
-                        </span>
-                    </div>
-                </a>
-
-                <a href="Cours/cours-pc.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Cours : La carte mère</h3>
-                        <span class="card-tag">En classe - 23/09</span>
-                    </div>
-                    <p class="card-description">
-                        Découverte des composants importants de l'ordinateur et de la carte mère.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            30min
-                        </span>
-                    </div>
-                </a>
-
-                <a href="Cours/cours-memoire.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Cours : La mémoire</h3>
-                        <span class="card-tag">En classe - 12/10</span>
-                    </div>
-                    <p class="card-description">
-                        Apprentissage sur les différents types de mémoire et leur applications dans l'ordinateur.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            30min
-                        </span>
-                    </div>
-                </a>
-
-                <a href="Cours/fiche-revision.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Fiche de révision sur les premiers cours</h3>
-                        <span class="card-tag">Autonomie</span>
-                    </div>
-                    <p class="card-description">
-                        Fiche de révision des 3 permiers cours de l'année.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            30min
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </section>
+                    <ul class="plain">
+                        <section id="tps">
+                            <p>
+                                Voici les TP disponibles et ceux déjà joué.
+                            </p>
+        
+                            <div class="display-cards">
+                            </div>
+                        </section>
+                    </ul>
+                </li>
+        
+                <ul class="plain collapsible">
+                    <li>
+                        <div class="section-subtitle">
+                            <h4>📚 Cours</h4>
+                            <span class="section-tag">Théorie</span>
+                        </div>
+                        <ul class="plain">
+                            <section id="cours">
+                                <p>
+                                    Retrouvez ici les supports de cours pour approfondir vos connaissances.
+                                </p>
+        
+                                <div class="display-cards">
+                                </div>
+                            </section>
+                        </ul>
+                    </li>
+                </ul>
+        </section> -->
 
         <!-- Section Ressources -->
         <section id="ressources">
@@ -281,22 +483,6 @@
             </p>
 
             <div class="display-cards">
-                <a href="Cours/cours-comm-enligne.html" class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Cours : Communiquer en ligne</h3>
-                        <span class="card-tag">En classe </span>
-                    </div>
-                    <p class="card-description">
-                        Découvrez les bases de la communication proffesionnelle en ligne.
-                    </p>
-                    <div class="card-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">⏱️</span>
-                            10min
-                        </span>
-                    </div>
-                </a>
-
                 <!-- Ressource : Proton Mail -->
                 <a href="https://proton.me/" target="_blank" class="card">
                     <div class="card-header">

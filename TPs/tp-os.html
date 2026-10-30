@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — Découvrir les systèmes d'exploitation</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">TP 2 — Systèmes d'exploitation</div>
+        <h1>Découvrir les OS : de la VM à la vraie machine</h1>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">Séance de 3h</span>
+            <span class="chip">Binôme : _______________</span>
+        </div>
+    </header>
+
+    <!-- Objectifs -->
+    <section id="objectifs">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Objectifs</h2>
+            <span class="sec-tag">À retenir</span>
+        </div>
+        <p>À la fin de ce TP, vous serez capable de :</p>
+        <ul class="plain">
+            <li>Expliquer ce qu'est un <strong>fichier ISO</strong> et le principe du <strong>boot</strong>.</li>
+            <li><strong>Installer Ubuntu</strong> et faire les vérifications post-installation.</li>
+            <li>Vous déplacer dans Linux en <strong>ligne de commande</strong> et créer des fichiers.</li>
+            <li>Créer une <strong>clé USB bootable</strong> avec Rufus et installer l'OS sur une <strong>vraie
+                    machine</strong>.</li>
+        </ul>
+    </section>
+
+    <!-- Sécurité -->
+    <section id="securite">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Consignes</h2>
+            <span class="sec-tag">Important</span>
+        </div>
+        <div>
+            <ul class="plain">
+                <li>On travail sur des machines dédiées. Il ne faut pas reproduire cela avec d'autres machines du lycée.</li>
+                <li>Completer au fur et à mesure le compte rendu : <a href="../Ressources/CR_TP_OS">fichier à télécharger</a>.</li>
+                <li>Pour répondre au question, vous avez le droit à toutes les ressources en lignes. <strong>Attention</strong>, vous devez être capable de justifier votre réponse avec vos mots pour qu'elle soit comptée.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Séance 2 -->
+    <section id="seance2">
+        <div class="sec-head">
+            <span class="sec-num">04</span>
+            <h2>Séance 2 — Installation sur une vraie machine</h2>
+            <span class="sec-tag">En binôme</span>
+        </div>
+
+        <p>Votre binôme dispose de <strong>trois éléments</strong> :</p>
+        <ul>
+            <li>Un <strong>PC avec internet</strong> (téléchargements, Rufus) ;</li>
+            <li>Une <strong>clé USB</strong>à rendre bootable ;</li>
+            <li>Un <strong>PC d'experimentation</strong> sur lequel installer le nouvel OS.</li>
+        </ul>        
+
+        <h3>Étape 1 — Installation du poste de travail</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Récupérer le matériel</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>À l'entrée de la salle, récupérez les différents matériels : <strong>un PC découverte</strong>, <strong>un
+                            écran</strong> et <strong>un clavier</strong>.</p>
+                    <p>Notez la référence du PC dans votre compte rendu.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">S'installer et brancher la config</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>S'installer à une <strong>paillasse</strong> alimentée.</p>
+                    <p>Brancher : écran → prise vidéo, clavier → USB, alimentation.</p>
+                    <p>Avant d'allumer : <strong>vérifier chaque branchement</strong>.</p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Étape 2 — Relever la licence Windows du PC découverte</h3>
+        <div class="question">
+            <span class="lbl">Question 1 — à compléter (les mots : <em>clé USB — virtuel — effacer</em>)</span>
+            <p>En VM, le disque est ____________ et on peut recommencer sans risque. Sur une vraie machine, le
+                support est une ____________ qu'il faut d'abord rendre bootable avec Rufus, et l'installation peut
+                ____________ les données du disque.</p>
+        </div>
+        <p>Avant de modifier le disque, on <strong>protège les données existantes</strong> : ici, le numéro de
+            licence Windows, au cas où il faudrait un jour réinstaller ce système.</p>
+        <div class="question">
+            <span class="lbl">Question 2</span>
+            <p>Quel sysème d'exploitation est actuellement installé ? Quelle marque ? Quel modèle ?</p>
+            <p>Y a-t-il un numéro de licence pour la réutiliser ulterieurement ? Si oui, lequel ?</p>
+        </div>
+
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Relever la clé</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Si Windows démarre : ouvrir l'invite de commandes (<kbd>Win</kbd>+<kbd>R</kbd> →
+                        <code>cmd</code>) et saisir :<br>
+                        <code>wmic path softwarelicensingservice get OA3xOriginalProductKey</code><br></p>
+                    <p>Sinon : chercher l'étiquette COA (Certificate of Authenticity) collée sur le boîtier.
+                    </p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Noter et conserver</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Recopier la clé sur la feuille de réponses (25 caractères) : ____________<br>
+                        Un professionnel documente toujours sa intervention : la clé notée, c'est une
+                        réinstallation Windows possible plus tard.</p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Étape 4 — Choisir sa distribution et télécharger l'ISO</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Choisir une distribution</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Depuis le <strong>PC relié au réseau</strong>, le binôme choisit UNE de ces distributions
+                        Ubuntu parmis :</p>
+                    <ul>
+                        <li>Edubuntu</li>
+                        <li>Linux Lite</li>
+                        <li>Lubuntu</li>
+                    </ul>
+
+                    <div class="question">
+                        <span class="lbl">Question 3</span>
+                        <p>Qu'est-ce qu'une distribution Linux ? Quelles sont les différences entre ces 3 ?</p>
+                    </div>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Téléchargement officiel</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Télécharger l'ISO <strong>uniquement depuis le site officiel</strong> de la distribution.</p>
+                    <p>Edubuntu et Lubuntu via <a href="https://ubuntu.com/download" target="_blank">ubuntu.com</a>,
+                        Linux Lite via <a href="https://www.linuxliteos.com" target="_blank">linuxliteos.com</a>.</p>
+                    <p>Enregistrer l'ISO sur le PC.</p>
+                </div>
+            </li>
+        </ol>
+        <div class="question">
+            <span class="lbl">Question 4 — QCM</span>
+            <p>Pourquoi télécharger l'ISO depuis le site officiel ? Cochez la bonne réponse :</p>
+            <p>☐ a) C'est plus rapide<br>
+                ☐ b) Pour être sûr que le fichier n'a pas été modifié (critère <strong>I</strong>ntégrité du
+                DICP)<br>
+                ☐ c) Parce que les autres sites sont payants</p>
+        </div>
+
+        <h3>Étape 5 — Créer la clé USB bootable avec Rufus</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Lancer Rufus</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Sur le PC réseau, brancher la <strong>clé fournie</strong> (elle sera <strong>effacée</strong>
+                        — vérifier avec le professeur qu'elle ne contient rien).</p>
+                    <p>Dans Rufus : <strong>Périphérique</strong> = votre clé.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Choisir l'ISO</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p><strong>Sélection de démarrage</strong> → <em>Sélectionner</em> → pointer l'ISO de votre
+                        distribution téléchargée.</p>
+                    <p>Schéma de partition : <strong>GPT</strong> (UEFI) ou MBR selon
+                        l'âge du PC découverte (vérifier dans le BIOS).</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Graver et vérifier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p><em>Démarrer</em> → confirmer l'effacement → patienter (5-10 min).</p>
+                    <p>En fin de processus, la clé
+                        contient le <strong>bootloader + fichiers d'installation</strong> : elle est bootable.</p>
+                </div>
+            </li>
+        </ol>
+        <div class="question">
+            <span class="lbl">Question 5 — à compléter</span>
+            <p>Pour rendre la clé bootable, Rufus y copie l'__________ complète, avec son programme
+                d'____________ (le bootloader). Après cela, la clé permet de ____________ l'ordinateur.</p>
+        </div>
+
+        <h3>Étape 6 — Ordre de boot et installation de Linux</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Brancher la clé et allumer le PC découverte</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Brancher la clé bootable sur le PC découverte, allumer et presser la touche du Setup :
+                        <kbd>Suppr</kbd>, <kbd>F2</kbd> ou <kbd>F12</kbd> selon la carte mère (indiqué brièvement au
+                    </p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Mettre la clé USB en premier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Dans le menu <strong>Boot Order</strong>, remonter « USB ... » en tête de l'ordre de boot, enregistrer
+                        et quitter (<kbd>F10</kbd>). La machine redémarre sur la clé → écran d'installation.</p>
+                    <p class="note">Si le PC démarre sur son ancien disque : l'ordre de boot n'a pas été pris en
+                        compte — recommencer l'étape.</p>
+                </div>
+            </li>
+
+            <div class="callout deliver">
+                <span class="lbl">🏆 Défi — Le dual boot</span>
+                <p><strong>Uniquement pour les binômes rapide</strong>. Demandez l'autorisation au professeur.</p>
+                <p>Au moment du partitionnement, choisir « <strong>Installer à côté de Windows</strong> » (ou créer
+                    manuellement une partition pour Linux) : le PC proposera alors, à chaque démarrage, le choix entre
+                    Windows et votre distribution via le bootloader <strong>GRUB</strong>.</p>
+                <p>Le PC découverte garde ainsi
+                    ses deux systèmes — et vous venez de découvrir à quoi sert un menu de boot !</p>
+                <p>⚠️ À tenter uniquement après validation du professeur : le redimensionnement de partition reste une
+                    opération délicate. Faites valider le menu GRUB par le professeur.</p>
+            </div>
+
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Installer la distribution</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Mêmes étapes que la séance 1 : langue, « Installer », partitionnement, compte utilisateur,
+                        redémarrage. Retirer la clé quand le système le demande.</p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Étape 7 — Vérifications et comparaison</h3>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vérification</th>
+                        <th>Séance 1 (VM)</th>
+                        <th>Séance 2 (machine réelle)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Temps total d'installation (estimation)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>RAM détectée (<code>free -h</code>)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Disque détecté (<code>df -h</code>)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Touche d'accès au Setup utilisée</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 6 — Vrai ou Faux</span>
+            <p>a) L'installation sur VM est la plus simple : VRAI / FAUX<br>
+                b) L'installation sur une vraie machine peut effacer des données : VRAI / FAUX<br>
+                c) Un technicien utilise une VM pour tester un OS sans risque avant de l'installer en vrai :
+                VRAI / FAUX</p>
+        </div>
+
+        <h3>Étape 8 — Rangement</h3>
+        <div class="callout warn">
+            <span class="lbl">⚠️ Fin de séance — obligatoire</span>
+            <ul class="plain">
+                <li><strong>Éteindre proprement</strong> le PC découverte et le PC réseau (jamais en appuyant sur
+                    le bouton !).</li>
+                <li><strong>Débrancher</strong> écran, clavier et alimentations, enrouler les câbles.</li>
+                <li><strong>Rapporter le PC, l'écran et le clavier à l'entrée de la salle</strong>, à leur place.</li>
+                <li>Rendre la <strong>clé USB</strong> au professeur.</li>
+                <li>Faire vérifier la paillasse par le professeur.</li>
+            </ul>
+        </div>
+        <p class="signature">Paillasse vérifiée : ____________________</p>
+    </section>
+
+    <!-- Synthèse -->
+    <section id="synthese">
+        <div class="sec-head">
+            <span class="sec-num">05</span>
+            <h2>Questions de synthèse</h2>
+            <span class="sec-tag">À répondre</span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 7 — à compléter</span>
+            <p>Au démarrage, c'est le ____________ qui cherche un support bootable. S'il n'en trouve aucun
+                contenant un OS, il affiche le message : « ____________________ ».</p>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 8 — à compléter</span>
+            <p>La séance 1 était « sans risque » car tout se passait dans un disque ____________ . En séance 2,
+                le geste irréversible a été l'____________ de la clé USB (et éventuellement du disque).</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>TP réalisé par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : octobre 2026</p>
+    </footer>
+</body>
+
+</html>

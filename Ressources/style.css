@@ -179,14 +179,18 @@ section {
     font-weight: 500;
 }
 
-.section-title {
+.section-title, .section-subtitle {
     display: flex;
     align-items: baseline;
     gap: 0.85rem;
-    border-bottom: 2px solid var(--ink);
     padding-bottom: 0.6rem;
     margin-bottom: 1.5rem;
 }
+
+.section-title {
+    border-bottom: 2px solid var(--ink);
+}
+
 
 .section-title h2 {
     font-size: 1.8rem;
