@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défis — Machines virtuelles &amp; Linux</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">Défis — Systèmes d'exploitation</div>
+        <h1>🏆 Les défis VM &amp; Linux</h1>
+        <p class="lede">20 défis pour devenir un pro de la machine virtuelle et du terminal. À faire en binôme dans
+            votre VM Ubuntu : chaque défi réussi est validé par le professeur.</p>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">En binôme</span>
+            <span class="chip">Menu libre : piochez dans l'ordre des niveaux</span>
+        </div>
+    </header>
+
+    <div class="callout">
+        <span class="lbl">⚡ Règle du jeu</span>
+        <p>🥉 Défi facile · 🥈 moyen · 🥇 avancé · 💎 pour les fins de séance. Chaque défi réussi = <strong>validation
+                du professeur</strong> (capture d'écran ou démonstration en direct). 3 défis du niveau 2 validés = badge
+            <strong>« Terminal Master »</strong> 🏅<br>
+            Aucun défi ne peut abîmer le poste hôte : tout se passe dans la VM — et en cas de catastrophe, on la
+            supprime et on recommence !
+        </p>
+    </div>
+
+    <!-- Niveau 1 -->
+    <section id="niveau1">
+        <div class="sec-head">
+            <span class="sec-num">🥉</span>
+            <h2>Niveau 1 — Découvrir la machine virtuelle</h2>
+            <span class="sec-tag">5 défis</span>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥉 Défi 1 — L'espion du système</span>
+            <p>Ouvre les <strong>Paramètres → À propos</strong> de ta VM Ubuntu. Note : la quantité de RAM détectée,
+                le nombre de cœurs, la version d'Ubuntu. Compare avec les valeurs que tu as choisies à la création de
+                la VM. Coïncide-t-il ?</p>
+            <p class="note">Objectif : vérifier le paramétrage d'une VM.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥉 Défi 2 — Le mensonge du matériel</span>
+            <p>Dans VirtualBox, ouvre la fenêtre de la VM éteinte : tu vois la « vraie » config du poste hôte (ex. 16
+                Go de RAM). Pourquoi Ubuntu dans la VM n'en voit que 4 ? Écris ta réponse en 2 phrases.</p>
+            <p class="note">Objectif : comprendre que la VM est un ordinateur logiciel.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥉 Défi 3 — Le crash sans douleur</span>
+            <p>Ouvre plusieurs applications dans la VM en même temps (navigateur + lecteur vidéo + éditeur de texte)
+                jusqu'à ce que ça rame. Que se passe-t-il ? Redémarre la VM. Que retrouve-t-on ?</p>
+            <p class="note">Objectif : la VM est un bac à sable sans risque.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥉 Défi 4 — La photo du système</span>
+            <p>Fais une <strong>capture d'écran</strong> de ton bureau Ubuntu (touche Impr. écran ou outil capture) et
+                enregistre-la dans ton dossier personnel.</p>
+            <p class="note">Objectif : s'habituer aux raccourcis et au gestionnaire de fichiers.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥉 Défi 5 — Le tour de magie des instantanés</span>
+            <p>Crée un <strong>instantané</strong> (snapshot) de ta VM dans VirtualBox, puis « casse » la VM
+                volontairement (change le fond d'écran, crée des fichiers, renomme des dossiers). Restaure
+                l'instantané : tout est revenu ! Explique à quoi sert un instantané pour un technicien CIEL.</p>
+            <p class="note">Objectif : la restauration — l'outil du technicien.</p>
+            <p>Validation : ____________________</p>
+        </div>
+    </section>
+
+    <!-- Niveau 2 -->
+    <section id="niveau2">
+        <div class="sec-head">
+            <span class="sec-num">🥈</span>
+            <h2>Niveau 2 — Le terminal</h2>
+            <span class="sec-tag">6 défis</span>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥈 Défi 6 — Le détective des dossiers</span>
+            <p>Uniquement au terminal : affiche où tu es (<code>pwd</code>), liste le contenu (<code>ls -l</code>),
+                puis réponds : combien de <strong>dossiers cachés</strong> vois-tu ? (indice : ils commencent par un
+                point) À quoi sert le plus gros ?</p>
+            <p class="note">Objectif : naviguer et observer.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥈 Défi 7 — L'architecte</span>
+            <p>Dans ton dossier personnel, construis cette arborescence uniquement au terminal :</p>
+            <p>Projet/ → Docs/ · Images/ · Code/ → v1/</p>
+            <p>Vérifie avec <code>ls -R Projet</code>.</p>
+            <p class="note">Objectif : réinvestir mkdir et l'arborescence du cours.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥈 Défi 8 — L'écrivain sans souris</span>
+            <p>Crée le fichier <code>presentation.txt</code> avec <code>nano</code> : 3 lignes (ton prénom, ta
+                section, ton film préféré). Affiche-le avec <code>cat</code>. Puis copie-le en
+                <code>presentation2.txt</code>, et supprime l'original avec <code>rm</code>. Il ne reste qu'une copie :
+                vérifie avec <code>ls</code>.
+            </p>
+            <p class="note">Objectif : touch, nano, cp, rm — la chaîne complète.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥈 Défi 9 — L'espion du disque</span>
+            <p>Tape <code>df -h</code>. Réponds : combien d'espace total sur ton disque virtuel ? Combien est utilisé ?
+                Compare avec les 25 Go demandés à la création de la VM — pourquoi la différence ?</p>
+            <p class="note">Objectif : le disque dynamique grossit au fur et à mesure.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥈 Défi 10 — La chasse au trésor caché</span>
+            <p>Le professeur (ou un binôme pour l'autre) a caché un fichier <code>tresor.txt</code> quelque part dans
+                le dossier personnel. Retrouve-le <strong>uniquement</strong> avec <code>ls</code>, <code>cd</code> et
+                <code>cat</code>, puis note son chemin complet. Chronomètre : le binôme le plus rapide gagne !
+            </p>
+            <p class="note">Objectif : naviguer dans l'arborescence.</p>
+            <p>Chemin du trésor : ____________________ · Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥈 Défi 11 — Le traducteur</span>
+            <p>Fais correspondre chaque commande Windows (<code>dir</code>, <code>cd</code>, <code>md</code>,
+                <code>del</code>, <code>copy</code>, <code>type</code>) à son équivalent Linux. Le premier binôme qui
+                rend la table complète gagne.
+            </p>
+            <p class="note">Objectif : les commandes sont de l'anglais abrégé, la logique est la même.</p>
+            <p>Validation : ____________________</p>
+        </div>
+    </section>
+
+    <!-- Niveau 3 -->
+    <section id="niveau3">
+        <div class="sec-head">
+            <span class="sec-num">🥇</span>
+            <h2>Niveau 3 — Administrer</h2>
+            <span class="sec-tag">7 défis</span>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥇 Défi 12 — Le mode sombre du terminal</span>
+            <p>Change le <strong>fond d'écran</strong> de ta VM, puis change le <strong>thème</strong> du terminal
+                (couleurs, police). Prouve que tu sais revenir en arrière.</p>
+            <p class="note">Objectif : personnalisation — la VM est à toi.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥇 Défi 13 — L'installateur</span>
+            <p>Installe un logiciel depuis la logithèque Ubuntu (ex. GIMP, un jeu libre). Lance-le, puis
+                <strong>désinstalle-le</strong> proprement. Note les 3 étapes.
+            </p>
+            <p class="note">Objectif : gérer les logiciels.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥇 Défi 14 — Le mode live en vrai</span>
+            <p>Redémarre la VM sur l'ISO (lecteur optique virtuel) et choisis « <strong>Essayer Ubuntu</strong> » au
+                lieu d'installer. Explore, puis redémarre normalement : tes fichiers sont intacts. Explique pourquoi
+                (indice : où l'OS « live » s'est-il chargé ?).</p>
+            <p class="note">Objectif : réinvestir le cours mémoires — la RAM volatile.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥇 Défi 15 — Le conservateur de musée</span>
+            <p>Crée un <strong>nouvel utilisateur</strong> dans ta VM (Paramètres → Utilisateurs). Déconnecte-toi,
+                connecte-toi avec ce compte : trouve-t-il tes fichiers ? Pourquoi ?</p>
+            <p class="note">Objectif : les comptes protègent « chacun chez soi » — lien avec le cours utilisateurs et
+                droits.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥇 Défi 16 — L'horloger</span>
+            <p>Trouve et change le <strong>fuseau horaire</strong> de ta VM (Paramètres → Date et heure). Quelle heure
+                affiche-t-elle maintenant ? Remets l'heure de Paris.</p>
+            <p class="note">Objectif : configurer le système.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🥇 Défi 17 — Le gestionnaire de tâches Linux</span>
+            <p>Ouvre le <strong>Moniteur système</strong> (équivalent du Gestionnaire des tâches Windows). Liste 5
+                processus en cours. En trouve-t-on un qui porte le nom du <strong>noyau</strong> ?</p>
+            <p class="note">Objectif : réinvestir le cours — le noyau tourne en permanence.</p>
+            <p>Validation : ____________________</p>
+        </div>
+    </section>
+
+    <!-- Niveau 4 -->
+    <section id="niveau4">
+        <div class="sec-head">
+            <span class="sec-num">💎</span>
+            <h2>Niveau 4 — Pour les fins de séance</h2>
+            <span class="sec-tag">3 défis</span>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">💎 Défi 19 — Le clavier invisible</span>
+            <p>Modifie la configure du clavier en <strong>anglais</strong> de ton voisin
+                (Paramètres → Clavier). Il revient : à lui de découvrir le problème en 3 minutes maximum et de le
+                réparer.</p>
+            <p class="note">Objectif : diagnostic — un problème simple peut bloquer tout le travail.</p>
+            <p>Validation : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">💎 Défi 20 — Le rapport de mission</span>
+            <p>Rédige (au terminal, avec <code>nano</code>) le fichier <code>mission.txt</code> : 5 lignes résumant ce
+                que tu as appris sur les VM et Linux, <strong>sans copier-coller</strong>. C'est la preuve finale de
+                la mission !</p>
+            <p class="note">Objectif : reformuler avec ses mots.</p>
+            <p>Validation : ____________________</p>
+        </div>
+    </section>
+
+    <!-- Synthèse -->
+    <section id="synthese">
+        <div class="sec-head">
+            <span class="sec-num">📋</span>
+            <h2>Grille de validation du professeur</h2>
+            <span class="sec-tag">Suivi</span>
+        </div>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Défi</th>
+                        <th>Compétence travaillée</th>
+                        <th>Binôme</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 à 5 (🥉)</td>
+                        <td>Comprendre la VM (config, snapshot, sans risque)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6 à 11 (🥈)</td>
+                        <td>Maîtriser le terminal (navigation, fichiers)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>12 à 17 (🥇)</td>
+                        <td>Administrer (logiciels, comptes, processus)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>18 à 20 (💎)</td>
+                        <td>Aller plus loin (export, diagnostic, restitution)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout">
+            <span class="lbl">🏅 Badge « Terminal Master »</span>
+            <p>3 défis du niveau 2 validés : ____________________ (binôme) — date : ____________</p>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>Défis par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : novembre 2026</p>
+    </footer>
+</body>
+
+</html>
