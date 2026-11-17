@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours — Principes de la programmation web</title>
+    <link rel="stylesheet" href="../Ressources/style.css">
+    <style>
+        /* Schémas du cours */
+        .schema {
+            margin: 18px 0;
+            text-align: center;
+        }
+
+        .schema svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .schema figcaption {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .pictos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: space-around;
+            margin: 16px 0;
+        }
+
+        .picto {
+            flex: 1 1 200px;
+            max-width: 240px;
+            background: #f6f8fc;
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .picto .ico {
+            font-size: 2.4em;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .picto strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .picto p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        code {
+            background: #eef2fa;
+            padding: 1px 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">Cours — Web · 30 min</div>
+        <h1>Les principes de la programmation web</h1>
+        <p class="lede">Avant d'écrire du code : comprendre ce qu'est une page web, comment elle voyage, et avec
+            quels langages elle est construite.</p>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">30 min</span>
+            <span class="chip">Cours + questions flash</span>
+        </div>
+    </header>
+
+    <!-- 1. Le voyage -->
+    <section id="voyage">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Le voyage d'une page web</h2>
+            <span class="sec-tag">Client · Serveur · HTTP</span>
+        </div>
+
+        <figure class="schema">
+            <svg viewBox="0 0 780 240" xmlns="http://www.w3.org/2000/svg" role="img"
+                aria-label="Le navigateur (client) demande la page au serveur web, qui renvoie les fichiers.">
+                <!-- Client -->
+                <rect x="20" y="70" width="190" height="110" rx="14" fill="#e3edff" stroke="#1a4fb4"
+                    stroke-width="2.5" />
+                <text x="115" y="115" text-anchor="middle" font-size="40">💻</text>
+                <text x="115" y="150" text-anchor="middle" font-size="17" font-weight="bold" fill="#123">CLIENT</text>
+                <text x="115" y="170" text-anchor="middle" font-size="12" fill="#345">votre navigateur</text>
+                <!-- Serveur -->
+                <rect x="570" y="70" width="190" height="110" rx="14" fill="#ffe9e3" stroke="#c0392b"
+                    stroke-width="2.5" />
+                <text x="665" y="115" text-anchor="middle" font-size="40">🗄️</text>
+                <text x="665" y="150" text-anchor="middle" font-size="17" font-weight="bold" fill="#301">SERVEUR</text>
+                <text x="665" y="170" text-anchor="middle" font-size="12" fill="#543">garde les fichiers du site</text>
+                <!-- Requête -->
+                <line x1="215" y1="105" x2="565" y2="105" stroke="#1a4fb4" stroke-width="3"
+                    marker-end="url(#flebleu)" />
+                <text x="390" y="93" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a4fb4">1 · REQUÊTE
+                    HTTP (« donne-moi la page »)</text>
+                <!-- Reponse -->
+                <line x1="565" y1="150" x2="215" y2="150" stroke="#c0392b" stroke-width="3"
+                    marker-end="url(#flrouge)" />
+                <text x="390" y="178" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">2 · RÉPONSE
+                    : des fichiers (HTML, CSS…)</text>
+                <!-- Fleches -->
+                <defs>
+                    <marker id="flebleu" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path d="M0,0 L8,3 L0,6 Z" fill="#1a4fb4" />
+                    </marker>
+                    <marker id="flrouge" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path d="M0,0 L8,3 L0,6 Z" fill="#c0392b" />
+                    </marker>
+                </defs>
+                <!-- Affichage -->
+                <text x="390" y="215" text-anchor="middle" font-size="14" fill="#345">3 · le navigateur lit les fichiers
+                    et construit l'affichage 🖥️</text>
+            </svg>
+            <figcaption>Le serveur envoie du texte. C'est le navigateur qui fabrique la page.</figcaption>
+        </figure>
+
+        <div class="callout">
+            <span class="lbl">💡 Le point clé à retenir</span>
+            <p>Une page web n'est <strong>pas une image</strong> envoyée d'un coup : c'est du <strong>texte</strong>
+                que votre ordinateur transforme en page.</p>
+        </div>
+    </section>
+
+    <!-- 2. Les trois langages -->
+    <section id="langages">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Les trois langages du web</h2>
+            <span class="sec-tag">HTML · CSS · JS</span>
+        </div>
+
+        <div class="pictos">
+            <div class="picto">
+                <span class="ico">🧱</span>
+                <strong>HTML</strong>
+                <p>le contenu et la structure<br>« qu'est-ce qu'il y a ? »</p>
+            </div>
+            <div class="picto">
+                <span class="ico">🎨</span>
+                <strong>CSS</strong>
+                <p>l'apparence<br>« à quoi ça ressemble ? »</p>
+            </div>
+            <div class="picto">
+                <span class="ico">⚡</span>
+                <strong>JavaScript</strong>
+                <p>l'interactivité<br>« que fait-on au clic ? »</p>
+            </div>
+        </div>
+
+        <figure class="schema">
+            <svg viewBox="0 0 780 230" xmlns="http://www.w3.org/2000/svg" role="img"
+                aria-label="Analogie de la maison : HTML les murs, CSS la peinture, JavaScript l'électricité.">
+                <!-- Maison : murs -->
+                <rect x="250" y="70" width="280" height="130" fill="#f5e9d8" stroke="#8a6a45" stroke-width="3" />
+                <polygon points="230,70 390,15 550,70" fill="#b0563a" stroke="#8a4a30" stroke-width="3" />
+                <rect x="355" y="140" width="70" height="60" fill="#7a5230" />
+                <rect x="275" y="95" width="55" height="45" fill="#bfe3ff" stroke="#8a6a45" stroke-width="2" />
+                <rect x="450" y="95" width="55" height="45" fill="#bfe3ff" stroke="#8a6a45" stroke-width="2" />
+                <!-- Etiquettes -->
+                <line x1="240" y1="185" x2="120" y2="210" stroke="#8a6a45" stroke-width="2" />
+                <text x="25" y="200" font-size="15" font-weight="bold" fill="#6b4a2a">🧱 HTML</text>
+                <text x="25" y="218" font-size="12" fill="#6b4a2a">les murs, les pièces</text>
+                <line x1="520" y1="55" x2="620" y2="30" stroke="#c0392b" stroke-width="2" />
+                <text x="600" y="22" font-size="15" font-weight="bold" fill="#c0392b">🎨 CSS</text>
+                <text x="600" y="40" font-size="12" fill="#c0392b">la peinture</text>
+                <line x1="470" y1="170" x2="600" y2="195" stroke="#b7950b" stroke-width="2" />
+                <text x="590" y="192" font-size="15" font-weight="bold" fill="#a07d08">⚡ JavaScript</text>
+                <text x="590" y="210" font-size="12" fill="#a07d08">l'électricité, les interrupteurs</text>
+            </svg>
+            <figcaption>Pas de page web sans HTML — comme pas de maison sans murs.</figcaption>
+        </figure>
+
+        <div class="question">
+            <span class="lbl">Question flash 1 🙋</span>
+            <p>« Le titre du site est en rouge et centré » → quel langage ? « Un menu s'ouvre au clic » → quel
+                langage ?</p>
+            <span class="rule"></span>
+        </div>
+    </section>
+
+    <!-- 3. Structure -->
+    <section id="structure">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>La structure d'un fichier HTML</h2>
+            <span class="sec-tag">Balises · head · body</span>
+        </div>
+
+        <div class="pictos">
+            <div class="picto">
+                <span class="ico">📄</span>
+                <strong>Un fichier texte</strong>
+                <p>extension <code>.html</code></p>
+            </div>
+            <div class="picto">
+                <span class="ico">🏷️</span>
+                <strong>Des balises</strong>
+                <p><code>&lt;p&gt;…&lt;/p&gt;</code><br>on ouvre, on ferme</p>
+            </div>
+            <div class="picto">
+                <span class="ico">🪆</span>
+                <strong>Emboîtées</strong>
+                <p>comme des poupées russes<br>jamais en travers !</p>
+            </div>
+        </div>
+
+        <figure class="schema">
+            <svg viewBox="0 0 780 330" xmlns="http://www.w3.org/2000/svg" role="img"
+                aria-label="Squelette d'une page HTML : html contient head (invisible) et body (visible).">
+                <!-- html -->
+                <rect x="30" y="15" width="720" height="300" rx="12" fill="#f2f6ff" stroke="#1a4fb4"
+                    stroke-width="2.5" />
+                <text x="60" y="45" font-size="16" font-weight="bold" fill="#1a4fb4">&lt;html lang="fr"&gt; — toute la
+                    page</text>
+                <!-- head -->
+                <rect x="60" y="60" width="660" height="90" rx="10" fill="#fff6e0" stroke="#b7950b" stroke-width="2" />
+                <text x="85" y="90" font-size="15" font-weight="bold" fill="#8a6d00">&lt;head&gt; — l'INVISIBLE
+                    👻</text>
+                <text x="85" y="115" font-size="13" fill="#555">titre de l'onglet · encodage · lien vers le CSS</text>
+                <text x="85" y="137" font-size="13" fill="#555">rien ne s'affiche ici</text>
+                <!-- body -->
+                <rect x="60" y="165" width="660" height="130" rx="10" fill="#e8f8ec" stroke="#1e8e3e"
+                    stroke-width="2" />
+                <text x="85" y="195" font-size="15" font-weight="bold" fill="#146c2e">&lt;body&gt; — le VISIBLE
+                    👀</text>
+                <text x="85" y="220" font-size="13" fill="#555">titres · paragraphes · images · tableaux ·
+                    boutons</text>
+                <text x="85" y="242" font-size="13" fill="#555">tout ce que l'on voit à l'écran</text>
+                <!-- doctype -->
+                <text x="30" y="8" font-size="12" fill="#888">&lt;!DOCTYPE html&gt; ← « page web moderne »</text>
+            </svg>
+            <figcaption>Deux zones à ne jamais confondre : head (invisible) et body (visible).</figcaption>
+        </figure>
+
+        <div class="question">
+            <span class="lbl">Question flash 2 🙋</span>
+            <p>Le titre de l'onglet s'écrit dans <code>&lt;head&gt;</code> ou <code>&lt;body&gt;</code> ? Et le
+                contenu visible ?</p>
+            <span class="rule"></span>
+        </div>
+    </section>
+
+    <!-- 4. Les blocs -->
+    <section id="blocs">
+        <div class="sec-head">
+            <span class="sec-num">04</span>
+            <h2>Les blocs de structure</h2>
+            <span class="sec-tag">header · section · article · table</span>
+        </div>
+
+        <figure class="schema">
+            <svg viewBox="0 0 820 620" xmlns="http://www.w3.org/2000/svg" role="img"
+                aria-label="Décomposition de la vraie page : chaque zone de la fiche est annotée avec sa balise.">
+                <!-- ===== La page (à gauche) ===== -->
+                <rect x="20" y="15" width="480" height="590" fill="#ffffff" stroke="#999" stroke-width="2" />
+                <!-- h1 -->
+                <text x="35" y="55" font-family="Georgia, serif" font-size="21" font-weight="bold" fill="#000"
+                    text-decoration="underline">Fiche matériel — Switch Cisco 2960</text>
+                <!-- section presentation -->
+                <text x="35" y="105" font-family="Georgia, serif" font-size="17" font-weight="bold" fill="#000"
+                    text-decoration="underline">Présentation</text>
+                <text x="35" y="135" font-family="Georgia, serif" font-size="12" fill="#000">Le switch Cisco 2960 est un
+                    équipement réseau de la gamme Cisco Systems.</text>
+                <!-- section equipements -->
+                <text x="35" y="180" font-family="Georgia, serif" font-size="17" font-weight="bold" fill="#000"
+                    text-decoration="underline">Les équipements</text>
+                <text x="35" y="215" font-family="Georgia, serif" font-size="14" font-weight="bold"
+                    fill="#000">Switch</text>
+                <text x="35" y="238" font-family="Georgia, serif" font-size="12" fill="#000">Relie les machines d'un
+                    même réseau local.</text>
+                <text x="35" y="270" font-family="Georgia, serif" font-size="14" font-weight="bold"
+                    fill="#000">Routeur</text>
+                <text x="35" y="293" font-family="Georgia, serif" font-size="12" fill="#000">Passe les communications
+                    d'un réseau à un autre.</text>
+                <text x="35" y="325" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#000">Point
+                    d'accès WiFi</text>
+                <text x="35" y="348" font-family="Georgia, serif" font-size="12" fill="#000">Connecte les appareils sans
+                    fil au réseau.</text>
+                <!-- section inventaire -->
+                <text x="35" y="390" font-family="Georgia, serif" font-size="17" font-weight="bold" fill="#000"
+                    text-decoration="underline">Inventaire</text>
+                <text x="35" y="422" font-family="Georgia, serif" font-size="12" font-weight="bold"
+                    fill="#000">Équipement</text>
+                <text x="140" y="422" font-family="Georgia, serif" font-size="12" font-weight="bold"
+                    fill="#000">Modèle</text>
+                <text x="235" y="422" font-family="Georgia, serif" font-size="12" font-weight="bold"
+                    fill="#000">Quantité</text>
+                <text x="320" y="422" font-family="Georgia, serif" font-size="12" font-weight="bold"
+                    fill="#000">État</text>
+                <text x="35" y="445" font-family="Georgia, serif" font-size="12" fill="#000">Switch</text>
+                <text x="140" y="445" font-family="Georgia, serif" font-size="12" fill="#000">Cisco 2960</text>
+                <text x="235" y="445" font-family="Georgia, serif" font-size="12" fill="#000">2</text>
+                <text x="320" y="445" font-family="Georgia, serif" font-size="12" fill="#000">En service</text>
+                <text x="35" y="468" font-family="Georgia, serif" font-size="12" fill="#000">Routeur</text>
+                <text x="140" y="468" font-family="Georgia, serif" font-size="12" fill="#000">Cisco 1941</text>
+                <text x="235" y="468" font-family="Georgia, serif" font-size="12" fill="#000">1</text>
+                <text x="320" y="468" font-family="Georgia, serif" font-size="12" fill="#000">En service</text>
+                <text x="35" y="491" font-family="Georgia, serif" font-size="12" fill="#000">Point d'accès</text>
+                <text x="140" y="491" font-family="Georgia, serif" font-size="12" fill="#000">TP-Link EAP225</text>
+                <text x="235" y="491" font-family="Georgia, serif" font-size="12" fill="#000">3</text>
+                <text x="320" y="491" font-family="Georgia, serif" font-size="12" fill="#000">En stock</text>
+                <!-- footer -->
+                <text x="35" y="530" font-family="Georgia, serif" font-size="12" fill="#000">Binôme : Prénom NOM &amp;
+                    Prénom NOM · Seconde Bac Pro CIEL · 2026</text>
+                <text x="35" y="585" font-size="12" fill="#888" font-style="italic">← la page rendue par le navigateur
+                    (sans CSS)</text>
+
+                <!-- ===== Annotations (à droite) ===== -->
+                <!-- h1 -->
+                <rect x="28" y="32" width="440" height="34" rx="4" fill="none" stroke="#1a4fb4" stroke-width="3" />
+                <line x1="468" y1="49" x2="530" y2="49" stroke="#1a4fb4" stroke-width="2" />
+                <text x="538" y="46" font-size="13" font-weight="bold" fill="#1a4fb4">&lt;h1&gt;</text>
+                <text x="538" y="62" font-size="11" fill="#555">LE titre de la page</text>
+                <!-- section presentation -->
+                <rect x="28" y="86" width="440" height="60" rx="4" fill="none" stroke="#7a1fa2" stroke-width="3" />
+                <line x1="468" y1="116" x2="530" y2="116" stroke="#7a1fa2" stroke-width="2" />
+                <text x="538" y="113" font-size="13" font-weight="bold" fill="#7a1fa2">&lt;section&gt;</text>
+                <text x="538" y="129" font-size="11" fill="#555">une grande partie</text>
+                <!-- h2 -->
+                <text x="538" y="152" font-size="13" font-weight="bold" fill="#1a4fb4">&lt;h2&gt;</text>
+                <text x="538" y="168" font-size="11" fill="#555">titre de la partie</text>
+                <line x1="533" y1="148" x2="180" y2="100" stroke="#1a4fb4" stroke-width="1.5" stroke-dasharray="3 3" />
+                <!-- article 1 -->
+                <rect x="28" y="196" width="440" height="52" rx="4" fill="none" stroke="#1e8e3e" stroke-width="3" />
+                <line x1="468" y1="222" x2="530" y2="222" stroke="#1e8e3e" stroke-width="2" />
+                <text x="538" y="219" font-size="13" font-weight="bold" fill="#1e8e3e">&lt;article&gt; n°1</text>
+                <text x="538" y="235" font-size="11" fill="#555">h3 + paragraphe</text>
+                <!-- article 2 -->
+                <rect x="28" y="252" width="440" height="52" rx="4" fill="none" stroke="#1e8e3e" stroke-width="3" />
+                <line x1="468" y1="278" x2="530" y2="278" stroke="#1e8e3e" stroke-width="2" />
+                <text x="538" y="275" font-size="13" font-weight="bold" fill="#1e8e3e">&lt;article&gt; n°2</text>
+                <!-- article 3 -->
+                <rect x="28" y="308" width="440" height="52" rx="4" fill="none" stroke="#1e8e3e" stroke-width="3" />
+                <line x1="468" y1="334" x2="530" y2="334" stroke="#1e8e3e" stroke-width="2" />
+                <text x="538" y="331" font-size="13" font-weight="bold" fill="#1e8e3e">&lt;article&gt; n°3</text>
+                <!-- section inventaire + table -->
+                <rect x="28" y="370" width="440" height="135" rx="4" fill="none" stroke="#7a1fa2" stroke-width="3" />
+                <line x1="468" y1="437" x2="530" y2="437" stroke="#7a1fa2" stroke-width="2" />
+                <text x="538" y="434" font-size="13" font-weight="bold" fill="#7a1fa2">&lt;section&gt;</text>
+                <text x="538" y="450" font-size="13" font-weight="bold" fill="#b7950b">📊 &lt;table&gt;</text>
+                <!-- th -->
+                <rect x="28" y="406" width="440" height="24" rx="3" fill="none" stroke="#b7950b" stroke-width="2.5" />
+                <text x="538" y="470" font-size="12" fill="#b7950b">1 ligne = &lt;tr&gt;</text>
+                <text x="538" y="486" font-size="12" fill="#b7950b">en-tête = &lt;th&gt;</text>
+                <text x="538" y="502" font-size="12" fill="#b7950b">donnée = &lt;td&gt;</text>
+                <!-- footer -->
+                <rect x="28" y="514" width="440" height="26" rx="4" fill="none" stroke="#555" stroke-width="3" />
+                <line x1="468" y1="527" x2="530" y2="527" stroke="#555" stroke-width="2" />
+                <text x="538" y="524" font-size="13" font-weight="bold" fill="#555">&lt;footer&gt;</text>
+                <text x="538" y="540" font-size="11" fill="#555">pied de page</text>
+            </svg>
+            <figcaption>La fiche de TP, décomposée bloc par bloc : chaque zone de l'écran correspond à une balise du
+                code.</figcaption>
+        </figure>
+
+        <figure class="schema">
+            <svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" role="img"
+                aria-label="Arbre DOM : html est la racine, head et body ses branches, les blocs des feuilles.">
+                <text x="390" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">🌳 La page est
+                    un ARBRE : le DOM</text>
+                <!-- racine -->
+                <rect x="330" y="45" width="120" height="40" rx="8" fill="#1a4fb4" />
+                <text x="390" y="70" text-anchor="middle" font-size="14" fill="#fff">&lt;html&gt;</text>
+                <!-- branches -->
+                <line x1="350" y1="85" x2="200" y2="130" stroke="#888" stroke-width="2" />
+                <line x1="430" y1="85" x2="580" y2="130" stroke="#888" stroke-width="2" />
+                <rect x="130" y="130" width="120" height="36" rx="8" fill="#fff6e0" stroke="#b7950b" stroke-width="2" />
+                <text x="190" y="153" text-anchor="middle" font-size="13" fill="#555">&lt;head&gt;</text>
+                <rect x="510" y="130" width="120" height="36" rx="8" fill="#e8f8ec" stroke="#1e8e3e" stroke-width="2" />
+                <text x="570" y="153" text-anchor="middle" font-size="13" fill="#555">&lt;body&gt;</text>
+                <!-- sous body -->
+                <line x1="540" y1="166" x2="440" y2="215" stroke="#888" stroke-width="2" />
+                <line x1="570" y1="166" x2="600" y2="215" stroke="#888" stroke-width="2" />
+                <line x1="600" y1="166" x2="710" y2="215" stroke="#888" stroke-width="2" />
+                <rect x="370" y="215" width="130" height="36" rx="8" fill="#eef4ff" stroke="#1a4fb4" stroke-width="2" />
+                <text x="435" y="238" text-anchor="middle" font-size="13" fill="#555">&lt;header&gt;</text>
+                <rect x="540" y="215" width="120" height="36" rx="8" fill="#eef4ff" stroke="#1a4fb4" stroke-width="2" />
+                <text x="600" y="238" text-anchor="middle" font-size="13" fill="#555">&lt;section&gt;</text>
+                <rect x="680" y="215" width="90" height="36" rx="8" fill="#eef4ff" stroke="#1a4fb4" stroke-width="2" />
+                <text x="725" y="238" text-anchor="middle" font-size="13" fill="#555">&lt;footer&gt;</text>
+                <!-- sous section -->
+                <line x1="600" y1="251" x2="560" y2="275" stroke="#888" stroke-width="2" />
+                <rect x="480" y="275" width="130" height="20" rx="6" fill="#fff" stroke="#1e8e3e" stroke-width="1.5" />
+                <text x="545" y="290" text-anchor="middle" font-size="11" fill="#555">&lt;article&gt;…</text>
+                <text x="120" y="240" font-size="12" fill="#777">le CSS habille cet arbre 🎨</text>
+                <text x="120" y="258" font-size="12" fill="#777">le JS le modifie ⚡</text>
+            </svg>
+            <figcaption>Une page web est un arbre, pas un tas de lignes.</figcaption>
+        </figure>
+
+        <div class="question">
+            <span class="lbl">Question flash 3 🙋</span>
+            <p>Trois équipements à présenter dans la même partie « Les équipements » : quelle balise une fois,
+                laquelle trois fois ?</p>
+            <span class="rule"></span>
+        </div>
+    </section>
+
+    <!-- 5. Réflexes -->
+    <section id="pratiques">
+        <div class="sec-head">
+            <span class="sec-num">05</span>
+            <h2>Les réflexes du développeur</h2>
+            <span class="sec-tag">Bonnes pratiques</span>
+        </div>
+
+        <div class="pictos">
+            <div class="picto">
+                <span class="ico">💾</span>
+                <strong>Enregistrer + F5</strong>
+                <p>sans ça, le navigateur ne voit rien de nouveau</p>
+            </div>
+            <div class="picto">
+                <span class="ico">⌨️</span>
+                <strong>Indenter (Tab)</strong>
+                <p>un code lisible se débugue 2× plus vite</p>
+            </div>
+            <div class="picto">
+                <span class="ico">🔗</span>
+                <strong>1 ouverte = 1 fermée</strong>
+                <p>la balise oubliée = bug n°1</p>
+            </div>
+            <div class="picto">
+                <span class="ico">🧱🎨</span>
+                <strong>Séparer les rôles</strong>
+                <p>contenu dans .html,<br>apparence dans .css</p>
+            </div>
+        </div>
+
+        <div class="callout">
+            <span class="lbl">📋 L'essentiel en une phrase</span>
+            <p>Le serveur envoie du texte, le navigateur le transforme en page : le <strong>HTML</strong> la
+                structure en balises emboîtées (<code>head</code> + <code>body</code>, blocs
+                <code>header/section/article/table</code>), le <strong>CSS</strong> l'habille, le
+                <strong>JavaScript</strong> l'anime — et tout cet arbre s'appelle le <strong>DOM</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>Cours réalisé par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : novembre 2026</p>
+    </footer>
+</body>
+
+</html>
