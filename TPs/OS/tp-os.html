@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — OS : mode live et installation depuis une clé</title>
+    <link rel="stylesheet" href="../../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">TP — Systèmes d'exploitation</div>
+        <h1>OS : mode live et installation depuis une clé</h1>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">1 séance de 4h</span>
+            <span class="chip">En binôme</span>
+            <span class="chip">Compte rendu sur Pronote</span>
+        </div>
+    </header>
+
+    <div class="callout">
+        <span class="lbl">🎯 Fil rouge du TP</span>
+        <p>En binôme, sur une <strong>machine de test</strong>, vous allez : <strong>
+            <br>① préparer votre environnement de travail et votre clé bootable</strong> (ISO + Rufus), puis réaliser <strong>
+            <br>② deux missions</strong> : explorer le PC en <strong>mode live</strong> (sans installer), puis
+            <strong>installer un OS</strong> — à votre choix : installation complète ou <strong>dual boot</strong>
+            à côté du Windows déjà présent.
+        </p>
+    </div>
+
+    <div class="callout">
+        <span class="lbl">📝 Évaluation</span>
+        <p>Ce TP est <strong>évalué</strong> :</p>
+        <ul>
+            <li>un <strong>compte rendu de binôme</strong> à déposer sur Pronote en fin de séance</li>
+            <li>votre avancement, validé par votre enseignant</li>
+            
+        </ul>
+    </div>
+
+    <!-- Objectifs -->
+    <section id="objectifs">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Objectifs</h2>
+            <span class="sec-tag">À retenir</span>
+        </div>
+        <p>À la fin de ce TP, vous serez capable de :</p>
+        <ul class="plain">
+            <li>Installer un <strong>poste de travail</strong> (PC, écran, clavier) et vérifier les
+                branchements.</li>
+            <li>Télécharger un <strong>fichier ISO</strong> depuis le site officiel et créer une <strong>clé USB
+                    bootable</strong> avec Rufus.</li>
+            <li>Démarrer un PC sur la clé et utiliser l'OS en <strong>mode live</strong> (sans installer).</li>
+            <li>Expliquer les <strong>risques</strong> pour les données, les <strong>usages légitimes</strong>
+                (dépannage, investigation) et les <strong>protections</strong> possibles.</li>
+            <li>Installer Linux sur une vraie machine : <strong>installation complète</strong> ou
+                <strong>dual boot</strong> avec Windows.
+            </li>
+            <li>Rédiger un <strong>compte rendu de TP</strong> en binôme et le déposer sur Pronote.</li>
+        </ul>
+    </section>
+
+    <!-- Partie 1 -->
+    <section id="partie1">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>Partie 1 — Préparer la clé bootable et l'environnement de travail</h2>
+            <span class="sec-tag">45 min</span>
+        </div>
+
+        <div class="callout">
+            <span class="lbl">Situation professionnelle</span>
+            <p>Votre tuteur de stage vous demande de préparer une clé bootable afin d'installer un nouveau système d'exploitation suite à la récéption d'un oridnateur.</p>
+        </div>
+
+        <h3>Étape 1 — Installer le poste de travail</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Aller chercher le matériel</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>À l'entrée de la salle, prendre : <strong>un PC de test</strong>, <strong>un écran</strong>
+                        et <strong>un clavier</strong>.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Brancher et vérifier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>S'installer à une <strong>paillasse</strong>, puis brancher : écran → prise vidéo, clavier →
+                        USB, alimentation. Avant d'allumer : <strong>vérifier chaque branchement</strong>.</p>
+                    <p>Allumer et noter ce que vous observez comme OS :
+                        <ul>
+                            <li>Marque : ____________</li>
+                            <li>Mdoèle : ____________</li>
+                            <li>Marque : ____________</li>
+                            <li>Numéro de licence : ____________</li>
+                        </ul>
+                    </p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Étape 2 — Télécharger l'ISO</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Téléchargement officiel</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Aller chercher une distribution Linux. L'enregistrer dans un dossier facile à
+                        retrouver. Vérifier l'extension <code>.iso</code> et la taille du fichier : un
+                        téléchargement interrompu donne un ISO corrompu qui fera échouer le boot.</p>
+                </div>
+            </li>
+        </ol>
+        <div class="question">
+            <span class="lbl">Question 1</span>
+            <p>Qu'est-ce qu'une distribution ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div><div class="question">
+            <span class="lbl">Question 1</span>
+            <p>Qulle distribution avez-vous choisi et où l'avez-vous téléchargé ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 3</span>
+            <p>Pourquoi télécharger l'ISO depuis le site officiel plutôt qu'un site tiers ? Quel critère du DICP
+                est en jeu ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h3>Étape 3 — Créer la clé USB bootable avec Rufus</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Lancer Rufus</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Brancher la <strong>clé fournie</strong> (elle sera <strong>effacée</strong> — vérifier avec
+                        le professeur qu'elle ne contient rien). Dans Rufus : <strong>Périphérique</strong> = votre
+                        clé.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Choisir l'ISO</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p><strong>Sélection de démarrage</strong> → <em>Sélectionner</em> → pointer l'ISO Ubuntu
+                        téléchargée. Schéma de partition : <strong>GPT</strong> (UEFI) ou MBR selon l'âge de la
+                        machine de test.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Graver et vérifier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p><em>Démarrer</em> → confirmer l'effacement → patienter (5-10 min). En fin de processus, la
+                        clé contient le <strong>bootloader + fichiers d'installation</strong> : elle est bootable.
+                        Faire une capture d'écran de la fenêtre Rufus configurée pour le compte rendu.</p>
+                </div>
+            </li>
+        </ol>
+        <div class="question">
+            <span class="lbl">Question 4</span>
+            <p>Que vient « écrire » Rufus sur la clé pour la rendre bootable ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h3>Étape 4 — Démarrer sur la clé (5 min)</h3>
+        <div class="callout">
+            <span class="lbl">🧭 Procédure à adapter : faites preuve d'initiative</span>
+            <p>La méthode « entrer dans le Setup avec <kbd>Suppr</kbd>/<kbd>F2</kbd> et modifier l'ordre de boot »
+                est <strong>une</strong> méthode, mais elle n'est <strong>pas toujours la bonne</strong> : selon la
+                machine, on passera par le <strong>menu de boot ponctuel</strong> (<kbd>F12</kbd>, <kbd>F9</kbd>,
+                <kbd>Échap</kbd>…), par les <strong>réglages UEFI</strong> de Windows, ou il faudra d'abord
+                désactiver le <strong>Secure Boot</strong>.</p>
+        </div>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Brancher la clé et allumer la machine de test</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Brancher la clé, allumer, et accéder au menu de boot ou au Setup. Touche(s) utilisée(s) :
+                        ____________</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Démarrer sur la clé USB</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Choisir la clé USB comme support de démarrage. La machine démarre sur la clé → écran d'accueil
+                        Ubuntu.</p>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Partie 2 -->
+    <section id="partie2">
+        <div class="sec-head">
+            <span class="sec-num">04</span>
+            <h2>Partie 2 — Deux missions</h2>
+            <span class="sec-tag"></span>
+        </div>
+
+        <div class="callout">
+            <span class="lbl">Situation professionnelle</span>
+            <p>Votre tuteur de stage vous demande de procéder en 2 étapes :</p>
+            <ul>
+                <li>Mission 1 : Vérfier les informations présentent sur le disque de la machine.</li>
+                <li>Mission 2 : Installer un système d'exploitation sur la machine  : soit en dualboot, soit avec uniquement un nouvel OS.</li>
+            </ul>
+        </div>
+        </p>
+
+        <h3>🛰️ Mission 1 — Explorer le PC depuis la clé, en mode live</h3>
+
+        <h4>Étape 1 — Démarrer sans installer</h4>
+        <p>Sur l'écran d'accueil Ubuntu, choisissez « <strong>Essayer Ubuntu</strong> » (et non « Installer ») :
+            l'OS se charge entièrement en <strong>RAM</strong>, sans rien écrire sur le disque. Vous voilà sur un
+            bureau Linux complet, sur une machine dont le système d'origine est intact.</p>
+
+        <h4>Étape 2 — Explorer la machine « de l'extérieur »</h4>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Observation</th>
+                        <th>Résultat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RAM détectée (Paramètres → À propos, ou <code>free -h</code>)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Disque(s) détecté(s) (<code>df -h</code>, ou l'outil Disques)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Le réseau fonctionne ? (ouvrir Firefox)</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                    <tr>
+                        <td>Peut-on parcourir les fichiers du disque Windows ?</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 5</span>
+            <p>Complétez le tableau.</p>
+            <p>En mode live, d'où l'OS est-il chargé ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h4>Étape 3 — Les risques : les données à portée de main</h4>
+        <p>Depuis le système live, vous pouvez parcourir les fichiers du disque <strong>sans connaître le mot de
+                passe</strong> de la session Windows. C'est exactement ce que ferait une personne malveillante avec une
+            clé bootable.</p>
+        <div class="question">
+            <span class="lbl">Question 6</span>
+            <p>Pourquoi le mot de passe de session ne protège-t-il pas les fichiers du disque dans ce cas ? Que
+                faudrait-il pour que les données soient réellement inaccessibles depuis un autre OS ?</p>
+            <p>Quel critère DICP est enjeu ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h4>Étape 4 — Les possibilités positives : l'outil du technicien</h4>
+        <div class="question">
+            <span class="lbl">Question 7</span>
+            <p>Donnez deux situations professionnelles où le démarrage sur clé bootable est un outil légitime à utiliser.</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 8</span>
+            <p>Comment se protéger ? Citez trois mesures (chez soi ou en entreprise) qui rendent un démarrage sur
+                clé bootable inefficace ou impossible.</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 9 — Vrai ou Faux</span>
+            <p>a) Le chiffrement du disque (BitLocker, LUKS) protège les données même si on démarre sur un autre
+                OS : VRAI / FAUX<br>
+                b) Utiliser une clé bootable sur le PC d'un camarade sans son accord est anodin entre amis : VRAI /
+                FAUX<br>
+                c) Un technicien peut démarrer sur clé pour récupérer les données d'un client qui le lui demande :
+                VRAI / FAUX<br>
+                d) Une clé bootable trouvée dans le lycée peut être branchée et démarrée sans risque : VRAI / FAUX</p>
+        </div>
+        <div class="callout deliver">
+            <span class="lbl">✅ Fin de la mission 1</span>
+            <p>Éteindre la machine (sans retirer la clé pendant l'extinction). Redémarrer normalement : le système
+                d'origine est <strong>exactement comme avant</strong>. Constatez-le, puis passez à la mission 2.</p>
+            <p>Validation enseignant : ____________________</p>
+        </div>
+
+        <h3>🎯 Mission 2 — Installer un OS (au choix du binôme) (≈ 60 min)</h3>
+        <div class="callout">
+            <span class="lbl">🤔 À vous de choisir</span>
+            <p><strong>Option A — Installation complète</strong> : Ubuntu remplace tout ce qui est sur le disque.
+                Plus simple, plus rapide, mais Windows est effacé.<br>
+                <strong>Option B — Dual boot</strong> : Ubuntu est installé <strong>à côté</strong> de Windows, et un
+                menu propose le choix du système à chaque démarrage. Plus technique, mais le système existant est
+                conservé.
+            </p>
+            <p>Notez dans votre compte rendu votre choix.</p>
+        </div>
+
+        <h4>Étape 1 — Protéger l'existant</h4>
+        <p><strong>Indispensable pour le remplacement d'un OS</strong>, bonne pratique dans tous les cas : on
+            <strong>relève la licence Windows</strong> avant de toucher au disque.
+        </p>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Relever la clé</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Démarrer la machine sur Windows. Ouvrir l'invite de commandes (<kbd>Win</kbd>+<kbd>R</kbd> →
+                        <code>cmd</code>) et saisir :<br>
+                        <code>wmic path softwarelicensingservice get OA3xOriginalProductKey</code><br>
+                        Sinon : chercher l'étiquette COA collée sur le boîtier. <em>(Si vous avez choisi
+                            l'option A et que Windows ne démarre plus, passez directement à l'étape 2.)</em>
+                    </p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Noter et conserver</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Recopier la clé (25 caractères) dans le compte rendu : ____________________<br>
+                        <i>Un professionnel documente toujours son intervention : la clé notée, c'est une
+                        réinstallation Windows possible plus tard</i>.</p>
+                </div>
+            </li>
+        </ol>
+        <div class="question">
+            <span class="lbl">Question 10</span>
+            <p>Pourquoi relever la licence Windows <strong>avant</strong> de modifier le disque, alors que le dual
+                boot est censé préserver Windows ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+
+        <h4>Étape 2 — Installer</h4>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Redémarrer sur la clé</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Redémarrer la machine sur la clé (même méthode qu'en partie 1).</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Option A — Effacer et installer</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Choisir « <strong>Installer Ubuntu</strong> », puis « <strong>Effacer le disque et installer
+                            Ubuntu</strong> » (<strong>OK uniquement sur machine de test !</strong>) : le disque est
+                        formaté et partitionné automatiquement.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Option B — Installer à côté de Windows</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Choisir « <strong>Installer Ubuntu</strong> », puis « <strong>Installer Ubuntu à côté de
+                            [Windows]</strong> » : le disque est redimensionné pour faire de la place.
+                        <strong>Ne jamais choisir « Effacer le disque »</strong> : Windows serait supprimé !
+                    </p>
+                    <p class="note">⚠️ Avant de valider le partitionnement : faire valider par le professeur. Le
+                        redimensionnement de partition est une opération délicate.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">4</span>
+                <div class="step-head">
+                    <span class="step-title">Finaliser</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Compte utilisateur, mot de passe, puis patienter pendant l'installation. Retirer la clé au
+                        redémarrage.</p>
+                    <p><i><strong>Notez impérativement les informations des utilisateurs créé !</strong></i></p>
+                </div>
+            </li>
+        </ol>
+
+        <h4>Étape 3 — Vérifier (10 min)</h4>
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vérification</th>
+                        <th>Résultat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ubuntu démarre et fonctionne</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                    <tr>
+                        <td>RAM détectée (<code>free -h</code>)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Disque détecté (<code>df -h</code>)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Option B uniquement : un menu propose Windows et Ubuntu au démarrage (bootloader GRUB)</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                    <tr>
+                        <td>Option B uniquement : Windows démarre toujours et retrouve ses fichiers</td>
+                        <td>☐ Oui ☐ Non</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 11</span>
+            <p>Quel programme affiche le menu de choix entre Windows et Ubuntu au démarrage ? Comment
+                s'appelle ce type de programme ?</p>
+            <span class="rule"></span><span class="rule"></span>
+        </div>
+        <div class="callout deliver">
+            <span class="lbl">✅ Fin de la mission 2</span>
+            <p>Option réalisée : ☐ A — Installation complète ☐ B — Dual boot · Validation enseignant :
+                ____________________</p>
+        </div>
+    </section>
+
+    <!-- Compte rendu -->
+    <section id="compte-rendu">
+        <div class="sec-head">
+            <span class="sec-num">05</span>
+            <h2>Compte rendu à déposer sur Pronote</h2>
+            <span class="sec-tag">≈ 15 min — obligatoire</span>
+        </div>
+        <p>Un compte rendu <strong>par binôme</strong>, rédigé ensemble (les deux noms !), à
+            <strong>déposer sur Pronote</strong> avant la fin de la journée. Il doit contenir :
+        </p>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">En-tête</span>
+                </div>
+                <div class="step-body">
+                    <p>Noms du binôme, date, numéro d'inventaire de la machine de test, distribution et version
+                        utilisée, option choisie pour la mission 2 (A ou B).</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Réponses aux questions 1 à 11</span>
+                </div>
+                <div class="step-body">
+                    <p>Réponses rédigées avec vos mots, en phrases complètes.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Bilan de sécurité (5 lignes)</span>
+                </div>
+                <div class="step-body">
+                    <p>Ce que vous avez retenu : ce qu'une clé bootable permet, les risques pour les données, et
+                        comment s'en protéger.</p>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Rangement -->
+    <section id="rangement">
+        <div class="sec-head">
+            <span class="sec-num">07</span>
+            <h2>Rangement</h2>
+            <span class="sec-tag">Fin de séance</span>
+        </div>
+        <div class="callout warn">
+            <span class="lbl">⚠️ Obligatoire</span>
+            <ul class="plain">
+                <li><strong>Éteindre proprement</strong> la machine de test (jamais en appuyant sur le bouton !).</li>
+                <li><strong>Débrancher</strong> écran, clavier et alimentations, enrouler les câbles.</li>
+                <li>Rapporter le PC, l'écran et le clavier <strong>à l'entrée de la salle</strong>, à leur place.</li>
+                <li>Rendre la <strong>clé USB</strong> au professeur.</li>
+                <li>Faire vérifier la paillasse par le professeur.</li>
+            </ul>
+        </div>
+        <p class="signature">Paillasse vérifiée : ____________________</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>TP réalisé par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : novembre 2026</p>
+    </footer>
+</body>
+
+</html>

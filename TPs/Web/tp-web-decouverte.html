@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séance — Structurer et styliser une page web</title>
+    <link rel="stylesheet" href="../../Ressources/style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">Séance — Web</div>
+        <h1>Structurer et styliser une page web</h1>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">1 séance de 4h</span>
+            <span class="chip">Outil : VS Code</span>
+        </div>
+    </header>
+
+
+
+    <div class="callout">
+        <span class="lbl">Informations importante</span>
+        <p>L'usage de l'IA n'est pas autorisé pendant cette séance.</p>
+        <p>N'hesitez pas à utiliser le cours ou le site : <a href="https://www.w3schools.com/" target="_blank">w3schools</a> pour vous aider dans la découvertes des balises html.</p>
+    </div>
+
+    <!-- Partie HTML -->
+    <section id="partie-html">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Partie HTML — Construire la page</h2>
+            <span class="sec-tag">VS Code</span>
+        </div>
+
+        <h3>Étape 0 — Découvrir VS Code</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Créer le dossier de travail</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Créer un dossier <code>web</code> dans vos documents. Ouvrir <strong>Visual Studio
+                            Code</strong>, puis <em>Fichier → Ouvrir le dossier</em> → sélectionner <code>web</code>.
+                    </p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Créer le fichier</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Nouveau fichier (<kbd>Ctrl</kbd>+<kbd>N</kbd>), l'enregistrer sous <code>fiche.html</code>
+                        dans le dossier <code>web</code>. L'extension <code>.html</code> indique à VS Code (et au
+                        navigateur) qu'il s'agit d'une page web : la coloration syntaxique s'active.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-head">
+                    <span class="step-title">Le réflexe du professionnel</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Taper <code>!</code> (point d'exclamation) puis <kbd>Tab</kbd> : VS Code génère le squelette
+                        complet de la page. Compléter le <code>lang="fr"</code> et le
+                        <code>&lt;title&gt;</code> : « Ma fiche CIEL ». Enregistrer (<kbd>Ctrl</kbd>+<kbd>S</kbd>),
+                        puis ouvrir le fichier dans le navigateur (clic droit → <em>Reveal in File Explorer</em> →
+                        double-clic). <strong>Garder l'éditeur et le navigateur côte à côte</strong> : chaque
+                        sauvegarde, un rechargement (<kbd>F5</kbd>).
+                    </p>
+                    <p class="note">📌 [CAPTURE 1] Votre squelette VS Code + navigateur : voir document de
+                        captures.</p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Exercice 1 — Le squelette et les premiers textes</h3>
+        <p>Dans le <code>&lt;body&gt;</code>, ajouter :</p>
+        <ul class="plain">
+            <li>un <code>&lt;h1&gt;</code> : « Fiche matériel — Switch Cisco 2960 » ;</li>
+            <li>un <code>&lt;h2&gt;</code> : « Présentation » ;</li>
+            <li>deux <code>&lt;p&gt;</code> : une phrase de description du switch et une phrase sur son rôle
+                (relier des machines en réseau) ;</li>
+            <li>un <code>&lt;p&gt;</code> avec un mot en <code>&lt;strong&gt;</code> (important) et un mot en
+                <code>&lt;em&gt;</code> (accentué).
+            </li>
+        </ul>
+        <img src="Ressources/exo1.png" alt="Exercice 1 — Site attendu" class="capture">
+
+        <h3>Exercice 2 — Structurer avec header, section, article</h3>
+        <p>On organise maintenant la fiche en <strong>blocs sémantiques</strong>. Réorganiser le code pour obtenir :</p>
+        <ul class="plain">
+            <li>un <code>&lt;header&gt;</code> qui contient le <code>&lt;h1&gt;</code> ;</li>
+            <li>une <code>&lt;section&gt;</code> « Présentation » (avec son <code>&lt;h2&gt;</code> et les
+                paragraphes de l'exercice 1) ;</li>
+            <li>une <code>&lt;section&gt;</code> « Les équipements » qui contient <strong>trois</strong>
+                <code>&lt;article&gt;</code>, un par équipement : un switch, un routeur, un point d'accès WiFi.
+                Chaque <code>&lt;article&gt;</code> a un <code>&lt;h3&gt;</code> (nom) et un
+                <code>&lt;p&gt;</code> (rôle en une phrase).
+            </li>
+        </ul>
+        <img src="Ressources/exo2.png" alt="Exercice 2 — Site attendu" class="capture">
+        <div class="question">
+            <span class="lbl">Question 1</span>
+            <p>Quelle est la différence entre une <code>&lt;section&gt;</code> et un
+                <code>&lt;article&gt;</code> ? Pourquoi trois <code>&lt;article&gt;</code> dans la même
+                <code>&lt;section&gt;</code> ?
+            </p>
+            <span class="rule"></span>
+        </div>
+
+        <h3>Exercice 3 — Le tableau (25 min)</h3>
+        <p>Ajouter une <code>&lt;section&gt;</code> « Inventaire » contenant un
+            <code>&lt;table&gt;</code> de 4 colonnes et 4 lignes de données :
+        </p>
+        
+        <ul class="plain">
+            <li><code>&lt;tr&gt;</code> = une ligne, <code>&lt;th&gt;</code> = cellule d'en-tête,
+                <code>&lt;td&gt;</code> = cellule de données ;
+            </li>
+            <li>en-têtes : <strong>Équipement · Modèle · Quantité · État</strong> ;</li>
+            <li>3 lignes de données de votre choix (matériel réseau réaliste).</li>
+        </ul>
+        <img src="Ressources/exo3.png" alt="Exercice 3 — Site attendu" class="capture">
+        <div class="question">
+            <span class="lbl">Question 2</span>
+            <p>Combien de balises <code>&lt;td&gt;</code> contient votre tableau en tout ? Montrez le calcul.</p>
+            <span class="rule"></span>
+        </div>
+
+        <h3>Exercice 4 — Le pied de page et le bilan</h3>
+        <p>Ajouter un <code>&lt;footer&gt;</code> : votre noms de binôme, la mention « Seconde Bac Pro CIEL » et
+            l'année. Vérifier la structure complète du document : <code>header</code> → 3
+            <code>section</code> → <code>footer</code>. Faire valider la structure par le professeur.
+        </p>
+        <img src="Ressources/exo4.png" alt="Exercice 4 — Site attendu" class="capture">
+        <div class="question">
+            <span class="lbl">Question 3</span>
+            <p>Combien de balises <code>&lt;section&gt;</code> contient la page ?</p>
+            <span class="rule"></span>
+    </section>
+
+    <!-- Partie CSS -->
+    <section id="partie-css">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>Partie CSS — Habiller la page</h2>
+            <span class="sec-tag">Couleur · Police · Tailles</span>
+        </div>
+
+        <h3>Étape 1 — Créer et relier la feuille de style</h3>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-head">
+                    <span class="step-title">Créer le fichier CSS</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Dans VS Code : nouveau fichier, enregistrer sous <code>style.css</code> dans le même dossier
+                        <code>web</code>. Un fichier CSS ne contient <strong>que</strong> des règles
+                        <code>sélecteur { propriété: valeur; }</code> — pas de balise HTML.
+                    </p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-head">
+                    <span class="step-title">Relier le CSS au HTML</span>
+                    <label class="tick"><input type="checkbox"> Fait</label>
+                </div>
+                <div class="step-body">
+                    <p>Dans le <code>&lt;head&gt;</code> de <code>fiche.html</code>, ajouter :<br>
+                        <code>&lt;link rel="stylesheet" href="style.css"&gt;</code><br>
+                        Vérification immédiate : dans <code>style.css</code>, taper
+                        <code>body { background: lightyellow; }</code>, enregistrer, recharger : le fond devient
+                        jaune pâle. Le lien fonctionne !
+                    </p>
+                </div>
+            </li>
+        </ol>
+
+        <h3>Étape 2 — Les couleurs</h3>
+        <p>Compléter <code>style.css</code>, étape par étape (enregistrer + <kbd>F5</kbd> après chaque règle) :</p>
+        <ul class="plain">
+            <li><code>body</code> : <code>background</code> en bleu très clair (ex. <code>#eef4ff</code>) et
+                <code>color</code> en gris foncé (ex. <code>#222</code>) ;
+            </li>
+            <li><code>header</code> : <code>background</code> bleu foncé (ex. <code>#1a4fb4</code>) et
+                <code>color: white</code> ;
+            </li>
+            <li><code>article</code> : <code>background: white</code> — les fiches ressortent sur le fond ;</li>
+            <li><code>th</code> : <code>background</code> gris clair.</li>
+        </ul>
+        <p class="note">Les couleurs s'écrivent en anglais (<code>white</code>, <code>navy</code>…) ou en code
+            hexadécimal <code>#rrggbb</code> : deux chiffres par canal (rouge, vert, bleu), de 00 à FF. Testez
+            <a href="https://developer.mozilla.org/fr/docs/Web/CSS/color_value" target="_blank">le sélecteur de
+                couleurs du MDN</a> pour choisir vos teintes.
+        </p>
+        <img src="Ressources/exo6.png" alt="Exercice 6 — Site attendu" class="capture">
+
+        <h3>Étape 3 — La police</h3>
+        <ul class="plain">
+            <li><code>body</code> : <code>font-family: Verdana, Arial, sans-serif;</code> — on donne plusieurs
+                polices de secours, séparées par des virgules ;</li>
+            <li><code>h1, h2, h3</code> : <code>font-family: Georgia, serif;</code> — les titres en police à
+                empattements, le corps en police sans empattements : contraste visuel classique du web ;</li>
+            <li><code>em</code> : <code>color: #1a4fb4;</code> — les mots accentués passent en bleu.</li>
+        </ul>
+
+        <h3>Étape 4 — Les tailles et la hiérarchie</h3>
+        <ul class="plain">
+            <li><code>body</code> : <code>font-size: 16px;</code> — la taille de référence ;</li>
+            <li><code>h1</code> : <code>font-size: 32px;</code> · <code>h2</code> : <code>24px</code> ·
+                <code>h3</code> : <code>19px</code> ;
+            </li>
+            <li><code>footer</code> : <code>font-size: 13px;</code> — discrètement plus petit.</li>
+        </ul>
+        <img src="Ressources/exo7.png" alt="Exercice 7 — Site attendu" class="capture">
+        <div class="question">
+            <span class="lbl">Question 4</span>
+            <p>Pourquoi les titres doivent-ils être plus grands que le texte du corps ? Quel rôle joue la
+                <strong>taille</strong> dans la lecture d'une page ?
+            </p>
+            <span class="rule"></span>
+        </div>
+
+        <h3>Défi final — À vous de jouer (20 min)</h3>
+        <div class="callout deliver">
+            <span class="lbl">🏆 Défi — Personnalisez la fiche</span>
+            <p>Sans toucher au HTML, uniquement dans <code>style.css</code> : changez la palette de couleurs
+                (fond, header, articles), la police des titres, et les tailles, pour donner à la fiche
+                <strong>votre identité visuelle</strong>. Interdiction de tout casser : si le rendu devient
+                illisible, c'est raté ! Faites valider par le professeur.
+            </p>
+            <p>Validation : ____________________</p>
+        <img src="Ressources/exo8.png" alt="Exercice 8 — Site attendu" class="capture">
+        </div>
+    </section>
+
+    <!-- Bilan -->
+    <section id="bilan">
+        <div class="question">
+            <span class="lbl">Question 5</span>
+            <p>Le fichier <code>fiche.html</code> contient le ____________ et la ____________ de la page. Le
+                fichier <code>style.css</code> contient son ____________ . Le lien entre les deux se fait avec la
+                balise <code>&lt;____________&gt;</code> placée dans le <code>&lt;____________&gt;</code>.</p>
+            <span class="rule"></span>
+        </div>
+        <div class="question">
+            <span class="lbl">Question 6</span>
+            <p>a) <code>&lt;article&gt;</code> s'utilise toujours seul, jamais dans une
+                <code>&lt;section&gt;</code> : VRAI / FAUX<br>
+                b) En CSS, <code>font-size: 32px;</code> rend le texte plus grand que
+                <code>font-size: 16px;</code> : VRAI / FAUX<br>
+                c) La couleur <code>#1a4fb4</code> est composée de rouge, vert et bleu : VRAI / FAUX<br>
+                d) Sans CSS, une page HTML reste illisible pour le navigateur : VRAI / FAUX
+            </p>
+        </div>
+        <div class="callout deliver">
+            <span class="lbl">📤 À déposer sur Pronote</span>
+            <p>Les deux fichiers (<code>fiche.html</code> et <code>style.css</code>) + les réponses aux questions
+                1 à 7.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>Séance réalisée par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : novembre 2026</p>
+    </footer>
+</body>
+
+</html>

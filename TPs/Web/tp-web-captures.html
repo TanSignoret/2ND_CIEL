@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captures d'écran — TP web (document de travail prof)</title>
+    <style>
+        /* Document de travail interne : styles autonomes (pas de dépendance au site) */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            margin: 0;
+            background: #e8ecf3;
+            color: #222;
+        }
+
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+        }
+
+        .intro {
+            background: #fff8e6;
+            border: 2px solid #e0b000;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 28px;
+        }
+
+        .cap {
+            background: #fff;
+            border: 2px solid #1a4fb4;
+            border-radius: 12px;
+            margin: 34px 0;
+            overflow: hidden;
+        }
+
+        .cap>.label {
+            background: #1a4fb4;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 16px;
+            font-size: 15px;
+        }
+
+        .cap>.label small {
+            display: block;
+            font-weight: normal;
+            opacity: .85;
+            margin-top: 2px;
+        }
+
+        .cap>.render {
+            padding: 18px;
+        }
+
+        /* Rendus "élève" ( volontairement simples, comme un débutant ) */
+        .r1 header,
+        .r2 header,
+        .r3 header,
+        .r4 header,
+        .r5 header {
+            background: #eee;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .r1 h1,
+        .r2 h1,
+        .r3 h1,
+        .r4 h1,
+        .r5 h1 {
+            font-size: 2em;
+            margin: .4em 0;
+        }
+
+        .r1 h2,
+        .r2 h2,
+        .r3 h2,
+        .r4 h2,
+        .r5 h2 {
+            font-size: 1.5em;
+            margin: .6em 0 .3em;
+        }
+
+        .r3 h3,
+        .r5 h3 {
+            margin: .6em 0 .2em;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 6px 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #ddd;
+        }
+
+        footer {
+            margin-top: 16px;
+            font-size: .85em;
+            color: #555;
+            border-top: 1px solid #bbb;
+            padding-top: 8px;
+        }
+
+        /* Rendus stylés (CSS) */
+        .r6 {
+            background: #eef4ff;
+            color: #222;
+            padding: 14px;
+            border-radius: 6px;
+        }
+
+        .r6 header {
+            background: #1a4fb4;
+            color: #fff;
+            padding: 10px 14px;
+        }
+
+        .r6 header h1 {
+            color: #fff;
+            margin: 0;
+        }
+
+        .r6 article {
+            background: #fff;
+            padding: 10px 14px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
+        .r6 th {
+            background: #d4dcea;
+        }
+
+        .r7 {
+            background: #eef4ff;
+            color: #222;
+            font-size: 16px;
+            padding: 14px;
+            border-radius: 6px;
+        }
+
+        .r7 header {
+            background: #1a4fb4;
+            color: #fff;
+            padding: 10px 14px;
+        }
+
+        .r7 header h1 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .r7 h2 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+        }
+
+        .r7 h3 {
+            font-family: Georgia, serif;
+            font-size: 19px;
+            margin: .5em 0 .2em;
+        }
+
+        .r7 article {
+            background: #fff;
+            padding: 10px 14px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
+        .r7 th {
+            background: #d4dcea;
+        }
+
+        .r7 footer {
+            font-size: 13px;
+        }
+
+        .r7 em {
+            color: #1a4fb4;
+        }
+
+        .r8 {
+            background: #fdf3ff;
+            color: #333;
+            padding: 14px;
+            border-radius: 6px;
+        }
+
+        .r8 header {
+            background: #7a1fa2;
+            color: #fff;
+            padding: 10px 14px;
+        }
+
+        .r8 header h1 {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .r8 h2 {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 20px;
+            color: #7a1fa2;
+        }
+
+        .r8 article {
+            background: #fff;
+            padding: 10px 14px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px dashed #c98ad9;
+        }
+
+        .r8 th {
+            background: #e7c9f0;
+        }
+
+        .r8 footer {
+            font-size: 13px;
+        }
+
+        .note-cap {
+            font-size: 13px;
+            color: #555;
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>📸 Document de captures — TP « Structurer et styliser une page web »</h1>
+        <div class="intro">
+            <strong>Document de travail professeur — à ne pas diffuser aux élèves.</strong><br>
+            Chaque cadre bleu ci-dessous correspond à un emplacement <code>[CAPTURE n]</code> du TP. Mettez le rendu
+            en forme dans votre navigateur, puis faites la capture d'écran du contenu du cadre et insérez-la dans
+            le TP à l'emplacement correspondant. Les rendus sont volontairement « niveau élève » : ne les
+            embellissez pas trop, il faut que ce soit atteignable.
+        </div>
+
+        <div class="cap">
+            <div class="label">CAPTURE 1 — Le squelette dans VS Code<small>TP : Étape 0, après la génération du
+                    squelette avec « ! » + Tab. Montrer VS Code à gauche (squelette généré, title rempli) et le
+                    navigateur à droite (page quasi vide, onglet « Ma fiche CIEL »).</small></div>
+            <div class="render"><em>À capturer vous-même : screenshot de votre écran VS Code + navigateur côte à
+                    côte, avec ce squelette :</em>
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ma fiche CIEL&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+        </div>
+
+        <div class="cap">
+            <div class="label">CAPTURE 2 — Exercice 1 : premiers textes<small>Titre h1, h2 « Présentation », 3
+                    paragraphes (dont un avec strong et em). Rendu par défaut du navigateur, sans CSS.</small></div>
+            <div class="render r1">
+                <h1>Fiche matériel — Switch Cisco 2960</h1>
+                <h2>Présentation</h2>
+                <p>Le switch Cisco 2960 est un équipement réseau de la gamme Cisco Systems.</p>
+                <p>Son rôle est de <strong>relier plusieurs machines</strong> au sein d'un même réseau local et
+                    d'<em>aiguiller</em> les communications entre elles.</p>
+            </div>
+        </div>
+
+        <div class="cap">
+            <div class="label">CAPTURE 3 — Exercice 2 : header, sections, articles<small>header contenant le h1,
+                    section « Présentation », section « Les équipements » avec 3 articles (h3 + p). Toujours sans
+                    CSS.</small></div>
+            <div class="render r3">
+                <header>
+                    <h1>Fiche matériel — Switch Cisco 2960</h1>
+                </header>
+                <section>
+                    <h2>Présentation</h2>
+                    <p>Le switch Cisco 2960 est un équipement réseau de la gamme Cisco Systems.</p>
+                    <p>Son rôle est de <strong>relier plusieurs machines</strong> au sein d'un même réseau local et
+                        d'<em>aiguiller</em> les communications entre elles.</p>
+                </section>
+                <section>
+                    <h2>Les équipements</h2>
+                    <article>
+                        <h3>Switch</h3>
+                        <p>Relie les machines d'un même réseau local entre elles.</p>
+                    </article>
+                    <article>
+                        <h3>Routeur</h3>
+                        <p>Fait passer les communications d'un réseau à un autre, par exemple vers Internet.</p>
+                    </article>
+                    <article>
+                        <h3>Point d'accès WiFi</h3>
+                        <p>Permet aux appareils sans fil de rejoindre le réseau local.</p>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <div class="cap">
+            <div class="label">CAPTURE 4 — Exercice 3 : le tableau<small>Section « Inventaire » avec un tableau
+                    4 colonnes × 4 lignes (1 ligne d'en-têtes th + 3 lignes td). Toujours sans CSS.</small></div>
+            <div class="render r4">
+                <section>
+                    <h2>Inventaire</h2>
+                    <table>
+                        <tr>
+                            <th>Équipement</th>
+                            <th>Modèle</th>
+                            <th>Quantité</th>
+                            <th>État</th>
+                        </tr>
+                        <tr>
+                            <td>Switch</td>
+                            <td>Cisco 2960</td>
+                            <td>2</td>
+                            <td>En service</td>
+                        </tr>
+                        <tr>
+                            <td>Routeur</td>
+                            <td>Cisco 1941</td>
+                            <td>1</td>
+                            <td>En service</td>
+                        </tr>
+                        <tr>
+                            <td>Point d'accès</td>
+                            <td>TP-Link EAP225</td>
+                            <td>3</td>
+                            <td>En stock</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </div>
+
+        <div class="cap">
+            <div class="label">CAPTURE 5 — Page HTML complète<small>Page entière : header + 3 sections +
+                    footer (noms du binôme, « Seconde Bac Pro CIEL », année). Sans CSS, rendu par défaut.</small></div>
+            <div class="render r5">
+                <header>
+                    <h1>Fiche matériel — Switch Cisco 2960</h1>
+                </header>
+                <section>
+                    <h2>Présentation</h2>
+                    <p>Le switch Cisco 2960 est un équipement réseau de la gamme Cisco Systems.</p>
+                </section>
+                <section>
+                    <h2>Les équipements</h2>
+                    <article>
+                        <h3>Switch</h3>
+                        <p>Relie les machines d'un même réseau local.</p>
+                    </article>
+                    <article>
+                        <h3>Routeur</h3>
+                        <p>Passe les communications d'un réseau à un autre.</p>
+                    </article>
+                    <article>
+                        <h3>Point d'accès WiFi</h3>
+                        <p>Connecte les appareils sans fil au réseau.</p>
+                    </article>
+                </section>
+                <section>
+                    <h2>Inventaire</h2>
+                    <table>
+                        <tr>
+                            <th>Équipement</th>
+                            <th>Modèle</th>
+                            <th>Quantité</th>
+                            <th>État</th>
+                        </tr>
+                        <tr>
+                            <td>Switch</td>
+                            <td>Cisco 2960</td>
+                            <td>2</td>
+                            <td>En service</td>
+                        </tr>
+                        <tr>
+                            <td>Routeur</td>
+                            <td>Cisco 1941</td>
+                            <td>1</td>
+                            <td>En service</td>
+                        </tr>
+                        <tr>
+                            <td>Point d'accès</td>
+                            <td>TP-Link EAP225</td>
+                            <td>3</td>
+                            <td>En stock</td>
+                        </tr>
+                    </table>
+                </section>
+                <footer>Binôme : Prénom NOM &amp; Prénom NOM · Seconde Bac Pro CIEL · 2026</footer>
+            </div>
+            <p class="note-cap">Astuce : capturez la page entière (F12 → Ctrl+Maj+P → « capture full size
+                screenshot », ou capture d'écran défilante de votre outil système).</p>
+        </div>
+
+        <div class="cap">
+            <div class="label">CAPTURE 6 — Étape 2 CSS : les couleurs<small>Fond bleu très clair #eef4ff, header
+                    bleu foncé #1a4fb4 avec texte blanc, articles blancs, th gris clair. Police et tailles encore par
+                    défaut.</small></div>
+            <div class="render r6">
+                <header>
+                    <h1>Fiche matériel — Switch Cisco 2960</h1>
+                </header>
+                <section>
+                    <h2>Présentation</h2>
+                    <p>Le switch Cisco 2960 est un équipement réseau de la gamme Cisco Systems.</p>
+                </section>
+                <section>
+                    <h2>Les équipements</h2>
+                    <article>
+                        <h3>Switch</h3>
+                        <p>Relie les machines d'un même réseau local.</p>
+                    </article>
+                    <article>
+                        <h3>Routeur</h3>
+                        <p>Passe les communications d'un réseau à un autre.</p>
+                    </article>
+                    <article>
+                        <h3>Point d'accès WiFi</h3>
+                        <p>Connecte les appareils sans fil au réseau.</p>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <div class="cap">
+            <div class="label">CAPTURE 7 — Étapes 3-4 CSS : police et tailles (rendu final)<small>Titres en
+                    Georgia (serif), corps en Verdana 16px, h1 32px, h2 24px, h3 19px, footer 13px, em en bleu.
+                    C'est le rendu « attendu » avant le défi final.</small></div>
+            <div class="render r7">
+                <header>
+                    <h1>Fiche matériel — Switch Cisco 2960</h1>
+                </header>
+                <section>
+                    <h2>Présentation</h2>
+                    <p>Le switch Cisco 2960 est un équipement réseau de la gamme Cisco Systems. Son rôle est de
+                        <em>relier</em> les machines du réseau local.
+                    </p>
+                </section>
+                <section>
+                    <h2>Les équipements</h2>
+                    <article>
+                        <h3>Switch</h3>
+                        <p>Relie les machines d'un même réseau local.</p>
+                    </article>
+                    <article>
+                        <h3>Routeur</h3>
+                        <p>Passe les communications d'un réseau à un autre.</p>
+                    </article>
+                    <article>
+                        <h3>Point d'accès WiFi</h3>
+                        <p>Connecte les appareils sans fil au réseau.</p>
+                    </article>
+                </section>
+                <section>
+                    <h2>Inventaire</h2>
+                    <table>
+                        <tr>
+                            <th>Équipement</th>
+                            <th>Modèle</th>
+                            <th>Quantité</th>
+                            <th>État</th>
+                        </tr>
+                        <tr>
+                            <td>Switch</td>
+                            <td>Cisco 2960</td>
+                            <td>2</td>
+                            <td>En service</td>
+                        </tr>
+                        <tr>
+                            <td>Routeur</td>
+                            <td>Cisco 1941</td>
+                            <td>1</td>
+                            <td>En service</td>
+                        </tr>
+                        <tr>
+                            <td>Point d'accès</td>
+                            <td>TP-Link EAP225</td>
+                            <td>3</td>
+                            <td>En stock</td>
+                        </tr>
+                    </table>
+                </section>
+                <footer>Binôme : Prénom NOM &amp; Prénom NOM · Seconde Bac Pro CIEL · 2026</footer>
+            </div>
+        </div>
+
+        <div class="cap">
+            <div class="label">CAPTURE 8 — Défi final : version personnalisée (exemple)<small>Exemple de
+                    personnalisation réussie : autre palette (violet), autre police de titres, tailles adaptées.
+                    Montre aux élèves que « changer uniquement le CSS » transforme complètement la page, sans toucher
+                    au HTML.</small></div>
+            <div class="render r8">
+                <header>
+                    <h1>Fiche matériel — Switch Cisco 2960</h1>
+                </header>
+                <section>
+                    <h2>Présentation</h2>
+                    <p>Le switch Cisco 2960 est un équipement réseau de la gamme Cisco Systems.</p>
+                </section>
+                <section>
+                    <h2>Les équipements</h2>
+                    <article>
+                        <h3>Switch</h3>
+                        <p>Relie les machines d'un même réseau local.</p>
+                    </article>
+                    <article>
+                        <h3>Routeur</h3>
+                        <p>Passe les communications d'un réseau à un autre.</p>
+                    </article>
+                    <article>
+                        <h3>Point d'accès WiFi</h3>
+                        <p>Connecte les appareils sans fil au réseau.</p>
+                    </article>
+                </section>
+                <footer>Binôme : Prénom NOM &amp; Prénom NOM · Seconde Bac Pro CIEL · 2026</footer>
+            </div>
+            <p class="note-cap">Cette capture est un exemple : vous pouvez aussi montrer deux versions côte à côte
+                (avant/après le défi).</p>
+        </div>
+
+        <footer>Document de travail — Seconde Bac Pro CIEL · Tanguy Signoret · novembre 2026</footer>
+    </div>
+</body>
+
+</html>
