@@ -16,151 +16,364 @@
         <div class="chips">
             <span class="chip">Seconde Bac Pro CIEL</span>
             <span class="chip">1 séance de 4h</span>
-            <span class="chip">En binôme</span>
-            <span class="chip">8 défis · 135 points</span>
+            <span class="chip">Travail individuel</span>
+            <span class="chip">25 défis · 250 points</span>
             <span class="chip">Compte rendu sur Pronote</span>
         </div>
     </header>
 
     <div class="callout">
         <span class="lbl">🎯 Le principe</span>
-        <p>Ce TP est un <strong>CTF</strong> (<em>Capture The Flag</em>) :</p>
-        <p>Chaque défi cache un <strong>flag</strong>,
-            une chaîne de caractères de la forme <code class="flagbox">CIEL{...}</code>. À vous de la trouver en
-            explorant la page : le <strong>code HTML</strong>, les <strong>styles CSS</strong>, le
-            <strong>JavaScript</strong>, les <strong>cookies</strong>, l'<strong>URL</strong> et les
-            <strong>échanges réseau</strong>.</p>
-        <p>Tous les défis sont sur <strong>cette page même</strong> : c'est elle
-            que vous allez disséquer.
+        <p>Ce TP est un <strong>CTF</strong> (<em>Capture The Flag</em>). Chaque défi cache un <strong>flag</strong>,
+            une chaîne de la forme <code class="flagbox">CIEL{...}</code>.</p>
+        <p>À vous de le trouver en explorant la page : le <strong>HTML</strong>, le <strong>CSS</strong>, le <strong>JavaScript</strong>, les
+            <strong>cookies</strong>, l'<strong>URL</strong>, le <strong>stockage</strong> et les <strong>échanges
+                réseau</strong>.
         </p>
+        <p>Tous les défis sont sur <strong>cette page même</strong> : c'est elle que vous allez disséquer.</p>
     </div>
 
     <div class="callout warn">
-        <span class="lbl">⚖️ Éthique et légal — à lire avant de commencer</span>
+        <span class="lbl">⚖️ Règles du jeu — à lire avant de commencer</span>
         <ul class="plain">
-            <li>Le « hacking » est une pratique qui consiste à comprendre comment un système fonctionne pour en trouver les failles.
-                <br><strong>Sans autorisation</strong>, c'est un délit (article 323-1 du Code pénal : accès frauduleux à
-                un système de traitement automatisé de données).
-            </li>
-            <li>Ici, la cible est <strong>cette page de TP</strong> : l'autorisation est explicite. Ailleurs, elle ne
-                l'est jamais par défaut : tester le site de l'école, d'un commerce ou d'un camarade sans accord
-                écrit = attaque.</li>
-            <li>C'est exactement le métier du <strong>pentester</strong> : chercher les failles <strong>avec
-                    autorisation</strong> pour qu'elles soient corrigées. En entreprise, on travaille toujours avec un
-                mandat écrit.</li>
-        </ul>   
+            <li><strong>Internet est autorisé</strong> : documentation, recherches, tutos. Un technicien sait
+                chercher.</li>
+            <li><strong>IA : NON</strong>.</li>
+            <li>Le « hacking » consiste à comprendre un système pour en trouver les failles.<br><strong>Sans
+                    autorisation</strong>, c'est un délit (article 323-1 du Code pénal : accès frauduleux à un système
+                de traitement automatisé de données).</li>
+            <li>Ici, la cible est <strong>cette page de TP</strong> : l'autorisation est explicite. Ailleurs
+                (école, commerce, camarade), jamais par défaut : sans accord écrit, c'est une attaque.</li>
+            <li>C'est le métier du <strong>pentester</strong> : chercher les failles <strong>avec
+                    autorisation</strong> pour qu'elles soient corrigées. En entreprise : mandat écrit, toujours.</li>
+        </ul>
     </div>
 
-    <!-- Outils -->
-    <section id="outils">
+    <!-- ============ PRISE EN MAIN ============ -->
+    <section id="prise-en-main">
         <div class="sec-head">
             <span class="sec-num">01</span>
-            <h2>Votre boîte à outils : les DevTools</h2>
-            <span class="sec-tag">Briefing</span>
+            <h2>Prise en main : un exercice par outil</h2>
+            <span class="sec-tag">≈ 40 min — obligatoire</span>
         </div>
-        <p>Tous les défis se résolvent avec les <strong>outils de développement</strong> du navigateur, ouverts avec
-            <kbd>F12</kbd> (ou <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>I</kbd>). Prenez 10 minutes pour explorer chaque
-            onglet avec votre binôme :
+        <p>Avant le CTF, vous devez savoir piloter les <strong>DevTools</strong> (<kbd>F12</kbd> ou
+            <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>I</kbd>). Réalisez ces 5 exercices <strong>dans l'ordre</strong> :
+            chaque outil sera utilisé ensuite dans au moins un défi.
         </p>
-        <div class="tw">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Onglet</th>
-                        <th>Ce qu'on y trouve</th>
-                        <th>Défis concernés</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Éléments</strong></td>
-                        <td>Le code HTML réel de la page, modifiable en direct</td>
-                        <td>1, 2, 3</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Console</strong></td>
-                        <td>Exécution de code JavaScript, messages d'erreur</td>
-                        <td>4, 5, 6</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Réseau</strong></td>
-                        <td>Tous les échanges entre le navigateur et le serveur</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Application</strong></td>
-                        <td>Cookies, stockage local, cache</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>Barre d'adresse</td>
-                        <td>L'URL et ses <strong>paramètres</strong> (après le <code>?</code>)</td>
-                        <td>7</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div class="callout deliver">
+            <span class="lbl">🛠️ Exercice A — Onglet « Éléments »</span>
+            <p>Ouvrez les DevTools (<code>F12</code>), onglet <strong>Éléments</strong>, et retrouvez dans le code le titre de cette
+                section. Comme entraînement, <strong>modifiez le texte en direct</strong> : double-clic sur « Les
+                principes vus ci-dessus » juste après et écrivez « [Vos deux prénoms] ont pris le contrôle ! » puis
+                validez avec <kbd>Entrée</kbd>. La page change sans être rechargée.</p>
+            <p class="note">Réflexe : clic droit sur un élément de la page → « Examiner » sélectionne directement le
+                bon code.</p>
+            <p>Insérer une capture d'écran de la modification dans votre rapport.</p>
         </div>
-        <div class="callout">
-            <span class="lbl">💡 Méthode de travail</span>
-            <p>Pour chaque défi : notez le <strong>flag</strong> ET la <strong>manipulation qui l'a révélé</strong>
-                (2 phrases). Un flag sans explication ne compte pas : on cherche des techniciens qui comprennent,
-                pas des cliqueurs chanceux. Les défis sont indépendants : si vous bloquez, passez au suivant.</p>
+
+        <div class="callout deliver">
+            <span class="lbl">🛠️ Exercice B — Onglet « Console »</span>
+            <p>La <strong>Console</strong> exécute du JavaScript en direct. Tapez-y : <code>2 + 2</code> puis
+                <kbd>Entrée</kbd>, puis <code>"CIEL{" + "essai" + "}"</code>. Enfin, observez les
+                <strong>messages jaunes/rouges</strong> déjà présents : cette page en laisse traîner, prenez-en
+                l'habitude.
+            </p>
+            <p>Résultat des deux essais : ____________________</p>
+            <p>Insérer une capture d'écran de la modification dans votre rapport.</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🛠️ Exercice C — Onglet « Application » (cookies &amp; stockage)</span>
+            <p>Onglet <strong>Application</strong> (ou Stockage selon le navigateur) → <strong>Cookies</strong> :
+                cette page a déposé un cookie d'entraînement <code>acces_demo=invite</code>. Remplacez sa valeur par
+                <code>vip</code> (double-clic ou via la Console : <code>document.cookie =
+                "acces_demo=vip"</code>), puis rechargez la page : la zone change.
+            </p>
+            <div class="zone">
+                <p id="zoneDemo">🔒 Zone d'entraînement : accès « invite ».</p>
+            </div>
+            <p>Insérer une capture d'écran de la modification dans votre rapport.</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🛠️ Exercice D — Onglet « Réseau »</span>
+            <p>Onglet <strong>Réseau</strong>, puis rechargez la page (<kbd>F5</kbd>) : la liste montre
+                <strong>tous les échanges</strong> entre le navigateur et le serveur. Ouvrez la ligne du document
+                principal et cherchez l'onglet <strong>Réponse</strong>. Notez combien de requêtes cette page
+                déclenche.
+            </p>
+            <p>Nombre de requêtes observées : ____________________</p>
+            <p>Insérer une capture d'écran de la modification dans votre rapport.</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🛠️ Exercice E — L'URL et ses paramètres</span>
+            <p>Ajoutez <code>?ville=Lyon</code> à la fin de l'URL de cette page (après l'adresse), puis
+                <kbd>Entrée</kbd> : la zone ci-dessous lit ce paramètre. Lisez ensuite la fonction
+                <code>lireVille</code> dans le code source (<kbd>Ctrl</kbd>+<kbd>U</kbd>) pour comprendre
+                comment.
+            </p>
+            <div class="zone">
+                <p id="zoneVille">🗺️ Aucune ville détectée dans l'URL.</p>
+            </div>
+            <p>Validation : ____________________</p>
         </div>
     </section>
 
-    <!-- Défis -->
-    <section id="defis">
+    <!-- ============ HTML ============ -->
+    <section id="html">
         <div class="sec-head">
             <span class="sec-num">02</span>
-            <h2>Les défis</h2>
-            <span class="sec-tag">≈ 3h — menu libre</span>
+            <h2>Piste HTML — 8 défis</h2>
+            <span class="sec-tag">70 points</span>
         </div>
 
-        <!-- Défi 1 -->
-        <div class="callout deliver">
-            <span class="lbl">🟢 Défi 1</span>
-            <p>Le premier flag est quelque part dans le <strong>code source</strong> de cette page… mais invisible
-                à l'écran. Ouvrez le code avec <kbd>Ctrl</kbd>+<kbd>U</kbd> ou l'onglet Éléments et fouillez les
-                <strong>commentaires HTML</strong>.
-            </p>
-            <!-- Le flag est juste ici : CIEL{html_cache_trouve} -->
-            <p>Flag trouvé : ____________________ · Méthode : ____________________</p>
+
+        <div class="callout">
+            <span class="lbl">💡 Méthode de travail pour le CTF</span>
+            <p>Pour chaque défi : notez le <strong>flag</strong> ET la <strong>manipulation qui l'a révélé</strong>
+                (2 phrases). Un flag sans explication ne compte pas. Les défis sont indépendants : si vous bloquez,
+                passez au suivant. 🟢 facile = 5 pts · 🟡 moyen = 10 pts · 🔴 difficile = 15 pts.</p>
         </div>
 
-        <!-- Défi 2 -->
         <div class="callout deliver">
-            <span class="lbl">🟢 Défi 2</span>
-            <p>Le flag ci-dessous <strong>existe</strong> dans la page, mais un attribut l'empêche de s'afficher.
-                Trouvez-le dans l'onglet Éléments et <strong>modifiez le HTML en direct</strong> (double-clic sur
-                l'attribut ou clic droit → « Modifier le HTML ») pour le rendre visible.</p>
+            <span class="lbl">🟢 H1 — Le commentaire (5 pts)</span>
+            <p>Un premier flag se cache dans un <strong>commentaire HTML</strong> du code source. Ouvrez le code
+                (<kbd>Ctrl</kbd>+<kbd>U</kbd> ou onglet Éléments) et fouillez.</p>
+            <!-- Bravo : le flag est ici : CIEL{commentaires_lus} -->
+            <p>Flag : ____________________ · Méthode : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟢 H2 — L'image et son alt (5 pts)</span>
+            <p>Cette image ne s'affiche pas (elle n'existe pas)… mais son attribut <code>alt</code> est parlant.
+                Trouvez-le dans le code.</p>
             <div class="zone">
-                <p>Voici la zone secrète :</p>
-                <p class="cache">Le flag est : CIEL{dom_modifie_avec_f12}</p>
+                <img src="images/introuvable.png" alt="Flag : CIEL{alt_est_important}" width="120">
             </div>
-            <p>Flag trouvé : ____________________ · Qu'avez-vous modifié ? ____________________</p>
+            <p>Flag : ____________________ · À quoi sert l'attribut alt ? ____________________</p>
         </div>
 
-        <!-- Défi 3 -->
         <div class="callout deliver">
-            <span class="lbl">🟡 Défi 3</span>
-            <p>Un flag est défini dans les <strong>styles CSS</strong> de la page (dans le contenu d'un
-                pseudo-élément <code>::after</code>). Mais l'élément HTML ci-dessous ne porte pas la bonne
-                <strong>classe</strong>, donc rien ne s'affiche. Lisez les styles, puis ajoutez la bonne classe à
-                l'élément dans l'onglet Éléments.
+            <span class="lbl">🟢 H3 — L'info-bulle (5 pts)</span>
+            <p>Survolez — ou trouvez dans le code — l'attribut <code>title</code> de cet élément :</p>
+            <div class="zone">
+                <p title="CIEL{survole_le_titre}">🖱️ Survolez-moi avec la souris…</p>
+            </div>
+            <p>Flag : ____________________ · Méthode : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟡 H4 — Le tableau en vrac (10 pts)</span>
+            <p>Le flag a été <strong>découpé en 4 morceaux</strong> et dispersé dans ce tableau de données.
+                Retrouvez les cellules (onglet Éléments), remettez les morceaux en ordre.</p>
+            <div class="zone">
+                <table id="tableVrac">
+                    <tr>
+                        <th>Serveur</th>
+                        <th>IP</th>
+                        <th>État</th>
+                    </tr>
+                    <tr>
+                        <td>cale</td>
+                        <td>192.168.1.10</td>
+                        <td>up</td>
+                    </tr>
+                    <tr>
+                        <td>web-01</td>
+                        <td>CIEL{</td>
+                        <td>up</td>
+                    </tr>
+                    <tr>
+                        <td>mail</td>
+                        <td>192.168.1.30</td>
+                        <td>up</td>
+                    </tr>
+                    <tr>
+                        <td>web-01</td>
+                        <td>tableau_</td>
+                        <td>up</td>
+                    </tr>
+                    <tr>
+                        <td>dns</td>
+                        <td>192.168.1.1</td>
+                        <td>up</td>
+                    </tr>
+                    <tr>
+                        <td>web-01</td>
+                        <td>decode}</td>
+                        <td>up</td>
+                    </tr>
+                </table>
+            </div>
+            <p>Flag reconstitué : ____________________ · Méthode : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟡 H5 — L'identifiant unique (10 pts)</span>
+            <p>Dans le HTML, un attribut <code>id</code> doit être <strong>unique</strong>. Un développeur
+                distrait a caché le flag dans l'identifiant d'un élément de cette page. Cherchez un attribut
+                <code>id</code> suspect…
             </p>
+            <div class="zone" id="CIEL{id_unique_trouve}">
+                <p>Son <code>id</code> n'est pas très discret…</p>
+            </div>
+            <p>Flag : ____________________ · Méthode : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟡 H6 — La classe oubliée (10 pts)</span>
+            <p>Les attributs <code>class</code> brandissent des étiquettes. Un élément de cette page porte une
+                étiquette qui n'a rien d'une classe classique…</p>
+            <div class="suspense" id="piste6">
+                <p>Ces blocs portent des classes : <code>suspense</code>, <code>zone</code>,
+                    <code>interdit</code>… <span class="CIEL{class_cachee}">ou presque toutes.</span>
+                </p>
+            </div>
+            <p>Flag : ____________________ · Méthode : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟡 H7 — Le lien suspect (10 pts)</span>
+            <p>Les liens <code>&lt;a href="..."&gt;</code> pointent quelque part. Un des liens de cette page ne
+                pointe pas tout à fait où il prétend… inspectez les liens de la section bonus (le paragraphe
+                ci-dessous).</p>
+            <div class="zone">
+                <p>Liens du « club CIEL » :
+                    <a href="https://example.com/accueil.html">Accueil du club</a> ·
+                    <a href="https://example.com/reglement.html">Règlement</a> ·
+                    <a href="https://example.com/CIEL{lien_secret}.html">Dossier confidentiel</a>
+                </p>
+            </div>
+            <p>Flag : ____________________ · Méthode : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🔴 H8 — Le champ invisible (15 pts)</span>
+            <p>Les formulaires cachent parfois des <strong>champs invisibles</strong> :
+                <code>type="hidden"</code>, attributs <code>data-*</code> personnalisés… Fouillez le formulaire
+                ci-dessous dans l'onglet Éléments.
+            </p>
+            <div class="zone">
+                <form onsubmit="return false;">
+                    <input type="text" placeholder="Votre nom">
+                    <input type="hidden" value="CIEL{champ_cache}">
+                    <button type="submit">Envoyer</button>
+                    <span data-flag="CIEL{attribut_personnalise}" style="display:none;"></span>
+                </form>
+            </div>
+            <p>Les deux flags cachés : ____________________ et ____________________</p>
+        </div>
+    </section>
+
+    <!-- ============ CSS ============ -->
+    <section id="css">
+        <div class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>Piste CSS — 7 défis</h2>
+            <span class="sec-tag">70 points</span>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟢 C1 — Le commentaire du styliste (5 pts)</span>
+            <p>Les CSS aussi ont leurs <strong>commentaires</strong> (<code>/* ... */</code>). Ouvrez les styles de
+                la page (onglet Éléments → <code>&lt;style&gt;</code>, ou onglet Sources) et cherchez.</p>
+            <p>Flag : ____________________ · Où l'avez-vous trouvé ? ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟢 C2 — La classe qui manque (5 pts)</span>
+            <p>Le flag ci-dessous est défini dans le <strong>contenu d'un pseudo-élément</strong>
+                (<code>::after</code>)… mais l'élément ne porte pas la bonne <strong>classe</strong>. Lisez les
+                styles, puis ajoutez la bonne classe dans l'onglet Éléments.</p>
             <div class="zone">
                 <p id="styliste">Cet élément cache quelque chose…</p>
             </div>
-            <p>Flag trouvé : ____________________ · Quelle classe avez-vous ajoutée ? ____________________</p>
+            <p>Flag : ____________________ · Classe ajoutée : ____________________</p>
         </div>
 
-        <!-- Défi 4 -->
         <div class="callout deliver">
-            <span class="lbl">🟡 Défi 4</span>
-            <p>Ce petit formulaire vérifie un mot de passe… mais la vérification se fait
-                <strong>dans votre navigateur</strong>, donc le code est visible. Lisez la fonction
-                <code>verifierCoffre</code> dans le code source : le mot de passe y est caché, mais
-                <strong>à l'envers</strong>. Trouvez-le, tapez-le, et le flag s'affichera.
+            <span class="lbl">🟡 C3 — Le survol (10 pts)</span>
+            <p>En CSS, un <code>:hover</code> change l'apparence au survol de la souris. Le badge ci-dessous révèle
+                quelque chose quand on survole… mais pour <strong>lire</strong> le code plutôt que de jouer au
+                hasard, retrouvez la règle <code>:hover</code> dans les styles.</p>
+            <div class="zone">
+                <p class="badge-hover">🏅 Survolez ce badge</p>
+            </div>
+            <p>Flag : ____________________ · La règle CSS trouvée : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟡 C4 — Le caméléon (10 pts)</span>
+            <p>Ce paragraphe contient du texte… qui se fond parfaitement dans son décor. <strong>Sélectionnez</strong>
+                la zone à la souris, ou corrigez sa <strong>couleur</strong> directement dans l'onglet
+                Éléments.</p>
+            <div class="zone fond-blanc">
+                <p class="camaleon">Rien à signaler par ici, circulez.</p>
+            </div>
+            <p>Flag : ____________________ · Quelle propriété avez-vous modifiée ? ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟡 C5 — La variable (10 pts)</span>
+            <p>Le CSS a des <strong>variables</strong> (<code>--nom: valeur;</code>, déclarées souvent dans
+                <code>:root</code>). Une de ces variables ne contient pas une couleur… Trouvez-la et
+                <strong>affichez</strong> sa valeur (ou comprenez où elle est utilisée).
+            </p>
+            <div class="zone">
+                <p class="variable-user">🎨 Cette décoration utilise une variable CSS : <span class="var-ref"></span>
+                </p>
+            </div>
+            <p>Flag : ____________________ · Nom de la variable : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🔴 C6 — La fenêtre étroite (15 pts)</span>
+            <p>Une règle <code>@media</code> n'agit que sous une certaine condition — par exemple quand la fenêtre
+                devient <strong>étroite</strong>. Essayez de réduire la largeur de la fenêtre… puis expliquez la
+                règle en la lisant dans le code.</p>
+            <div class="zone">
+                <p class="media-flag"></p>
+            </div>
+            <p>Flag : ____________________ · La condition de la règle : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🔴 C7 — Les trois morceaux (15 pts)</span>
+            <p>Trois éléments de cette page portent en <code>::before</code> ou <code>::after</code> un
+                <strong>morceau de flag</strong> (visible à l'écran si vous savez où regarder — ou dans le CSS).
+                Rassemblez-les dans l'ordre : le mot d'abord, puis les deux morceaux entourés.
+            </p>
+            <div class="zone">
+                <p class="morceau-a"></p>
+                <p>Le mot central est : ____________________</p>
+                <p class="morceau-b"></p>
+            </div>
+            <p>Flag reconstitué : ____________________</p>
+        </div>
+    </section>
+
+    <!-- ============ JS ============ -->
+    <section id="js">
+        <div class="sec-head">
+            <span class="sec-num">04</span>
+            <h2>Piste JavaScript — 5 défis</h2>
+            <span class="sec-tag">50 points</span>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟢 J1 — La parole à la Console (5 pts)</span>
+            <p>Rechargez la page et lisez l'onglet <strong>Console</strong> : un <code>console.log</code> glissé au
+                chargement vous dit bonjour… à sa manière.</p>
+            <p>Flag : ____________________ · Le message complet : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟡 J2 — Le coffre-fort (10 pts)</span>
+            <p>Ce formulaire vérifie un mot de passe… <strong>dans votre navigateur</strong>, donc le code est
+                visible. Lisez la fonction <code>verifierCoffre</code> : le mot de passe y est caché, mais
+                <strong>à l'envers</strong>.
             </p>
             <div class="zone">
                 <p>🔐 Coffre-fort numérique :</p>
@@ -168,100 +381,148 @@
                 <button onclick="verifierCoffre()">Ouvrir</button>
                 <p class="verdict" id="verdictCoffre"></p>
             </div>
-            <p>Flag trouvé : ____________________ · Quel était le mot de passe et comment l'avez-vous trouvé ?
-                ____________________</p>
+            <p>Flag : ____________________ · Le mot de passe et sa logique : ____________________</p>
         </div>
 
-        <!-- Défi 5 -->
         <div class="callout deliver">
-            <span class="lbl">🟡 Défi 5</span>
-            <p>Le développeur a caché le flag dans un tableau de <strong>codes de caractères</strong>, mais sa
-                fonction d'affichage ne marche plus (ouvrez la Console : il y a une erreur !). Corrigez la fonction
-                dans l'onglet Console, ou reconstruisez le flag vous-même avec
-                <code>String.fromCharCode(...)</code>.
-            </p>
+            <span class="lbl">🟡 J3 — Le code cassé (10 pts)</span>
+            <p>Le flag est caché dans un tableau de <strong>codes de caractères</strong>, mais la fonction
+                d'affichage plante (Regardez la Console : il y a une erreur !). Corrigez la fonction dans la
+                Console, ou reconstruisez le flag avec <code>String.fromCharCode(...)</code>.</p>
             <div class="zone">
                 <button onclick="revelerCode()">Révéler le message secret</button>
                 <p class="verdict" id="verdictCode"></p>
             </div>
-            <p>Flag trouvé : ____________________ · Comment avez-vous procédé ? ____________________</p>
+            <p>Flag : ____________________ · Comment avez-vous procédé ? ____________________</p>
         </div>
 
-        <!-- Défi 6 -->
         <div class="callout deliver">
-            <span class="lbl">🟡 Défi 6</span>
-            <p>Cette page dépose un <strong>cookie</strong> à chaque chargement : <code>acces=invite</code>. La
-                zone ci-dessous ne s'ouvre que pour un cookie <code>acces=admin</code>. Trouvez le cookie (onglet
-                Application, ou <code>document.cookie</code> dans la Console), puis <strong>modifiez sa
-                    valeur</strong> et rechargez la zone.</p>
+            <span class="lbl">🟡 J4 — Le message encodé (10 pts)</span>
+            <p>La fonction <code>ouvrirGarde</code> affiche son secret via un <strong>encodage base64</strong>
+                (<code>atob()</code> décode, <code>btoa()</code> encode). Exécutez l'encodage/décodage dans la
+                Console plutôt que de deviner la chaîne à la main.</p>
+            <div class="zone">
+                <button onclick="ouvrirGarde()">Décoder le message</button>
+                <p class="verdict" id="verdictGarde"></p>
+            </div>
+            <p>Flag : ____________________ · La commande Console utilisée : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🔴 J5 — Le test de persévérance (15 pts)</span>
+            <p>Ce compteur ne dévoile son trésor qu'au <strong>10ᵉ clic</strong>… mais la fonction qui affiche le
+                flag est <strong>là, dans le code</strong> : trouvez son nom et appelez-la directement depuis la
+                Console (ou cliquez dix fois, ça marche aussi).</p>
+            <div class="zone">
+                <button onclick="compterClic()">Cliquer (compteur : <span id="compteurClics">0</span>/10)</button>
+                <p class="verdict" id="verdictClics"></p>
+            </div>
+            <p>Flag : ____________________ · Le nom de la fonction à appeler : ____________________</p>
+        </div>
+    </section>
+
+    <!-- ============ AUTRES ============ -->
+    <section id="autres">
+        <div class="sec-head">
+            <span class="sec-num">05</span>
+            <h2>Piste Autres — 5 défis</h2>
+            <span class="sec-tag">60 points</span>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🟡 A1 — Le biscuit (10 pts)</span>
+            <p>Cette page dépose un cookie <code>acces=invite</code> à chaque chargement. La zone ci-dessous ne
+                s'ouvre que pour <code>acces=admin</code>. Modifiez le cookie (onglet Application ou
+                <code>document.cookie</code>) puis rechargez.
+            </p>
             <div class="zone">
                 <p id="zoneCookie">🔒 Accès refusé : vous êtes « invité ».</p>
             </div>
-            <p>Flag trouvé : ____________________ · Quelle valeur de cookie avez-vous posée et comment ?
-                ____________________</p>
+            <p>Flag : ____________________ · Comment avez-vous posé le cookie ? ____________________</p>
         </div>
 
-        <!-- Défi 7 -->
         <div class="callout deliver">
-            <span class="lbl">🟡 Défi 7</span>
-            <p>La zone ci-dessous refuse l'accès… mais son code source révèle qu'elle lit un
-                <strong>paramètre dans l'URL</strong>. Lisez le code (fonction <code>verifierURL</code>), trouvez
-                le paramètre attendu et sa valeur, puis <strong>ajoutez-les à l'URL de la page</strong> (après un
-                <code>?</code>) et rechargez.
+            <span class="lbl">🟡 A2 — La porte dérobée (10 pts)</span>
+            <p>La zone ci-dessous lit un <strong>paramètre d'URL</strong>. Lisez la fonction
+                <code>verifierURL</code> dans le code source, trouvez le paramètre et sa valeur attendue, ajoutez-les
+                à l'URL (après un <code>?</code>) et rechargez.
             </p>
             <div class="zone">
                 <p id="zoneURL">🔒 Accès refusé : paramètre d'autorisation manquant.</p>
             </div>
-            <p>Flag trouvé : ____________________ · Paramètre et valeur ajoutés : ____________________</p>
+            <p>Flag : ____________________ · Paramètre et valeur : ____________________</p>
         </div>
 
-        <!-- Défi 8 -->
         <div class="callout deliver">
-            <span class="lbl">🔴 Défi 8</span>
-            <p>Au chargement, cette page a déjà échangé <strong>deux messages secrets</strong> avec un « serveur ».
-                Rien ne s'affiche à l'écran : ouvrez l'onglet <strong>Réseau</strong>, rechargez la page, repérez
-                les requêtes, et examinez leur <strong>réponse</strong>. Attention : l'un des deux messages est un
-                <strong>faux flag</strong> posé par l'administrateur…
+            <span class="lbl">🟡 A3 — L'entrepôt local (10 pts)</span>
+            <p>Le navigateur dispose d'un <strong>stockage local</strong> (<code>localStorage</code>), visible dans
+                l'onglet Application. L'entrepôt de cette page contient une caisse mal étiquetée…</p>
+            <div class="zone">
+                <button onclick="consulterEntrepot()">Consulter l'entrepôt</button>
+                <p class="verdict" id="verdictEntrepot"></p>
+            </div>
+            <p>Flag : ____________________ · Clé utilisée dans le localStorage : ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🔴 A4 — Les ondes (15 pts)</span>
+            <p>Au chargement, cette page a échangé <strong>deux messages secrets</strong> avec un « serveur ». Rien
+                ne s'affiche : ouvrez l'onglet <strong>Réseau</strong>, rechargez, examinez les
+                <strong>réponses</strong>. L'un des deux messages est un <strong>faux flag</strong> posé par
+                l'administrateur…
             </p>
             <div class="zone">
                 <button onclick="echangerMessages()">Rejouer l'échange réseau</button>
                 <p class="verdict" id="verdictReseau">Les échanges ont eu lieu au chargement de la page…</p>
             </div>
-            <p>Vrai flag trouvé : ____________________ · Comment avez-vous éliminé le faux ?
+            <p>Vrai flag : ____________________ · Comment avez-vous éliminé le faux ? ____________________</p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">🔴 A5 — La double porte (15 pts)</span>
+            <p>Le boss final : la zone ci-dessous n'accepte d'ouvrir que si <strong>deux conditions sont réunies en
+                    même temps</strong> — un <strong>cookie</strong> ET un <strong>paramètre d'URL</strong> (tous deux
+                différents de ceux des défis A1 et A2). Lisez la fonction <code>verifierDoublePorte</code> pour
+                trouver les valeurs attendues, puis posez le cookie et l'URL, et rechargez.</p>
+            <div class="zone">
+                <p id="zoneDouble">🔒🔒 Double porte verrouillée : cookie + paramètre d'URL requis.</p>
+            </div>
+            <p>Flag : ____________________ · Cookie posé : ____________________ · URL utilisée :
                 ____________________</p>
         </div>
 
         <!-- Bonus -->
         <div class="callout deliver">
-            <span class="lbl">💎 Bonus</span>
+            <span class="lbl">💎 Bonus — Le créateur de défi</span>
             <p>Pour les binômes en avance : <strong>inventez votre propre défi</strong>. Cachez un flag dans cette
                 page (commentaire, style, JS, cookie…) et préparez un petit indice écrit. Échangez votre défi avec
-                un autre binôme : chacun doit résoudre celui de l'autre. Le défi le plus malin rapporte 30 pts au
-                binôme qui l'a créé ET à celui qui le résout.</p>
+                un autre binôme : chacun résout celui de l'autre. Le défi le plus malin rapporte 30 pts au binôme
+                qui l'a créé ET à celui qui le résout.</p>
             <p>Défi créé : ____________________ · Défi résolu (de quel binôme ?) : ____________________</p>
         </div>
     </section>
 
-    <!-- Compte rendu -->
+    <!-- ============ COMPTE RENDU ============ -->
     <section id="compte-rendu">
         <div class="sec-head">
-            <span class="sec-num">03</span>
+            <span class="sec-num">06</span>
             <h2>Compte rendu à déposer sur Pronote</h2>
             <span class="sec-tag">≈ 30 min — obligatoire</span>
         </div>
         <p>Un compte rendu <strong>par binôme</strong>, à déposer sur Pronote, contenant :</p>
         <ul class="plain">
-            <li><strong>En-tête</strong> : noms du binôme, date, score total obtenu (additionnez les points des
-                défis réussis).</li>
+            <li><strong>En-tête</strong> : noms du binôme, date, score total (additionnez les points des défis
+                réussis, sur 250).</li>
             <li><strong>Pour chaque défi réussi</strong> : le flag + la méthode en 2 phrases (quel outil, quel
                 onglet, quelle manipulation).</li>
             <li><strong>Une capture d'écran</strong> d'au moins un flag révélé grâce à une modification en direct
-                (Défi 2, 3 ou 6).</li>
+                (HTML, CSS ou cookie).</li>
+            <li><strong>Une situation où Internet (la doc) vous a aidé</strong> : quelle recherche, quelle page
+                consultée ?</li>
             <li><strong>Bilan sécurité (10 lignes)</strong> : pourquoi tout ce qui se passe dans le navigateur
-                (HTML, CSS, JS, cookies, paramètres d'URL) doit toujours être considéré comme
-                <strong>visible et modifiable par l'utilisateur</strong> ?</li>
+                (HTML, CSS, JS, cookies, paramètres d'URL) doit toujours être considéré comme <strong>visible et
+                    modifiable par l'utilisateur</strong> ? Qu'est-ce que cela implique pour un développeur web ?</li>
         </ul>
-    </section>
 
     <!-- Footer -->
     <footer>

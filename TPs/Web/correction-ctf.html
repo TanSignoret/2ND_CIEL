@@ -1,0 +1,221 @@
+<div class="tw">
+    <table>
+        <thead>
+            <tr>
+                <th>Piste</th>
+                <th>Défis</th>
+                <th>Points max</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td>8</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>7</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>5</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Autres (cookies, URL, stockage, réseau)</td>
+                <td>5</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>25</strong></td>
+                <td><strong>250</strong></td>
+            </tr>
+            <tr>
+                <td>Bonus : défi inventé et échangé</td>
+                <td>1</td>
+                <td>+30</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</section>
+
+<!-- ============ CORRIGE PROF ============ -->
+<section id="corrige">
+    <div class="sec-head">
+        <span class="sec-num">P</span>
+        <h2>Corrigé professeur — page à retirer avant diffusion</h2>
+        <span class="sec-tag">Ne pas diffuser</span>
+    </div>
+    <div class="tw">
+        <table>
+            <thead>
+                <tr>
+                    <th>Défi</th>
+                    <th>Flag</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Prise en main A-E</td>
+                    <td>—</td>
+                    <td>A : éditer le texte dans Éléments · B : 4 puis CIEL{essai} · C : cookie acces_demo=vip ·
+                        D : compter les requêtes du Réseau · E : ?ville=Lyon lue par lireVille</td>
+                </tr>
+                <tr>
+                    <td>H1</td>
+                    <td><code>CIEL{commentaires_lus}</code></td>
+                    <td>Commentaire HTML au début du défi 1 (Ctrl+U).</td>
+                </tr>
+                <tr>
+                    <td>H2</td>
+                    <td><code>CIEL{alt_est_important}</code></td>
+                    <td>Attribut <code>alt</code> de l'image cassée.</td>
+                </tr>
+                <tr>
+                    <td>H3</td>
+                    <td><code>CIEL{survole_le_titre}</code></td>
+                    <td>Attribut <code>title</code> du paragraphe (info-bulle au survol).</td>
+                </tr>
+                <tr>
+                    <td>H4</td>
+                    <td><code>CIEL{tableau_decode}</code></td>
+                    <td>Morceaux dans les cellules « web-01 », dans l'ordre d'apparition.</td>
+                </tr>
+                <tr>
+                    <td>H5</td>
+                    <td><code>CIEL{id_unique_trouve}</code></td>
+                    <td>Attribut <code>id</code> du bloc de la zone défi H5.</td>
+                </tr>
+                <tr>
+                    <td>H6</td>
+                    <td><code>CIEL{class_cachee}</code></td>
+                    <td>Attribut <code>class</code> du span du défi H6.</td>
+                </tr>
+                <tr>
+                    <td>H7</td>
+                    <td><code>CIEL{lien_secret}</code></td>
+                    <td><code>href</code> du troisième lien du « club CIEL ».</td>
+                </tr>
+                <tr>
+                    <td>H8</td>
+                    <td><code>CIEL{champ_cache}</code> + <code>CIEL{attribut_personnalise}</code></td>
+                    <td><code>input type="hidden"</code> et attribut <code>data-flag</code> du formulaire.</td>
+                </tr>
+                <tr>
+                    <td>C1</td>
+                    <td><code>CIEL{commentaire_css}</code></td>
+                    <td>Commentaire <code>/* */</code> en tête du bloc &lt;style&gt; de la page.</td>
+                </tr>
+                <tr>
+                    <td>C2</td>
+                    <td><code>CIEL{css_revele_par_style}</code></td>
+                    <td>Ajouter la classe <code>drapeau</code> à l'élément #styliste (::after).</td>
+                </tr>
+                <tr>
+                    <td>C3</td>
+                    <td><code>CIEL{survole_badge}</code></td>
+                    <td>Règle <code>.badge-hover:hover::after</code> (ou survoler effectivement).</td>
+                </tr>
+                <tr>
+                    <td>C4</td>
+                    <td><code>CIEL{camaleon}</code></td>
+                    <td>Texte blanc sur fond blanc ; sélectionner ou changer <code>color</code>.</td>
+                </tr>
+                <tr>
+                    <td>C5</td>
+                    <td><code>CIEL{variable_css}</code></td>
+                    <td>Variable <code>--flag-secret</code> dans <code>:root</code>, utilisée par
+                        <code>.var-ref</code>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>C6</td>
+                    <td><code>CIEL{fenetre_etroite}</code></td>
+                    <td><code>@media (max-width: 500px)</code> dévoile le contenu via .media-flag::after.</td>
+                </tr>
+                <tr>
+                    <td>C7</td>
+                    <td><code>CIEL{trois_morceaux}</code></td>
+                    <td>.morceau-a::before = « CIEL{ », .morceau-a::after = « trois », .morceau-b::after =
+                        « _morceaux} » ; le mot central est le connecteur « _ » que les élèves écrivent
+                        (corrigé dans style-ctf.css).</td>
+                </tr>
+                <tr>
+                    <td>J1</td>
+                    <td><code>CIEL{bonjour_console}</code></td>
+                    <td><code>console.log</code> au chargement de la page.</td>
+                </tr>
+                <tr>
+                    <td>J2</td>
+                    <td><code>CIEL{js_lu_et_compris}</code></td>
+                    <td>Mot de passe = <code>lesecret</code> (« tercesel » à l'envers).</td>
+                </tr>
+                <tr>
+                    <td>J3</td>
+                    <td><code>CIEL{console_est_une_alliee}</code></td>
+                    <td>Fonction buggy (variable inexistante) ; <code>String.fromCharCode(...codes)</code>.</td>
+                </tr>
+                <tr>
+                    <td>J4</td>
+                    <td><code>CIEL{base64_decodee}</code></td>
+                    <td><code>atob('Q0lFTHtiYXNlNjRfZGVjb2RlZX0=')</code> dans la Console.</td>
+                </tr>
+                <tr>
+                    <td>J5</td>
+                    <td><code>CIEL{dix_clics_bravo}</code></td>
+                    <td>Appeler <code>devoilerTresor()</code> depuis la Console (ou 10 clics).</td>
+                </tr>
+                <tr>
+                    <td>A1</td>
+                    <td><code>CIEL{cookie_escalade_admin}</code></td>
+                    <td><code>document.cookie="acces=admin"</code> puis recharger.</td>
+                </tr>
+                <tr>
+                    <td>A2</td>
+                    <td><code>CIEL{parametre_url_trouve}</code></td>
+                    <td>Ajouter <code>?autorisation=ciel2027</code>.</td>
+                </tr>
+                <tr>
+                    <td>A3</td>
+                    <td><code>CIEL{stockage_local}</code></td>
+                    <td>Clé <code>caisse_mal_etiquettee</code> du localStorage (onglet Application).</td>
+                </tr>
+                <tr>
+                    <td>A4</td>
+                    <td><code>CIEL{reseau_intercepte}</code></td>
+                    <td>Deux requêtes <code>data:</code> dans Réseau ; le faux flag est
+                        <code>CIEL{faux_flag_piege}</code>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>A5</td>
+                    <td><code>CIEL{double_authentification}</code></td>
+                    <td>Cookie <code>acces=directeur</code> + URL <code>?niveau=ultime</code> (valeurs lues dans
+                        verifierDoublePorte).</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="callout warn">
+        <span class="lbl">⚠️ Notes d'installation</span>
+        <ul class="plain">
+            <li>Servir la page par un vrai serveur web (GitHub Pages, pas <code>file://</code>) : indispensables
+                pour les défis cookie, URL et réseau.</li>
+            <li>Le défi A4 utilise des requêtes <code>data:</code> (visibles dans l'onglet Réseau). Pour un vrai
+                aller-retour, remplacez par deux fichiers <code>.txt</code> hébergés à côté.</li>
+            <li>Vérifiez que <code>Ressources/style-ctf.css</code> et <code>Ressources/js-ctf.js</code>
+                correspondent bien à ce TP (classes : <code>drapeau</code>, <code>badge-hover</code>,
+                <code>camaleon</code>, <code>var-ref</code>, <code>media-flag</code>, <code>morceau-a/b</code> ;
+                fonctions : <code>verifierCoffre</code>, <code>revelerCode</code>, <code>ouvrirGarde</code>,
+                <code>compterClic</code>/<code>devoilerTresor</code>, <code>verifierCookie</code>,
+                <code>verifierURL</code>, <code>verifierDoublePorte</code>, <code>consulterEntrepot</code>,
+                <code>echangerMessages</code>).
+            </li>
+        </ul>
+    </div>
+</section>
