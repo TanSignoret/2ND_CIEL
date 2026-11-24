@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cours — Les essentiels du HTML</title>
+  <link rel="stylesheet" href="../Ressources/style.css">
+  <style>
+    /* Cours HTML : tableaux code | rendu, dans la DA du site (cf. .tw) */
+    .cr {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+    }
+
+    .cr th {
+      background: #1a4fb4;
+      color: #fff;
+      padding: 8px 12px;
+      text-align: left;
+      font-size: 0.95em;
+    }
+
+    .cr td {
+      border: 1px solid #dde3ee;
+      padding: 10px 14px;
+      vertical-align: top;
+      width: 50%;
+      background: #fff;
+    }
+
+    .cr pre {
+      background: #f2f5fb;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin: 0;
+      font-family: monospace;
+      font-size: 0.88em;
+      overflow-x: auto;
+    }
+
+    .cr .rendu {
+      background: #fffdf4;
+    }
+
+    .cr .rendu>*:first-child {
+      margin-top: 0;
+    }
+
+    .cr .rendu>*:last-child {
+      margin-bottom: 0;
+    }
+
+    .legende {
+      font-size: 0.9em;
+      color: #445;
+      margin: 8px 0 0;
+      padding: 8px 14px;
+    }
+
+    code {
+      background: #eef2fa;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    .demo-table, .demo-table th, .demo-table td {
+      background: none;
+      color: black;
+      border: 1px solid black;
+    }
+    .demo-table {
+      border-collapse: collapse;
+      width: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="eyebrow">Cours — Web · HTML</div>
+    <h1>Les essentiels du HTML</h1>
+    <p class="lede">Comprendre les balises, structurer une page et connaître les éléments indispensables.
+      Chaque notion est présentée <strong>code à gauche, rendu à droite</strong> : comparez, c'est le meilleur
+      moyen de comprendre.</p>
+    <div class="chips">
+      <span class="chip">Seconde Bac Pro CIEL</span>
+      <span class="chip">Cours + lecture de code</span>
+      <span class="chip">Références : NSI-Learning, LdM, NSI-Renoir</span>
+    </div>
+  </header>
+
+  <!-- 1. Balise -->
+  <section id="balise">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>Une balise, c'est quoi ?</h2>
+      <span class="sec-tag">Ouvrante · contenu · fermante</span>
+    </div>
+    <p>Le HTML est un langage de <strong>balisage</strong> : il ne calcule pas (ce n'est pas un langage de
+      programmation), il <strong>décrit</strong> le contenu. Une balise se compose de trois parties :</p>
+
+    <table class="cr">
+      <tr>
+        <th>Code</th>
+        <th>Rendu dans le navigateur</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>&lt;h1&gt;Bienvenue&lt;/h1&gt;</pre>
+        </td>
+        <td class="rendu">
+          <h1>Bienvenue</h1>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 Lecture du code</span>
+      <p><code>&lt;h1&gt;</code> = balise <strong>ouvrante</strong> · <code>Bienvenue</code> = le
+        <strong>contenu</strong> · <code>&lt;/h1&gt;</code> = balise <strong>fermante</strong> (avec le
+        slash /).
+      </p>
+    </div>
+
+    <p>Les balises s'<strong>emboîtent</strong> comme des poupées russes — jamais en travers :</p>
+    <table class="cr">
+      <tr>
+        <th>✅ Imbrication correcte</th>
+        <th>❌ Imbrication fausse</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>&lt;p&gt;Un mot &lt;strong&gt;important&lt;/strong&gt; ici&lt;/p&gt;</pre>
+        </td>
+        <td>
+          <pre>&lt;p&gt;Un mot &lt;strong&gt;important&lt;/p&gt;&lt;/strong&gt;</pre>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 Pourquoi ?</span>
+      <p>A gauche, la balise interne ferme <em>avant</em> la balise externe. À droite, elles se croisent : le
+        navigateur ne sait plus qui se termine où.</p>
+    </div>
+  </section>
+
+  <!-- 2. Structuration -->
+  <section id="structure">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>Structurer une page</h2>
+      <span class="sec-tag">Squelette · head · body</span>
+    </div>
+    <p>Toute page respecte le même squelette, en deux zones : le <code>&lt;head&gt;</code> (invisible) et le
+      <code>&lt;body&gt;</code> (visible) :
+    </p>
+
+    <table class="cr">
+      <tr>
+        <th>Code (le squelette)</th>
+        <th>Rendu dans le navigateur</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Ma page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- le contenu visible ici --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </td>
+        <td class="rendu">
+          <pre class="tree">
+(Onglet du navigateur) : <strong>« Ma page »</strong></pre>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 Lecture du code</span>
+      <p><code>&lt;head&gt;</code> : titre de l'onglet, encodage… rien à l'écran. <code>&lt;body&gt;</code> :
+        tout ce qui s'affiche. Les <strong>commentaires</strong> <code>&lt;!-- ... --&gt;</code> ne
+        s'affichent jamais.</p>
+    </div>
+
+    <p>Dans le <code>&lt;body&gt;</code>, on organise les grandes zones avec de <strong>blocs
+        sémantiques</strong> — chaque balise dit ce qu'elle contient :</p>
+
+    <table class="cr">
+      <tr>
+        <th>Code (une page organisée)</th>
+        <th>Rendu dans le navigateur</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Club réseau du lycée&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Nos activités&lt;/h2&gt;
+    &lt;article&gt;
+      &lt;h3&gt;Atelier câblage&lt;/h3&gt;
+      &lt;p&gt;Apprendre à sertir un câble.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;Contact : le club&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</pre>
+        </td>
+        <td class="rendu">
+          <h1>Club réseau du lycée</h1>
+          <br>
+          <article>
+            <h2>Nos activités</h2>
+            <h3>Atelier câblage</h3>
+            <p>Apprendre à sertir un câble.</p>
+          </article>
+          <footer style="margin-top: none; border-top: none; padding-top: none; text-align: left; color: black;">
+            <p>Contact : le club</p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 Les blocs sémantiques</span>
+      <p><code>header</code> : bandeau · <code>section</code> : grande partie · <code>article</code> : bloc
+        autonome · <code>footer</code> : pied de page. Sans CSS, ces balises se ressemblent presque (juste
+        un espacement) : leur valeur, c'est le <strong>sens</strong> — pour le navigateur, le
+        référencement… et pour vous quand vous relisez le code.</p>
+    </div>
+  </section>
+
+  <!-- 3. Balises texte -->
+  <section id="texte">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>Les balises à connaître</h2>
+      <span class="sec-tag">Titres · paragraphes · emphase</span>
+    </div>
+
+    <h3>Les titres et les paragraphes</h3>
+    <table class="cr">
+      <tr>
+        <th>Code</th>
+        <th>Rendu dans le navigateur</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>&lt;h1&gt;Titre principal&lt;/h1&gt;
+&lt;h2&gt;Sous-titre&lt;/h2&gt;
+&lt;h3&gt;Petit titre&lt;/h3&gt;
+&lt;p&gt;Un paragraphe de texte.&lt;/p&gt;</pre>
+        </td>
+        <td class="rendu">
+          <h1>Titre principal</h1>
+          <h2>Sous-titre</h2>
+          <h3>Petit titre</h3>
+          <p>Un paragraphe de texte.</p>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 Lecture du code</span>
+      <p><code>h1</code> → <code>h6</code> : du plus important au moins important. Un seul
+        <code>h1</code> par page.
+      </p>
+    </div>
+
+    <h3>Mettre du texte en avant : strong, b, em, i</h3>
+    <table class="cr">
+      <tr>
+        <th>Code</th>
+        <th>Rendu dans le navigateur</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>&lt;p&gt;C'est &lt;strong&gt;important&lt;/strong&gt;
+et &lt;b&gt;en gras&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Un mot &lt;em&gt;accentué&lt;/em&gt;
+et un terme &lt;i&gt;clin d'œil&lt;/i&gt;.&lt;/p&gt;</pre>
+        </td>
+        <td class="rendu">
+          <p>C'est <strong>important</strong> et <b>en gras</b>.</p>
+          <p>Un mot <em>accentué</em> et un terme <i>clin d'œil</i>.</p>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 strong/b, em/i : quelle différence ?</span>
+      <p><code>strong</code> = <strong>important</strong> (priorité, urgence) · <code>b</code> = en gras,
+        sans importance particulière · <code>em</code> = emphase (on insiste en lisant) · <code>i</code> =
+        italique (terme étranger, pensée, titre…). À l'écran, <code>strong</code> et <code>b</code>
+        semblent identiques : la différence est le <strong>sens</strong> — « ceci est capital », pas
+        seulement « ceci est gras ».</p>
+      <p>Les différents types de balises permettent de structurer le contenu et d'aider au référencement.</p>
+    </div>
+
+    <h3>Les tableaux</h3>
+    <table class="cr">
+      <tr>
+        <th>Code</th>
+        <th>Rendu dans le navigateur</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Équipement&lt;/th&gt;
+    &lt;th&gt;Quantité&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Switch&lt;/td&gt;
+    &lt;td&gt;2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+        </td>
+        <td class="rendu">
+          <table class="demo-table">
+            <tr>
+              <th>Équipement</th>
+              <th>Quantité</th>
+            </tr>
+            <tr>
+              <td>Switch</td>
+              <td>2</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 Lecture du code</span>
+      <p><code>table</code> le tableau · <code>tr</code> une ligne · <code>th</code> cellule d'en-tête
+        (grasse et centrée) · <code>td</code> cellule de données. Sans CSS, pas de bordures : le tableau
+        existe, mais il est nu.</p>
+    </div>
+  </section>
+
+  <!-- 4. CSS -->
+  <section id="css">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2>Les propriétés CSS à connaître</h2>
+      <span class="sec-tag">Couleur · police · fond · bordure · padding · margin</span>
+    </div>
+    <p>Le CSS complète le HTML. Une règle cible des éléments et applique des propriétés :
+      <code>sélecteur { propriété: valeur; }</code>. Voici les six propriétés essentielles, appliquées à un
+      même paragraphe :
+    </p>
+
+    <table class="cr">
+      <tr>
+        <th>Code CSS (dans un &lt;style&gt; ou un fichier .css)</th>
+        <th>Rendu</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>p.ex1 {
+  color: red;
+}</pre>
+        </td>
+        <td class="rendu">
+          <p class="ex1" style="color:red;">Un texte en rouge.</p>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 color</span>
+      <p><code>color</code> = la couleur du <em>texte</em>.</p>
+    </div>
+
+    <table class="cr">
+      <tr>
+        <th>Code CSS</th>
+        <th>Rendu</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>p.ex2 {
+  color: white;
+  background-color: darkblue;
+}</pre>
+        </td>
+        <td class="rendu">
+          <p class="ex2" style="color:white; background-color:darkblue; padding:4px;">Un
+            texte blanc sur fond bleu marine.</p>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 background-color</span>
+      <p><code>background-color</code> = la couleur du <em>fond</em> derrière le texte.</p>
+    </div>
+
+    <table class="cr">
+      <tr>
+        <th>Code CSS</th>
+        <th>Rendu</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>p.ex3 {
+  font-family: Georgia, serif;
+  font-size: 2em;
+  font-weight: bold;
+}</pre>
+        </td>
+        <td class="rendu">
+          <p class="ex3" style="font-family:Georgia, serif; font-size:2em; font-weight:bold;">Un
+            texte en Georgia, 2em, gras.</p>
+        </td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <span class="lbl">🔎 les polices</span>
+      <p><code>font-family</code> (on donne plusieurs polices de secours) est une police de caractères·</p>
+    </div>
+
+    <div class="callout">
+      <span class="lbl">🔎 la taille des caractères</span>
+      <p><code>1 em;</code> est une unité de mesure qui correspond à la taille de la police de caractères utilisée.</p>
+    </div>
+
+    <div class="callout">
+      <span class="lbl">🔎 l'épaisseur du trait</span>
+      <p><code>font-weight</code> correspond à l'épaisseur du trait que l'on souhaite utiliser.</p>
+    </div>
+
+    <table class="cr">
+      <tr>
+        <th>Code CSS</th>
+        <th>Rendu</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>p.ex4 {
+  border: 2px solid black;
+}</pre>
+        </td>
+        <td class="rendu">
+          <p class="ex4" style="border:2px solid black; padding:4px;">Un texte entouré
+            d'une bordure.</p>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 border</span>
+      <p><code>border</code> = bordure : épaisseur + style + couleur (ici : 2 pixels, trait continu,
+        noir).</p>
+    </div>
+
+    <table class="cr">
+      <tr>
+        <th>Code CSS</th>
+        <th>Rendu</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>p.ex5 {
+  border: 2px dashed orange;
+  padding: 15px;
+}</pre>
+        </td>
+        <td class="rendu">
+          <p class="ex5" style="border:2px dashed orange; padding:15px;">Un texte avec 15
+            pixels de padding : de l'espace intérieur.</p>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 padding</span>
+      <p><code>padding</code> = marge <em>intérieur</em> : entre le texte et sa bordure. Ici 15 px d'air
+        tout autour du texte.</p>
+    </div>
+
+    <table class="cr">
+      <tr>
+        <th>Code CSS</th>
+        <th>Rendu</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>p.ex6 {
+  border: 2px dashed green;
+  margin: 30px;
+}</pre>
+        </td>
+        <td class="rendu">
+          <p class="ex6" style="border:2px dashed green; margin:30px;">Un texte avec 30
+            pixels de marge : de l'espace extérieur.</p>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 margin — et la comparaison padding/margin</span>
+      <p><code>margin</code> = marge <em>extérieur</em> : entre l'élément et ses voisins. Comparez avec
+        l'exemple précédent : même bordure, mais l'élément se détache du reste. À retenir :
+        <code>padding</code> = à l'<strong>intérieur</strong> (le coussin entre le texte et sa bordure),
+        <code>margin</code> = à l'<strong>extérieur</strong> (la distance avec les autres).
+      </p>
+    </div>
+
+    <table class="cr">
+      <tr>
+        <th>Code CSS</th>
+        <th>Rendu</th>
+      </tr>
+      <tr>
+        <td>
+<pre>table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #999;
+  padding: 6px 10px;
+  text-align: left;
+}
+th {
+  background-color: #1a4fb4;
+  color: white;
+}</pre>
+        </td>
+        <td class="rendu">
+          <table class="demo-table">
+            <tr>
+              <th>Équipement</th>
+              <th>Quantité</th>
+            </tr>
+            <tr>
+              <td>Switch</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Routeur</td>
+              <td>1</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div class="callout">
+      <span class="lbl">🔎 le style d'un tableau</span>
+      <p><code>border-collapse: collapse;</code> colle les bordures des cellules entre elles (sinon, double
+        trait). <code>border</code> sur <code>th, td</code> dessine les cases, <code>padding</code> aère leur
+        contenu, et on réutilise <code>background-color</code> + <code>color</code> pour l'en-tête. C'est avec
+        cela que votre tableau « nu » devient lisible.</p>
+    </div>
+
+  </section>
+
+  <!-- Récap -->
+  <section id="recap">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2>L'essentiel en une page</h2>
+      <span class="sec-tag">Mémo</span>
+    </div>
+    <h3>📌 Mémo 1 — Les balises HTML importantes</h3>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th>Balise</th>
+            <th>Rôle</th>
+            <th>Exemple</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;h1&gt;</code> … <code>&lt;h6&gt;</code></td>
+            <td>Titres, du plus au moins important (un seul <code>h1</code> par page)</td>
+            <td><code>&lt;h1&gt;Titre&lt;/h1&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;p&gt;</code></td>
+            <td>Paragraphe</td>
+            <td><code>&lt;p&gt;Du texte...&lt;/p&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;strong&gt;</code> / <code>&lt;b&gt;</code></td>
+            <td>Important (sens) / gras (forme)</td>
+            <td><code>&lt;strong&gt;capital&lt;/strong&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;em&gt;</code> / <code>&lt;i&gt;</code></td>
+            <td>Emphase, insister (sens) / italique (forme)</td>
+            <td><code>&lt;em&gt;accentué&lt;/em&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;section&gt;</code></td>
+            <td>Grande partie de la page</td>
+            <td>« Présentation », « Inventaire »</td>
+          </tr>
+          <tr>
+            <td><code>&lt;article&gt;</code></td>
+            <td>Bloc autonome dans une section</td>
+            <td>Une fiche, une carte produit</td>
+          </tr>
+          <tr>
+            <td><code>&lt;header&gt;</code> / <code>&lt;footer&gt;</code></td>
+            <td>Bandeau d'en-tête / pied de page</td>
+            <td>Nom du site / auteur, contact</td>
+          </tr>
+          <tr>
+            <td><code>&lt;table&gt;</code> <code>&lt;tr&gt;</code> <code>&lt;th&gt;</code>
+              <code>&lt;td&gt;</code>
+            </td>
+            <td>Tableau / ligne / cellule d'en-tête / cellule de données</td>
+            <td>Inventaire, planning</td>
+          </tr>
+          <tr>
+            <td><code>&lt;link&gt;</code></td>
+            <td>Relier une feuille de style CSS</td>
+            <td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;!-- ... --&gt;</code></td>
+            <td>Commentaire (jamais affiché)</td>
+            <td><code>&lt;!-- à revoir --&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>📌 Mémo 2 — Les propriétés CSS importantes</h3>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th>Propriété</th>
+            <th>Elle règle quoi ?</th>
+            <th>Exemple</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>color</code></td>
+            <td>Couleur du <em>texte</em></td>
+            <td><code>color: darkblue;</code></td>
+          </tr>
+          <tr>
+            <td><code>background-color</code></td>
+            <td>Couleur du <em>fond</em></td>
+            <td><code>background-color: #f0f4fb;</code></td>
+          </tr>
+          <tr>
+            <td><code>font-family</code></td>
+            <td>Police (plusieurs de secours, séparées par des virgules)</td>
+            <td><code>font-family: Verdana, sans-serif;</code></td>
+          </tr>
+          <tr>
+            <td><code>font-size</code></td>
+            <td>Taille du texte (en pixels)</td>
+            <td><code>font-size: 20px;</code></td>
+          </tr>
+          <tr>
+            <td><code>border</code></td>
+            <td>Bordure : épaisseur + style + couleur</td>
+            <td><code>border: 2px solid black;</code></td>
+          </tr>
+          <tr>
+            <td><code>padding</code></td>
+            <td>Marge <em>intérieure</em> (texte ↔ bordure)</td>
+            <td><code>padding: 15px;</code></td>
+          </tr>
+          <tr>
+            <td><code>margin</code></td>
+            <td>Marge <em>extérieure</em> (élément ↔ voisins)</td>
+            <td><code>margin: 30px;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <span class="lbl">🧠 Le piège à ne pas oublier</span>
+      <p><code>padding</code> agit à l'<strong>intérieur</strong> de la bordure, <code>margin</code> à
+        l'<strong>extérieur</strong>. Et côté HTML : <code>strong</code>/<code>em</code> portent un
+        <strong>sens</strong>, <code>b</code>/<code>i</code> seulement une <strong>forme</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+    <p>Cours réalisé par <strong>Tanguy Signoret</strong> | <a
+        href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+    <p>Crédits : inspiré des cours NSI-Learning, Le Doc de Millman (forge Éducation) et NSI-Renoir — usage
+      pédagogique.</p>
+    <p>Mise à jour : novembre 2026</p>
+  </footer>
+</body>
+
+</html>

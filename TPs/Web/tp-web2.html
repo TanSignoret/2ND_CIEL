@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP — Site vitrine client (1h)</title>
+    <link rel="stylesheet" href="../../Ressources/style.css">
+    <style>
+        .cr {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+        }
+
+        .cr th {
+            background: #1a4fb4;
+            color: #fff;
+            padding: 8px 12px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+
+        .cr td {
+            border: 1px solid #dde3ee;
+            padding: 10px 14px;
+            vertical-align: top;
+            width: 50%;
+            background: #fff;
+        }
+
+        .cr .rendu {
+            background: #fffdf4;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <div class="eyebrow">TP — Web · 1h · Mise en situation professionnelle</div>
+        <h1>🎯 Mission : le site vitrine de l'Atelier FabLab</h1>
+        <p class="lede">Un client vous contacte : il veut un <strong>site vitrine</strong> pour présenter son
+            activité. Vous êtes le prestataire web : à vous de livrer une page qui respecte son cahier des
+            charges.</p>
+        <div class="chips">
+            <span class="chip">Seconde Bac Pro CIEL</span>
+            <span class="chip">1 heure · seul(e)</span>
+            <span class="chip">Sans IA · cours et mémo autorisés</span>
+            <span class="chip">À déposer sur Pronote</span>
+        </div>
+    </header>
+
+    <div class="callout">
+        <span class="lbl">📇 Le brief client — Atelier FabLab, entreprise de conception et prototypage</span>
+        <p>« Bonjour, je suis Mme Reyes, gérante de l'<strong>Atelier FabLab</strong> à Vienne. Nous imprimons des
+            pièces en 3D, nous réparons de l'électronique et nous organisons des ateliers d'initiation. J'ai
+            besoin d'une <strong>page web simple et claire</strong> que je puisse montrer à mes clients : notre
+            présentation, nos <strong>trois activités</strong>, nos <strong>prochains événements</strong> sous
+            forme de tableau, et nos <strong>tarifs</strong> dans un second tableau. Je veux que la page fasse
+            « sérieux » : couleurs sobres, textes lisibles, et mon nom en bas de page. Merci ! »</p>
+    </div>
+
+    <div class="callout">
+        <span class="lbl">📋 Ce que le client attend (les exigences)</span>
+        <ul class="plain">
+            <li>Un <strong>en-tête</strong> reprenant le nom de l'entreprise et sa localisation.</li>
+            <li>Une partie <strong>« Nos activités »</strong> : les trois activités de l'entreprise, chacune comme
+                un bloc autonome avec son titre et sa description.</li>
+            <li>Une partie <strong>« Prochains événements »</strong> : un <strong>tableau</strong> (date, lieu,
+                événement).</li>
+            <li>Une partie <strong>« Tarifs »</strong> : un second <strong>tableau</strong> (prestation, durée,
+                prix).</li>
+            <li>Un <strong>pied de page</strong> avec le nom de l'entreprise et un moyen de contact.</li>
+            <li>De la <strong>mise en avant dans les textes</strong> : un mot important, un mot en emphase, un
+                terme en gras — comme un vrai rédacteur.</li>
+        </ul>
+    </div>
+
+    <!-- Rendu de référence -->
+    <section id="reference">
+        <div class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Le rendu de référence (à reproduire)</h2>
+            <span class="sec-tag">C'est la cible</span>
+        </div>
+
+        <h2>Ce qu'il doit y avoir dans le code :</h2><br>
+        <ul class="plain">
+            <li>un <code>&lt;header&gt;</code> (bandeau bleu) avec un
+                <code>&lt;h1&gt;</code> (nom de l'entreprise) ;
+            </li>
+            <li>trois <code>&lt;section&gt;</code> : « Nos activités », « Prochains événements »,
+                « Tarifs » ;</li>
+            <li>dans « Nos activités » : <strong>trois
+                    <code>&lt;article&gt;</code></strong> (une par activité) avec
+                <code>&lt;h2&gt;</code> (ou <code>&lt;h3&gt;</code>) + <code>&lt;p&gt;</code> ;
+            </li>
+            <li><strong>deux <code>&lt;table&gt;</code></strong> complets (<code>tr</code>,
+                <code>th</code>, <code>td</code>) : événements (2 lignes min.) et tarifs (3 lignes
+                min.) ;
+            </li>
+            <li>un <code>&lt;footer&gt;</code> (entreprise, contact) ;</li>
+            <li>du <strong>texte en avant</strong> : au moins un
+                <code>&lt;strong&gt;</code>, un <code>&lt;em&gt;</code> et un
+                <code>&lt;b&gt;</code> bien utilisés.
+            </li>
+        </ul>
+        <br>
+        <h2>A quoi ça va ressembler :</h2>
+        <img src="Ressources/obj.png" alt="Rendu de référence">
+
+        
+
+    </section>
+
+    <!-- Consignes CSS -->
+    <section id="consignes-css">
+        <div class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Côté CSS — les effets visibles à reproduire</h2>
+            <span class="sec-tag">style.css relié avec &lt;link&gt;</span>
+        </div>
+        <table class="cr">
+            <tr>
+                <th>Effet sur le rendu de référence</th>
+                <th>Propriété(s) attendue(s)</th>
+            </tr>
+            <tr>
+                <td>Fond de page bleu très clair, texte gris foncé, police sans-serif</td>
+                <td><code>background-color</code> · <code>color</code> ·
+                    <code>font-family</code> sur <code>body</code>
+                </td>
+            </tr>
+            <tr>
+                <td>Bandeau d'en-tête bleu foncé avec texte blanc : le client reconnaît « sa » couleur</td>
+                <td><code>background-color</code> + <code>color</code> sur <code>header</code></td>
+            </tr>
+            <tr>
+                <td>Sections en « cartes » blanches arrondies, détachées du fond</td>
+                <td><code>background-color</code> sur <code>section</code> ·
+                    <code>border-radius</code> (à découvrir) · <code>margin</code> + <code>padding</code>
+                </td>
+            </tr>
+            <tr>
+                <td>Deux tableaux lisibles : bordures fines, en-têtes bleus</td>
+                <td><code>border</code> + <code>border-collapse: collapse</code> · <code>padding</code> ·
+                    <code>th</code> stylé
+                </td>
+            </tr>
+            <tr>
+                <td>Titres colorés et hiérarchisés : la page se survole</td>
+                <td><code>color</code> + <code>font-size</code> sur <code>h1</code>, <code>h2</code>,
+                    <code>h3</code>
+                </td>
+            </tr>
+            <tr>
+                <td>Pied de page discret (plus petit, grisé, séparé par un trait)</td>
+                <td><code>font-size</code> · <code>color</code> · <code>border-top</code> sur
+                    <code>footer</code>
+                </td>
+            </tr>
+        </table>
+        <div class="callout">
+            <span class="lbl">💡 Droits et interdits</span>
+            <p><strong>Autorisés</strong> : le cours, les mémos (balises + CSS), le site de documentation.</p>
+            <p><strong>Interdit</strong> : les IA, les copier-coller de code d'un camarade (comparez les deux
+                fichiers, ça se voit). <strong>Le client vous regarde travailler</strong> : les textes doivent être
+                rédigés par vous, pas copiés d'internet — un prestataire qui copie un site concurrent, c'est un
+                procès.
+            </p>
+        </div>
+
+        <div class="callout deliver">
+            <span class="lbl">📤 Dépot</span>
+            <p>Sur Pronote : <code>page.html</code> + <code>style.css</code> (ou une archive des deux
+                fichiers). Livraison = envoi de la facture : retard pénalisant !</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Seconde Bac Pro CIEL — Lycée Charlie Chaplin</strong></p>
+        <p>TP réalisé par <strong>Tanguy Signoret</strong> | <a
+                href="mailto:tanguy.signoret@ac-lyon.fr">tanguy.signoret@ac-lyon.fr</a></p>
+        <p>Mise à jour : novembre 2026</p>
+    </footer>
+</body>
+
+</html>
