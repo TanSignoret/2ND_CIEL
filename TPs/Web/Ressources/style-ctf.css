@@ -1,0 +1,61 @@
+/* Styles propres au TP (défis) */
+.flagbox {
+    font-family: monospace;
+    background: #f0f4ff;
+    border: 1px dashed #8899cc;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.cache {
+    display: none;
+}
+
+.drapeau::after {
+    content: "CIEL{css_revele_par_style}";
+    font-family: monospace;
+    font-weight: bold;
+    color: #1a4fb4;
+}
+
+.zone {
+    border: 1px solid #ccd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    background: #fbfcff;
+}
+
+.zone input {
+    font-family: monospace;
+    padding: 6px 10px;
+    border: 1px solid #99a;
+    border-radius: 6px;
+}
+
+.zone button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #1a4fb4;
+    color: #fff;
+    cursor: pointer;
+}
+
+code,
+pre {
+    font-family: monospace;
+}
+
+pre {
+    background: #f2f4f8;
+    padding: 10px 14px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9em;
+}
+
+.verdict {
+    font-weight: bold;
+    margin-top: 8px;
+}
