@@ -1,21 +1,16 @@
-/* Styles propres au TP (défis) */
+/* ===== style-ctf.css — TP CTF « Hacking web » (Seconde Bac Pro CIEL) ===== */
+/* À déposer dans Ressources/style-ctf.css, à côté de la page du TP.      */
+/* complète ../Ressources/style.css (hero, callout, sections, etc.)       */
+
+/* C1 — le commentaire du styliste */
+/* Le flag est ici : CIEL{commentaire_css} */
+
 .flagbox {
     font-family: monospace;
     background: #f0f4ff;
     border: 1px dashed #8899cc;
-    padding: 8px 12px;
+    padding: 2px 8px;
     border-radius: 6px;
-}
-
-.cache {
-    display: none;
-}
-
-.drapeau::after {
-    content: "CIEL{css_revele_par_style}";
-    font-family: monospace;
-    font-weight: bold;
-    color: #1a4fb4;
 }
 
 .zone {
@@ -42,20 +37,122 @@
     cursor: pointer;
 }
 
-code,
-pre {
-    font-family: monospace;
+.zone table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-pre {
-    background: #f2f4f8;
-    padding: 10px 14px;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-size: 0.9em;
+.zone th,
+.zone td {
+    border: 1px solid #99a;
+    padding: 4px 10px;
+    text-align: left;
+}
+
+.zone th {
+    background: #d4dcea;
 }
 
 .verdict {
     font-weight: bold;
     margin-top: 8px;
+    min-height: 1.2em;
+}
+
+/* C2 — la classe qui manque : .drapeau doit être ajoutée à #styliste */
+.drapeau::after {
+    content: "CIEL{css_revele_par_style}";
+    font-family: monospace;
+    font-weight: bold;
+    color: #1a4fb4;
+}
+
+/* C3 — le survol */
+.badge-hover {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #eef4ff;
+    cursor: default;
+}
+
+.badge-hover::after {
+    content: "";
+}
+
+.badge-hover:hover::after {
+    content: " CIEL{survole_badge}";
+    font-family: monospace;
+    font-weight: bold;
+    color: #1a4fb4;
+}
+
+/* C4 — le caméléon : texte blanc sur fond blanc */
+.fond-blanc {
+    background: #ffffff;
+}
+
+.camaleon {
+    color: #ffffff;
+}
+
+/* C5 — la variable CSS */
+:root {
+    --couleur-accent: #1a4fb4;
+    --flag-secret: "CIEL{variable_css}";
+}
+
+.variable-user {
+    border-left: 4px solid var(--couleur-accent);
+    padding-left: 10px;
+}
+
+.var-ref::after {
+    content: var(--flag-secret);
+    font-family: monospace;
+    font-weight: bold;
+    color: #1a4fb4;
+}
+
+/* C6 — la fenêtre étroite */
+.media-flag::after {
+    content: "";
+}
+
+@media (max-width: 500px) {
+    .media-flag::after {
+        content: "CIEL{fenetre_etroite}";
+        font-family: monospace;
+        font-weight: bold;
+        color: #1a4fb4;
+    }
+}
+
+/* C7 — les trois morceaux, à rassembler dans l'ordre */
+.morceau-a {
+    font-family: monospace;
+    font-weight: bold;
+    color: #1a4fb4;
+}
+
+.morceau-a::before {
+    content: "CIEL{";
+}
+
+.morceau-a::after {
+    content: "trois";
+    font-weight: bold;
+}
+
+/* Le morceau central est à trouver : regardez CSS C7 dans le TP...           */
+/* indice : entre "trois" et "}", il manque un mot qui compte les morceaux !  */
+
+.morceau-b {
+    font-family: monospace;
+    font-weight: bold;
+    color: #1a4fb4;
+}
+
+.morceau-b::after {
+    content: "_morceaux}";
 }
